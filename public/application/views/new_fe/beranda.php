@@ -13,8 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Genos:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="<?= base_url('assets/css/beranda.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/beranda-mobile.css') ?>" />
 </head>
 <body>
     <?php $this->load->view('new_fe/components/beranda_hero'); ?>
+    <?php $this->load->view('new_fe/components/beranda_hero_mobile'); ?>
 </body>
 </html>

@@ -1,0 +1,290 @@
+/* ================================================================
+   BERANDA MOBILE — BAPENDA Purwakarta
+   Figma node 3:372 "M-Beranda"
+   Canvas: 412 × 915 px
+   ================================================================ */
+
+/* ── Reset ─────────────────────────────────────────────────── */
+.bap-m-wrap *, .bap-m-wrap *::before, .bap-m-wrap *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Outer wrapper — default: sembunyikan di desktop ────────── */
+.bap-m-wrap {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Mobile: tampilkan canvas mobile */
+@media (max-width: 768px) {
+    .bap-m-wrap {
+        display: block;
+    }
+}
+
+/* ── Inner canvas 412×915 — di-scale ke viewport ────────────── */
+.bap-m-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 412px;
+    height: 915px;
+    overflow: visible;
+}
+
+/* ================================================================
+   BG Foto kantor
+   img: left=-137.53%, w=578.44%, h=145.72%
+   ================================================================ */
+.bap-m-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 411px;
+    height: 916px;
+    overflow: hidden;
+    z-index: 1;
+}
+.bap-m-bg img {
+    position: absolute;
+    left: -137.53%;
+    top: 0;
+    width: 578.44%;
+    height: 145.72%;
+    max-width: none;
+    display: block;
+}
+
+/* ================================================================
+   Ornamen Lawang — hanya kanan (sesuai Figma mobile)
+   w=208, h=615, left=0 (dari Figma node 3:377 di sisi kiri canvas)
+   ================================================================ */
+.bap-m-ornamen {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 208px;
+    height: 615px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+.bap-m-ornamen img {
+    position: absolute;
+    left: -86.06%;
+    top: -4.39%;
+    width: 369.71%;
+    height: 124.98%;
+    max-width: none;
+}
+
+/* ================================================================
+   gplay SVG overlay — full canvas
+   ================================================================ */
+.bap-m-gplay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 412px;
+    height: 915px;
+    pointer-events: none;
+    z-index: 4;
+}
+.bap-m-gplay img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ================================================================
+   Watermark "BERANDA"
+   font: Krona One 48px, white, opacity=0.35
+   top-right area
+   ================================================================ */
+.bap-m-watermark {
+    position: absolute;
+    right: 0;
+    top: 10;
+    font-family: 'Krona One', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.35;
+    line-height: normal;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 6;
+}
+
+/* ================================================================
+   Logo BAPENDA — disembunyikan di mobile
+   ================================================================ */
+.bap-m-logo {
+    display: none;
+}
+
+/* ================================================================
+   Sidebar menu — horizontal di atas (mobile: vertikal, kiri)
+   Sesuai Figma: menu list di kiri top
+   top=60, w=162, item h=40
+   ================================================================ */
+.bap-m-sidebar {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+}
+.bap-m-sidebar__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 162px;
+    height: 40px;
+    padding: 0 22px;
+    background: #ffffff;
+    color: #303752;
+    font-family: 'Genos', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.bap-m-sidebar__item:hover {
+    background: #f5f6fa;
+}
+.bap-m-sidebar__item--active {
+    background: #eaa90d;
+    border-top: 2px solid #303752;
+    height: 42px;
+}
+.bap-m-sidebar__item--active:hover {
+    background: #eaa90d;
+}
+.bap-m-sidebar__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 41px;
+    height: 40px;
+    background: #eaa90d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.bap-m-sidebar__arrow img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* ================================================================
+   Headline
+   font: Genos 40px, #f4c24a, center
+   top: ~270px dari canvas top
+   ================================================================ */
+.bap-m-headline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 290px;
+    padding: 0 12px;
+    font-family: 'Genos', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #f4c24a;
+    text-align: center;
+    line-height: normal;
+    z-index: 10;
+}
+
+/* ================================================================
+   Deskripsi
+   font: Plus Jakarta Sans 14px, white
+   top: ~400px
+   ================================================================ */
+.bap-m-desc {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 400px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.5;
+    z-index: 10;
+}
+
+/* ================================================================
+   Badges — grid 2×2, tengah horizontal
+   ================================================================ */
+.bap-m-badges {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 560px;
+    display: grid;
+    grid-template-columns: repeat(2, 116px);
+    gap: 10px;
+    z-index: 10;
+}
+.bap-m-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: 116px;
+    height: 31.609px;
+    padding: 0 8px;
+    background: #ffffff;
+    border: 1px solid #303752;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #303752;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.bap-m-badge--noborder {
+    border: none;
+}
+.bap-m-badge__icon {
+    width: 18.476px;
+    height: 18.476px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ================================================================
+   Copyright
+   bottom area, font: Plus Jakarta Sans 12px
+   ================================================================ */
+.bap-m-copyright {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    line-height: normal;
+    z-index: 25;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 8px;
+}
