@@ -45,3 +45,17 @@ ERROR - 2026-08-18 05:37:41 --> Severity: Warning --> Undefined array key "ket" 
 ERROR - 2026-08-18 05:37:41 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682
 ERROR - 2026-08-18 05:39:23 --> Severity: Warning --> Undefined array key "ket" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 677
 ERROR - 2026-08-18 05:39:23 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "foto_kaban" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 110
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "nama_kaban" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 117
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "foto_sekban" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 156
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "nama_sekban" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 163
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "foto_kabid1" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 205
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "nama_kabid1" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 212
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "foto_kabid2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 247
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "nama_kabid2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 254
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "foto_kabid3" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 288
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "nama_kabid3" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 295
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "judul1" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 336
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "judul2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 336
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "narasi1" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 339
+ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "narasi2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 339

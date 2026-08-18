@@ -1,105 +1,213 @@
 <?php
 /**
- * Beranda Hero Section – BAPENDA Purwakarta
- * Implementasi dari desain Figma: Untitled, node 1:683
+ * BERANDA HERO — BAPENDA Purwakarta
+ * Implementasi pixel-perfect dari Figma node 1:683 "MENU BERANDA"
+ * Canvas: 1283 × 733 px, di-scale ke viewport via JS
  *
- * Variabel opsional dari controller:
- *   $hero_headline  – judul utama
- *   $hero_desc      – deskripsi
- *   $active_menu    – menu aktif di sidebar (default: 'beranda')
+ * Koordinat semua elemen diambil langsung dari metadata Figma.
  */
-
-$headline = isset($hero_headline) ? $hero_headline : 'Pengelolaan Pendapatan yang Transparan';
-$desc     = isset($hero_desc)     ? $hero_desc
-    : 'Dinas Pendapatan Daerah Kabupaten Purwakarta hadir untuk mewujudkan tata kelola '
-    . 'pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi demi '
-    . 'pembangunan daerah yang berkeadilan.';
-
-/* Inline SVG check-circle hijau – tidak bergantung pada file eksternal */
-$svg_check = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#22c55e" width="17" height="17" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/></svg>';
-
-/* Inline SVG check-circle outline (untuk badge non-aktif) */
-$svg_check_outline = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#22c55e" width="17" height="17" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5-4.5-4.5 1.41-1.41L10 13.67l7.09-7.09 1.41 1.41L10 16.5z"/></svg>';
-
-$base   = base_url('assets/beranda/');
-$badges = [
-    ['label' => 'Transparan',  'active' => false],
-    ['label' => 'Akuntabel',   'active' => false],
-    ['label' => 'Informatif',  'active' => false],
-    ['label' => 'Profesional', 'active' => false],
-];
+$b = base_url('assets/beranda/');
 ?>
 
-<section class="beranda-hero" aria-label="Hero Beranda BAPENDA Purwakarta">
+<!-- ═══════════════════════════════════════════════════════════
+     CANVAS WRAPPER — 1283×733px, di-scale ke viewport
+═══════════════════════════════════════════════════════════ -->
+<div class="bap-wrap" id="bap-wrap">
+<div class="bap-canvas" id="bap-canvas">
 
-    <!-- ── Layer Background ──────────────────────────────── -->
-    <div class="beranda-hero__bg" aria-hidden="true">
-        <img
-            src="<?= $base ?>bg-kantor.png"
-            alt="Kantor BAPENDA Purwakarta"
-            loading="eager"
-        />
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:686 — Background foto kantor
+         left=0, top=0, w=1280, h=731
+         img: left=-24.71%, w=185.73%, h=182.6%
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-bg" aria-hidden="true">
+        <img src="<?= $b ?>bg-kantor.png" alt="Gedung Kantor BAPENDA Purwakarta" />
     </div>
 
-    <!-- ── Ornamen gplay (kanan) ─────────────────────────── -->
-    <div class="beranda-hero__ornamen" aria-hidden="true">
-        <img src="<?= $base ?>ornamen-gplay.svg" alt="" />
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:690 — Ornamen Lawang Sigotaka kiri
+         left=0, top=97, w=216, h=615
+         img: left=-175.93%, top=-4.39%, w=356.02%, h=124.98%
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-ornamen-l" aria-hidden="true">
+        <img src="<?= $b ?>ornamen-lawang.png" alt="" />
     </div>
 
-    <!-- ── Watermark teks "BERANDA" ─────────────────────── -->
-    <span class="beranda-hero__watermark" aria-hidden="true">BERANDA</span>
-
-    <!-- ── Logo BAPENDA (kiri atas) ─────────────────────── -->
-    <div class="beranda-hero__logo">
-        <img
-            class="beranda-hero__logo-img"
-            src="<?= $base ?>purwakarta-logo.png"
-            alt="Logo BAPENDA Purwakarta"
-            onerror="this.src='<?= base_url('assets/images/logo-bapenda-pwk.webp') ?>'"
-        />
-        <img
-            class="beranda-hero__logo-text"
-            src="<?= $base ?>purwakarta-text.png"
-            alt="Purwakarta"
-            onerror="this.style.display='none'"
-        />
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:691 — Ornamen Lawang Sigotaka kanan
+         left=1073, top=97, w=208, h=615
+         img: left=-86.06%, top=-4.39%, w=369.71%, h=124.98%
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-ornamen-r" aria-hidden="true">
+        <img src="<?= $b ?>ornamen-lawang.png" alt="" />
     </div>
 
-    <!-- ── Sidebar Menu Kiri ─────────────────────────────── -->
-    <?php $this->load->view('new_fe/components/beranda_sidebar', [
-        'active_menu' => isset($active_menu) ? $active_menu : 'beranda'
-    ]); ?>
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:692 — gplay SVG overlay
+         left=0, top=0, w=1283, h=733
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-gplay" aria-hidden="true">
+        <img src="<?= $b ?>ornamen-gplay.svg" alt="" />
+    </div>
 
-    <!-- ── Konten Utama ──────────────────────────────────── -->
-    <div class="beranda-hero__content">
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:693 — Watermark "BERANDA"
+         left=644, top=0 (text x=644, y=12)
+         font: Krona One 96px, white, opacity=0.35
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-watermark" aria-hidden="true">BERANDA</div>
 
-        <!-- Headline kuning besar (font Genos) -->
-        <h1 class="beranda-hero__headline">
-            <?= htmlspecialchars($headline) ?>
-        </h1>
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:751/1:752 — Logo Group
+         group: left=17.467, top=26, w=429, h=61.588
+         1:753 bapenda mark: left=0,       top=0      w=248.406 h=61.588
+         1:754 PURWAKARTA:   left=276.138, top=57.820 w=170.394 h=14.371
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-logo" aria-label="Logo BAPENDA Purwakarta">
 
-        <!-- Deskripsi -->
-        <p class="beranda-hero__desc">
-            <?= htmlspecialchars($desc) ?>
-        </p>
-
-        <!-- Badge / Chip row -->
-        <div class="beranda-hero__badges" role="list" aria-label="Nilai-nilai BAPENDA">
-            <?php foreach ($badges as $badge): ?>
-                <span
-                    class="beranda-badge<?= !empty($badge['active']) ? ' beranda-badge--active' : '' ?>"
-                    role="listitem"
-                >
-                    <?= $svg_check ?>
-                    <?= htmlspecialchars($badge['label']) ?>
-                </span>
-            <?php endforeach; ?>
+        <!-- 1:753 — purwakarta111 1.png (tulisan "bapenda") -->
+        <!-- container 248.406×61.588px, img: h=142.66%, top=-0.66% -->
+        <div class="bap-logo__mark">
+            <img src="<?= $b . rawurlencode('purwakarta111 1.png') ?>" alt="bapenda" />
         </div>
+
+        <!-- 1:754 — purwakarta112 1.png (tulisan "PURWAKARTA") -->
+        <!-- container 170.394×14.371px, img: h=419.49%, top=-328.57%, left=-0.01% -->
+        <div class="bap-logo__text">
+            <img src="<?= $b . rawurlencode('purwakarta112 1.png') ?>" alt="PURWAKARTA" />
+        </div>
+
     </div>
 
-    <!-- ── Footer Copyright ──────────────────────────────── -->
-    <footer class="beranda-hero__footer" role="contentinfo">
-        Copyright &copy; <?= date('Y') ?> Badan Pendapatan Daerah Kab. Purwakarta
-    </footer>
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:727 — Headline
+         left=172, top=197, w=940, h=230
+         font: Genos 96px, #f4c24a, text-center
+    ──────────────────────────────────────────────────────── -->
+    <h1 class="bap-headline">
+        Pengelolaan Pendapatan yang Transparan
+    </h1>
 
-</section>
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:726 — Deskripsi
+         left=172, top=417, w=801, h=79.023
+         font: Plus Jakarta Sans 20px, white
+    ──────────────────────────────────────────────────────── -->
+    <p class="bap-desc">
+        Dinas Pendapatan Daerah Kabupaten Purrwakarta hadir untuk mewujudkan tata
+        kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi
+        demi pembangunan daerah yang berkeadilan.
+    </p>
+
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:695/1:696 — Badges row
+         group left=381, top=550, w=521, h=31.609
+         Tiap badge: w=116, h=31.609
+         Transparan  left=381 → offset 0    (no border)
+         Akuntabel   left=516 → offset 135  (border)
+         Informatif  left=654 → offset 273  (border)
+         Profesional left=786 → offset 405  (border)
+         icon check_circle: size=18.476px
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-badges" role="list" aria-label="Nilai-nilai BAPENDA">
+
+        <!-- 1:718 — Transparan (bg white, NO border) -->
+        <span class="bap-badge bap-badge--noborder" role="listitem">
+            <img src="<?= $b ?>icon-check2.svg" alt="" class="bap-badge__icon" />
+            Transparan
+        </span>
+
+        <!-- 1:711 — Akuntabel (border #303752) -->
+        <span class="bap-badge" role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-badge__icon" />
+            Akuntabel
+        </span>
+
+        <!-- 1:704 — Informatif (border #303752) -->
+        <span class="bap-badge" role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-badge__icon" />
+            Informatif
+        </span>
+
+        <!-- 1:697 — Profesional (border #303752) -->
+        <span class="bap-badge" role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-badge__icon" />
+            Profesional
+        </span>
+
+    </div>
+
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:729 — Sidebar menu
+         group: left=1, top=277, w=203, h=201
+         Tiap item: w=161-162, h=40
+         Beranda aktif top=277, h=42: bg=#eaa90d, border-top 2px #303752
+                        arrow kanan w=41px bg=#eaa90d
+         Profil      top=319
+         Layanan     top=359
+         Informasi   top=399
+         Saran&Kritik top=438
+         font: Genos 24px, #303752
+    ──────────────────────────────────────────────────────── -->
+    <nav class="bap-sidebar" aria-label="Menu utama">
+
+        <!-- 1:742 — Beranda (AKTIF) -->
+        <a href="<?= base_url('beranda') ?>" class="bap-sidebar__item bap-sidebar__item--active" aria-current="page">
+            Beranda
+            <span class="bap-sidebar__arrow" aria-hidden="true">
+                <img src="<?= $b ?>icon-arrow-forward.svg" alt="" />
+            </span>
+        </a>
+
+        <!-- 1:739 — Profil -->
+        <a href="<?= base_url('tentang-kami') ?>" class="bap-sidebar__item">Profil</a>
+
+        <!-- 1:736 — Layanan -->
+        <a href="<?= base_url('layanan') ?>" class="bap-sidebar__item">Layanan</a>
+
+        <!-- 1:733 — Informasi -->
+        <a href="<?= base_url('blog') ?>" class="bap-sidebar__item">Informasi</a>
+
+        <!-- 1:730 — Saran & Kritik -->
+        <a href="<?= base_url('kritik-saran') ?>" class="bap-sidebar__item">Saran &amp; Kritik</a>
+
+    </nav>
+
+    <!-- ────────────────────────────────────────────────────
+         NODE 1:728 — Copyright
+         left=414, top=712, w=351, h=20
+         font: Plus Jakarta Sans 12px, #303752
+    ──────────────────────────────────────────────────────── -->
+    <div class="bap-copyright">
+        Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta
+    </div>
+
+</div><!-- /.bap-canvas -->
+</div><!-- /.bap-wrap -->
+
+<script>
+(function () {
+    var wrap   = document.getElementById('bap-wrap');
+    var canvas = document.getElementById('bap-canvas');
+    var W = 1283, H = 733;
+
+    function doScale() {
+        var vw = wrap.clientWidth  || window.innerWidth;
+        var vh = wrap.clientHeight || window.innerHeight;
+
+        /* COVER — scale terbesar agar canvas menutupi penuh viewport */
+        var s = Math.max(vw / W, vh / H);
+
+        /* Tengahkan horizontal, tapi anchor vertikal dari atas (offsetY min 0)
+           agar logo & watermark di top tidak pernah terpotong */
+        var offsetX = (vw - W * s) / 2;
+        var offsetY = Math.min(0, (vh - H * s) / 2);
+
+        canvas.style.transform       = 'translate(' + offsetX + 'px, ' + offsetY + 'px) scale(' + s + ')';
+        canvas.style.transformOrigin = 'top left';
+    }
+
+    doScale();
+    window.addEventListener('resize', doScale);
+})();
+</script>

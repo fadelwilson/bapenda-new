@@ -1,321 +1,374 @@
-/* ============================================================
-   BERANDA HERO - BAPENDA Purwakarta
-   Mengikuti desain Figma: node 1:683
-   ============================================================ */
+/* ================================================================
+   BERANDA — BAPENDA Purwakarta
+   Pixel-perfect dari Figma node 1:683 "MENU BERANDA"
+   Canvas: 1283 × 733 px
+   Semua nilai left/top/width/height dalam px sesuai metadata Figma
+   ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Genos:wght@400;500;600;700&family=Krona+One&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ---------- CSS Variables ---------- */
-:root {
-    --bap-navy:   #303752;
-    --bap-gold:   #eaa90d;
-    --bap-yellow: #f4c24a;
-    --bap-white:  #ffffff;
-    --bap-green:  #22c55e;
-    --sidebar-w:  162px;
-}
-
-/* ---------- Reset / Base ---------- */
-*, *::before, *::after { box-sizing: border-box; }
-
-/* ---------- Hero Wrapper ---------- */
-.beranda-hero {
-    position: relative;
+html, body {
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
+    height: 100%;
     overflow: hidden;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #0d1020;
 }
 
-/* ---------- Background Layer ---------- */
-.beranda-hero__bg {
+/* ── Viewport wrapper ───────────────────────────────────────── */
+.bap-wrap {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #0d1020;
+}
+
+/* ── Canvas 1283×733 ─────────────────────────────────────────
+   overflow:visible wajib agar elemen di top:26 (logo) dan
+   top:712 (copyright) tidak terpotong saat di-transform
+   ─────────────────────────────────────────────────────────── */
+.bap-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1283px;
+    height: 733px;
+    overflow: visible;
+}
+
+/* ================================================================
+   NODE 1:686 — Background foto kantor
+   Menutup penuh canvas 1283×733 dengan object-fit: cover
+   ================================================================ */
+.bap-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1283px;
+    height: 733px;
+    overflow: hidden;
+    z-index: 1;
+}
+.bap-bg img {
     position: absolute;
     inset: 0;
-    z-index: 0;
-}
-
-.beranda-hero__bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
-    filter: brightness(0.55) grayscale(0.3);
+    object-position: center center;
+    max-width: none;
+    display: block;
 }
 
-/* Overlay gradient supaya konten tetap terbaca */
-.beranda-hero__bg::after {
-    content: '';
+/* ================================================================
+   NODE 1:690 — Ornamen Lawang KIRI
+   Hampir full canvas 70%: h=513px (~70% dari 733)
+   ================================================================ */
+.bap-ornamen-l {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        rgba(48, 55, 82, 0.72) 0%,
-        rgba(48, 55, 82, 0.45) 55%,
-        rgba(0, 0, 0, 0.15) 100%
-    );
-}
-
-/* ---------- Ornamen SVG (gplay) ---------- */
-.beranda-hero__ornamen {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
+    left: 0;
+    top: 110px;
+    width: 190px;
+    height: 513px;
     overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+.bap-ornamen-l img {
+    position: absolute;
+    left: -175.93%;
+    top: -4.39%;
+    width: 356.02%;
+    height: 124.98%;
+    max-width: none;
 }
 
-.beranda-hero__ornamen img {
+/* ================================================================
+   NODE 1:691 — Ornamen Lawang KANAN
+   Hampir full canvas 70%: h=513px (~70% dari 733)
+   ================================================================ */
+.bap-ornamen-r {
     position: absolute;
-    right: -40px;
+    left: auto;
+    right: 0;
+    top: 110px;
+    width: 183px;
+    height: 513px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+.bap-ornamen-r img {
+    position: absolute;
+    left: -86.06%;
+    top: -4.39%;
+    width: 369.71%;
+    height: 124.98%;
+    max-width: none;
+}
+
+/* ================================================================
+   NODE 1:692 — gplay SVG overlay
+   left=0, top=0, w=1283, h=733
+   ================================================================ */
+.bap-gplay {
+    position: absolute;
+    left: 0;
     top: 0;
+    width: 1283px;
+    height: 733px;
+    pointer-events: none;
+    z-index: 4;
+}
+.bap-gplay img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    width: auto;
-    opacity: 0.18;
+    display: block;
 }
 
-/* ---------- Watermark Teks "BERANDA" ---------- */
-.beranda-hero__watermark {
+/* ================================================================
+   NODE 1:693 — Watermark "BERANDA"
+   text x=644, y=12 → left=644, top=0
+   font: Krona One 96px, white, opacity=0.35
+   ================================================================ */
+.bap-watermark {
     position: absolute;
-    top: -10px;
-    right: -20px;
-    z-index: 2;
+    left: 700px;
+    top: 68px;
     font-family: 'Krona One', sans-serif;
-    font-size: clamp(60px, 9vw, 96px);
-    color: #fff;
-    opacity: 0.12;
-    letter-spacing: 0.04em;
+    font-size: 86px;
+    font-style: normal;
+    font-weight: 400;
+    color: #ffffff;
+    opacity: 0.35;
+    line-height: normal;
+    white-space: nowrap;
     pointer-events: none;
     user-select: none;
-    white-space: nowrap;
+    z-index: 6;
 }
 
-/* ---------- Logo Area (kiri atas) ---------- */
-.beranda-hero__logo {
+/* ================================================================
+   NODE 1:751/1:752 — Logo Group
+   group: left=17.467, top=26
+   1:753 purwakarta111 1.png — "bapenda"    249×62px
+   1:754 purwakarta112 1.png — "PURWAKARTA" 171×15px
+   ================================================================ */
+.bap-logo {
     position: absolute;
-    top: 24px;
-    left: 24px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.beranda-hero__logo-img {
-    height: 62px;
-    width: auto;
-    object-fit: contain;
-}
-
-.beranda-hero__logo-text {
-    height: 14px;
-    width: auto;
-    object-fit: contain;
-    opacity: 0.85;
-}
-
-/* ---------- Sidebar Menu Kiri ---------- */
-.beranda-sidebar {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 17px;
+    top: 80px;
+    pointer-events: none;
     z-index: 20;
     display: flex;
-    flex-direction: column;
-    width: var(--sidebar-w);
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
 }
 
-.beranda-sidebar__item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    padding: 0 12px;
-    background: var(--bap-white);
-    color: var(--bap-navy);
+/* 1:753 — mark "bapenda" — tampil ukuran asli */
+.bap-logo__mark {
+    display: block;
+    line-height: 0;
+    flex-shrink: 0;
+}
+.bap-logo__mark img {
+    /* width: 249px; */
+    height: 48px;
+    display: block;
+}
+
+/* 1:754 — teks "PURWAKARTA" — tampil ukuran asli, sejajar secara vertikal */
+.bap-logo__text {
+    display: block;
+    line-height: 0;
+    flex-shrink: 0;
+}
+.bap-logo__text img {
+    /* width: 171px; */
+    /* height: 15px; */
+    display: block;
+}
+
+/* ================================================================
+   NODE 1:727 — Headline
+   left=172, top=197, w=940, h=230
+   font: Genos 96px, #f4c24a, center
+   ================================================================ */
+.bap-headline {
+    position: absolute;
+    left: 172px;
+    top: 197px;
+    width: 940px;
+    height: 230px;
     font-family: 'Genos', sans-serif;
-    font-size: 22px;
+    font-size: 96px;
     font-weight: 400;
-    text-decoration: none;
-    transition: background 0.18s, color 0.18s;
-    white-space: nowrap;
-    border-bottom: 1px solid rgba(48,55,82,0.08);
-}
-
-.beranda-sidebar__item:hover {
-    background: #f0f2fa;
-    color: var(--bap-navy);
-}
-
-/* Item aktif (Beranda) */
-.beranda-sidebar__item--active {
-    background: var(--bap-gold);
-    color: var(--bap-navy);
-    font-weight: 600;
-}
-
-/* Garis atas item aktif */
-.beranda-sidebar__item--active::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--bap-navy);
-}
-
-/* Tombol panah di item aktif */
-.beranda-sidebar__arrow {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    background: var(--bap-gold);
+    color: #f4c24a;
+    text-align: center;
+    line-height: normal;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    border-left: 1px solid rgba(48,55,82,0.15);
-}
-
-.beranda-sidebar__arrow img {
-    width: 20px;
-    height: 20px;
-    filter: invert(0);
-}
-
-/* ---------- Konten Utama Hero ---------- */
-.beranda-hero__content {
-    position: absolute;
-    left: calc(var(--sidebar-w) + 40px);
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 10;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
 }
 
-/* Headline besar */
-.beranda-hero__headline {
-    font-family: 'Genos', sans-serif;
-    font-size: clamp(40px, 6.5vw, 88px);
+/* ================================================================
+   NODE 1:726 — Deskripsi
+   left=172, top=417, w=801, h=79.023
+   font: Plus Jakarta Sans 20px, white
+   ================================================================ */
+.bap-desc {
+    position: absolute;
+    left: 172px;
+    top: 417px;
+    width: 801px;
+    height: 79.023px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 1.1;
-    color: var(--bap-yellow);
-    margin: 0;
-    max-width: 820px;
+    color: #ffffff;
+    line-height: normal;
+    z-index: 10;
 }
 
-/* Deskripsi / sub-teks */
-.beranda-hero__desc {
-    font-size: clamp(13px, 1.4vw, 18px);
-    font-weight: 400;
-    color: var(--bap-white);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0;
-}
-
-/* ---------- Badge / Chip Row ---------- */
-.beranda-hero__badges {
+/* ================================================================
+   NODE 1:695 — Badges row
+   group left=381, top=550 (absolut di canvas)
+   Tiap badge: w=116, h=31.609
+   gap antara badge: 135-116=19px (Transparan→Akuntabel)
+   ================================================================ */
+.bap-badges {
+    position: absolute;
+    left: 381px;
+    top: 550px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
+    gap: 19px;
+    z-index: 10;
 }
 
-.beranda-badge {
+.bap-badge {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    background: var(--bap-white);
-    border: 1px solid var(--bap-navy);
-    padding: 5px 14px 5px 8px;
+    gap: 6px;
+    width: 116px;
+    height: 31.609px;
+    padding: 0 8px;
+    background: #ffffff;
+    border: 1px solid #303752;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
-    color: var(--bap-navy);
-    border-radius: 2px;
+    color: #303752;
     white-space: nowrap;
-}
-
-/* Badge terakhir (Transparan) - tanpa border */
-.beranda-badge--active {
-    border-color: transparent;
-    box-shadow: 0 0 0 1px rgba(48,55,82,0.12);
-}
-
-.beranda-badge__icon {
-    width: 17px;
-    height: 17px;
     flex-shrink: 0;
 }
 
-/* ---------- Footer Copyright ---------- */
-.beranda-hero__footer {
+/* 1:718/1:719 — Transparan: bg white, NO border */
+.bap-badge--noborder {
+    border: none;
+}
+
+.bap-badge__icon {
+    width: 18.476px;
+    height: 18.476px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ================================================================
+   NODE 1:729 — Sidebar menu
+   group: left=1, top=277, w=203, h=201
+   Item h=40, w=161-162
+   Beranda aktif: top=277 dalam canvas → posisi 0 dalam sidebar
+   Urutan: Beranda (0) → Profil (40) → Layanan (80) → Informasi (120) → Saran (160)
+   ================================================================ */
+.bap-sidebar {
     position: absolute;
-    bottom: 18px;
-    left: calc(var(--sidebar-w) + 16px);
-    z-index: 10;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 11px;
+    left: 1px;            /* x=1 dari Figma */
+    top: 277px;           /* y=277 dari Figma */
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+}
+
+/* Semua item */
+.bap-sidebar__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 162px;
+    height: 40px;
+    padding: 0 22px;      /* text x=22 dari Figma */
+    background: #ffffff;
+    color: #303752;
+    font-family: 'Genos', sans-serif;
+    font-size: 24px;
     font-weight: 400;
-    color: var(--bap-navy);
-    background: rgba(255,255,255,0.82);
-    padding: 3px 10px;
-    border-radius: 2px;
-    line-height: 1.5;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.bap-sidebar__item:hover {
+    background: #f5f6fa;
 }
 
-/* ---------- Responsif ---------- */
-@media (max-width: 900px) {
-    .beranda-hero__watermark { display: none; }
-
-    .beranda-sidebar {
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        transform: none;
-        flex-direction: row;
-        overflow-x: auto;
-    }
-
-    .beranda-sidebar__item {
-        flex: 1;
-        justify-content: center;
-        font-size: 14px;
-        height: 44px;
-        border-bottom: none;
-        border-right: 1px solid rgba(48,55,82,0.1);
-    }
-
-    .beranda-sidebar__arrow { display: none; }
-
-    .beranda-hero__content {
-        left: 16px;
-        right: 16px;
-        top: 45%;
-    }
-
-    .beranda-hero__logo {
-        top: 16px;
-        left: 16px;
-    }
-
-    .beranda-hero__footer {
-        left: 16px;
-        bottom: 56px;
-    }
+/* ── 1:742 Beranda AKTIF ──────────────────────────────────────
+   h=42 (sedikit lebih tinggi), bg=#eaa90d, border-top 2px #303752
+   arrow kanan: w=41, bg=#eaa90d (node 1:746/1:747)
+──────────────────────────────────────────────────────────── */
+.bap-sidebar__item--active {
+    background: #eaa90d;
+    border-top: 2px solid #303752;
+    height: 42px;         /* h=42 untuk item aktif */
+}
+.bap-sidebar__item--active:hover {
+    background: #eaa90d;
 }
 
-@media (max-width: 480px) {
-    .beranda-hero__headline { font-size: 32px; }
-    .beranda-hero__desc    { font-size: 12px; }
-    .beranda-badge         { font-size: 11px; padding: 4px 10px 4px 6px; }
+/* Arrow button 1:746 — w=41, h=40, bg=#eaa90d */
+.bap-sidebar__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 41px;
+    height: 40px;
+    background: #eaa90d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.bap-sidebar__arrow img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* ================================================================
+   NODE 1:728 — Copyright
+   left=414, top=712, w=351, h=20
+   font: Plus Jakarta Sans 12px, #303752
+   Background semi-transparan agar terbaca di atas foto
+   ================================================================ */
+.bap-copyright {
+    position: absolute;
+    left: 414px;
+    top: 621px;
+    width: 351px;
+    height: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #303752;
+    line-height: normal;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    padding: 0 0px;
 }
