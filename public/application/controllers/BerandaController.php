@@ -26,6 +26,21 @@ class BerandaController extends CI_Controller
 		$this->load->view('new_fe/index', $data);
 	}
 
+	/**
+	 * Halaman Beranda – tampilan hero full-screen sesuai desain Figma
+	 * URL: /beranda
+	 */
+	public function Beranda()
+	{
+		$data['active_menu']    = 'beranda';
+		$data['hero_headline']  = 'Pengelolaan Pendapatan yang Transparan';
+		$data['hero_desc']      = 'Dinas Pendapatan Daerah Kabupaten Purwakarta hadir untuk mewujudkan '
+			. 'tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi '
+			. 'demi pembangunan daerah yang berkeadilan.';
+
+		$this->load->view('new_fe/beranda', $data);
+	}
+
 	public function getProdukHukum()
 	{
 		$page = (int) $this->input->get('page');

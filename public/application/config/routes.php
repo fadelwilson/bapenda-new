@@ -52,6 +52,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'BerandaController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// beranda hero (desain Figma)
+$route['beranda'] = 'BerandaController/Beranda';
 // $route['https://www.bapenda.purwakartakab.go.id/'] = 'BerandaController';
 // $route['BerandaController/viewPdf/(:num)'] = 'BerandaController/viewPdf/$1';
 
