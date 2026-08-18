@@ -59,3 +59,5 @@ ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "judul
 ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "judul2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 336
 ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "narasi1" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 339
 ERROR - 2026-08-18 06:48:05 --> Severity: Warning --> Undefined array key "narasi2" C:\laragon\www\bapenda\public\application\views\new_fe\about.php 339
+ERROR - 2026-08-18 08:10:07 --> Severity: Warning --> Undefined array key "ket" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 677
+ERROR - 2026-08-18 08:10:07 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682
