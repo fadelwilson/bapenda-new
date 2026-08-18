@@ -113,7 +113,7 @@
 .bap-m-watermark {
     position: absolute;
     right: 0;
-    top: 10;
+    top: 10px;
     font-family: 'Krona One', sans-serif;
     font-size: 48px;
     font-weight: 400;
@@ -141,7 +141,7 @@
 .bap-m-sidebar {
     position: absolute;
     left: 0;
-    top: 60px;
+    top: 75px;
     display: flex;
     flex-direction: column;
     z-index: 20;
