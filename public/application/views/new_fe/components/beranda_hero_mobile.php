@@ -38,25 +38,38 @@ $b = base_url('assets/beranda/');
         </div>
     </div>
 
-    <!-- ── Sidebar menu ───────────────────────────────────── -->
-    <nav class="bap-m-sidebar" aria-label="Menu utama">
+    <!-- ── Sidebar menu dengan toggle ───────────────────────── -->
+    <div class="bap-m-sidebar-wrap" id="bap-m-sidebar-wrap">
 
-        <a href="<?= base_url('beranda') ?>" class="bap-m-sidebar__item bap-m-sidebar__item--active" aria-current="page">
-            Beranda
-            <span class="bap-m-sidebar__arrow" aria-hidden="true">
-                <img src="<?= $b ?>icon-arrow-forward.svg" alt="" />
-            </span>
-        </a>
+        <!-- Toggle button — kotak kuning dengan ikon chevron kanan -->
+        <button class="bap-m-sidebar-toggle" id="bap-m-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
+            <svg class="bap-m-sidebar-toggle__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
 
-        <a href="<?= base_url('tentang-kami') ?>" class="bap-m-sidebar__item">Profil</a>
+        <!-- Menu items — tampil saat toggle dibuka -->
+        <nav class="bap-m-sidebar" id="bap-m-sidebar" aria-label="Menu utama">
 
-        <a href="<?= base_url('layanan') ?>" class="bap-m-sidebar__item">Layanan</a>
+            <!-- Baris aktif: link teks + close button chevron terpisah -->
+            <div class="bap-m-sidebar__active-row">
+                <a href="<?= base_url('beranda') ?>" class="bap-m-sidebar__item bap-m-sidebar__item--active" aria-current="page">
+                    Beranda
+                </a>
+                <button class="bap-m-sidebar__close" id="bap-m-sidebar-close" aria-label="Tutup menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-        <a href="<?= base_url('blog') ?>" class="bap-m-sidebar__item">Informasi</a>
+            <a href="<?= base_url('tentang-kami') ?>" class="bap-m-sidebar__item">Profil</a>
+            <a href="<?= base_url('layanan') ?>" class="bap-m-sidebar__item">Layanan</a>
+            <a href="<?= base_url('blog') ?>" class="bap-m-sidebar__item">Informasi</a>
+            <a href="<?= base_url('kritik-saran') ?>" class="bap-m-sidebar__item">Saran &amp; Kritik</a>
+        </nav>
 
-        <a href="<?= base_url('kritik-saran') ?>" class="bap-m-sidebar__item">Saran &amp; Kritik</a>
-
-    </nav>
+    </div>
 
     <!-- ── Headline ───────────────────────────────────────── -->
     <h1 class="bap-m-headline">
@@ -126,5 +139,37 @@ $b = base_url('assets/beranda/');
 
     doScale();
     window.addEventListener('resize', doScale);
+})();
+</script>
+
+<script>
+/* ── Sidebar toggle — mobile ────────────────────────────── */
+(function () {
+    var wrap   = document.getElementById('bap-m-sidebar-wrap');
+    var toggle = document.getElementById('bap-m-sidebar-toggle');
+    var close  = document.getElementById('bap-m-sidebar-close');
+    var menu   = document.getElementById('bap-m-sidebar');
+
+    if (!toggle || !menu) return;
+
+    function openMenu() {
+        wrap.classList.add('bap-m-sidebar-wrap--open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Tutup menu');
+    }
+
+    function closeMenu() {
+        wrap.classList.remove('bap-m-sidebar-wrap--open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Buka menu');
+    }
+
+    toggle.addEventListener('click', function () {
+        wrap.classList.contains('bap-m-sidebar-wrap--open') ? closeMenu() : openMenu();
+    });
+
+    if (close) {
+        close.addEventListener('click', closeMenu);
+    }
 })();
 </script>

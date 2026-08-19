@@ -69,3 +69,5 @@ ERROR - 2026-08-18 08:19:58 --> Severity: Warning --> Undefined array key "ket" 
 ERROR - 2026-08-18 08:19:58 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682
 ERROR - 2026-08-18 08:24:44 --> Severity: Warning --> Undefined array key "ket" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 677
 ERROR - 2026-08-18 08:24:44 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682
+ERROR - 2026-08-18 08:25:18 --> Severity: Warning --> Undefined array key "ket" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 677
+ERROR - 2026-08-18 08:25:18 --> Severity: Warning --> Undefined array key "file_uu" C:\laragon\www\bapenda\public\application\views\new_fe\index.php 682

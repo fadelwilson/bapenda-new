@@ -12,7 +12,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: #0d1020;
+    background: transparent;
 }
 
 /* ── Viewport wrapper ───────────────────────────────────────── */
@@ -281,29 +281,71 @@ html, body {
 }
 
 /* ================================================================
-   NODE 1:729 — Sidebar menu
-   group: left=1, top=277, w=203, h=201
-   Item h=40, w=161-162
-   Beranda aktif: top=277 dalam canvas → posisi 0 dalam sidebar
-   Urutan: Beranda (0) → Profil (40) → Layanan (80) → Informasi (120) → Saran (160)
+   NODE 1:729 — Sidebar toggle + menu
    ================================================================ */
-.bap-sidebar {
+
+/* Wrapper — posisi absolut di canvas, kolom vertikal */
+.bap-sidebar-wrap {
     position: absolute;
-    left: 1px;            /* x=1 dari Figma */
-    top: 277px;           /* y=277 dari Figma */
+    left: 1px;
+    top: 277px;
+    z-index: 20;
     display: flex;
     flex-direction: column;
-    z-index: 20;
+    align-items: flex-start;
 }
 
-/* Semua item */
+/* Toggle button — kotak kuning persegi, tampil saat menu TERTUTUP */
+.bap-sidebar-toggle {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: #eaa90d;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+}
+.bap-sidebar-toggle__icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Toggle disembunyikan saat menu terbuka */
+.bap-sidebar-wrap--open .bap-sidebar-toggle {
+    display: none;
+}
+
+/* Menu — tersembunyi default (animasi tinggi) */
+.bap-sidebar {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+/* Menu terbuka */
+.bap-sidebar-wrap--open .bap-sidebar {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Item biasa */
 .bap-sidebar__item {
     position: relative;
     display: flex;
     align-items: center;
     width: 162px;
     height: 40px;
-    padding: 0 22px;      /* text x=22 dari Figma */
+    padding: 0 22px;
     background: #ffffff;
     color: #303752;
     font-family: 'Genos', sans-serif;
@@ -318,36 +360,43 @@ html, body {
     background: #f5f6fa;
 }
 
-/* ── 1:742 Beranda AKTIF ──────────────────────────────────────
-   h=42 (sedikit lebih tinggi), bg=#eaa90d, border-top 2px #303752
-   arrow kanan: w=41, bg=#eaa90d (node 1:746/1:747)
-──────────────────────────────────────────────────────────── */
+/* Item aktif — kuning, sama lebar item biasa,
+   close button di kanannya yang membuat baris lebih panjang */
 .bap-sidebar__item--active {
     background: #eaa90d;
-    border-top: 2px solid #303752;
-    height: 42px;         /* h=42 untuk item aktif */
+    color: #303752;
+    width: 162px;
+    height: 42px;
+    border-bottom: 2px solid #303752;
+    overflow: visible;
 }
 .bap-sidebar__item--active:hover {
     background: #eaa90d;
 }
 
-/* Arrow button 1:746 — w=41, h=40, bg=#eaa90d */
-.bap-sidebar__arrow {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 41px;
-    height: 40px;
+/* Wrapper baris aktif: link (162px) + close button (42px) = 204px total */
+.bap-sidebar__active-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: fit-content;
+}
+
+/* Close button — kotak kuning di kanan baris aktif, seamless */
+.bap-sidebar__close {
+    flex-shrink: 0;
+    width: 40.5px;
+    height: 40.5px;
     background: #eaa90d;
+    border: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    padding: 0;
 }
-.bap-sidebar__arrow img {
-    width: 24px;
-    height: 24px;
-    display: block;
+.bap-sidebar__close:hover {
+    background: #d99c0c;
 }
 
 /* ================================================================
@@ -358,7 +407,7 @@ html, body {
    ================================================================ */
 .bap-copyright {
     position: absolute;
-    left: 475px;
+    left: 465px;
     top: 621px;
     width: 351px;
     height: 20px;

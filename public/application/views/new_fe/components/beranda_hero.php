@@ -138,40 +138,41 @@ $b = base_url('assets/beranda/');
     </div>
 
     <!-- ────────────────────────────────────────────────────
-         NODE 1:729 — Sidebar menu
-         group: left=1, top=277, w=203, h=201
-         Tiap item: w=161-162, h=40
-         Beranda aktif top=277, h=42: bg=#eaa90d, border-top 2px #303752
-                        arrow kanan w=41px bg=#eaa90d
-         Profil      top=319
-         Layanan     top=359
-         Informasi   top=399
-         Saran&Kritik top=438
-         font: Genos 24px, #303752
+         NODE 1:729 — Sidebar menu dengan toggle
+         Toggle: bg=#eaa90d, w=42, h=42, ikon chevron
+         Menu muncul saat toggle diklik
     ──────────────────────────────────────────────────────── -->
-    <nav class="bap-sidebar" aria-label="Menu utama">
+    <div class="bap-sidebar-wrap" id="bap-sidebar-wrap">
 
-        <!-- 1:742 — Beranda (AKTIF) -->
-        <a href="<?= base_url('beranda') ?>" class="bap-sidebar__item bap-sidebar__item--active" aria-current="page">
-            Beranda
-            <span class="bap-sidebar__arrow" aria-hidden="true">
-                <img src="<?= $b ?>icon-arrow-forward.svg" alt="" />
-            </span>
-        </a>
+        <!-- Toggle button — kotak kuning, tampil saat menu TERTUTUP -->
+        <button class="bap-sidebar-toggle" id="bap-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
+            <svg class="bap-sidebar-toggle__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
 
-        <!-- 1:739 — Profil -->
-        <a href="<?= base_url('tentang-kami') ?>" class="bap-sidebar__item">Profil</a>
+        <!-- Menu items — tersembunyi default, muncul saat aktif -->
+        <nav class="bap-sidebar" id="bap-sidebar" aria-label="Menu utama">
 
-        <!-- 1:736 — Layanan -->
-        <a href="<?= base_url('layanan') ?>" class="bap-sidebar__item">Layanan</a>
+            <!-- Baris aktif: link teks + close button chevron terpisah -->
+            <div class="bap-sidebar__active-row">
+                <a href="<?= base_url('beranda') ?>" class="bap-sidebar__item bap-sidebar__item--active" aria-current="page">
+                    Beranda
+                </a>
+                <button class="bap-sidebar__close" id="bap-sidebar-close" aria-label="Tutup menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
 
-        <!-- 1:733 — Informasi -->
-        <a href="<?= base_url('blog') ?>" class="bap-sidebar__item">Informasi</a>
+            <a href="<?= base_url('tentang-kami') ?>" class="bap-sidebar__item">Profil</a>
+            <a href="<?= base_url('layanan') ?>" class="bap-sidebar__item">Layanan</a>
+            <a href="<?= base_url('blog') ?>" class="bap-sidebar__item">Informasi</a>
+            <a href="<?= base_url('kritik-saran') ?>" class="bap-sidebar__item">Saran &amp; Kritik</a>
+        </nav>
 
-        <!-- 1:730 — Saran & Kritik -->
-        <a href="<?= base_url('kritik-saran') ?>" class="bap-sidebar__item">Saran &amp; Kritik</a>
-
-    </nav>
+    </div>
 
     <!-- ────────────────────────────────────────────────────
          NODE 1:728 — Copyright
@@ -209,5 +210,37 @@ $b = base_url('assets/beranda/');
 
     doScale();
     window.addEventListener('resize', doScale);
+})();
+</script>
+
+<script>
+/* ── Sidebar toggle — desktop ───────────────────────────── */
+(function () {
+    var wrap   = document.getElementById('bap-sidebar-wrap');
+    var toggle = document.getElementById('bap-sidebar-toggle');
+    var close  = document.getElementById('bap-sidebar-close');
+    var menu   = document.getElementById('bap-sidebar');
+
+    if (!toggle || !menu) return;
+
+    function openMenu() {
+        wrap.classList.add('bap-sidebar-wrap--open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Tutup menu');
+    }
+
+    function closeMenu() {
+        wrap.classList.remove('bap-sidebar-wrap--open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Buka menu');
+    }
+
+    toggle.addEventListener('click', function () {
+        wrap.classList.contains('bap-sidebar-wrap--open') ? closeMenu() : openMenu();
+    });
+
+    if (close) {
+        close.addEventListener('click', closeMenu);
+    }
 })();
 </script>

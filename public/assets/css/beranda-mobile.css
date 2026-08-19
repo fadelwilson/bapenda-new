@@ -134,29 +134,75 @@
 }
 
 /* ================================================================
-   Sidebar menu — horizontal di atas (mobile: vertikal, kiri)
-   Sesuai Figma: menu list di kiri top
-   top=60, w=162, item h=40
+   Sidebar toggle + menu — mobile
    ================================================================ */
-.bap-m-sidebar {
+
+/* Wrapper — kolom vertikal, toggle di atas, menu di bawahnya */
+.bap-m-sidebar-wrap {
     position: absolute;
     left: 0;
-    top: 75px;
+    top: 60px;
+    z-index: 20;
     display: flex;
     flex-direction: column;
-    z-index: 20;
+    align-items: flex-start;
 }
+
+/* Toggle button — kotak kuning persegi, tampil saat menu TERTUTUP */
+.bap-m-sidebar-toggle {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: #eaa90d;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+}
+.bap-m-sidebar-toggle__icon {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Toggle disembunyikan saat menu terbuka */
+.bap-m-sidebar-wrap--open .bap-m-sidebar-toggle {
+    display: none;
+}
+
+/* Menu — tersembunyi default (animasi tinggi) */
+.bap-m-sidebar {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+/* Menu terbuka */
+.bap-m-sidebar-wrap--open .bap-m-sidebar {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Item menu biasa */
 .bap-m-sidebar__item {
     position: relative;
     display: flex;
     align-items: center;
-    width: 162px;
-    height: 40px;
-    padding: 0 22px;
+    width: 200px;
+    height: 52px;
+    padding: 0 24px;
     background: #ffffff;
     color: #303752;
     font-family: 'Genos', sans-serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
@@ -166,30 +212,45 @@
 .bap-m-sidebar__item:hover {
     background: #f5f6fa;
 }
+
+/* Item aktif — background kuning, sama lebar dengan item biasa,
+   close button di kanannya yang membuat total row lebih panjang */
 .bap-m-sidebar__item--active {
     background: #eaa90d;
-    border-top: 2px solid #303752;
-    height: 42px;
+    color: #303752;
+    width: 200px;
+    height: 56px;
+    border-bottom: 2.5px solid #303752;
+    overflow: visible;
 }
 .bap-m-sidebar__item--active:hover {
     background: #eaa90d;
 }
-.bap-m-sidebar__arrow {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 41px;
-    height: 40px;
+
+/* Wrapper baris aktif: link (200px) + close button (56px) = 256px total
+   — lebih panjang dari item biasa (200px) */
+.bap-m-sidebar__active-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: fit-content;
+}
+
+/* Close button — kotak kuning 56×56 di kanan, menyambung seamless */
+.bap-m-sidebar__close {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
     background: #eaa90d;
+    border: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    padding: 0;
 }
-.bap-m-sidebar__arrow img {
-    width: 24px;
-    height: 24px;
-    display: block;
+.bap-m-sidebar__close:hover {
+    background: #d99c0c;
 }
 
 /* ================================================================
