@@ -12,8 +12,7 @@ class SaranController extends CI_Controller {
 
     public function index()
     {
-        $data['ShowData'] = $this->UploadModel->ShowData()->result_array();
-        $this->load->view('fe/view_saran',$data);
+        $this->load->view('new_fe/saran');
     }
 
     function store()
