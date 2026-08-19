@@ -103,7 +103,7 @@ $bs = base_url('assets/saran/');
 
     <!-- ── Batik band — strip antara form dan footer ─────────── -->
     <div class="sar-batik-band" aria-hidden="true">
-        <img src="<?= $bs ?>batik sunda1 copy 1.png" alt="" />
+        <img src="<?= $bs ?>batik sunda.png" alt="" />
     </div>
 
     <!-- ── Footer info bar ───────────────────────────────────── -->

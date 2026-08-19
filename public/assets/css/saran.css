@@ -72,8 +72,6 @@ html, body {
     top: 70px;
     right: 0px;
     width: 28%;
-    /* height: 100%; */
-    /* object-fit: contain; */
     object-position: top right;
     max-width: none;
     display: block;
@@ -318,12 +316,12 @@ html, body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 430px;
-    height: 119px;
+    top: 505.5px;
+    height: 190px;
     overflow: hidden;
     pointer-events: none;
     z-index: 5;
-    opacity: 0;
+    opacity: 0.2;
 }
 .sar-batik-band img {
     position: absolute;
@@ -381,15 +379,15 @@ html, body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 12px;
     font-weight: 400;
-    color: black;
+    color: #303752;
     line-height: 1.6;
 }
 .sar-footer__body a {
-    color: black;
+    color: #303752;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-.sar-footer__body a:hover { color: #ffffff; }
+/* .sar-footer__body a:hover { color: #ffffff; } */
 
 /* ── Copyright ──────────────────────────────────────────────── */
 .sar-copyright {
