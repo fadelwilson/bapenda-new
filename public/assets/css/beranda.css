@@ -249,6 +249,9 @@ html, body {
     display: flex;
     gap: 19px;
     z-index: 10;
+    /* tengahkan horizontal di canvas 1283px */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .bap-badge {
@@ -420,6 +423,11 @@ html, body {
     display: flex;
     align-items: center;
     padding: 0 0px;
+    /* tengahkan horizontal di canvas 1283px */
+    left: 0;
+    right: 0;
+    width: auto;
+    justify-content: center;
 }
 
 /* ================================================================
