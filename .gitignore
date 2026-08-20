@@ -1,0 +1,20 @@
+# Node.js
+public/node_modules/
+
+# Composer (PHP dependencies)
+public/vendor/
+
+# CodeIgniter 3 logs & cache (mengabaikan isi log dan cache kecuali file index.html)
+public/application/logs/*
+!public/application/logs/index.html
+!public/application/logs/.htaccess
+
+public/application/cache/*
+!public/application/cache/index.html
+!public/application/cache/.htaccess
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
