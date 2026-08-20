@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'control.hosting.purwakartakab.go.id',
-	'username' => 'u13209zrl_bpnda',
-	'password' => 'HooDB2FcChxW',
-	'database' => 'u13209zrl_bpnda',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '123123123',
+	'database' => 'bapenda',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

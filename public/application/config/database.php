@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	    => '',
-	'hostname'  => 'localhost',
+	'hostname'  => 'localhost', // Nanti ini ubah ubah kalo ga masukin git ignore biar ga error
 	'username'  => 'root',      // PRODUCTION: u13209zrl_bpnda
-	'password'  => '', // PRODUCTION: HooDB2FcChxWDB2FcChxW
+	'password'  => '123123123', // PRODUCTION: HooDB2FcChxWDB2FcChxW
 	'database'  => 'bapenda',   // PRODUCTION: u13209zrl_bpnda
 	'dbdriver'  => 'mysqli',
 	'dbprefix'  => '',

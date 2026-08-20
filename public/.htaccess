@@ -1,6 +1,10 @@
 Options -Indexes
 RewriteEngine On
 
+# Lewatkan langsung folder loginwebsite (CI app terpisah)
+RewriteCond %{REQUEST_URI} ^/loginwebsite/ [NC]
+RewriteRule ^ - [L]
+
 # Izinkan akses langsung ke folder assets, gambar, dll
 RewriteCond %{REQUEST_URI} ^/assets/ [NC]
 RewriteRule ^ - [L]
