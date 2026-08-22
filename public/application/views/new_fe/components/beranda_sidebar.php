@@ -1,6 +1,6 @@
 <?php
 /**
- * Beranda Sidebar – menu vertikal kiri sesuai desain Figma node 1:683
+ * Beranda Sidebar – menu vertikal kiri sesuai desain Figma
  *
  * Variabel yang diterima:
  *   $active_menu – key menu yang sedang aktif
@@ -16,25 +16,75 @@ $menu_items = [
     ['key' => 'informasi', 'label' => 'Informasi',      'url' => base_url('blog')],
     ['key' => 'saran',     'label' => 'Saran & Kritik', 'url' => base_url('kritik-saran')],
 ];
-
-/* Inline SVG arrow_forward_ios */
-$svg_arrow = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#303752" width="18" height="18" aria-hidden="true"><path d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"/></svg>';
 ?>
 
-<nav class="beranda-sidebar" aria-label="Menu Utama">
-    <?php foreach ($menu_items as $item): ?>
-        <?php $is_active = ($active === $item['key']); ?>
-        <a
-            href="<?= $item['url'] ?>"
-            class="beranda-sidebar__item<?= $is_active ? ' beranda-sidebar__item--active' : '' ?>"
-            <?= $is_active ? 'aria-current="page"' : '' ?>
-        >
-            <?= htmlspecialchars($item['label']) ?>
+<div class="fixed left-[1px] top-[277px] z-[9999] flex flex-row items-start" id="beranda-sidebar-wrap">
+
+    <nav 
+        class="hidden flex-col bg-white border border-slate-200 shadow-xl overflow-hidden w-[250px]" 
+        id="beranda-sidebar-menu" 
+        aria-label="Menu utama"
+    >
+        <?php foreach ($menu_items as $item): ?>
+            <?php $is_active = ($active === $item['key']); ?>
+            
             <?php if ($is_active): ?>
-                <span class="beranda-sidebar__arrow" aria-hidden="true">
-                    <?= $svg_arrow ?>
-                </span>
+                <a 
+                    href="<?= $item['url'] ?>" 
+                    class="flex items-center h-[56px] px-6 bg-(--yellow-color) text-[#303752] font-bold genos text-[1.167vw]"
+                    aria-current="page"
+                >
+                    <?= htmlspecialchars($item['label']) ?>
+                </a>
+            <?php else: ?>
+                <a 
+                    href="<?= $item['url'] ?>" 
+                    class="flex items-center h-[56px] px-6 text-[#303752] bg-white hover:bg-slate-50 border-b border-slate-100 genos text-[1.167vw] transition-all duration-200"
+                >
+                    <?= htmlspecialchars($item['label']) ?>
+                </a>
             <?php endif; ?>
-        </a>
-    <?php endforeach; ?>
-</nav>
+        <?php endforeach; ?>
+    </nav>
+
+    <button 
+        class="size-[56px] flex-shrink-0 bg-(--yellow-color) flex items-center justify-center text-[#303752] font-bold cursor-pointer hover:bg-amber-300 transition-all duration-200" 
+        id="beranda-sidebar-toggle" 
+        aria-label="Toggle menu" 
+        aria-expanded="false"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var wrap = document.getElementById('beranda-sidebar-wrap');
+    var toggle = document.getElementById('beranda-sidebar-toggle');
+    var menu = document.getElementById('beranda-sidebar-menu');
+
+    if (!toggle || !menu) return;
+
+    function openMenu() {
+        menu.style.display = 'flex';
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+        menu.style.display = 'none';
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function () {
+        var isOpen = menu.style.display === 'flex';
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+});
+</script>

@@ -41,6 +41,12 @@ class BerandaController extends CI_Controller
 		$this->load->view('new_fe/beranda', $data);
 	}
 
+	public function layanan()
+	{
+		$data['active_menu'] = 'layanan';
+		$this->load->view('new_fe/service', $data);
+	}
+
 	public function getProdukHukum()
 	{
 		$page = (int) $this->input->get('page');

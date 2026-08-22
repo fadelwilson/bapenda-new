@@ -61,6 +61,9 @@ $route['beranda'] = 'BerandaController/Beranda';
 // tentang kami
 $route['tentang-kami'] = 'BerandaController/TentangKami';
 
+// Layanan
+$route['layanan'] = 'BerandaController/layanan';
+
 // blog
 $route['blog'] = 'BerandaController/blog';
 
