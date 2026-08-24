@@ -42,45 +42,73 @@ body {
     align-items: flex-start;
 }
 .inf-sidebar-toggle {
-    width: 3.276vw; height: 3.276vw;
-    min-width: 42px; min-height: 42px;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
     background: #eaa90d;
-    border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
     z-index: 2;
 }
-.inf-sidebar-toggle svg { width: 1.716vw; height: 1.716vw; min-width: 22px; min-height: 22px; display: block; }
+.inf-sidebar-toggle__icon { width: 28px; height: 28px; display: block; }
 .inf-sidebar-wrap--open .inf-sidebar-toggle { display: none; }
 .inf-sidebar {
-    display: flex; flex-direction: column;
-    overflow: hidden; max-height: 0; opacity: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
     pointer-events: none;
     transition: max-height 0.3s ease, opacity 0.2s ease;
 }
 .inf-sidebar-wrap--open .inf-sidebar { max-height: 400px; opacity: 1; pointer-events: auto; }
-.inf-sidebar a {
-    display: flex; align-items: center;
-    width: 12.627vw; height: 3.12vw;
-    min-width: 162px; min-height: 40px;
-    padding: 0 1.716vw;
-    background: #fff; color: #303752;
-    font-family: 'Genos', sans-serif; font-size: 1.872vw; font-weight: 400;
-    text-decoration: none; white-space: nowrap;
+.inf-sidebar__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 52px;
+    padding: 0 28px;
+    background: #ffffff;
+    color: #303752;
+    font-family: 'Genos', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
 }
-.inf-sidebar a:hover { background: #f5f6fa; }
-.inf-sidebar a.active {
+.inf-sidebar__item:hover { background: #f5f6fa; }
+.inf-sidebar__item--active {
     background: #eaa90d;
-    border-bottom: 2px solid #303752;
+    color: #303752;
+    width: 200px;
+    height: 56px;
+    border-bottom: 2.5px solid #303752;
+    overflow: visible;
 }
-.inf-sidebar__active-row { display: flex; flex-direction: row; align-items: stretch; }
+.inf-sidebar__item--active:hover { background: #eaa90d; }
+.inf-sidebar__active-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: fit-content;
+}
 .inf-sidebar__close {
-    width: 3.159vw; height: 3.159vw;
-    min-width: 40.5px; min-height: 40.5px;
-    background: #eaa90d; border: none;
-    border-bottom: 2px solid #303752;
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+    background: #eaa90d;
+    border: none;
     cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0;
 }
 .inf-sidebar__close:hover { background: #d99c0c; }
@@ -572,24 +600,24 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
 
 <!-- ── Sidebar nav ──────────────────────────────────────────── -->
 <div class="inf-sidebar-wrap" id="inf-sidebar-wrap">
-    <button class="inf-sidebar-toggle" id="inf-sidebar-toggle" aria-label="Buka menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <button class="inf-sidebar-toggle" id="inf-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
+        <svg class="inf-sidebar-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
     </button>
-    <nav class="inf-sidebar" id="inf-sidebar">
-        <a href="<?= base_url('beranda') ?>">Beranda</a>
-        <a href="<?= base_url('tentang-kami') ?>">Profil</a>
-        <a href="<?= base_url('layanan') ?>">Layanan</a>
+    <nav class="inf-sidebar" id="inf-sidebar" aria-label="Menu utama">
+        <a href="<?= base_url('beranda') ?>" class="inf-sidebar__item">Beranda</a>
+        <a href="<?= base_url('tentang-kami') ?>" class="inf-sidebar__item">Profil</a>
+        <a href="<?= base_url('layanan') ?>" class="inf-sidebar__item">Layanan</a>
         <div class="inf-sidebar__active-row">
-            <a href="<?= base_url('informasi') ?>" class="active" aria-current="page">Informasi</a>
-            <button class="inf-sidebar__close" id="inf-sidebar-close" aria-label="Tutup">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <a href="<?= base_url('informasi') ?>" class="inf-sidebar__item inf-sidebar__item--active" aria-current="page">Informasi</a>
+            <button class="inf-sidebar__close" id="inf-sidebar-close" aria-label="Tutup menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
         </div>
-        <a href="<?= base_url('kritik-saran') ?>">Saran &amp; Kritik</a>
+        <a href="<?= base_url('kritik-saran') ?>" class="inf-sidebar__item">Saran &amp; Kritik</a>
     </nav>
 </div>
 
