@@ -113,6 +113,16 @@ html, body {
 }
 
 /* ── Sidebar toggle ─────────────────────────────────────────── */
+.sar-sidebar-wrap {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 .sar-sidebar-toggle {
     flex-shrink: 0;
     width: 42px;
@@ -178,11 +188,10 @@ html, body {
 }
 .sar-sidebar__close {
     flex-shrink: 0;
-    width: 42px;
-    height: 42px;
+    width: 41px;
+    height: 41px;
     background: #eaa90d;
     border: none;
-    border-bottom: 2px solid #303752;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -336,7 +345,7 @@ html, body {
     object-fit: cover;
     object-position: center center;
     display: block;
-    opacity: 0.22;
+    opacity: 1;
 }
 
 /* ================================================================
