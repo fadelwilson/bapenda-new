@@ -6,6 +6,10 @@ html {
 
 :root {
   --animate-delay: 0.2s !important;
+  --text-title: #B8B9C2;
+  --text-title-sec: #4f556c;
+  --blue-color: #313752;
+  --yellow-color: #F4C24A;
 }
 
 .montserrat {
@@ -41,6 +45,26 @@ html {
 
 .orbitron {
   font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.krona-one {
+  font-family: "Krona One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.genos{
+  font-family: "Genos", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jakarta-sans{
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

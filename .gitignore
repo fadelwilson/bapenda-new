@@ -18,3 +18,8 @@ public/application/cache/*
 .vscode/
 .idea/
 Thumbs.db
+
+# Database configuration
+public/**/config/database.php
+
+
