@@ -206,8 +206,8 @@ html, body {
 .sar-alert {
     display: none;
     padding: 8px 16px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 12px;
+    font-family: 'Genos', sans-serif;
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
 }
@@ -230,8 +230,8 @@ html, body {
     margin-bottom: 14px;
 }
 .sar-field label {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 13px;
+    font-family: 'Genos', sans-serif;
+    font-size: 18px;
     font-weight: 500;
     color: #303752;
     margin-bottom: 5px;
@@ -243,8 +243,8 @@ html, body {
     border: 1px solid #c8cbd8;
     border-radius: 0;
     background: #ffffff;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 13px;
+    font-family: 'Genos', sans-serif;
+    font-size: 17px;
     color: #303752;
     outline: none;
     transition: border-color 0.15s;
@@ -266,8 +266,8 @@ html, body {
     padding: 10px 12px;
     border: 1px solid #c8cbd8;
     background: #ffffff;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 13px;
+    font-family: 'Genos', sans-serif;
+    font-size: 17px;
     color: #303752;
     outline: none;
     resize: none;
@@ -442,7 +442,7 @@ html, body {
 }
 
 /* ── Background ─────────────────────────────────────────────── */
-.sar-m-bg {
+/* .sar-m-bg {
     position: absolute;
     left: 0; top: 0;
     width: 412px; height: 915px;
@@ -458,7 +458,7 @@ html, body {
     max-width: none;
     display: block;
     opacity: 0.10;
-}
+} */
 
 /* ── Tower ornamen kanan ────────────────────────────────────── */
 .sar-m-tower {
@@ -579,8 +579,8 @@ html, body {
 .sar-m-alert {
     display: none;
     padding: 8px 12px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 11px; font-weight: 500;
+    font-family: 'Genos', sans-serif;
+    font-size: 14px; font-weight: 500;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -599,8 +599,8 @@ html, body {
     gap: 3px;
 }
 .sar-m-field label {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 12px; font-weight: 500;
+    font-family: 'Genos', sans-serif;
+    font-size: 16px; font-weight: 500;
     color: #303752;
 }
 .sar-m-field input,
@@ -609,8 +609,8 @@ html, body {
     padding: 7px 10px;
     border: 1px solid #c8cbd8;
     background: #ffffff;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 12px; color: #303752;
+    font-family: 'Genos', sans-serif;
+    font-size: 15px; color: #303752;
     outline: none; resize: none;
     transition: border-color 0.15s;
 }
@@ -667,8 +667,7 @@ html, body {
 .sar-m-footer {
     position: absolute;
     left: 0; right: 0;
-    bottom: 32px;
-    background: #303752;
+    bottom: 50px;
     z-index: 10;
     padding: 18px 20px 16px;
     display: flex;
@@ -690,16 +689,16 @@ html, body {
 .sar-m-footer__body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 11px; font-weight: 400;
-    color: #d0d3de;
+    color: #303752;
     line-height: 1.55;
 }
-.sar-m-footer__body a { color: #d0d3de; text-decoration: underline; }
+.sar-m-footer__body a { color: #303752; text-decoration: underline; }
 
 /* ── Copyright ──────────────────────────────────────────────── */
 .sar-m-copyright {
     position: absolute;
     left: 0; right: 0;
-    bottom: 10px;
+    bottom: 15px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 10px; font-weight: 400;
     color: #303752;

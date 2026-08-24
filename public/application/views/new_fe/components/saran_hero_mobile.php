@@ -12,9 +12,9 @@ $bs = base_url('assets/saran/');
 <div class="sar-m-canvas" id="sar-m-canvas">
 
     <!-- ── Background ───────────────────────────────────────── -->
-    <div class="sar-m-bg" aria-hidden="true">
+    <!-- <div class="sar-m-bg" aria-hidden="true">
         <img src="<?= $b ?>bg-kantor.png" alt="" />
-    </div>
+    </div> -->
 
     <!-- ── Tower ornamen kanan ──────────────────────────────── -->
     <div class="sar-m-tower" aria-hidden="true">
