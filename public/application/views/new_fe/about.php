@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>BAPENDA - Tentang Kami</title>
-
-    <meta name="keywords" content="BAPENDA, Badan Pendapatan Daerah, Purwakarta, pajak daerah, retribusi, pelayanan pajak, informasi pajak Purwakarta, pendapatan daerah, e-pajak, sistem informasi pajak, Purwakarta digital" />
-    <meta name="description" content="Situs resmi Badan Pendapatan Daerah (BAPENDA) Kabupaten Purwakarta. Temukan informasi pajak daerah, layanan retribusi, serta berbagai inovasi digital dalam pengelolaan pendapatan daerah." />
-    <meta name="facebook-domain-verification" content="u7cyt5xgrow1db0yzok1uoyr02ez3i"   />
-
-    <!-- Favicon -->
-    <link
-        rel="shortcut icon"
-        href="<?= base_url('assets'); ?>/new/img/favicon.ico"
-        type="image/x-icon" />
-    <link rel="apple-touch-icon" href="<?= base_url('assets'); ?>/new/img/apple-touch-icon.png" />
-
-    <!-- Mobile Metas -->
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
-
-    <!-- Web Fonts  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Orbitron:wght@400..900&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Krona+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
-
-    <link href="<?= base_url('assets'); ?>/animation/owl.carousel.min.css" rel="stylesheet" />
-    <link href="<?= base_url('assets'); ?>/animation/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="<?= base_url('assets/vendor/viewerjs/viewer.min.css') ?>" rel="stylesheet">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="<?= base_url('assets'); ?>/css/output.css" rel="stylesheet" />
-</head>
+<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'profil']); ?>
@@ -67,19 +19,19 @@
                 </p>
     
                 <div class="grid grid-cols-2 gap-[0.778vw] mt-[1.556vw] w-[60%] pt-[2.724vw]">
-                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-start relative cursor-pointer" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-start relative cursor-pointer preview-btn" data-preview="<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300">Visi Bapenda</h3>
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-end relative cursor-pointer" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-end relative cursor-pointer preview-btn" data-preview="<?= base_url('assets/gambar/full-gallery-image-2.jpg') ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-2.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300">Misi Bapenda</h3>    
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-start relative cursor-pointer" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-start relative cursor-pointer preview-btn" data-preview="<?= base_url('assets/gambar/full-gallery-image-3.jpg') ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-3.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300">Informasi</h3>
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-end relative cursor-pointer" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] flex items-end justify-end relative cursor-pointer preview-btn" data-preview="<?= base_url('assets/gambar/full-gallery-image-4.jpg') ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-4.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300">Alur Pembayaran</h3>
                     </div>
@@ -189,6 +141,33 @@
                     }
                 });
             });
+
+            // Preview images on grid click
+            const previewBtns = document.querySelectorAll('.preview-btn');
+            previewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const imgUrl = this.getAttribute('data-preview');
+                    if (!imgUrl) return;
+                    
+                    const img = new Image();
+                    img.src = imgUrl;
+                    
+                    const viewer = new Viewer(img, {
+                        toolbar: true,
+                        navbar: false,
+                        title: false,
+                        tooltip: true,
+                        movable: true,
+                        scalable: true,
+                        transition: true,
+                        fullscreen: true,
+                        hidden: function() {
+                            viewer.destroy();
+                        }
+                    });
+                    viewer.show();
+                });
+            });
         });
         </script>
     </div>
@@ -201,10 +180,4 @@
         </div>
     </footer>
 
-    <script src="<?= base_url('assets'); ?>/new/vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('assets'); ?>/animation/owl.carousel.min.js"></script>
-    <script src="<?= base_url('assets/vendor/viewerjs/viewer.min.js') ?>"></script>
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
-</body>
-
-</html>
+<?php $this->load->view('new_fe/components/footer_scripts'); ?>
