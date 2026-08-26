@@ -89,6 +89,14 @@ class BerandaController extends CI_Controller
 	// 	$this->load->view('new_fe/Blog', $data);
 	// }
 
+	public function informasi()
+	{
+		$data['ShowData']      = $this->UploadModel->ShowData()->result_array();
+		$data['ShowDataBerita'] = $this->UploadModel->getBerita()->result_array();
+		$data['ShowDataPPID']   = $this->UploadModel->getDataPPID()->result_array();
+		$this->load->view('new_fe/informasi', $data);
+	}
+
 	public function blog()
 	{
 		$this->load->helper('download');

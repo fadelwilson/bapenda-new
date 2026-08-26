@@ -168,7 +168,7 @@ $b = base_url('assets/beranda/');
 
             <a href="<?= base_url('tentang-kami') ?>" class="bap-sidebar__item">Profil</a>
             <a href="<?= base_url('layanan') ?>" class="bap-sidebar__item">Layanan</a>
-            <a href="<?= base_url('blog') ?>" class="bap-sidebar__item">Informasi</a>
+            <a href="<?= base_url('informasi') ?>" class="bap-sidebar__item">Informasi</a>
             <a href="<?= base_url('kritik-saran') ?>" class="bap-sidebar__item">Saran &amp; Kritik</a>
         </nav>
 

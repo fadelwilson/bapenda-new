@@ -37,7 +37,7 @@ $bs = base_url('assets/saran/');
             <a href="<?= base_url('beranda') ?>" class="sar-sidebar__item">Beranda</a>
             <a href="<?= base_url('tentang-kami') ?>" class="sar-sidebar__item">Profil</a>
             <a href="<?= base_url('layanan') ?>" class="sar-sidebar__item">Layanan</a>
-            <a href="<?= base_url('blog') ?>" class="sar-sidebar__item">Informasi</a>
+            <a href="<?= base_url('informasi') ?>" class="sar-sidebar__item">Informasi</a>
             <div class="sar-sidebar__active-row">
                 <a href="<?= base_url('kritik-saran') ?>" class="sar-sidebar__item sar-sidebar__item--active" aria-current="page">
                     Saran &amp; Kritik
@@ -103,7 +103,7 @@ $bs = base_url('assets/saran/');
 
     <!-- ── Batik band — strip antara form dan footer ─────────── -->
     <div class="sar-batik-band" aria-hidden="true">
-        <img src="<?= $bs ?>batik sunda.png" alt="" />
+        <img src="<?= $bs ?>batik.png" alt="" />
     </div>
 
     <!-- ── Footer info bar ───────────────────────────────────── -->

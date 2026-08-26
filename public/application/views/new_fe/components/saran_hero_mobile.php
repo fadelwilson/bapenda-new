@@ -12,9 +12,9 @@ $bs = base_url('assets/saran/');
 <div class="sar-m-canvas" id="sar-m-canvas">
 
     <!-- ── Background ───────────────────────────────────────── -->
-    <div class="sar-m-bg" aria-hidden="true">
+    <!-- <div class="sar-m-bg" aria-hidden="true">
         <img src="<?= $b ?>bg-kantor.png" alt="" />
-    </div>
+    </div> -->
 
     <!-- ── Tower ornamen kanan ──────────────────────────────── -->
     <div class="sar-m-tower" aria-hidden="true">
@@ -37,7 +37,7 @@ $bs = base_url('assets/saran/');
             <a href="<?= base_url('beranda') ?>" class="sar-m-sidebar__item">Beranda</a>
             <a href="<?= base_url('tentang-kami') ?>" class="sar-m-sidebar__item">Profil</a>
             <a href="<?= base_url('layanan') ?>" class="sar-m-sidebar__item">Layanan</a>
-            <a href="<?= base_url('blog') ?>" class="sar-m-sidebar__item">Informasi</a>
+            <a href="<?= base_url('informasi') ?>" class="sar-m-sidebar__item">Informasi</a>
             <div class="sar-m-sidebar__active-row">
                 <a href="<?= base_url('kritik-saran') ?>" class="sar-m-sidebar__item sar-m-sidebar__item--active" aria-current="page">
                     Saran &amp; Kritik

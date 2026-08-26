@@ -71,31 +71,7 @@
      <div
          class="w-full md:w-5/7 flex md:flex-row flex-col text-slate-50 text-[1.823vw] md:text-[0.729vw] m-auto items-center overflow-hidden gap-2 md:gap-0">
          <div>
-             Copyright &copy; 2025 Badan Pendapatan Daerah Kab. Purwakarta.
-         </div>
-         <div class="text-right grow">
-             <div class="flex justify-end items-center gap-2">
-                 <?php foreach ($ShowData as $d) : ?>
-                     <a href="<?= $d['facebook'] ?? '#' ?>" target="_blank">
-                         <img
-                             src="<?= base_url('assets'); ?>/animation/facebook.svg"
-                             class="w-[4.167vw] md:w-[1.667vw]" />
-                     </a>
-                     <a href="<?= $d['instagram'] ?? '#' ?>" target="_blank">
-                         <img
-                             src="<?= base_url('assets'); ?>/animation/ig.svg"
-                             class="w-[4.167vw] md:w-[1.667vw]" />
-                     </a>
-                     <a href="<?= $d['twitter'] ?? '#' ?>" target="_blank">
-                         <img src="<?= base_url('assets'); ?>/animation/x.svg" class="w-[4.167vw] md:w-[1.667vw]" />
-                     </a>
-                     <a href="<?= $d['youtube'] ?? '#' ?>" target="_blank">
-                         <img
-                             src="<?= base_url('assets'); ?>/animation/youtube.svg"
-                             class="w-[4.167vw] md:w-[1.667vw]" />
-                     </a>
-                 <?php endforeach; ?>
-             </div>
+             Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta.
          </div>
      </div>
  </div>
