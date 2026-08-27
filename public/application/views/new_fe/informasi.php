@@ -382,7 +382,7 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
                 $openClass   = $isOpen ? ' open' : '';
             ?>
             <div class="inf-acc-item<?= $isHighlight ? ' inf-acc-item--highlight' : '' ?><?= $openClass ?> border-b border-[#c8cbd8] overflow-hidden">
-                <button class="inf-acc-header-el w-full flex items-center justify-between px-5 py-4 <?= $headerBg ?> border-0 cursor-pointer text-left gap-3 transition-[background] duration-150 hover:bg-[#f0f0ec]"
+                <button class="inf-acc-header-el w-full flex items-center justify-between px-5 py-4 <?= $headerBg ?> border-0 cursor-pointer text-left gap-3 transition-[background] duration-150"
                         type="button">
                     <span class="inf-acc-label-el inf-acc-label-fs genos font-medium <?= $labelColor ?> flex-1 leading-[1.3]"><?= htmlspecialchars($acc['label']) ?></span>
                     <svg class="inf-acc-chevron-el <?= $chevronColor ?> transition-transform duration-[250ms] ease-in-out shrink-0 w-[22px] h-[22px]"
