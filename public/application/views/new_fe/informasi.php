@@ -19,8 +19,10 @@
         .inf-sidebar-open .inf-sidebar-menu    { max-height: 400px; opacity: 1; pointer-events: auto; }
 
         /* Tab active state */
-        .inf-tab-btn.active                    { border-bottom: 3px solid #eaa90d; }
-        .inf-tab-btn.active .tab-label         { color: #eaa90d; font-weight: 600; }
+        .inf-tab-btn.active                    { background: rgba(255,255,255,0.18); }
+        .inf-tab-btn.active .tab-label         { color: #313752; font-weight: 700; }
+        .inf-tab-btn.active:hover              { background: rgba(255,255,255,0.22); }
+        .inf-tab-btn.active img                { opacity: 0.45; }
 
         /* Accordion open state */
         .inf-acc-item.open .inf-acc-header-el  { background: #eaa90d; }
@@ -32,7 +34,7 @@
         /* Card hover gap trick for link arrow */
         .inf-card__link:hover { gap: 10px; }
 
-        /* clamp font sizes not expressible in Tailwind */
+        .inf-tab-btn img.tab-bg { opacity: 0.35; }
         .inf-title-text    { font-size: clamp(36px, 5vw, 68px); }
         .inf-subtitle-text { font-size: clamp(18px, 2.2vw, 28px); }
         .inf-body-fs       { font-size: clamp(15px, 1.6vw, 19px); }
@@ -155,39 +157,55 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
         </div>
 
         <!-- ── Tab navigasi ── -->
+        <?php
+        $bi = $bi ?? base_url('assets/Informasi/');
+        $tab_bgs = [
+            'IMG-20260729-WA0012-4279738261 1.png',
+            'img20250923081406-2-68d242abed641541c5071bc2 1 (1).png',
+            'Screen Shot 2026-08-02 at 15.12.17 1 (1).png',
+            '0cf5493d8e01976457fd1b2a8035a1fe 1.png',
+        ];
+        ?>
         <div class="flex flex-col gap-2" role="tablist">
             <!-- Baris 1: 4 tab -->
             <div class="inf-tabs-row grid gap-2" style="grid-template-columns: repeat(4, 1fr);">
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out active hover:bg-[#3d4668]"
                         role="tab" data-tab="objek-pajak">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Objek Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[0] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Objek Pajak</span>
                 </button>
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="subjek-wajib">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Subjek &amp; Wajib Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[1] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Subjek &amp; Wajib Pajak</span>
                 </button>
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="dasar-pengenaan">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Dasar Pengenaan</span>
+                    <img src="<?= $bi . $tab_bgs[2] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Dasar Pengenaan</span>
                 </button>
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="tarif">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Tarif Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[3] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Tarif Pajak</span>
                 </button>
             </div>
             <!-- Baris 2: 3 tab -->
             <div class="inf-tabs-row grid gap-2" style="grid-template-columns: repeat(3, 1fr);">
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="masa-pajak">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Masa Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[1] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Masa Pajak</span>
                 </button>
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="jenis-pajak">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Denda Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[2] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Denda Pajak</span>
                 </button>
                 <button class="inf-tab-btn inf-tab-btn-h relative bg-[#303752] flex items-end justify-start p-0 border-0 border-b-[3px] border-transparent cursor-pointer overflow-hidden text-left transition-[background,border-color] duration-[250ms] ease-in-out hover:bg-[#3d4668]"
                         role="tab" data-tab="mekanisme">
-                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-normal text-white/70 leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms]">Mekanisme Pembayaran Pajak</span>
+                    <img src="<?= $bi . $tab_bgs[0] ?>" alt="" class="tab-bg absolute inset-0 w-full h-full object-cover object-top pointer-events-none select-none" aria-hidden="true" />
+                    <span class="tab-label inf-tab-label-fs relative z-[1] genos font-semibold text-white leading-none px-2 pb-[6px] uppercase transition-colors duration-[250ms] drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">Mekanisme Pembayaran Pajak</span>
                 </button>
             </div>
         </div>
