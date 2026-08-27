@@ -118,7 +118,7 @@ $b = base_url('assets/beranda/');
         </nav>
     </div>
 
-    <div class="absolute left-0 right-0 top-[621px] h-[20px] jakarta-sans text-[12px] font-normal text-white leading-normal z-[25] flex items-center justify-center">
+    <div class="absolute left-0 right-0 top-[621px] h-[20px] jakarta-sans text-[12px] font-normal text-[#303752] leading-normal z-[25] flex items-center justify-center">
         Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta
     </div>
 

@@ -103,7 +103,7 @@ $b = base_url('assets/beranda/');
         </span>
     </div>
 
-    <div class="absolute left-0 right-0 bottom-3 jakarta-sans text-[12px] font-normal text-white text-center leading-normal z-[25] bg-white/15 py-1 px-2">
+    <div class="absolute left-0 right-0 bottom-3 jakarta-sans text-[12px] font-normal text-[#303752] text-center leading-normal z-[25] bg-white/15 py-1 px-2">
         Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta
     </div>
 
