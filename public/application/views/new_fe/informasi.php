@@ -387,7 +387,7 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
 </section>
 
 <!-- Copyright footer -->
-<footer class="bg-white text-center py-[18px] jakarta-sans text-[12px] text-[#8889a8]">
+<footer class="bg-white text-center py-[18px] jakarta-sans text-[12px] text-[#303752]">
     Copyright &copy; 2026 – Badan Pendapatan Daerah Kabupaten Purwakarta
 </footer>
 

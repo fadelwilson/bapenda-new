@@ -1,175 +1,160 @@
 <?php
 /**
  * BERANDA HERO MOBILE — BAPENDA Purwakarta
- * Implementasi dari Figma node 3:372 "M-Beranda"
  * Canvas: 412 × 915 px, di-scale ke viewport via JS
  */
 $b = base_url('assets/beranda/');
 ?>
 
-<div class="bap-m-wrap" id="bap-m-wrap">
-<div class="bap-m-canvas" id="bap-m-canvas">
+<div class="hidden md:hidden fixed inset-0 w-screen h-screen overflow-hidden bg-transparent max-md:block" id="bap-m-wrap">
+<div class="absolute top-0 left-0 w-[412px] h-[915px] overflow-visible" id="bap-m-canvas">
 
-    <!-- ── Background foto kantor ──────────────────────────── -->
-    <div class="bap-m-bg" aria-hidden="true">
-        <img src="<?= $b ?>bg-kantor.png" alt="Gedung Kantor BAPENDA Purwakarta" />
+    <div class="absolute left-0 top-0 w-[411px] h-[916px] overflow-hidden z-[1]" aria-hidden="true">
+        <img src="<?= $b ?>bg-kantor.png" alt="Gedung Kantor BAPENDA Purwakarta"
+             class="absolute max-w-none block"
+             style="left:-137.53%;top:0;width:578.44%;height:145.72%;" />
     </div>
 
-    <!-- ── Ornamen Lawang (kanan saja, sesuai Figma mobile) ── -->
-    <div class="bap-m-ornamen" aria-hidden="true">
-        <img src="<?= $b ?>ornamen-lawang.png" alt="" />
+    <div class="absolute right-0 top-0 w-[208px] h-[615px] overflow-hidden pointer-events-none z-[3]" aria-hidden="true">
+        <img src="<?= $b ?>ornamen-lawang.png" alt=""
+             class="absolute max-w-none"
+             style="left:-86.06%;top:-4.39%;width:369.71%;height:124.98%;" />
     </div>
 
-    <!-- ── gplay SVG overlay ──────────────────────────────── -->
-    <div class="bap-m-gplay" aria-hidden="true">
-        <img src="<?= $b ?>ornamen-gplay.svg" alt="" />
+    <div class="absolute left-0 top-0 w-[412px] h-[915px] pointer-events-none z-[4]" aria-hidden="true">
+        <img src="<?= $b ?>ornamen-gplay.svg" alt=""
+             class="absolute inset-0 w-full h-full block" />
     </div>
 
-    <!-- ── Watermark "BERANDA" ────────────────────────────── -->
-    <div class="bap-m-watermark" aria-hidden="true">BERANDA</div>
+    <div class="absolute right-0 top-[10px] krona-one text-[48px] font-normal text-white opacity-35 leading-normal whitespace-nowrap pointer-events-none select-none z-[6]"
+         aria-hidden="true">BERANDA</div>
 
-    <!-- ── Logo BAPENDA ──────────────────────────────────── -->
-    <div class="bap-m-logo" aria-label="Logo BAPENDA Purwakarta">
-        <div class="bap-m-logo__mark">
-            <img src="<?= $b . rawurlencode('purwakarta111 1.png') ?>" alt="bapenda" />
-        </div>
-        <div class="bap-m-logo__text">
-            <img src="<?= $b . rawurlencode('purwakarta112 1.png') ?>" alt="PURWAKARTA" />
-        </div>
-    </div>
+    <div class="absolute left-0 top-[60px] z-[20] flex flex-col items-start" id="bap-m-sidebar-wrap">
 
-    <!-- ── Sidebar menu dengan toggle ───────────────────────── -->
-    <div class="bap-m-sidebar-wrap" id="bap-m-sidebar-wrap">
-
-        <!-- Toggle button — kotak kuning dengan ikon chevron kanan -->
-        <button class="bap-m-sidebar-toggle" id="bap-m-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
-            <svg class="bap-m-sidebar-toggle__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button class="shrink-0 w-[56px] h-[56px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 z-[2]"
+                id="bap-m-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
+            <svg class="w-[28px] h-[28px] block" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </button>
 
-        <!-- Menu items — tampil saat toggle dibuka -->
-        <nav class="bap-m-sidebar" id="bap-m-sidebar" aria-label="Menu utama">
+        <nav class="flex flex-col overflow-hidden max-h-0 opacity-0 pointer-events-none transition-[max-height,opacity] duration-300 ease-in-out"
+             id="bap-m-sidebar" aria-label="Menu utama">
 
-            <!-- Baris aktif: link teks + close button chevron terpisah -->
-            <div class="bap-m-sidebar__active-row">
-                <a href="<?= base_url('beranda') ?>" class="bap-m-sidebar__item bap-m-sidebar__item--active" aria-current="page">
-                    Beranda
-                </a>
-                <button class="bap-m-sidebar__close" id="bap-m-sidebar-close" aria-label="Tutup menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
+            <div class="flex flex-row items-stretch w-fit">
+                <a href="<?= base_url('beranda') ?>"
+                   class="relative flex items-center w-[200px] h-[56px] px-[24px] bg-[#eaa90d] text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-visible border-b-[2.5px] border-[#303752]"
+                   aria-current="page">Beranda</a>
+                <button class="shrink-0 w-[54px] h-[54px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 hover:bg-[#d99c0c]"
+                        id="bap-m-sidebar-close" aria-label="Tutup menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="#303752" stroke-width="2.5" stroke-linecap="round"
+                         stroke-linejoin="round" width="26" height="26" aria-hidden="true">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
             </div>
 
-            <a href="<?= base_url('tentang-kami') ?>" class="bap-m-sidebar__item">Profil</a>
-            <a href="<?= base_url('layanan') ?>" class="bap-m-sidebar__item">Layanan</a>
-            <a href="<?= base_url('informasi') ?>" class="bap-m-sidebar__item">Informasi</a>
-            <a href="<?= base_url('kritik-saran') ?>" class="bap-m-sidebar__item">Saran &amp; Kritik</a>
+            <a href="<?= base_url('tentang-kami') ?>"
+               class="relative flex items-center w-[200px] h-[52px] px-[24px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Profil</a>
+            <a href="<?= base_url('layanan') ?>"
+               class="relative flex items-center w-[200px] h-[52px] px-[24px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Layanan</a>
+            <a href="<?= base_url('informasi') ?>"
+               class="relative flex items-center w-[200px] h-[52px] px-[24px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Informasi</a>
+            <a href="<?= base_url('kritik-saran') ?>"
+               class="relative flex items-center w-[200px] h-[52px] px-[24px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Saran &amp; Kritik</a>
         </nav>
-
     </div>
 
-    <!-- ── Headline ───────────────────────────────────────── -->
-    <h1 class="bap-m-headline">
+    <h1 class="absolute left-0 right-0 top-[290px] px-3 genos text-[36px] font-normal text-[#f4c24a] text-center leading-normal z-[10]">
         Pengelolaan Pendapatan yang Transparan
     </h1>
 
-    <!-- ── Deskripsi ──────────────────────────────────────── -->
-    <p class="bap-m-desc">
-        Dinas Pendapatan Daerah Kabupaten Purrwakarta hadir untuk mewujudkan tata
+    <p class="absolute left-3 right-3 top-[400px] jakarta-sans text-[14px] font-normal text-white leading-[1.5] z-[10]">
+        Dinas Pendapatan Daerah Kabupaten Purwakarta hadir untuk mewujudkan tata
         kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi
         demi pembangunan daerah yang berkeadilan.
     </p>
 
-    <!-- ── Badges 2×2 ─────────────────────────────────────── -->
-    <div class="bap-m-badges" role="list" aria-label="Nilai-nilai BAPENDA">
+    <div class="absolute left-1/2 -translate-x-1/2 top-[560px] grid grid-cols-[repeat(2,116px)] gap-[10px] z-[10]"
+         role="list" aria-label="Nilai-nilai BAPENDA">
 
-        <span class="bap-m-badge bap-m-badge--noborder" role="listitem">
-            <img src="<?= $b ?>icon-check2.svg" alt="" class="bap-m-badge__icon" />
+        <span class="inline-flex items-center gap-[6px] w-[116px] h-[31.609px] px-2 bg-white border-0 jakarta-sans text-[14px] font-normal text-[#303752] whitespace-nowrap shrink-0"
+              role="listitem">
+            <img src="<?= $b ?>icon-check2.svg" alt="" class="w-[18.476px] h-[18.476px] block shrink-0" />
             Transparan
         </span>
-
-        <span class="bap-m-badge" role="listitem">
-            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-m-badge__icon" />
+        <span class="inline-flex items-center gap-[6px] w-[116px] h-[31.609px] px-2 bg-white border border-[#303752] jakarta-sans text-[14px] font-normal text-[#303752] whitespace-nowrap shrink-0"
+              role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="w-[18.476px] h-[18.476px] block shrink-0" />
             Akuntabel
         </span>
-
-        <span class="bap-m-badge" role="listitem">
-            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-m-badge__icon" />
+        <span class="inline-flex items-center gap-[6px] w-[116px] h-[31.609px] px-2 bg-white border border-[#303752] jakarta-sans text-[14px] font-normal text-[#303752] whitespace-nowrap shrink-0"
+              role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="w-[18.476px] h-[18.476px] block shrink-0" />
             Informatif
         </span>
-
-        <span class="bap-m-badge" role="listitem">
-            <img src="<?= $b ?>icon-check.svg" alt="" class="bap-m-badge__icon" />
+        <span class="inline-flex items-center gap-[6px] w-[116px] h-[31.609px] px-2 bg-white border border-[#303752] jakarta-sans text-[14px] font-normal text-[#303752] whitespace-nowrap shrink-0"
+              role="listitem">
+            <img src="<?= $b ?>icon-check.svg" alt="" class="w-[18.476px] h-[18.476px] block shrink-0" />
             Profesional
         </span>
-
     </div>
 
-    <!-- ── Copyright ──────────────────────────────────────── -->
-    <div class="bap-m-copyright">
+    <div class="absolute left-0 right-0 bottom-3 jakarta-sans text-[12px] font-normal text-white text-center leading-normal z-[25] bg-white/15 py-1 px-2">
         Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta
     </div>
 
-</div><!-- /.bap-m-canvas -->
-</div><!-- /.bap-m-wrap -->
+</div>
+</div>
 
 <script>
 (function () {
     var wrap   = document.getElementById('bap-m-wrap');
     var canvas = document.getElementById('bap-m-canvas');
     var W = 412, H = 915;
-
     function doScale() {
         var vw = wrap.clientWidth  || window.innerWidth;
         var vh = wrap.clientHeight || window.innerHeight;
-
-        /* COVER — isi penuh viewport tanpa sisa putih */
-        var s = Math.max(vw / W, vh / H);
-
-        /* Tengahkan horizontal, anchor atas agar logo tidak terpotong */
-        var offsetX = (vw - W * s) / 2;
-        var offsetY = Math.min(0, (vh - H * s) / 2);
-
-        canvas.style.transform       = 'translate(' + offsetX + 'px, ' + offsetY + 'px) scale(' + s + ')';
+        var s  = Math.max(vw / W, vh / H);
+        var ox = (vw - W * s) / 2;
+        var oy = Math.min(0, (vh - H * s) / 2);
+        canvas.style.transform       = 'translate(' + ox + 'px,' + oy + 'px) scale(' + s + ')';
         canvas.style.transformOrigin = 'top left';
     }
-
     doScale();
     window.addEventListener('resize', doScale);
 })();
 </script>
 
 <script>
-/* ── Sidebar toggle — mobile ────────────────────────────── */
 (function () {
-    var wrap   = document.getElementById('bap-m-sidebar-wrap');
-    var toggle = document.getElementById('bap-m-sidebar-toggle');
-    var close  = document.getElementById('bap-m-sidebar-close');
-    var menu   = document.getElementById('bap-m-sidebar');
-
+    var toggle   = document.getElementById('bap-m-sidebar-toggle');
+    var closeBtn = document.getElementById('bap-m-sidebar-close');
+    var menu     = document.getElementById('bap-m-sidebar');
     if (!toggle || !menu) return;
 
     function openMenu() {
-        wrap.classList.add('bap-m-sidebar-wrap--open');
+        menu.style.maxHeight     = '400px';
+        menu.style.opacity       = '1';
+        menu.style.pointerEvents = 'auto';
+        toggle.style.display     = 'none';
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Tutup menu');
     }
-
     function closeMenu() {
-        wrap.classList.remove('bap-m-sidebar-wrap--open');
+        menu.style.maxHeight     = '0';
+        menu.style.opacity       = '0';
+        menu.style.pointerEvents = 'none';
+        toggle.style.display     = '';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Buka menu');
     }
-
     toggle.addEventListener('click', function () {
-        wrap.classList.contains('bap-m-sidebar-wrap--open') ? closeMenu() : openMenu();
+        menu.style.maxHeight === '400px' ? closeMenu() : openMenu();
     });
-
-    if (close) {
-        close.addEventListener('click', closeMenu);
-    }
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 })();
 </script>
