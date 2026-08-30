@@ -24,32 +24,7 @@ $bs = base_url('assets/saran/');
     <!-- ── Watermark ────────────────────────────────────────── -->
     <div class="sar-m-watermark" aria-hidden="true">KRITIK &amp; SARAN</div>
 
-    <!-- ── Sidebar toggle ────────────────────────────────────── -->
-    <div class="sar-m-sidebar-wrap" id="sar-m-sidebar-wrap">
 
-        <button class="sar-m-sidebar-toggle" id="sar-m-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
-            <svg class="sar-m-sidebar-toggle__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-
-        <nav class="sar-m-sidebar" id="sar-m-sidebar" aria-label="Menu utama">
-            <a href="<?= base_url('beranda') ?>" class="sar-m-sidebar__item">Beranda</a>
-            <a href="<?= base_url('tentang-kami') ?>" class="sar-m-sidebar__item">Profil</a>
-            <a href="<?= base_url('layanan') ?>" class="sar-m-sidebar__item">Layanan</a>
-            <a href="<?= base_url('informasi') ?>" class="sar-m-sidebar__item">Informasi</a>
-            <div class="sar-m-sidebar__active-row">
-                <a href="<?= base_url('kritik-saran') ?>" class="sar-m-sidebar__item sar-m-sidebar__item--active" aria-current="page">
-                    Saran &amp; Kritik
-                </a>
-                <button class="sar-m-sidebar__close" id="sar-m-sidebar-close" aria-label="Tutup menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" aria-hidden="true">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    </div>
 
     <!-- ── Konten: form ──────────────────────────────────────── -->
     <div class="sar-m-content">
@@ -155,19 +130,6 @@ $bs = base_url('assets/saran/');
 })();
 </script>
 
-<script>
-(function () {
-    var wrap   = document.getElementById('sar-m-sidebar-wrap');
-    var toggle = document.getElementById('sar-m-sidebar-toggle');
-    var close  = document.getElementById('sar-m-sidebar-close');
-    var menu   = document.getElementById('sar-m-sidebar');
-    if (!toggle || !menu) return;
-    function openMenu()  { wrap.classList.add('sar-m-sidebar-wrap--open');    toggle.setAttribute('aria-expanded','true');  toggle.setAttribute('aria-label','Tutup menu'); }
-    function closeMenu() { wrap.classList.remove('sar-m-sidebar-wrap--open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Buka menu');  }
-    toggle.addEventListener('click', function () { wrap.classList.contains('sar-m-sidebar-wrap--open') ? closeMenu() : openMenu(); });
-    if (close) close.addEventListener('click', closeMenu);
-})();
-</script>
 
 <script>
 (function () {

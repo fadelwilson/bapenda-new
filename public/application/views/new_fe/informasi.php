@@ -1,17 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BAPENDA Purwakarta – Informasi</title>
-    <meta name="description" content="Informasi pajak daerah, berita terkini, dan layanan PPID Badan Pendapatan Daerah Kabupaten Purwakarta." />
-    <link rel="shortcut icon" href="<?= base_url('assets/new/img/favicon.ico') ?>" type="image/x-icon" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Genos:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="<?= base_url('assets/css/output.css') ?>" rel="stylesheet" />
+<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA Purwakarta – Informasi']); ?>
 
     <style>
         /* State classes untuk sidebar & accordion yang dikendalikan JS */
@@ -99,43 +86,7 @@ $bi = base_url('assets/Informasi/');
 $berita_folder = base_url('loginwebsite/uploads/berita/');
 ?>
 
-<!-- ── Sidebar nav ──────────────────────────────────────────── -->
-<div class="fixed left-0 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-start" id="inf-sidebar-wrap">
-
-    <button class="shrink-0 w-[56px] h-[56px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 z-[2]"
-            id="inf-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
-        <svg class="w-[28px] h-[28px] block" viewBox="0 0 24 24" fill="none" stroke="#303752"
-             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-    </button>
-
-    <nav class="inf-sidebar-menu flex flex-col overflow-hidden max-h-0 opacity-0 pointer-events-none transition-[max-height,opacity] duration-300 ease-in-out"
-         id="inf-sidebar" aria-label="Menu utama">
-        <a href="<?= base_url('beranda') ?>"
-           class="relative flex items-center w-[200px] h-[52px] px-[28px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Beranda</a>
-        <a href="<?= base_url('tentang-kami') ?>"
-           class="relative flex items-center w-[200px] h-[52px] px-[28px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Profil</a>
-        <a href="<?= base_url('layanan') ?>"
-           class="relative flex items-center w-[200px] h-[52px] px-[28px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Layanan</a>
-
-        <div class="flex flex-row items-stretch w-fit">
-            <a href="<?= base_url('informasi') ?>"
-               class="relative flex items-center w-[200px] h-[56px] px-[28px] bg-[#eaa90d] text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-visible border-b-[2.5px] border-[#303752] hover:bg-[#eaa90d]"
-               aria-current="page">Informasi</a>
-            <button class="shrink-0 w-[55px] h-[55px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 hover:bg-[#d99c0c]"
-                    id="inf-sidebar-close" aria-label="Tutup menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5"
-                     stroke-linecap="round" stroke-linejoin="round" width="28" height="28" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
-
-        <a href="<?= base_url('kritik-saran') ?>"
-           class="relative flex items-center w-[200px] h-[52px] px-[28px] bg-white text-[#303752] genos text-[28px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Saran &amp; Kritik</a>
-    </nav>
-</div>
+<?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi']); ?>
 
 <!-- ================================================================
      SEKSI 1 — INFORMASI (Definisi Pajak Daerah)
@@ -411,34 +362,6 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
 
 <script>
 (function () {
-    /* ── Sidebar ── */
-    var sw    = document.getElementById('inf-sidebar-wrap');
-    var stgl  = document.getElementById('inf-sidebar-toggle');
-    var scls  = document.getElementById('inf-sidebar-close');
-    var menu  = document.getElementById('inf-sidebar');
-    if (!stgl || !menu) return;
-
-    function openMenu() {
-        menu.style.maxHeight     = '400px';
-        menu.style.opacity       = '1';
-        menu.style.pointerEvents = 'auto';
-        stgl.style.display       = 'none';
-        stgl.setAttribute('aria-expanded', 'true');
-        stgl.setAttribute('aria-label', 'Tutup menu');
-    }
-    function closeMenu() {
-        menu.style.maxHeight     = '0';
-        menu.style.opacity       = '0';
-        menu.style.pointerEvents = 'none';
-        stgl.style.display       = '';
-        stgl.setAttribute('aria-expanded', 'false');
-        stgl.setAttribute('aria-label', 'Buka menu');
-    }
-    stgl.addEventListener('click', function () {
-        menu.style.maxHeight === '400px' ? closeMenu() : openMenu();
-    });
-    if (scls) scls.addEventListener('click', closeMenu);
-
     /* ── Accordion ── */
     document.querySelectorAll('.inf-acc-header-el').forEach(function (header) {
         header.addEventListener('click', function () {
@@ -465,5 +388,4 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
     });
 })();
 </script>
-</body>
-</html>
+<?php $this->load->view('new_fe/components/footer_scripts'); ?>
