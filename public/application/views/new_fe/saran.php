@@ -12,38 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Genos:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link href="<?= base_url('assets/css/output.css') ?>" rel="stylesheet" />
-
-    <style>
-        /* ── Reset global ── */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            /* padding: 0; */
-        }
-
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: transparent;
-        }
-
-        /* ── Viewport wrapper ───────────────────────────────────────── */
-        #viewport {
-            width: 100vw;
-            height: 100vh;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-    </style>
+</head>
 </head>
 
 <body>
     <?php $this->load->view('new_fe/components/saran_hero'); ?>
-    <!-- <?php $this->load->view('new_fe/components/saran_hero_mobile'); ?> -->
+    <?php $this->load->view('new_fe/components/saran_hero_mobile'); ?>
 </body>
 
 </html>
