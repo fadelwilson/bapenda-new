@@ -22,46 +22,6 @@ $bs = base_url('assets/saran/');
             KRITIK &amp; SARAN
         </div>
 
-        <div class="fixed left-0 top-1/2 -translate-y-1/2 z-[100] flex flex-col items-start" id="sar-sidebar-wrap">
-
-            <button class="shrink-0 w-[42px] h-[42px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 z-[2]"
-                    id="sar-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
-                <svg class="w-[22px] h-[22px] block" xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5"
-                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-
-            <nav class="flex flex-col overflow-hidden max-h-0 opacity-0 pointer-events-none transition-[max-height,opacity] duration-300 ease-in-out"
-                 id="sar-sidebar" aria-label="Menu utama">
-                <a href="<?= base_url('beranda') ?>"
-                   class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Beranda</a>
-                <a href="<?= base_url('tentang-kami') ?>"
-                   class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Profil</a>
-                <a href="<?= base_url('layanan') ?>"
-                   class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Layanan</a>
-                <a href="<?= base_url('informasi') ?>"
-                   class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Informasi</a>
-
-                <div class="flex flex-row items-stretch w-fit">
-                    <a href="<?= base_url('kritik-saran') ?>"
-                       class="relative flex items-center w-[162px] h-[42px] px-[22px] bg-[#eaa90d] text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-visible border-b-2 border-[#303752] hover:bg-[#eaa90d]"
-                       aria-current="page">
-                        Saran &amp; Kritik
-                    </a>
-                    <button class="shrink-0 w-[41px] h-[41px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 hover:bg-[#d99c0c]"
-                            id="sar-sidebar-close" aria-label="Tutup menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                             stroke="#303752" stroke-width="2.5" stroke-linecap="round"
-                             stroke-linejoin="round" width="22" height="22" aria-hidden="true">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-            </nav>
-        </div>
-
         <div class="absolute left-[60px] right-[40px] top-[190px] z-[10]">
 
             <div class="hidden py-2 px-4 genos text-[14px] font-medium mb-[10px]"
@@ -177,36 +137,6 @@ $bs = base_url('assets/saran/');
 })();
 </script>
 
-<script>
-(function () {
-    /* ── Sidebar toggle ── */
-    var toggle  = document.getElementById('sar-sidebar-toggle');
-    var closeBtn = document.getElementById('sar-sidebar-close');
-    var menu    = document.getElementById('sar-sidebar');
-    if (!toggle || !menu) return;
-
-    function openMenu() {
-        menu.style.maxHeight    = '400px';
-        menu.style.opacity      = '1';
-        menu.style.pointerEvents = 'auto';
-        toggle.style.display    = 'none';
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Tutup menu');
-    }
-    function closeMenu() {
-        menu.style.maxHeight    = '0';
-        menu.style.opacity      = '0';
-        menu.style.pointerEvents = 'none';
-        toggle.style.display    = '';
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Buka menu');
-    }
-    toggle.addEventListener('click', function () {
-        menu.style.maxHeight === '400px' ? closeMenu() : openMenu();
-    });
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-})();
-</script>
 
 <script>
 (function () {

@@ -79,45 +79,6 @@ $b = base_url('assets/beranda/');
         </span>
     </div>
 
-    <div class="absolute left-[1px] top-[277px] z-[20] flex flex-col items-start" id="bap-sidebar-wrap">
-
-        <button class="shrink-0 w-[42px] h-[42px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 z-[2]"
-                id="bap-sidebar-toggle" aria-label="Buka menu" aria-expanded="false">
-            <svg class="w-[22px] h-[22px] block" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 24 24" fill="none" stroke="#303752" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </button>
-
-        <nav class="flex flex-col overflow-hidden max-h-0 opacity-0 pointer-events-none transition-[max-height,opacity] duration-300 ease-in-out"
-             id="bap-sidebar" aria-label="Menu utama">
-
-            <div class="flex flex-row items-stretch w-fit">
-                <a href="<?= base_url('beranda') ?>"
-                   class="relative flex items-center w-[162px] h-[42px] px-[22px] bg-[#eaa90d] text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-visible border-b-2 border-[#303752]"
-                   aria-current="page">Beranda</a>
-                <button class="shrink-0 w-[40.5px] h-[40.5px] bg-[#eaa90d] border-0 cursor-pointer flex items-center justify-center p-0 hover:bg-[#d99c0c]"
-                        id="bap-sidebar-close" aria-label="Tutup menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                         stroke="#303752" stroke-width="2.5" stroke-linecap="round"
-                         stroke-linejoin="round" width="22" height="22" aria-hidden="true">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-
-            <a href="<?= base_url('tentang-kami') ?>"
-               class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Profil</a>
-            <a href="<?= base_url('layanan') ?>"
-               class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Layanan</a>
-            <a href="<?= base_url('informasi') ?>"
-               class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Informasi</a>
-            <a href="<?= base_url('kritik-saran') ?>"
-               class="relative flex items-center w-[162px] h-[40px] px-[22px] bg-white text-[#303752] genos text-[24px] font-normal leading-normal no-underline whitespace-nowrap overflow-hidden hover:bg-[#f5f6fa]">Saran &amp; Kritik</a>
-        </nav>
-    </div>
-
     <div class="absolute left-0 right-0 top-[621px] h-[20px] jakarta-sans text-[12px] font-normal text-[#303752] leading-normal z-[25] flex items-center justify-center">
         Copyright &copy; 2026 Badan Pendapatan Daerah Kab. Purwakarta
     </div>
@@ -144,32 +105,3 @@ $b = base_url('assets/beranda/');
 })();
 </script>
 
-<script>
-(function () {
-    var toggle  = document.getElementById('bap-sidebar-toggle');
-    var closeBtn = document.getElementById('bap-sidebar-close');
-    var menu    = document.getElementById('bap-sidebar');
-    if (!toggle || !menu) return;
-
-    function openMenu() {
-        menu.style.maxHeight     = '400px';
-        menu.style.opacity       = '1';
-        menu.style.pointerEvents = 'auto';
-        toggle.style.display     = 'none';
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Tutup menu');
-    }
-    function closeMenu() {
-        menu.style.maxHeight     = '0';
-        menu.style.opacity       = '0';
-        menu.style.pointerEvents = 'none';
-        toggle.style.display     = '';
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Buka menu');
-    }
-    toggle.addEventListener('click', function () {
-        menu.style.maxHeight === '400px' ? closeMenu() : openMenu();
-    });
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-})();
-</script>

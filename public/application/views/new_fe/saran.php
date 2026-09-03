@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -15,7 +15,8 @@
 </head>
 </head>
 
-<body>
+<body class="min-h-screen min-w-screen overflow-x-hidden relative">
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran']); ?>
     <?php $this->load->view('new_fe/components/saran_hero'); ?>
     <?php $this->load->view('new_fe/components/saran_hero_mobile'); ?>
 </body>
