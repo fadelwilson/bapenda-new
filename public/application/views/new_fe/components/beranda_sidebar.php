@@ -18,10 +18,10 @@ $menu_items = [
 ];
 ?>
 
-<div class="fixed left-[1px] top-[277px] z-[9999] flex flex-row items-start" id="beranda-sidebar-wrap">
+<div class="fixed left-[0.049vw] top-[13.375vw] z-[9999] flex flex-row items-start" id="beranda-sidebar-wrap">
 
     <nav 
-        class="hidden flex-col bg-white border border-slate-200 shadow-xl overflow-hidden w-[250px]" 
+        class="hidden flex-col bg-white shadow-xl overflow-hidden w-[250px]" 
         id="beranda-sidebar-menu" 
         aria-label="Menu utama"
     >
@@ -31,7 +31,7 @@ $menu_items = [
             <?php if ($is_active): ?>
                 <a 
                     href="<?= $item['url'] ?>" 
-                    class="flex items-center h-[56px] px-6 bg-(--yellow-color) text-[#303752] font-bold genos text-[1.167vw]"
+                    class="flex items-center h-[56px] px-6 bg-[#EAA90D] text-[#303752] font-bold genos text-[1.167vw]"
                     aria-current="page"
                 >
                     <?= htmlspecialchars($item['label']) ?>
@@ -48,7 +48,7 @@ $menu_items = [
     </nav>
 
     <button 
-        class="size-[56px] flex-shrink-0 bg-(--yellow-color) flex items-center justify-center text-[#303752] font-bold cursor-pointer hover:bg-amber-300 transition-all duration-200" 
+        class="size-[56px] flex-shrink-0 bg-[#EAA90D] flex items-center justify-center text-[#303752] font-bold cursor-pointer hover:bg-[#EAA90D/80] transition-all duration-200" 
         id="beranda-sidebar-toggle" 
         aria-label="Toggle menu" 
         aria-expanded="false"
