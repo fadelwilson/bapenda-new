@@ -480,6 +480,10 @@ $galeryImages = array_filter($ShowDataGaleri[0], function ($value, $key) {
             method="post"
             class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-12 orbitron z-10 relative"
             onsubmit="submitForm(event)">
+            <!-- Honeypot trap anti-bot -->
+            <div style="display:none !important;" aria-hidden="true">
+                <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+            </div>
             <div>
                 <label
                     for="nama_lengkap"
@@ -1058,10 +1062,10 @@ $galeryImages = array_filter($ShowDataGaleri[0], function ($value, $key) {
                 .then((res) => res.json())
                 .then((res) => {
                     if (res.meta && res.meta.status === "success") {
-                        notyf.success("Kritik dan saran berhasil dikirim.");
+                        notyf.success(res.meta.message || "Kritik dan saran berhasil dikirim.");
                         form.reset();
                     } else {
-                        notyf.error("Gagal mengirim kritik dan saran.");
+                        notyf.error(res.meta && res.meta.message ? res.meta.message : "Gagal mengirim kritik dan saran.");
                     }
                 })
                 .catch((err) => {

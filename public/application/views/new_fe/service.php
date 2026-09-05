@@ -226,7 +226,7 @@
         </div>
         
         <footer class="mt-[11.67vw] relative z-10">
-            <div class="w-full p-[1.751vw] text-white text-[0.584vw] jakarta-sans">
+            <div class="w-full p-[1.751vw] text-white text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
