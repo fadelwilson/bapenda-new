@@ -27,7 +27,7 @@
                     <h2 class="text-(--yellow-color) text-[3.891vw] geologica leading-none max-md:text-[10.256vw] max-md:text-center">
                         Pengelolaan Pendapatan yang Transparan
                     </h2>
-                    <p class="text-[0.973vw] text-white pt-[0.584vw] open-sans max-md:text-[3.59vw] max-md:pt-[4.103vw]">
+                    <p class="text-[0.973vw] text-white mt-[0.584vw] open-sans max-md:text-[3.59vw] max-md:mt-[4.103vw]">
                         Dinas Pendapatan Daerah Kabupaten Purrwakarta hadir untuk mewujudkan tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi demi pembangunan daerah yang berkeadilan.
                     </p>
 

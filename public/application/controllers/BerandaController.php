@@ -67,6 +67,10 @@ class BerandaController extends CI_Controller
 		$data['ShowDataTim'] = $this->TentangKamiModel->ShowDataTim()->result_array();
 		$data['ShowDataStruktur'] = $this->TentangKamiModel->ShowDataStruktur()->result_array();
 		$data['ShowDataProdukHukum'] = $this->TentangKamiModel->ShowDataProdukHukum();
+		$data['ShowDataInformasi'] = $this->UploadModel->ShowDataInformasi()->result_array();
+		$data['ShowDataAlur'] = $this->UploadModel->ShowDataAlur()->result_array();
+		$data['ShowDataVisi'] = $this->UploadModel->ShowDataVisi()->result_array();
+		$data['ShowDataMisi'] = $this->UploadModel->ShowDataMisi()->result_array();
 
 		$this->load->view('new_fe/about', $data);
 	}
