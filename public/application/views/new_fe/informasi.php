@@ -225,9 +225,16 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
      ================================================================ -->
 <section class="relative bg-white overflow-hidden" id="berita">
 
+    <div class="absolute left-0 top-0 h-full w-[266px] opacity-[0.05] pointer-events-none overflow-hidden" aria-hidden="true">
+        <img src="<?= $bi ?>WhatsApp Image 2026-08-04 at 17.52.50 (1) copy copy 3.png" alt=""
+             class="absolute w-full h-full object-cover object-center" />
+    </div>
+
     <div class="relative mx-auto px-[52px] pt-[70px] pb-[60px] z-[2]">
-        <div class="inf-berita-title-fs krona-one font-normal text-[#1a1a2e2e] tracking-[2px] mb-[40px]">
-            BERITA &amp; <span>ARTIKEL</span>
+
+        <div class="krona-one text-[clamp(48px,7.5vw,96px)] font-normal text-[#303752] opacity-35 leading-normal whitespace-nowrap mb-[40px] select-none pointer-events-none"
+             aria-hidden="true">
+            BERITA &amp; ARTIKEL
         </div>
 
         <div class="grid grid-cols-3 gap-[28px] max-[900px]:grid-cols-1">
@@ -239,58 +246,66 @@ $berita_folder = base_url('loginwebsite/uploads/berita/');
             ];
             $k = !empty($berita_list) && isset($berita_list[0]['foto_berita']) ? $berita_keys[0] : $berita_keys[1];
 
-            // Gambar placeholder yang tersedia di folder assets/Informasi
             $placeholder_imgs = [
                 1 => 'img20250923081406-2-68d242abed641541c5071bc2 1 (1).png',
                 2 => 'img20250923081406-2-68d242abed641541c5071bc2 1 (2).png',
                 3 => 'img20250923081406-2-68d242abed641541c5071bc2 1.png',
             ];
 
-            if (empty($berita_list)):
-                for ($i = 1; $i <= 3; $i++):
-            ?>
-                <div class="bg-[#f5f5f3] overflow-hidden flex flex-col transition-[transform,box-shadow] duration-[250ms] ease-in-out cursor-pointer hover:-translate-y-[6px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                    <div class="w-full aspect-video overflow-hidden relative bg-[#303752]">
-                        <img src="<?= $bi . $placeholder_imgs[$i] ?>" alt="Berita <?= $i ?>"
-                             class="w-full h-full object-cover object-top block transition-transform duration-[350ms] ease-in-out" />
-                        <span class="absolute bottom-[10px] left-[10px] bg-[#eaa90d] text-[#1a1a2e] genos text-[13px] font-semibold px-[10px] py-[3px] tracking-[0.5px]">Berita</span>
+            /* ── Helper render card ── */
+            function render_berita_card_v2($img_src, $judul, $narasi, $url) { ?>
+                <a href="<?= htmlspecialchars($url) ?>" target="_blank"
+                   class="group flex flex-col no-underline">
+
+                    <div class="relative w-full overflow-hidden bg-[#303752]" style="height:280px;">
+                        <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul) ?>"
+                             class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]" />
                     </div>
-                    <div class="p-[20px_20px_18px] flex-1 flex flex-col gap-2">
-                        <div class="inf-card-title-fs genos font-semibold text-[#1a1a2e] leading-[1.4] line-clamp-2">Berita BAPENDA <?= $i ?></div>
-                        <div class="jakarta-sans text-[13px] text-[#555] leading-[1.6] line-clamp-3 flex-1">Informasi terkini dari Badan Pendapatan Daerah Kabupaten Purwakarta mengenai kegiatan, pelayanan, dan inovasi perpajakan daerah.</div>
-                        <a href="<?= base_url('blog') ?>" class="inf-card__link inline-flex items-center gap-[6px] genos text-[15px] font-medium text-[#eaa90d] no-underline mt-1 transition-[gap] duration-150">
-                            Baca Selengkapnya
-                            <svg class="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                        </a>
+
+                    <div class="relative z-[10] -mt-[65px] ml-[50px] rounded-md w-[361px] max-w-full h-[130px] bg-[#303752]
+                                flex items-center justify-center px-[16px]">
+                        <p class="text-white text-[20px] font-semibold text-center leading-snug line-clamp-3"
+                           style="font-family:'Genos',sans-serif;">
+                            <?= htmlspecialchars($judul) ?>
+                        </p>
                     </div>
-                </div>
-            <?php endfor; else: ?>
-                <?php foreach ($berita_list as $idx => $b): ?>
-                <div class="bg-[#f5f5f3] overflow-hidden flex flex-col transition-[transform,box-shadow] duration-[250ms] ease-in-out cursor-pointer hover:-translate-y-[6px] hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]">
-                    <div class="w-full aspect-video overflow-hidden relative bg-[#303752]">
-                        <?php if (!empty($b[$k['foto']])): ?>
-                        <img src="<?= $berita_folder . $b[$k['foto']] ?>" alt="<?= htmlspecialchars($b[$k['judul']] ?? '') ?>"
-                             class="w-full h-full object-cover object-top block transition-transform duration-[350ms]" />
-                        <?php else: ?>
-                        <?php $fallback_imgs = ['img20250923081406-2-68d242abed641541c5071bc2 1 (1).png','img20250923081406-2-68d242abed641541c5071bc2 1 (2).png','img20250923081406-2-68d242abed641541c5071bc2 1.png']; ?>
-                        <img src="<?= $bi . $fallback_imgs[$idx % 3] ?>" alt=""
-                             class="w-full h-full object-cover object-center block" />
-                        <?php endif; ?>
-                        <span class="absolute bottom-[10px] left-[10px] bg-[#eaa90d] text-[#1a1a2e] genos text-[13px] font-semibold px-[10px] py-[3px] tracking-[0.5px]">Berita</span>
+
+                    <div class="pt-[14px]">
+                        <p class="jakarta-sans text-[14px] font-normal text-[#303752] leading-normal line-clamp-4">
+                            <?= htmlspecialchars(strip_tags($narasi)) ?>
+                        </p>
                     </div>
-                    <div class="p-[20px_20px_18px] flex-1 flex flex-col gap-2">
-                        <div class="inf-card-title-fs genos font-semibold text-[#1a1a2e] leading-[1.4] line-clamp-2"><?= htmlspecialchars($b[$k['judul']] ?? 'Berita BAPENDA') ?></div>
-                        <div class="jakarta-sans text-[13px] text-[#555] leading-[1.6] line-clamp-3 flex-1"><?= htmlspecialchars(strip_tags($b[$k['narasi']] ?? '')) ?></div>
-                        <a href="<?= !empty($k['url']) && !empty($b[$k['url']]) ? $b[$k['url']] : base_url('blog') ?>" target="_blank"
-                           class="inf-card__link inline-flex items-center gap-[6px] genos text-[15px] font-medium text-[#eaa90d] no-underline mt-1 transition-[gap] duration-150">
-                            Baca Selengkapnya
-                            <svg class="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+                </a>
+            <?php } ?>
+
+            <?php if (empty($berita_list)):
+                $placeholders = [
+                    ['img' => $bi.$placeholder_imgs[1], 'judul' => 'Bapenda Kabupaten Purwakarta Apresiasi Para Wajib Pajak yang Turut Berkontribusi', 'narasi' => 'Badan Pendapatan Daerah (Bapenda) Kabupaten Purwakarta mengapresiasi pihak-pihak yang selama ini turut berkontribusi dan sangat mendukung pembangunan daerah. Terutama para wajib pajak yang selama ini taat untuk membayar pajak daerah.', 'url' => base_url('blog')],
+                    ['img' => $bi.$placeholder_imgs[2], 'judul' => 'Dongkrak Pendapatan, Purwakarta Justru Lakukan Dengan Langkah Keringanan', 'narasi' => 'Memaksimalkan layanan publik, pemerintah kabupaten Purwakarta menggelar "Gempungan" secara bergiliran ditiap kecamatan sekaligus desa setiap hari Selasa. Masyarakat dapat menerima layanan langsung karena dijemput bola oleh pemerintah kabupaten, yang umumnya selalu dihadiri oleh Bupati.', 'url' => base_url('blog')],
+                    ['img' => $bi.$placeholder_imgs[3], 'judul' => 'Bapenda Band & Dancer - Juara 1 Festival Mobil Hias Hari Jadi Purwakarta', 'narasi' => 'Bapenda Squad memeriahkan event Festival Mobil Hias Purwakarta dalam rangkaian hari jadi Kabupaten Purwakarta. Bapenda Band & Dancer - Juara 1 Festival Mobil Hias Hari Jadi Purwakarta.', 'url' => base_url('blog')],
+                ];
+                foreach ($placeholders as $p):
+                    render_berita_card_v2($p['img'], $p['judul'], $p['narasi'], $p['url']);
+                endforeach;
+            else:
+                $fallback = [$bi.$placeholder_imgs[1], $bi.$placeholder_imgs[2], $bi.$placeholder_imgs[3]];
+                foreach ($berita_list as $idx => $b):
+                    $img    = !empty($b[$k['foto']]) ? $berita_folder . $b[$k['foto']] : $fallback[$idx % 3];
+                    $judul  = $b[$k['judul']] ?? 'Berita BAPENDA';
+                    $narasi = $b[$k['narasi']] ?? '';
+                    $url    = !empty($k['url']) && !empty($b[$k['url']]) ? $b[$k['url']] : base_url('blog');
+                    render_berita_card_v2($img, $judul, $narasi, $url);
+                endforeach;
+            endif; ?>
         </div>
+
+        <div class="flex items-center justify-center gap-[10px] mt-[36px]">
+            <span class="w-[10px] h-[10px] rounded-full bg-[#c8cbd8] block"></span>
+            <span class="w-[13px] h-[13px] rounded-full bg-[#eaa90d] block"></span>
+            <span class="w-[10px] h-[10px] rounded-full bg-[#c8cbd8] block"></span>
+            <span class="w-[10px] h-[10px] rounded-full bg-[#c8cbd8] block"></span>
+        </div>
+
     </div>
 </section>
 
