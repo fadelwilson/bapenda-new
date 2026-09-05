@@ -17,7 +17,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
     <div class="flex flex-col">
         <!-- Section: Tentang Kami -->
         <div class="max-md:order-3 relative px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw] max-md:mt-[5.447vw]">
-            <div class="hidden max-md:block absolute bottom-2 left-0 w-full h-[600px] bg-no-repeat bg-cover bg-center opacity-[4%] pointer-events-none z-0" style="background-image: url('<?= base_url('assets/gambar/batik_sunda1.png') ?>');"></div>
+            <div class="hidden max-md:block absolute bottom-2 left-0 w-full h-[153.846vw] bg-no-repeat bg-cover bg-center opacity-[4%] pointer-events-none z-0" style="background-image: url('<?= base_url('assets/gambar/batik_sunda1.png') ?>');"></div>
 
             <h1 class="relative z-10 text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[9.231vw]">
                 Tentang Kami
@@ -32,7 +32,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, doloremque. Quisquam laudantium odio accusamus ipsam obcaecati fuga consequuntur pariatur ad nobis laborum ducimus eligendi rerum blanditiis beatae, impedit magni nisi. Ipsa ea perferendis, doloremque a inventore eaque nesciunt? Laboriosam sunt maiores, illum temporibus sed, itaque officia maxime natus, perferendis sapiente voluptatem sint a facere magnam vitae. Totam, dolore optio itaque velit nostrum dignissimos dolor ad. Labore quod quasi amet debitis ex fugiat, obcaecati similique maxime officia consectetur. Assumenda beatae amet perspiciatis eaque repellat explicabo, quidem dolor laudantium sint debitis magni quae saepe nam vero accusamus perferendis suscipit! Voluptatum, dignissimos delectus.    
                 </p>
     
-                <div class="grid grid-cols-2 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw] mt-[1.556vw] max-md:mt-0 w-[60%] max-md:w-full pt-[2.724vw] max-md:py-8">
+                <div class="grid grid-cols-2 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw] mt-[1.556vw] max-md:mt-0 w-[60%] max-md:w-full pt-[2.724vw] max-md:py-[8.205vw]">
                     <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-start relative z-10 cursor-pointer preview-btn" data-preview="<?= $visi_img ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Visi Bapenda</h3>
@@ -59,7 +59,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                 Profil
             </h1>
     
-            <div class="px-[1.167vw] mt-[0.584vw] max-md:mt-[12.308vw]">
+            <div class="px-[1.167vw] mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
                 <h3 class="text-[2.335vw] text-(--blue-color) genos leading-none max-md:text-[9.231vw] max-md:text-center">
                     Struktur Organisasi
                 </h3>
@@ -135,7 +135,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
 
                     <!-- Desktop Shared Content Box -->
                     <div class="bg-(--blue-color)/60 w-full p-[2.724vw] text-white text-[0.778vw] jakarta-sans max-md:hidden">
-                        <div class="text-justify leading-relaxed min-h-[150px]" id="tab-content-text">
+                        <div class="text-justify leading-relaxed min-h-[7.3vw]" id="tab-content-text">
                             Pengelolaan pendapatan daerah oleh Badan Pendapatan Daerah Kabupaten Purwakarta berlandaskan pada Peraturan Daerah Kabupaten Purwakarta Nomor 3 Tahun 2021 tentang Pajak Daerah dan Retribusi Daerah, serta Peraturan Bupati Purwakarta Nomor 87 Tahun 2022 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, serta Tata Kerja Badan Pendapatan Daerah.
                         </div>
                     </div>
@@ -236,8 +236,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
         </div>
     </div>
 
-    <footer class="relative overflow-visible mt-60 max-md:mt-0">
-        <img src="<?= base_url('assets/gambar/arjuna_woawan.png') ?>" alt="" class="hidden max-md:block absolute right-0 bottom-0 h-[800px] w-auto pointer-events-none z-0">
+    <footer class="relative overflow-visible mt-[11.67vw] max-md:mt-0">
+        <img src="<?= base_url('assets/gambar/arjuna_woawan.png') ?>" alt="" class="hidden max-md:block absolute right-0 bottom-0 h-[200vw] w-auto pointer-events-none z-0">
 
         <div class="relative z-10 w-full p-[1.751vw] text-(--blue-color) text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
             <div class="text-center">
