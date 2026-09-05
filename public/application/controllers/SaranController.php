@@ -12,7 +12,8 @@ class SaranController extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('new_fe/saran');
+        $data['active_menu'] = 'saran';
+        $this->load->view('new_fe/saran', $data);
     }
 
     function store()

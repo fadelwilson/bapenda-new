@@ -197,26 +197,29 @@
                 }
 
                 $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
-                $judul_berita = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-                $narasi_berita = !empty(trim(strip_tags($dt['narasi_berita'] ?? '')))
-                    ? (mb_strlen(strip_tags($dt['narasi_berita'])) > 150 ? mb_substr(strip_tags($dt['narasi_berita']), 0, 150) . '...' : strip_tags($dt['narasi_berita']))
+                $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
+                $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                $narasi_berita = !empty($clean_narasi)
+                    ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
                     : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
                 ?>
                 <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
                     <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
-                        <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita) ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                        <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                     </div>
 
                     <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
                         <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
-                            <?= htmlspecialchars($judul_berita) ?>
+                            <?= $judul_berita ?>
                         </h3>
                     </div>
 
                     <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
                         <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
-                            <?= htmlspecialchars($narasi_berita) ?>
+                            <?= $narasi_berita ?>
                         </p>
                     </div>
                 </a>

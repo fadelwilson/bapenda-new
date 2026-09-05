@@ -64,8 +64,25 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                     Struktur Organisasi
                 </h3>
         
-                <div class="flex justify-center mt-[0.778vw] max-md:mt-[4.103vw]">
-                    <img src="<?= base_url('assets/gambar/struktur 1.png') ?>" alt="" class="!w-[65%] max-md:!w-full h-auto">
+                <div class="flex flex-col items-center justify-center gap-6 mt-[0.778vw] max-md:mt-[4.103vw]">
+                    <?php
+                    $folder_struk = 'https://www.bapenda.purwakartakab.go.id/loginwebsite/uploads/tentangkami/struktur/';
+                    $has_struktur = false;
+                    ?>
+                    <?php if (!empty($ShowDataStruktur)) : ?>
+                        <?php foreach ($ShowDataStruktur as $dt) : ?>
+                            <?php if (!empty($dt['foto_struk'])) : $has_struktur = true; ?>
+                                <div class="cursor-pointer preview-btn flex justify-center w-full" data-preview="<?= $folder_struk . $dt['foto_struk'] ?>">
+                                    <img src="<?= $folder_struk . $dt['foto_struk'] ?>" alt="Struktur Organisasi" class="!w-[65%] max-md:!w-full h-auto object-contain">
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    <?php if (!$has_struktur) : ?>
+                        <div class="cursor-pointer preview-btn flex justify-center w-full" data-preview="<?= base_url('assets/gambar/struktur 1.png') ?>">
+                            <img src="<?= base_url('assets/gambar/struktur 1.png') ?>" alt="Struktur Organisasi" class="!w-[65%] max-md:!w-full h-auto object-contain">
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

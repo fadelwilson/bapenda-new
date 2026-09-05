@@ -125,7 +125,7 @@
                         <div class="bg-stone-200 md:p-[2.083vw] p-[5.208vw]">
                             <h2
                                 class="orbitron md:text-[1.563vw] text-[3.906vw] leading-[4.167vw] md:leading-[1.625vw] mb-4 line-clamp-2">
-                                <?= $d['judul_berita'] ?>
+                                <?= html_entity_decode(html_entity_decode($d['judul_berita'], ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>
                             </h2>
                             <div class="flex gap-2 mb-4 justify-end">
                                 <div
@@ -139,7 +139,7 @@
                             </div>
                             <div class="h-[calc(var(--text-sm)_*_6)]">
                                 <div class="line-clamp-4 text-sm indent-8 text-justify">
-                                    <?= $d['narasi_berita'] ?>
+                                    <?= html_entity_decode(html_entity_decode(strip_tags($d['narasi_berita']), ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8') ?>
                                 </div>
                             </div>
                             <div class="text-sm mt-4">

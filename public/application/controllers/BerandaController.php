@@ -38,7 +38,7 @@ class BerandaController extends CI_Controller
 			. 'tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi '
 			. 'demi pembangunan daerah yang berkeadilan.';
 
-		$this->load->view('new_fe/beranda', $data);
+		$this->load->view('new_fe/index', $data);
 	}
 
 	public function layanan()
@@ -95,7 +95,8 @@ class BerandaController extends CI_Controller
 
 	public function informasi()
 	{
-		$data['ShowData']      = $this->UploadModel->ShowData()->result_array();
+		$data['active_menu']    = 'informasi';
+		$data['ShowData']       = $this->UploadModel->ShowData()->result_array();
 		$data['ShowDataBerita'] = $this->UploadModel->getBerita()->result_array();
 		$data['ShowDataPPID']   = $this->UploadModel->getDataPPID()->result_array();
 		$this->load->view('new_fe/informasi', $data);
