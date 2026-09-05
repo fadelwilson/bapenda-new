@@ -1,6 +1,9 @@
 # Node.js
 public/node_modules/
 
+# Tailwind CSS generated output
+public/assets/css/output.css
+
 # Composer (PHP dependencies)
 public/vendor/
 
