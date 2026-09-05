@@ -352,6 +352,9 @@
   .top-\[12px\] {
     top: 12px;
   }
+  .top-\[13\.375vw\] {
+    top: 13.375vw;
+  }
   .top-\[22vh\] {
     top: 22vh;
   }
@@ -636,6 +639,9 @@
   }
   .left-\[-3px\] {
     left: -3px;
+  }
+  .left-\[0\.049vw\] {
+    left: 0.049vw;
   }
   .left-\[1px\] {
     left: 1px;
@@ -2946,6 +2952,9 @@
   .bg-\[\#303752\]\/85 {
     background-color: color-mix(in oklab, #303752 85%, transparent);
   }
+  .bg-\[\#EAA90D\] {
+    background-color: #EAA90D;
+  }
   .bg-\[\#c8cbd8\] {
     background-color: #c8cbd8;
   }
@@ -4658,6 +4667,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: #3d4668;
+      }
+    }
+  }
+  .hover\:bg-\[\#EAA90D\/80\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #EAA90D/80;
       }
     }
   }
