@@ -69,4 +69,4 @@
         </div>
     </div>
 
-<?php $this->load->view('new_fe/components/footer_scripts'); ?>
+    <?php $this->load->view('new_fe/components/footer_scripts'); ?>

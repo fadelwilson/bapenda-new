@@ -16,8 +16,8 @@
 
                 <div class="mt-[0.584vw] max-md:mt-[3.077vw] max-md:p-[2.051vw]">
                     <p class="open-sans text-[0.778vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify">
-                        Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat. <br/><br/>
-                        Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat. <br/><br/>
+                        Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
+                        Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
                         <strong class="font-bold block text-(--blue-color) text-[0.875vw] max-md:text-[3.846vw]">Pajak Kendaraan Bermotor</strong>
                         Adapun Pajak Kendaraan Bermotor termasuk ke dalam jenis pajak provinsi yang merupakan bagian dari Pajak Daerah. Lebih lanjut, Pajak Kendaraan Bermotor sebagaimana yang didefinisikan dalam Pasal 1 angka 28 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 adalah pajak atas kepemilikan dan/atau penguasaan kendaraan bermotor. Dalam pelaksanaan pemungutannya dilakukan di kantor bersama samsat. Kantor Bersama SAMSAT ini melibatkan tiga instansi pemerintah, yaitu: Badan Pendapatan Daerah, Kepolisian Daerah Republik Indonesia, dan PT. (Persero) Asuransi Kerugian Jasa Raharja.
                     </p>
@@ -159,21 +159,21 @@
             'judul_berita'  => 'Bapenda Kabupaten Purwakarta Apresiasi Para Wajib Pajakyang Turut Berkontribusi',
             'narasi_berita' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
             'url_berita'    => base_url('blog'),
-            'is_local_asset'=> true,
+            'is_local_asset' => true,
         ],
         [
             'foto_berita'   => 'img20250923081406-2-68d242abed641541c5071bc2 1 (2).png',
             'judul_berita'  => 'Dongkrak Pendapatan, Purwakarta Justru Lakukan Dengan Langkah Keringanan',
             'narasi_berita' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.',
             'url_berita'    => base_url('blog'),
-            'is_local_asset'=> true,
+            'is_local_asset' => true,
         ],
         [
             'foto_berita'   => 'Screen Shot 2026-08-02 at 15.12.17 1 (2).png',
             'judul_berita'  => 'Bapenda Band & Dancer - Juara 1 Festival Mobil Hias Hari Jadi Purwakarta',
             'narasi_berita' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis.',
             'url_berita'    => base_url('blog'),
-            'is_local_asset'=> true,
+            'is_local_asset' => true,
         ],
     ];
 
@@ -225,6 +225,50 @@
                 </a>
             <?php endforeach; ?>
         </div>
+    </div>
+
+    <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
+
+        <h2 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[10vw]">
+            GALERI
+        </h2>
+
+        <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+
+            <!-- Galeri 1 -->
+            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                <img
+                    src="<?= base_url('assets/Informasi/gambar-1.png') ?>"
+                    alt="Galeri 1"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+            </div>
+
+            <!-- Galeri 2 -->
+            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                <img
+                    src="<?= base_url('assets/Informasi/gambar-2.png') ?>"
+                    alt="Galeri 2"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+            </div>
+
+            <!-- Galeri 3 -->
+            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                <img
+                    src="<?= base_url('assets/Informasi/gambar-3.png') ?>"
+                    alt="Galeri 3"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+            </div>
+
+            <!-- Galeri 4 -->
+            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                <img
+                    src="<?= base_url('assets/Informasi/gambar-4.png') ?>"
+                    alt="Galeri 4"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+            </div>
+
+        </div>
+
     </div>
 
     <?php
@@ -296,24 +340,24 @@
             </div>
         </footer>
 
-        <img src="<?= base_url('assets/saran/tower 1.png') ?>" alt="" class="absolute -right-[2.051vw] -bottom-10 h-[44vw] w-auto pointer-events-none z-10 max-md:hidden">
+        <img src="<?= base_url('assets/gambar/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] -bottom-10 h-[44vw] w-auto pointer-events-none z-10 max-md:hidden">
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tabContents = {
-            'objek-pajak': `Objek pajak adalah penghasilan, kekayaan, perbuatan, atau keadaan tertentu yang digunakan sebagai dasar pengenaan pajak. Berdasarkan UU HKPD, jenis pajak kabupaten/kota meliputi: PBB-P2 (bumi dan/atau bangunan yang dimiliki, dikuasai, dan/atau dimanfaatkan), BPHTB (perolehan hak atas tanah dan bangunan baik melalui jual beli, tukar menukar, hibah, maupun pemberian hak baru), PBJT (makanan/minuman, tenaga listrik, jasa perhotelan, jasa parkir, dan jasa kesenian &amp; hiburan), Pajak Reklame (semua jenis penyelenggaraan reklame), Pajak Air Tanah (pengambilan dan/atau pemanfaatan air tanah), Pajak MBLB (kegiatan pengambilan mineral bukan logam dan batuan), serta Pajak Sarang Burung Walet.`,
-            'subjek-wajib': `Subjek pajak adalah orang pribadi atau badan yang dapat dikenakan pajak. Wajib pajak adalah orang pribadi atau badan yang mempunyai hak dan kewajiban perpajakan sesuai ketentuan perundang-undangan daerah.<br><br>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabContents = {
+                'objek-pajak': `Objek pajak adalah penghasilan, kekayaan, perbuatan, atau keadaan tertentu yang digunakan sebagai dasar pengenaan pajak. Berdasarkan UU HKPD, jenis pajak kabupaten/kota meliputi: PBB-P2 (bumi dan/atau bangunan yang dimiliki, dikuasai, dan/atau dimanfaatkan), BPHTB (perolehan hak atas tanah dan bangunan baik melalui jual beli, tukar menukar, hibah, maupun pemberian hak baru), PBJT (makanan/minuman, tenaga listrik, jasa perhotelan, jasa parkir, dan jasa kesenian &amp; hiburan), Pajak Reklame (semua jenis penyelenggaraan reklame), Pajak Air Tanah (pengambilan dan/atau pemanfaatan air tanah), Pajak MBLB (kegiatan pengambilan mineral bukan logam dan batuan), serta Pajak Sarang Burung Walet.`,
+                'subjek-wajib': `Subjek pajak adalah orang pribadi atau badan yang dapat dikenakan pajak. Wajib pajak adalah orang pribadi atau badan yang mempunyai hak dan kewajiban perpajakan sesuai ketentuan perundang-undangan daerah.<br><br>
             <strong>Subjek PBB-P2:</strong> Orang pribadi atau badan yang secara nyata memiliki hak atau memperoleh manfaat atas bumi dan/atau bangunan.<br>
             <strong>Subjek BPHTB:</strong> Orang pribadi atau badan yang memperoleh hak atas tanah dan/atau bangunan.<br>
             <strong>Subjek PBJT:</strong> Konsumen barang dan jasa tertentu; pengusaha bertindak sebagai pemungut pajak.<br>
             <strong>Subjek Pajak Reklame:</strong> Orang pribadi atau badan yang menyelenggarakan reklame.`,
-            'dasar-pengenaan': `Dasar pengenaan pajak merupakan nilai/jumlah yang menjadi acuan menghitung besaran pajak terutang.<br><br>
+                'dasar-pengenaan': `Dasar pengenaan pajak merupakan nilai/jumlah yang menjadi acuan menghitung besaran pajak terutang.<br><br>
             <strong>PBB-P2:</strong> Nilai Jual Objek Pajak (NJOP) bumi dan/atau bangunan, ditetapkan berdasarkan harga rata-rata transaksi jual beli di pasaran.<br>
             <strong>BPHTB:</strong> Nilai Perolehan Objek Pajak (NPOP), yaitu harga transaksi atau nilai pasar.<br>
             <strong>PBJT:</strong> Jumlah yang dibayarkan konsumen untuk pembelian makanan/minuman, tagihan listrik, pembayaran hotel, biaya parkir, dan tiket hiburan.<br>
             <strong>Pajak Reklame:</strong> Nilai sewa reklame dihitung berdasarkan ukuran, lokasi, jenis, dan jangka waktu penyelenggaraan.`,
-            'tarif': `Tarif pajak daerah ditetapkan dengan Peraturan Daerah (Perda), dengan batas maksimum berdasarkan UU HKPD:<br><br>
+                'tarif': `Tarif pajak daerah ditetapkan dengan Peraturan Daerah (Perda), dengan batas maksimum berdasarkan UU HKPD:<br><br>
             • <strong>PBB-P2:</strong> Maks 0,5%<br>
             • <strong>BPHTB:</strong> Maks 5%<br>
             • <strong>PBJT Makanan/Minuman:</strong> Maks 10%<br>
@@ -324,102 +368,102 @@
             • <strong>Pajak Reklame:</strong> Maks 25%<br>
             • <strong>Pajak Air Tanah:</strong> Maks 20%<br>
             • <strong>Pajak MBLB:</strong> Sesuai ketentuan zonasi/jenis mineral`,
-            'masa-pajak': `Masa pajak adalah jangka waktu dasar bagi wajib pajak untuk menghitung, menyetor, dan melaporkan pajak terutang.<br><br>
+                'masa-pajak': `Masa pajak adalah jangka waktu dasar bagi wajib pajak untuk menghitung, menyetor, dan melaporkan pajak terutang.<br><br>
             <strong>PBB-P2:</strong> Tahun pajak satu tahun kalender (1 Januari – 31 Desember).<br>
             <strong>BPHTB:</strong> Saat terutang adalah sejak terjadinya perolehan hak.<br>
             <strong>PBJT:</strong> Masa pajak adalah 1 (satu) bulan kalender.<br>
             <strong>Pajak Reklame:</strong> Masa pajak disesuaikan dengan jangka waktu penyelenggaraan reklame.<br>
             <strong>Pajak Air Tanah, MBLB, Sarang Burung Walet:</strong> Masa pajak adalah 1 (satu) bulan kalender.`,
-            'denda-pajak': `Denda pajak dikenakan apabila terjadi keterlambatan pembayaran atau pelanggaran kewajiban perpajakan:<br><br>
+                'denda-pajak': `Denda pajak dikenakan apabila terjadi keterlambatan pembayaran atau pelanggaran kewajiban perpajakan:<br><br>
             • Keterlambatan pembayaran dikenakan sanksi bunga <strong>2% per bulan</strong>.<br>
             • Keterlambatan pelaporan SPTPD dikenakan denda administrasi sesuai jenis pajak.<br>
             • Wajib pajak yang tidak memenuhi kewajiban pendaftaran dikenakan sanksi sesuai Perda.<br>
             • SKPD Kurang Bayar diterbitkan apabila ditemukan pajak yang belum/kurang dibayar.<br>
             • Pengenaan bunga paling lama <strong>24 bulan</strong>.`,
-            'mekanisme': `Mekanisme pembayaran pajak daerah di Kabupaten Purwakarta terintegrasi secara digital:<br><br>
+                'mekanisme': `Mekanisme pembayaran pajak daerah di Kabupaten Purwakarta terintegrasi secara digital:<br><br>
             <strong>1. Pendaftaran &amp; Pengajuan:</strong> Wajib pajak mendaftarkan diri ke BAPENDA untuk mendapatkan NPWPD.<br><br>
             <strong>2. Penetapan &amp; Pemberitahuan:</strong> BAPENDA menerbitkan SKPD atau SPPT (untuk PBB-P2).<br><br>
             <strong>3. Pembayaran:</strong> Melalui bank yang ditunjuk, payment point, atau saluran digital (mobile/internet banking).<br><br>
             <strong>4. Pelaporan:</strong> Wajib pajak melaporkan SPTPD sesuai masa pajak. Keterlambatan dikenakan sanksi bunga 2% per bulan.`
-        };
+            };
 
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const contentText = document.getElementById('tab-content-text');
-        const accordionPanels = document.querySelectorAll('.tab-accordion-content');
-        
-        tabButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-                const tabKey = this.getAttribute('data-tab');
-                const targetPanel = document.querySelector(`.tab-accordion-content[data-tab-content="${tabKey}"]`);
-                const isCurrentlyOpenMobile = targetPanel && !targetPanel.classList.contains('hidden');
-                
-                tabButtons.forEach(b => {
-                    const o = b.querySelector('.tab-overlay');
-                    const t = b.querySelector('.tab-text');
-                    o.classList.remove('bg-white/70');
-                    o.classList.add('bg-(--blue-color)/65');
-                    t.classList.remove('text-(--blue-color)');
-                    t.classList.add('text-white');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const contentText = document.getElementById('tab-content-text');
+            const accordionPanels = document.querySelectorAll('.tab-accordion-content');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabKey = this.getAttribute('data-tab');
+                    const targetPanel = document.querySelector(`.tab-accordion-content[data-tab-content="${tabKey}"]`);
+                    const isCurrentlyOpenMobile = targetPanel && !targetPanel.classList.contains('hidden');
+
+                    tabButtons.forEach(b => {
+                        const o = b.querySelector('.tab-overlay');
+                        const t = b.querySelector('.tab-text');
+                        o.classList.remove('bg-white/70');
+                        o.classList.add('bg-(--blue-color)/65');
+                        t.classList.remove('text-(--blue-color)');
+                        t.classList.add('text-white');
+                    });
+
+                    accordionPanels.forEach(p => {
+                        p.classList.add('hidden');
+                    });
+
+                    if (isCurrentlyOpenMobile && window.innerWidth < 768) {
+                        return;
+                    }
+
+                    const o = this.querySelector('.tab-overlay');
+                    const t = this.querySelector('.tab-text');
+                    o.classList.remove('bg-(--blue-color)/65');
+                    o.classList.add('bg-white/70');
+                    t.classList.remove('text-white');
+                    t.classList.add('text-(--blue-color)');
+
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+
+                    if (tabContents[tabKey] && contentText) {
+                        contentText.innerHTML = tabContents[tabKey];
+                    }
                 });
+            });
 
-                accordionPanels.forEach(p => {
-                    p.classList.add('hidden');
+            // PPID Accordion Handler
+            const ppidHeaders = document.querySelectorAll('.ppid-accordion-header');
+            ppidHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.ppid-accordion-icon');
+                    const isOpen = content.classList.contains('opacity-100');
+
+                    ppidHeaders.forEach(h => {
+                        const c = h.nextElementSibling;
+                        const i = h.querySelector('.ppid-accordion-icon');
+
+                        h.classList.add('bg-[#303752]', 'text-white');
+                        h.classList.remove('bg-(--yellow-color)', 'text-[#303752]');
+
+                        if (i) i.classList.remove('rotate-180');
+
+                        c.classList.remove('max-h-[1000px]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
+                        c.classList.add('max-h-0', 'opacity-0', 'py-0');
+                    });
+
+                    if (!isOpen) {
+                        this.classList.remove('bg-[#303752]', 'text-white');
+                        this.classList.add('bg-(--yellow-color)', 'text-[#303752]');
+
+                        if (icon) icon.classList.add('rotate-180');
+
+                        content.classList.remove('max-h-0', 'opacity-0', 'py-0');
+                        content.classList.add('max-h-[1000px]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
+                    }
                 });
-
-                if (isCurrentlyOpenMobile && window.innerWidth < 768) {
-                    return;
-                }
-
-                const o = this.querySelector('.tab-overlay');
-                const t = this.querySelector('.tab-text');
-                o.classList.remove('bg-(--blue-color)/65');
-                o.classList.add('bg-white/70');
-                t.classList.remove('text-white');
-                t.classList.add('text-(--blue-color)');
-
-                if (targetPanel) {
-                    targetPanel.classList.remove('hidden');
-                }
-
-                if (tabContents[tabKey] && contentText) {
-                    contentText.innerHTML = tabContents[tabKey];
-                }
             });
         });
-
-        // PPID Accordion Handler
-        const ppidHeaders = document.querySelectorAll('.ppid-accordion-header');
-        ppidHeaders.forEach(header => {
-            header.addEventListener('click', function () {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('.ppid-accordion-icon');
-                const isOpen = content.classList.contains('opacity-100');
-
-                ppidHeaders.forEach(h => {
-                    const c = h.nextElementSibling;
-                    const i = h.querySelector('.ppid-accordion-icon');
-
-                    h.classList.add('bg-[#303752]', 'text-white');
-                    h.classList.remove('bg-(--yellow-color)', 'text-[#303752]');
-
-                    if (i) i.classList.remove('rotate-180');
-
-                    c.classList.remove('max-h-[1000px]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
-                    c.classList.add('max-h-0', 'opacity-0', 'py-0');
-                });
-
-                if (!isOpen) {
-                    this.classList.remove('bg-[#303752]', 'text-white');
-                    this.classList.add('bg-(--yellow-color)', 'text-[#303752]');
-
-                    if (icon) icon.classList.add('rotate-180');
-
-                    content.classList.remove('max-h-0', 'opacity-0', 'py-0');
-                    content.classList.add('max-h-[1000px]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
-                }
-            });
-        });
-    });
     </script>
 
-<?php $this->load->view('new_fe/components/footer_scripts'); ?>
+    <?php $this->load->view('new_fe/components/footer_scripts'); ?>
