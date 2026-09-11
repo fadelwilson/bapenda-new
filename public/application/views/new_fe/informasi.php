@@ -3,18 +3,26 @@
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi']); ?>
 
-    <div class="px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
+    <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
-            <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[12.308vw]">
-                Informasi
-            </h1>
+            <div class="px-[1.556vw] flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
+                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-full max-md:h-auto">
 
-            <div class="px-[1.167vw] mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
-                <h3 class="text-[2.335vw] text-(--blue-color) leading-none genos max-md:text-[9.231vw] max-md:text-center">
+                <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
+                    Informasi
+                </h1>
+            </div>
+
+            <div class="mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
+                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
+                    Peraturan & Publikasi
+                </h1>
+
+                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-(--blue-color) leading-none uppercase geologica max-md:text-[9.231vw] max-md:text-center">
                     Definisi Pajak Daerah
                 </h3>
 
-                <div class="mt-[0.584vw] max-md:mt-[3.077vw] max-md:p-[2.051vw]">
+                <div class="mt-[0.584vw] px-[1vw] max-md:mt-[3.077vw] max-md:p-[2.051vw]">
                     <p class="open-sans text-[0.778vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify">
                         Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
                         Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
@@ -181,7 +189,7 @@
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-        <h2 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[10vw]">
+        <h2 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw]">
             BERITA &amp; ARTIKEL
         </h2>
 
@@ -229,14 +237,18 @@
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
 
-        <h2 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[10vw]">
+        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
-        </h2>
+        </h1>
+
+        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[10vw]">
+            Kegiatan Bapenda Purwakarta
+        </h3>
 
         <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
 
             <!-- Galeri 1 -->
-            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+            <div class="group relative w-full overflow-hidden bg-[#303752]">
                 <img
                     src="<?= base_url('assets/Informasi/gambar-1.png') ?>"
                     alt="Galeri 1"
@@ -244,7 +256,7 @@
             </div>
 
             <!-- Galeri 2 -->
-            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+            <div class="group relative w-full overflow-hidden bg-[#303752]">
                 <img
                     src="<?= base_url('assets/Informasi/gambar-2.png') ?>"
                     alt="Galeri 2"
@@ -252,7 +264,7 @@
             </div>
 
             <!-- Galeri 3 -->
-            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+            <div class="group relative w-full overflow-hidden bg-[#303752]">
                 <img
                     src="<?= base_url('assets/Informasi/gambar-3.png') ?>"
                     alt="Galeri 3"
@@ -260,7 +272,7 @@
             </div>
 
             <!-- Galeri 4 -->
-            <div class="group relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+            <div class="group relative w-full overflow-hidden bg-[#303752]">
                 <img
                     src="<?= base_url('assets/Informasi/gambar-4.png') ?>"
                     alt="Galeri 4"
@@ -308,9 +320,13 @@
     <div class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
         <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
 
-        <h2 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
+        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
             PPID
-        </h2>
+        </h1>
+
+        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[10vw] relative z-30">
+            Pejabat Pengelola Informasi & Dokumentasi
+        </h3>
 
         <!-- Accordion Container -->
         <div class="flex flex-col gap-[0.19vw] mt-[2.33vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
