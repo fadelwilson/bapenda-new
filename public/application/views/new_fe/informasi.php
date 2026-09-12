@@ -6,19 +6,19 @@
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="px-[1.556vw] flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-full max-md:h-auto">
+                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Informasi
                 </h1>
             </div>
 
-            <div class="mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
-                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
+            <div class="mt-[0.584vw] max-md:mt-[10.308vw] max-md:px-0">
+                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] max-md:mt-[0vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw] ">
                     Peraturan & Publikasi
                 </h1>
 
-                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-(--blue-color) leading-none uppercase geologica max-md:text-[9.231vw] max-md:text-center">
+                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-(--blue-color) leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[12.208vw]">
                     Definisi Pajak Daerah
                 </h3>
 
@@ -189,9 +189,9 @@
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-        <h2 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw]">
+        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[8vw]">
             BERITA &amp; ARTIKEL
-        </h2>
+        </h1>
 
         <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[2.335vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
             <?php foreach ($berita_list as $idx => $dt): ?>
@@ -241,7 +241,7 @@
             GALERI
         </h1>
 
-        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[10vw]">
+        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
             Kegiatan Bapenda Purwakarta
         </h3>
 
@@ -324,8 +324,8 @@
             PPID
         </h1>
 
-        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[10vw] relative z-30">
-            Pejabat Pengelola Informasi & Dokumentasi
+        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw] relative z-30">
+            Pejabat Pengelola Informasi &amp; Dokumentasi
         </h3>
 
         <!-- Accordion Container -->

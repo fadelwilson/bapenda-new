@@ -5,9 +5,9 @@
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/gambar/saranico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-full max-md:h-auto">
+                <img src="<?= base_url('assets/gambar/saranico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
-                <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[12.308vw]">
+                <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[9vw]">
                     Kritik & Saran
                 </h1>
             </div>
@@ -135,7 +135,7 @@
                     <img
                         src="<?= base_url('assets/gambar/bapendalogo.svg') ?>"
                         alt="Logo Bapenda"
-                        class="h-[5.604vw] w-auto object-contain max-md:h-[10.256vw] max-md:mx-auto">
+                        class="h-[5.604vw] w-auto object-contain max-md:h-[40vw] max-md:mx-auto">
                 </div>
 
                 <!-- Alamat -->
