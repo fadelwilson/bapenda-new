@@ -36,7 +36,6 @@ function nav_active($url, $is_desktop = false)
         <!-- Desktop Nav -->
         <div class="basis-full md:flex justify-center hidden">
             <div class="grid grid-flow-col gap-8 content-center text-slate-50 tracking-wider text-[0.938vw] text-center">
-
                 <a href="<?= base_url() ?>"
                     class="py-3 px-2 relative tracking-widest after:content-[''] after:left-0 after:w-full after:absolute after:bottom-0 after:transition-all after:duration-[0.2s] after:scale-y-100 after:ease-linear duration-[0.2] ease-linear after:rounded <?= nav_active('', true) ?>">Beranda</a>
 

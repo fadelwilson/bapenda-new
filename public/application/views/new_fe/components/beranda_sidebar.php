@@ -18,10 +18,9 @@ $menu_items = [
 ];
 ?>
 
-<div class="fixed left-[0.049vw] top-[13.375vw] z-[9999] flex flex-row items-start" id="beranda-sidebar-wrap">
-
+<div class="max-md:fixed hidden max-md:right-[2.049vw] max-md:top-[2.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav 
-        class="hidden flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-[50.769vw]" 
+        class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:top-[12.523vw] max-md:inset-0 max-md:h-[calc(100vh-12.4vw)]" 
         id="beranda-sidebar-menu" 
         aria-label="Menu utama"
     >
@@ -31,7 +30,7 @@ $menu_items = [
             <?php if ($is_active): ?>
                 <a 
                     href="<?= $item['url'] ?>" 
-                    class="flex items-center h-[2.72vw] px-[1.17vw] bg-[#EAA90D] text-[#303752] font-bold genos text-[1.167vw] max-md:text-[4.615vw] max-md:px-[4.103vw] max-md:h-[10.385vw]"
+                    class="flex items-center h-[2.72vw] px-[1.17vw] bg-[#EAA90D] text-[#303752] font-bold genos text-[1.167vw] max-md:text-[4.615vw] max-md:px-[4.103vw] max-md:h-[10.385vw] max-md:mx-[3.2vw]"
                     aria-current="page"
                 >
                     <?= htmlspecialchars($item['label']) ?>
@@ -39,7 +38,7 @@ $menu_items = [
             <?php else: ?>
                 <a 
                     href="<?= $item['url'] ?>" 
-                    class="flex items-center h-[2.72vw] px-[1.17vw] text-[#303752] bg-white hover:bg-slate-50 border-b border-slate-100 genos text-[1.167vw] max-md:text-[4.615vw] max-md:px-[4.103vw] max-md:h-[10.385vw] transition-all duration-200"
+                    class="flex items-center h-[2.72vw] px-[1.17vw] text-[#303752] bg-white hover:bg-slate-50 border-b border-[#303752] genos text-[1.167vw] max-md:text-[4.615vw] max-md:px-[4.103vw] max-md:h-[10.385vw] transition-all duration-200 max-md:mx-[3.2vw]"
                 >
                     <?= htmlspecialchars($item['label']) ?>
                 </a>
@@ -53,11 +52,17 @@ $menu_items = [
         aria-label="Toggle menu" 
         aria-expanded="false"
     >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="size-[1.17vw] max-md:size-[5.128vw] transition-transform duration-200" id="beranda-sidebar-arrow">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="size-[1.17vw] max-md:size-[5.128vw] transition-transform duration-200" id="beranda-sidebar-arrow">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg> -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" stroke="currentColor" class="size-[1.17vw] max-md:size-[5.128vw] transition-transform duration-200" id="beranda-sidebar-burger"> 
+            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" stroke="currentColor" class="size-[1.17vw] hidden max-md:size-[5.128vw] transition-transform duration-200" id="beranda-sidebar-close">
+            <path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/>
         </svg>
     </button>
-
 </div>
 
 <script>
@@ -65,20 +70,28 @@ document.addEventListener('DOMContentLoaded', function () {
     var wrap = document.getElementById('beranda-sidebar-wrap');
     var toggle = document.getElementById('beranda-sidebar-toggle');
     var menu = document.getElementById('beranda-sidebar-menu');
-    var arrow = document.getElementById('beranda-sidebar-arrow');
+
+    var burger = document.getElementById('beranda-sidebar-burger');
+    var closeIcon = document.getElementById('beranda-sidebar-close');
 
     if (!toggle || !menu) return;
 
     function openMenu() {
         menu.style.display = 'flex';
         toggle.setAttribute('aria-expanded', 'true');
-        if (arrow) arrow.style.transform = 'rotate(180deg)';
+        // if (arrow) burger.style.transform = 'rotate(180deg)';
+
+        burger.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
     }
 
     function closeMenu() {
         menu.style.display = 'none';
         toggle.setAttribute('aria-expanded', 'false');
-        if (arrow) arrow.style.transform = 'rotate(0deg)';
+        // if (arrow) burger.style.transform = 'rotate(0deg)';
+
+        burger.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
     }
 
     toggle.addEventListener('click', function () {
