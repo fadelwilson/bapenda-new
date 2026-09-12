@@ -18,9 +18,9 @@ $menu_items = [
 ];
 ?>
 
-<div class="max-md:fixed hidden max-md:right-[2.049vw] max-md:top-[2.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+<div class="max-md:fixed hidden max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav 
-        class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:top-[12.523vw] max-md:inset-0 max-md:h-[calc(100vh-12.4vw)]" 
+        class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:top-[14.423vw] max-md:inset-0 max-md:h-[calc(100vh-12.4vw)]" 
         id="beranda-sidebar-menu" 
         aria-label="Menu utama"
     >

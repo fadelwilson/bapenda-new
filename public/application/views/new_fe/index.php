@@ -15,7 +15,7 @@
         <!-- Konten Header & Body -->
         <div class="relative z-10 min-h-screen flex flex-col p-[1.556vw] max-md:p-[2.051vw]">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/gambar/berandaico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-full max-md:h-auto">
+                <img src="<?= base_url('assets/gambar/berandaico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[4.669vw] max-md:text-[12.308vw] max-md:w-full text-(--text-title) uppercase krona-one leading-none text-right">
                     Beranda
