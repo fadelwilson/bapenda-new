@@ -21,7 +21,7 @@
                     </div>
                     <!-- Nama Lengkap -->
                     <div>
-                        <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                        <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                             Nama <span class="text-red-600">*</span>
                         </label>
                         <input
@@ -36,7 +36,7 @@
 
                     <!-- Email -->
                     <div>
-                        <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                        <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                             E-mail <span class="text-red-600">*</span>
                         </label>
                         <input
@@ -51,7 +51,7 @@
 
                     <!-- No HP -->
                     <div>
-                        <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                        <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                             No. Handphone
                         </label>
                         <input
@@ -65,7 +65,7 @@
 
                     <!-- Alamat -->
                     <div>
-                        <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                        <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                             Alamat
                         </label>
                         <input
@@ -78,7 +78,7 @@
 
                     <!-- Kritik -->
                     <div>
-                        <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                        <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                             Kritik & Saran <span class="text-red-600">*</span>
                         </label>
                         <textarea
