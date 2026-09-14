@@ -1,7 +1,7 @@
 <?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Beranda']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'beranda']); ?>
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'beranda', 'navbar_bg' => 'blue']); ?>
 
     <!-- Section Hero / Beranda -->
     <div class="relative min-h-screen w-full bg-cover bg-center max-md:bg-[-90px_center] overflow-hidden" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>');">

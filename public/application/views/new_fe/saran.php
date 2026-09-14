@@ -1,7 +1,7 @@
 ﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran']); ?>
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'blue']); ?>
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">

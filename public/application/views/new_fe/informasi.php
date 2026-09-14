@@ -1,7 +1,7 @@
 <?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi']); ?>
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi', 'navbar_bg' => 'white']); ?>
 
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>

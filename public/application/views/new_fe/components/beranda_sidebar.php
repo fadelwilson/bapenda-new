@@ -8,6 +8,11 @@
  */
 
 $active = isset($active_menu) ? $active_menu : 'beranda';
+$navbar_bg = isset($navbar_bg) ? $navbar_bg : 'white';
+
+$navbar_text_color = $navbar_bg === 'blue'
+    ? 'text-white hover:text-[#EAA90D]'
+    : 'text-[#303752] hover:text-[#EAA90D]';
 
 $menu_items = [
     ['key' => 'beranda',   'label' => 'Beranda',       'url' => base_url()],
@@ -32,7 +37,7 @@ $menu_items = [
                 class="relative flex items-center h-[3vw] geologica-light text-[1.167vw] whitespace-nowrap transition-all duration-200
                     <?= $is_active
                         ? 'text-[#EAA90D]'
-                        : 'text-white hover:text-[#EAA90D]'
+                        : $navbar_text_color
                     ?>
                 "
                 <?= $is_active ? 'aria-current="page"' : '' ?>
