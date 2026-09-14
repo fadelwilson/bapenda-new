@@ -11,7 +11,7 @@
                     Kritik & Saran
                 </h1>
             </div>
-            <div class="px-[3.767vw] my-auto max-md:my-[6.154vw]">
+            <div class="px-[3.767vw] py-[3.767vw] my-auto max-md:my-[6.154vw]">
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
                 <form id="critic" method="post" class="grid grid-cols-2 gap-[1.56vw] mt-[1.17vw] relative z-20 max-md:grid-cols-1" onsubmit="submitForm(event)">

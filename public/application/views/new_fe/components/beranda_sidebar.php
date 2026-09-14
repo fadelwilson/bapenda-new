@@ -18,7 +18,40 @@ $menu_items = [
 ];
 ?>
 
-<div class="max-md:fixed hidden max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+<div class="absolute top-[6.5vw] right-[1.556vw] z-[9999] flex items-center max-md:fixed max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+    <nav
+        class="flex items-center gap-[2.5vw] max-md:hidden"
+        id="beranda-desktop-menu"
+        aria-label="Menu utama"
+    >
+        <?php foreach ($menu_items as $item): ?>
+            <?php $is_active = ($active === $item['key']); ?>
+
+            <a
+                href="<?= $item['url'] ?>"
+                class="relative flex items-center h-[3vw] font-semibold genos text-[1.167vw] whitespace-nowrap transition-all duration-200
+                    <?= $is_active
+                        ? 'text-[#EAA90D]'
+                        : 'text-white hover:text-[#EAA90D]'
+                    ?>
+                "
+                <?= $is_active ? 'aria-current="page"' : '' ?>
+            >
+                <?= htmlspecialchars($item['label']) ?>
+
+                <?php if ($is_active): ?>
+                    <span
+                        class="absolute left-0 right-0 bottom-0 h-[0.18vw] bg-[#EAA90D]"
+                    ></span>
+                <?php endif; ?>
+            </a>
+
+        <?php endforeach; ?>
+    </nav>
+    
+    <div
+        class="hidden max-md:flex flex-row items-start"
+    >
     <nav 
         class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:top-[14.423vw] max-md:inset-0 max-md:h-[calc(100vh-12.4vw)]" 
         id="beranda-sidebar-menu" 
@@ -63,6 +96,7 @@ $menu_items = [
             <path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/>
         </svg>
     </button>
+    </div>
 </div>
 
 <script>
