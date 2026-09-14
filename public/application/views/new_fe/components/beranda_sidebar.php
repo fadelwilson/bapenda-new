@@ -20,7 +20,7 @@ $menu_items = [
 
 <div class="absolute top-[6.5vw] right-[1.556vw] z-[9999] flex items-center max-md:fixed max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav
-        class="flex items-center gap-[2.5vw] max-md:hidden"
+        class="flex items-center gap-[1.5vw] max-md:hidden"
         id="beranda-desktop-menu"
         aria-label="Menu utama"
     >
@@ -29,7 +29,7 @@ $menu_items = [
 
             <a
                 href="<?= $item['url'] ?>"
-                class="relative flex items-center h-[3vw] font-semibold genos text-[1.167vw] whitespace-nowrap transition-all duration-200
+                class="relative flex items-center h-[3vw] geologica-light text-[1.167vw] whitespace-nowrap transition-all duration-200
                     <?= $is_active
                         ? 'text-[#EAA90D]'
                         : 'text-white hover:text-[#EAA90D]'
@@ -41,7 +41,7 @@ $menu_items = [
 
                 <?php if ($is_active): ?>
                     <span
-                        class="absolute left-0 right-0 bottom-0 h-[0.18vw] bg-[#EAA90D]"
+                        class="absolute left-0 right-0 bottom-0 top-10 h-[0.18vw] bg-[#EAA90D]"
                     ></span>
                 <?php endif; ?>
             </a>
