@@ -5,11 +5,15 @@
 
     <div class="px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
         <div>
-            <h1 class="text-[4.669vw] text-(--text-title-sec) uppercase krona-one leading-none max-md:text-[12.308vw]">
-                Layanan
-            </h1>
+            <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
+                <img src="<?= base_url('assets/gambar/saranico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+
+                <h1 class="text-[4.669vw] text-(--text-title-sec) uppercase krona-one leading-none max-md:text-[12.308vw]">
+                    Layanan
+                </h1>
+            </div>
     
-            <div class="px-[1.167vw] mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
+            <div class="px-[1.167vw] mt-[1.584vw] max-md:mt-[12.308vw] max-md:px-0">
                 <h3 class="text-[2.335vw] text-white leading-none genos max-md:text-[9.231vw] max-md:text-center">
                     Pajak Bumi Bangunan
                 </h3>
