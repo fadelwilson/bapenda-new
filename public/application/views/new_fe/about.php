@@ -12,7 +12,7 @@ $alur_img = !empty($ShowDataAlur[0]['foto_alur']) ? $folderalur . $ShowDataAlur[
 $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'profil']); ?>
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'profil', 'navbar_bg' => 'white']); ?>
 
     <div class="flex flex-col">
         <!-- Section: Tentang Kami -->
