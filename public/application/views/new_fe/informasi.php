@@ -235,6 +235,102 @@
         </div>
     </div>
 
+    <?php
+    // Data Galeri Kegiatan dari endpoint/tabel sejarah
+    $raw_sejarah = !empty($ShowDataSejarah) ? $ShowDataSejarah : [];
+    if (empty($raw_sejarah)) {
+        $ci =& get_instance();
+        if (isset($ci->db)) {
+            $raw_sejarah = $ci->db->order_by('id_sejarah', 'desc')->get('sejarah')->result_array();
+        }
+    }
+
+    $galeri_kegiatan = [];
+    $placeholder_galeri = [
+        [
+            'judul'     => 'Kegiatan BAPENDA 1',
+            'deskripsi' => '',
+            'video_url' => '',
+            'thumb'     => base_url('assets/Informasi/gambar-1.png'),
+        ],
+        [
+            'judul'     => 'Kegiatan BAPENDA 2',
+            'deskripsi' => '',
+            'video_url' => '',
+            'thumb'     => base_url('assets/Informasi/gambar-2.png'),
+        ],
+        [
+            'judul'     => 'Kegiatan BAPENDA 3',
+            'deskripsi' => '',
+            'video_url' => '',
+            'thumb'     => base_url('assets/Informasi/gambar-3.png'),
+        ],
+        [
+            'judul'     => 'Kegiatan BAPENDA 4',
+            'deskripsi' => '',
+            'video_url' => '',
+            'thumb'     => base_url('assets/Informasi/gambar-4.png'),
+        ],
+    ];
+
+    if (!empty($raw_sejarah)) {
+        foreach ($raw_sejarah as $idx => $s) {
+            $link_raw = $s['link'] ?? '';
+            $link = html_entity_decode(html_entity_decode($link_raw, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            $embedSrc = '';
+            $youtubeId = '';
+            $videoUrl = '';
+
+            if (preg_match('/src=[\'"]([^\'"]+)[\'"]/', $link, $m)) {
+                $embedSrc = $m[1];
+            }
+
+            $checkStr = $embedSrc . ' ' . $link;
+            if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/', $checkStr, $m)) {
+                $youtubeId = $m[1];
+                if (empty($embedSrc)) {
+                    $embedSrc = 'https://www.youtube.com/embed/' . $youtubeId;
+                }
+                $videoUrl = 'https://www.youtube.com/watch?v=' . $youtubeId;
+            } elseif (!empty($embedSrc)) {
+                $videoUrl = $embedSrc;
+            } elseif (!empty($link) && preg_match('/^https?:\/\//', $link)) {
+                $videoUrl = $link;
+            }
+
+            if (!empty($youtubeId)) {
+                $thumb = 'https://img.youtube.com/vi/' . $youtubeId . '/hqdefault.jpg';
+            } elseif (!empty($s['thumbnail'])) {
+                $thumb = (strpos($s['thumbnail'], 'http') === 0) ? $s['thumbnail'] : base_url('loginwebsite/uploads/seputar/' . $s['thumbnail']);
+            } else {
+                $thumb = base_url('assets/Informasi/gambar-' . (($idx % 4) + 1) . '.png');
+            }
+
+            $judul = !empty($s['judul'])
+                ? html_entity_decode(html_entity_decode($s['judul'], ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')
+                : 'Kegiatan BAPENDA';
+
+            $deskripsi = !empty($s['deskripsi'])
+                ? html_entity_decode(html_entity_decode(strip_tags($s['deskripsi']), ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')
+                : '';
+
+            $galeri_kegiatan[] = [
+                'judul'     => $judul,
+                'deskripsi' => $deskripsi,
+                'video_url' => $videoUrl,
+                'embed_src' => $embedSrc,
+                'thumb'     => $thumb,
+            ];
+        }
+    }
+
+    if (empty($galeri_kegiatan)) {
+        $galeri_kegiatan = $placeholder_galeri;
+    }
+
+    $is_carousel = count($galeri_kegiatan) > 4;
+    ?>
+
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
 
         <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw]">
@@ -245,41 +341,35 @@
             Kegiatan Bapenda Purwakarta
         </h3>
 
-        <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
-
-            <!-- Galeri 1 -->
-            <div class="group relative w-full overflow-hidden bg-[#303752]">
-                <img
-                    src="<?= base_url('assets/Informasi/gambar-1.png') ?>"
-                    alt="Galeri 1"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+        <?php if ($is_carousel): ?>
+            <!-- Carousel Mode (Jika lebih dari 4 item) -->
+            <div class="owl-carousel owl-theme mt-[2.335vw] max-md:mt-[6.154vw] relative" id="galeri-kegiatan-carousel">
+                <?php foreach ($galeri_kegiatan as $item): ?>
+                    <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
+                    <div class="item">
+                        <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full overflow-hidden bg-[#303752]">
+                            <img
+                                src="<?= htmlspecialchars($item['thumb']) ?>"
+                                alt="<?= htmlspecialchars($item['judul']) ?>"
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                        </<?= $has_link ? 'a' : 'div' ?>>
+                    </div>
+                <?php endforeach; ?>
             </div>
-
-            <!-- Galeri 2 -->
-            <div class="group relative w-full overflow-hidden bg-[#303752]">
-                <img
-                    src="<?= base_url('assets/Informasi/gambar-2.png') ?>"
-                    alt="Galeri 2"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+        <?php else: ?>
+            <!-- Grid Mode (<= 4 item) -->
+            <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+                <?php foreach ($galeri_kegiatan as $item): ?>
+                    <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
+                    <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full overflow-hidden bg-[#303752]">
+                        <img
+                            src="<?= htmlspecialchars($item['thumb']) ?>"
+                            alt="<?= htmlspecialchars($item['judul']) ?>"
+                            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                    </<?= $has_link ? 'a' : 'div' ?>>
+                <?php endforeach; ?>
             </div>
-
-            <!-- Galeri 3 -->
-            <div class="group relative w-full overflow-hidden bg-[#303752]">
-                <img
-                    src="<?= base_url('assets/Informasi/gambar-3.png') ?>"
-                    alt="Galeri 3"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-            </div>
-
-            <!-- Galeri 4 -->
-            <div class="group relative w-full overflow-hidden bg-[#303752]">
-                <img
-                    src="<?= base_url('assets/Informasi/gambar-4.png') ?>"
-                    alt="Galeri 4"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-            </div>
-
-        </div>
+        <?php endif; ?>
 
     </div>
 
@@ -482,4 +572,81 @@
         });
     </script>
 
+    <style>
+    #galeri-kegiatan-carousel .owl-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5vw;
+        margin-top: 1vw;
+    }
+    #galeri-kegiatan-carousel .owl-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.4vw;
+        margin-top: 1vw;
+    }
+    #galeri-kegiatan-carousel .owl-dot span {
+        background: #cbd5e1 !important;
+        width: 0.6vw !important;
+        height: 0.6vw !important;
+        border-radius: 9999px !important;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+    #galeri-kegiatan-carousel .owl-dot.active span {
+        background: #EAA90D !important;
+        width: 1.8vw !important;
+        border-radius: 9999px !important;
+    }
+    @media (max-width: 768px) {
+        #galeri-kegiatan-carousel .owl-nav {
+            gap: 2vw;
+            margin-top: 3vw;
+        }
+        #galeri-kegiatan-carousel .owl-dots {
+            gap: 1.5vw;
+            margin-top: 3vw;
+        }
+        #galeri-kegiatan-carousel .owl-dot span {
+            width: 2vw !important;
+            height: 2vw !important;
+        }
+        #galeri-kegiatan-carousel .owl-dot.active span {
+            width: 6vw !important;
+        }
+    }
+    </style>
+
     <?php $this->load->view('new_fe/components/footer_scripts'); ?>
+
+    <script>
+        $(document).ready(function() {
+            var $galeriCarousel = $('#galeri-kegiatan-carousel');
+            if ($galeriCarousel.length) {
+                $galeriCarousel.owlCarousel({
+                    loop: true,
+                    margin: 16,
+                    nav: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 4500,
+                    autoplayHoverPause: true,
+                    navText: [
+                        '<span class="size-[2.2vw] max-md:size-[8vw] bg-[#303752] hover:bg-(--yellow-color) text-white hover:text-[#303752] rounded-full flex items-center justify-center cursor-pointer shadow-md transition-all duration-200"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1vw] max-md:size-[4vw]"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></span>',
+                        '<span class="size-[2.2vw] max-md:size-[8vw] bg-[#303752] hover:bg-(--yellow-color) text-white hover:text-[#303752] rounded-full flex items-center justify-center cursor-pointer shadow-md transition-all duration-200"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1vw] max-md:size-[4vw]"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></span>'
+                    ],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        640: {
+                            items: 2
+                        },
+                        1024: {
+                            items: 4
+                        }
+                    }
+                });
+            }
+        });
+    </script>

@@ -95,10 +95,11 @@ class BerandaController extends CI_Controller
 
 	public function informasi()
 	{
-		$data['active_menu']    = 'informasi';
-		$data['ShowData']       = $this->UploadModel->ShowData()->result_array();
-		$data['ShowDataBerita'] = $this->UploadModel->getBerita()->result_array();
-		$data['ShowDataPPID']   = $this->UploadModel->getDataPPID()->result_array();
+		$data['active_menu']     = 'informasi';
+		$data['ShowData']        = $this->UploadModel->ShowData()->result_array();
+		$data['ShowDataBerita']  = $this->UploadModel->getBerita()->result_array();
+		$data['ShowDataPPID']    = $this->UploadModel->getDataPPID()->result_array();
+		$data['ShowDataSejarah'] = $this->db->order_by('id_sejarah', 'desc')->get('sejarah')->result_array();
 		$this->load->view('new_fe/informasi', $data);
 	}
 
