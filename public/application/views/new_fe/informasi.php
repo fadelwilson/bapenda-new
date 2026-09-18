@@ -6,15 +6,15 @@
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/Informasi/new-info.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
-                <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
+                <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Informasi
                 </h1>
             </div>
 
             <div class="mt-[0.584vw] max-md:mt-[10.308vw] max-md:px-0">
-                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] max-md:mt-[0vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw] ">
+                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] max-md:mt-[0vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw] ">
                     Peraturan & Publikasi
                 </h1>
 
@@ -190,7 +190,7 @@
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[8vw]">
+        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[8vw]">
             BERITA &amp; ARTIKEL
         </h1>
 
@@ -381,7 +381,7 @@
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
 
-        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw]">
+        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
         </h1>
 
@@ -458,7 +458,7 @@
     <div class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
         <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
 
-        <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
+        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
             PPID
         </h1>
 
