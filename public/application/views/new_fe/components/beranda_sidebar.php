@@ -34,7 +34,7 @@ $menu_items = [
 
             <a
                 href="<?= $item['url'] ?>"
-                class="relative flex items-center px-[0.5vw] geologica-light text-[1.167vw] whitespace-nowrap transition-all duration-200
+                class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
                     <?= $is_active
                         ? 'bg-[#EAA90D] text-[#303752]'
                         : $navbar_text_color
