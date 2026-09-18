@@ -25,11 +25,11 @@
             <div class="flex-1 flex items-center w-full">
                 <div class="w-full px-[10.992vw] max-md:px-0">
                     <h2 class="text-(--yellow-color) text-[3.891vw] geologica leading-none max-md:text-[10.256vw] max-md:text-center">
-                        Pengelolaan Pendapatan yang Transparan
+                        Pembayaran Pajak Daerah Anda untuk Pembangunan Purwakarta Istimewa
                     </h2>
-                    <p class="text-[0.973vw] text-white mt-[0.584vw] open-sans max-md:text-[3.59vw] max-md:mt-[4.103vw]">
-                        Dinas Pendapatan Daerah Kabupaten Purrwakarta hadir untuk mewujudkan tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi demi pembangunan daerah yang berkeadilan.
-                    </p>
+                    <!-- <p class="text-[0.973vw] text-white mt-[0.584vw] open-sans max-md:text-[3.59vw] max-md:mt-[4.103vw]">
+                        Dinas Pendapatan Daerah Kabupaten Purwakarta hadir untuk mewujudkan tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi demi pembangunan daerah yang berkeadilan.
+                    </p> -->
 
                     <div class="w-fit mx-auto grid grid-cols-4 max-md:grid-cols-2 gap-[1.17vw] max-md:gap-[4.103vw] mt-[2vw] max-md:mt-[8.205vw]">
                         <!-- Menu 1 -->
