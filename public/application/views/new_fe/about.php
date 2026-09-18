@@ -20,7 +20,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
             <div class="hidden max-md:block absolute bottom-2 left-0 w-full h-[153.846vw] bg-no-repeat bg-cover bg-center opacity-[4%] pointer-events-none z-0" style="background-image: url('<?= base_url('assets/gambar/batik_sunda1.png') ?>');"></div>
 
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:hidden">
 
                 <h1 class="relative z-10 text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[9.231vw]">
                     Tentang Kami
@@ -59,9 +59,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
     
         <!-- Section: Profil -->
         <div class="max-md:order-1 px-[1.556vw] mt-[15.953vw] max-md:mt-0 max-md:p-[2.051vw]">
-            <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[12.308vw]">
-                Profil
-            </h1>
+            <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
+                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto hidden">
+
+                <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[12.308vw]">
+                    Profil
+                </h1>
+            </div>
     
             <div class="px-[1.167vw] mt-[0.584vw] max-md:mt-[12.308vw] max-md:px-0">
                 <h3 class="text-[2.335vw] text-(--blue-color) genos leading-none max-md:text-[9.231vw] max-md:text-center">

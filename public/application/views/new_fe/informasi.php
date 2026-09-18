@@ -5,7 +5,7 @@
 
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
-            <div class="px-[1.556vw] flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
+            <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
                 <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[12.308vw]">
@@ -185,7 +185,8 @@
         ],
     ];
 
-    $berita_list = !empty($ShowDataBerita) ? array_slice($ShowDataBerita, 0, 3) : $placeholder_berita;
+    $berita_list = !empty($ShowDataBerita) ? $ShowDataBerita : $placeholder_berita;
+    $is_berita_carousel = count($berita_list) > 3;
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
@@ -193,46 +194,93 @@
             BERITA &amp; ARTIKEL
         </h1>
 
-        <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[2.335vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
-            <?php foreach ($berita_list as $idx => $dt): ?>
-                <?php
-                if (!empty($dt['is_local_asset'])) {
-                    $img_src = $bi . $dt['foto_berita'];
-                } elseif (!empty($dt['foto_berita'])) {
-                    $img_src = base_url('loginwebsite') . '/uploads/berita/' . $dt['foto_berita'];
-                } else {
-                    $img_src = $bi . $placeholder_berita[$idx % 3]['foto_berita'];
-                }
+        <?php if ($is_berita_carousel): ?>
+            <!-- Carousel Mode (Jika lebih dari 3 item) -->
+            <div class="owl-carousel owl-theme mt-[2.335vw] max-md:mt-[6.154vw] relative" id="berita-carousel">
+                <?php foreach ($berita_list as $idx => $dt): ?>
+                    <?php
+                    if (!empty($dt['is_local_asset'])) {
+                        $img_src = $bi . $dt['foto_berita'];
+                    } elseif (!empty($dt['foto_berita'])) {
+                        $img_src = base_url('loginwebsite') . '/uploads/berita/' . $dt['foto_berita'];
+                    } else {
+                        $img_src = $bi . $placeholder_berita[$idx % 3]['foto_berita'];
+                    }
 
-                $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
-                $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
-                $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
+                    $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                    $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-                $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
-                $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
-                $narasi_berita = !empty($clean_narasi)
-                    ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
-                    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-                ?>
-                <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
-                    <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
-                        <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                    $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
+                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $narasi_berita = !empty($clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+                    ?>
+                    <div class="item">
+                        <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
+                            <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                                <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                            </div>
+
+                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                                <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                                    <?= $judul_berita ?>
+                                </h3>
+                            </div>
+
+                            <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
+                                <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                    <?= $narasi_berita ?>
+                                </p>
+                            </div>
+                        </a>
                     </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <!-- Grid Mode (<= 3 item) -->
+            <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[2.335vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+                <?php foreach ($berita_list as $idx => $dt): ?>
+                    <?php
+                    if (!empty($dt['is_local_asset'])) {
+                        $img_src = $bi . $dt['foto_berita'];
+                    } elseif (!empty($dt['foto_berita'])) {
+                        $img_src = base_url('loginwebsite') . '/uploads/berita/' . $dt['foto_berita'];
+                    } else {
+                        $img_src = $bi . $placeholder_berita[$idx % 3]['foto_berita'];
+                    }
 
-                    <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
-                        <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
-                            <?= $judul_berita ?>
-                        </h3>
-                    </div>
+                    $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
+                    $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                    $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
-                    <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
-                        <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
-                            <?= $narasi_berita ?>
-                        </p>
-                    </div>
-                </a>
-            <?php endforeach; ?>
-        </div>
+                    $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
+                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $narasi_berita = !empty($clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+                    ?>
+                    <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
+                        <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                            <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+
+                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                            <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                                <?= $judul_berita ?>
+                            </h3>
+                        </div>
+
+                        <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
+                            <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                <?= $narasi_berita ?>
+                            </p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <?php
@@ -347,7 +395,7 @@
                 <?php foreach ($galeri_kegiatan as $item): ?>
                     <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
                     <div class="item">
-                        <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full overflow-hidden bg-[#303752]">
+                        <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full aspect-video overflow-hidden bg-[#303752] galeri-kegiatan-card">
                             <img
                                 src="<?= htmlspecialchars($item['thumb']) ?>"
                                 alt="<?= htmlspecialchars($item['judul']) ?>"
@@ -361,7 +409,7 @@
             <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
                 <?php foreach ($galeri_kegiatan as $item): ?>
                     <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
-                    <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full overflow-hidden bg-[#303752]">
+                    <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full aspect-video overflow-hidden bg-[#303752] galeri-kegiatan-card">
                         <img
                             src="<?= htmlspecialchars($item['thumb']) ?>"
                             alt="<?= htmlspecialchars($item['judul']) ?>"
@@ -573,19 +621,37 @@
     </script>
 
     <style>
-    #galeri-kegiatan-carousel .owl-nav {
-        display: flex;
-        justify-content: flex-end;
-        gap: 0.5vw;
-        margin-top: 1vw;
+    #galeri-kegiatan-carousel,
+    #galeri-kegiatan-carousel .owl-stage-outer,
+    #galeri-kegiatan-carousel .owl-stage,
+    #berita-carousel,
+    #berita-carousel .owl-stage-outer,
+    #berita-carousel .owl-stage {
+        border-radius: 0 !important;
     }
-    #galeri-kegiatan-carousel .owl-dots {
+    #galeri-kegiatan-carousel .item a,
+    #galeri-kegiatan-carousel .item div,
+    .galeri-kegiatan-card {
+        aspect-ratio: 16 / 9 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+    #galeri-kegiatan-carousel img,
+    .galeri-kegiatan-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+    #galeri-kegiatan-carousel .owl-dots,
+    #berita-carousel .owl-dots {
         display: flex;
         justify-content: center;
         gap: 0.4vw;
-        margin-top: 1vw;
+        margin-top: 1.5vw;
     }
-    #galeri-kegiatan-carousel .owl-dot span {
+    #galeri-kegiatan-carousel .owl-dot span,
+    #berita-carousel .owl-dot span {
         background: #cbd5e1 !important;
         width: 0.6vw !important;
         height: 0.6vw !important;
@@ -593,25 +659,25 @@
         display: inline-block;
         transition: all 0.3s;
     }
-    #galeri-kegiatan-carousel .owl-dot.active span {
+    #galeri-kegiatan-carousel .owl-dot.active span,
+    #berita-carousel .owl-dot.active span {
         background: #EAA90D !important;
         width: 1.8vw !important;
         border-radius: 9999px !important;
     }
     @media (max-width: 768px) {
-        #galeri-kegiatan-carousel .owl-nav {
-            gap: 2vw;
-            margin-top: 3vw;
-        }
-        #galeri-kegiatan-carousel .owl-dots {
+        #galeri-kegiatan-carousel .owl-dots,
+        #berita-carousel .owl-dots {
             gap: 1.5vw;
             margin-top: 3vw;
         }
-        #galeri-kegiatan-carousel .owl-dot span {
+        #galeri-kegiatan-carousel .owl-dot span,
+        #berita-carousel .owl-dot span {
             width: 2vw !important;
             height: 2vw !important;
         }
-        #galeri-kegiatan-carousel .owl-dot.active span {
+        #galeri-kegiatan-carousel .owl-dot.active span,
+        #berita-carousel .owl-dot.active span {
             width: 6vw !important;
         }
     }
@@ -621,20 +687,40 @@
 
     <script>
         $(document).ready(function() {
+            var $beritaCarousel = $('#berita-carousel');
+            if ($beritaCarousel.length) {
+                $beritaCarousel.owlCarousel({
+                    loop: true,
+                    margin: 24,
+                    nav: false,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        640: {
+                            items: 2
+                        },
+                        1024: {
+                            items: 3
+                        }
+                    }
+                });
+            }
+
             var $galeriCarousel = $('#galeri-kegiatan-carousel');
             if ($galeriCarousel.length) {
                 $galeriCarousel.owlCarousel({
                     loop: true,
                     margin: 16,
-                    nav: true,
+                    nav: false,
                     dots: true,
                     autoplay: true,
                     autoplayTimeout: 4500,
                     autoplayHoverPause: true,
-                    navText: [
-                        '<span class="size-[2.2vw] max-md:size-[8vw] bg-[#303752] hover:bg-(--yellow-color) text-white hover:text-[#303752] rounded-full flex items-center justify-center cursor-pointer shadow-md transition-all duration-200"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1vw] max-md:size-[4vw]"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg></span>',
-                        '<span class="size-[2.2vw] max-md:size-[8vw] bg-[#303752] hover:bg-(--yellow-color) text-white hover:text-[#303752] rounded-full flex items-center justify-center cursor-pointer shadow-md transition-all duration-200"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-[1vw] max-md:size-[4vw]"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></span>'
-                    ],
                     responsive: {
                         0: {
                             items: 1
