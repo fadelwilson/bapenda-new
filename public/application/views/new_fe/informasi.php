@@ -14,11 +14,11 @@
             </div>
 
             <div class="mt-[0.584vw] max-md:mt-[10.308vw] max-md:px-0">
-                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] max-md:mt-[0vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw] ">
+                <h1 class="text-[4.669vw] px-[1vw] mt-[5vw] max-md:mt-[0vw] text-(--blue-color)  uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw] ">
                     Peraturan & Publikasi
                 </h1>
 
-                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-(--blue-color) leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[12.208vw]">
+                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-[#EA6D0D] leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[12.208vw]">
                     Definisi Pajak Daerah
                 </h3>
 
@@ -381,11 +381,11 @@
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
 
-        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[10vw]">
+        <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
         </h1>
 
-        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
+        <h3 class="text-[2.852vw] mt-[1vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
             Kegiatan Bapenda Purwakarta
         </h3>
 
@@ -424,32 +424,36 @@
     <?php
     $ppid_items = [
         [
-            'title'   => 'Info Tagihan PBB',
-            'content' => 'Informasi mengenai tagihan PBB (Pajak Bumi dan Bangunan) dapat diakses melalui portal resmi BAPENDA atau langsung ke kantor BAPENDA Kabupaten Purwakarta. Pastikan NJOP dan data objek pajak Anda sudah tercatat dengan benar untuk memastikan kesesuaian nilai ketetapan pajak tahun berjalan.',
+            'title'   => 'Pengajuan Keberatan',
+            'image'   => 'assets/ppid/pengajuan-keberatan.png',
         ],
         [
-            'title'   => 'Permohonan Keberatan / Pembatalan PBB',
-            'content' => 'Wajib pajak dapat mengajukan keberatan atau pembatalan atas penetapan PBB apabila terdapat kesalahan data, sengketa kepemilikan, atau ketidaksesuaian NJOP. Persyaratan pengajuan meliputi: Surat permohonan bermaterai, fotokopi SPPT PBB yang diajukan keberatan, fotokopi identitas diri (KTP/KK), dan dokumen bukti kepemilikan pendukung (sertifikat tanah/AJB).',
+            'title'   => 'Tugas PPID',
+            'image'   => 'assets/ppid/tugas-ppid.jpg',
         ],
         [
-            'title'   => 'Permohonan Pelayanan SPPT, SKPD, SKPDLB dan Pembetulan SPPT, SKPD, STPD',
-            'content' => 'Layanan penerbitan dan pembetulan dokumen ketetapan perpajakan daerah meliputi SPPT, SKPD, SKPDLB, dan STPD. Pengajuan dapat dilakukan untuk memperbaiki kekeliruan nama, alamat, luas bumi/bangunan, atau penyesuaian status wajib pajak secara langsung di loket BAPENDA.',
+            'title'   => 'Tata Cara Penyelesaian Sengketa Informasi',
+            'image'   => 'assets/ppid/tata-cara-penyelesaian.png',
         ],
         [
-            'title'   => 'Permohonan Mutasi Pecah / Pengabsahan Objek Pajak',
-            'content' => 'Mutasi dan pemecahan pengabsahan objek pajak diperlukan saat terjadi perubahan kepemilikan atau pembagian bidang tanah. Persyaratan meliputi: Formulir SPOP/LSPOP terisi lengkap, fotokopi SPPT/SKPD tahun berjalan lunas, fotokopi sertifikat tanah hasil pemecahan, fotokopi KTP pemohon, dan bukti pelunasan PBB 5 tahun terakhir.',
+            'title'   => 'QR SOP Permohonan Informasi',
+            'image'   => 'assets/ppid/qrsop-permohonan.png',
         ],
         [
-            'title'   => 'Permohonan Pendataan Objek Baru PBB',
-            'content' => 'Pendataan objek pajak baru PBB ditujukan untuk tanah dan/atau bangunan yang belum terdaftar dalam basis data perpajakan daerah. Persyaratan: Sertifikat tanah atau Surat Keterangan Tanah dari desa/kelurahan, Akta Jual Beli (AJB), fotokopi KTP/KK pemohon, gambar denah lokasi objek pajak, serta persetujuan bangunan gedung (PBG/IMB jika ada).',
+            'title'   => 'QR SOP Uji Konsekuensi',
+            'image'   => 'assets/ppid/qrsop-uji.png',
         ],
         [
-            'title'   => 'Persyaratan Permohonan Pemrosesan dan Pembebasan Pajak',
-            'content' => 'Pengajuan keringanan hingga pembebasan pajak daerah dapat diajukan oleh wajib pajak yang memenuhi kriteria sesuai ketentuan Peraturan Daerah (misalnya pensiunan, lahan sosial/ibadah, atau cagar budaya). Pemohon wajib melampirkan surat permohonan resmi, surat keterangan tidak mampu/SK pensiun, fotokopi SPPT PBB, dan fotokopi KTP.',
+            'title'   => 'SOP Permohonan Informasi',
+            'image'   => 'assets/ppid/sop-permohonan.png',
         ],
         [
-            'title'   => 'Persyaratan Permohonan Mutasi / Inbreng / Balik Nama Objek Pajak',
-            'content' => 'Layanan mutasi balik nama atau inbreng (penyertaan modal tanah/bangunan ke badan hukum) membutuhkan kelengkapan akta otentik notaris/PPAT, fotokopi identitas pemohon dan badan usaha, bukti pelunasan seluruh kewajiban pajak daerah terkait, serta verifikasi fisik lapangan oleh petugas BAPENDA.',
+            'title'   => 'Struktur PPID',
+            'image'   => 'assets/ppid/struktur-ppid.png',
+        ],
+        [
+            'title'   => 'Visi dan Misi PPID',
+            'image'   => 'assets/ppid/visi-misi.jpg',
         ],
     ];
     ?>
@@ -458,12 +462,12 @@
     <div class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
         <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
 
-        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
+        <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
             PPID
         </h1>
 
-        <h3 class="text-[2.852vw] mt-[1vw] text-(--blue-color) uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw] relative z-30">
-            Pejabat Pengelola Informasi &amp; Dokumentasi
+        <h3 class="text-[2.852vw] mt-[1vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw] relative z-30">
+            Penjabat Pengelola Informasi &amp; Dokumentasi
         </h3>
 
         <!-- Accordion Container -->
@@ -478,9 +482,16 @@
                     </button>
 
                     <div class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content">
-                        <p class="jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.33vw] text-justify relative z-20">
+                        <!-- <p class="jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.33vw] text-justify relative z-20">
                             <?= htmlspecialchars($p_item['content']) ?>
-                        </p>
+                        </p> -->
+                        <div class="flex justify-center w-full">
+                            <img
+                                src="<?= base_url($p_item['image']) ?>"
+                                alt="<?= htmlspecialchars($p_item['title']) ?>"
+                                class="max-w-[30vw] h-auto object-contain"
+                            >
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
