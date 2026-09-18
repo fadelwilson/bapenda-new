@@ -6,9 +6,9 @@
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/new-info.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/Informasi/new-info.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
-                <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[12.308vw]">
+                <h1 class="text-[5.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Informasi
                 </h1>
             </div>

@@ -5,9 +5,9 @@
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/beranda/new-beranda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/beranda/new-beranda.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
-                <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[9vw]">
+                <h1 class="text-[5.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[9vw]">
                     Kritik & Saran
                 </h1>
             </div>
@@ -19,92 +19,98 @@
                     <div style="display:none !important;" aria-hidden="true">
                         <input type="text" name="website_url" tabindex="-1" autocomplete="off">
                     </div>
-                    <!-- Nama Lengkap -->
-                    <div>
-                        <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
-                            Nama <span class="text-red-600">*</span>
-                        </label>
-                        <input
-                            type="text"
-                            id="nama_lengkap"
-                            name="nama_lengkap"
-                            required
-                            autocomplete="off"
-                            placeholder="Masukkan Nama Anda"
-                            class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                    
+                    <div class="flex flex-col gap-[0.45vw]">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                                Nama <span class="text-red-600">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="nama_lengkap"
+                                name="nama_lengkap"
+                                required
+                                autocomplete="off"
+                                placeholder="Masukkan Nama Anda"
+                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                        </div>
+
+                        <!-- No HP -->
+                        <div>
+                            <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                                No. Handphone
+                            </label>
+                            <input
+                                type="tel"
+                                id="no_hp"
+                                name="no_hp"
+                                maxlength="14"
+                                placeholder="Contoh: 081234567890"
+                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                        </div>
+
+                        
+                        <!-- Alamat -->
+                        <div>
+                            <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                                Alamat
+                            </label>
+                            <input
+                                type="text"
+                                id="alamat"
+                                name="alamat"
+                                placeholder="Masukkan Alamat Anda"
+                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                        </div>
                     </div>
 
-                    <!-- Email -->
-                    <div>
-                        <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
-                            E-mail <span class="text-red-600">*</span>
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            autocomplete="off"
-                            placeholder="Masukkan Email Anda"
-                            class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
-                    </div>
+                    <div class="flex flex-col gap-[0.45vw]">
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                                E-mail <span class="text-red-600">*</span>
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                autocomplete="off"
+                                placeholder="Masukkan Email Anda"
+                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                        </div>
+                    
+                        <!-- Kritik -->
+                        <div>
+                            <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                                Kritik & Saran <span class="text-red-600">*</span>
+                            </label>
+                            <textarea
+                                id="kritik"
+                                name="kritik"
+                                required
+                                rows="4"
+                                placeholder="Kritik Anda Kepada BAPENDA Kab. Purwakarta"
+                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]"></textarea>
+                        </div>
 
-                    <!-- No HP -->
-                    <div>
-                        <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
-                            No. Handphone
-                        </label>
-                        <input
-                            type="tel"
-                            id="no_hp"
-                            name="no_hp"
-                            maxlength="14"
-                            placeholder="Contoh: 081234567890"
-                            class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
-                    </div>
-
-                    <!-- Alamat -->
-                    <div>
-                        <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
-                            Alamat
-                        </label>
-                        <input
-                            type="text"
-                            id="alamat"
-                            name="alamat"
-                            placeholder="Masukkan Alamat Anda"
-                            class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
-                    </div>
-
-                    <!-- Kritik -->
-                    <div>
-                        <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
-                            Kritik & Saran <span class="text-red-600">*</span>
-                        </label>
-                        <textarea
-                            id="kritik"
-                            name="kritik"
-                            required
-                            rows="4"
-                            placeholder="Kritik Anda Kepada BAPENDA Kab. Purwakarta"
-                            class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]"></textarea>
-                    </div>
-
-                    <div class="w-full flex items-end gap-[3.89vw] mb-[0.29vw] text-[1.17vw] max-md:text-[4.615vw]">
-                        <button
-                            type="submit"
-                            class="flex-1 inline-flex items-center justify-center gap-[0.39vw] bg-[#1C2032] hover:bg-[#1C2032]/90 text-white py-[0.58vw]  cursor-pointer transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed max-md:p-4">
-                            <span class="material-symbols-outlined animate-spin text-lg !hidden" id="loading-icon">
-                                progress_activity
-                            </span>
-                            <span>Kirim</span>
-                        </button>
-
-                        <button
-                            type="reset"
-                            class="flex-1 inline-flex items-center justify-center gap-[0.39vw] bg-(--red-color) hover:bg-(--red-color)/90 text-white py-[0.58vw]  cursor-pointer transition-colors duration-150 max-md:p-[4.103vw]">
-                            <span>Batal</span>
-                        </button>
+                        <div class="w-full flex items-end gap-[3.89vw] mb-[0.29vw] text-[1.17vw] max-md:text-[4.615vw]">
+                            <button
+                                type="submit"
+                                class="flex-1 inline-flex items-center justify-center gap-[0.39vw] bg-[#1C2032] hover:bg-[#1C2032]/90 text-white py-[0.58vw]  cursor-pointer transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed max-md:p-4">
+                                <span class="material-symbols-outlined animate-spin text-lg !hidden" id="loading-icon">
+                                    progress_activity
+                                </span>
+                                <span>Kirim</span>
+                            </button>
+    
+                            <button
+                                type="reset"
+                                class="flex-1 inline-flex items-center justify-center gap-[0.39vw] bg-(--red-color) hover:bg-(--red-color)/90 text-white py-[0.58vw]  cursor-pointer transition-colors duration-150 max-md:p-[4.103vw]">
+                                <span>Batal</span>
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
