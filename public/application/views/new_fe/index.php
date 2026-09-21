@@ -53,6 +53,20 @@
                 </div>
             </div>
 
+            <a
+                href="http://mapagbumi.purwakartakab.go.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+            >
+                <div class="flex items-center justify-end max-md:hidden">
+                    <img
+                        src="<?= base_url('assets/gambar/bapendalogo.svg') ?>"
+                        alt="Logo Bapenda"
+                        class="h-[5.604vw] w-auto object-contain max-md:h-[40vw] max-md:mx-auto">              
+                </div>
+            </a>
+
             <footer>
                 <div class="w-full text-white text-[0.584vw] max-md:text-[2.564vw] open-sans">
                     <div class="text-center">

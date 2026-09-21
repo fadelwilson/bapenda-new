@@ -24,18 +24,138 @@
 
                 <div class="mt-[0.584vw] px-[1vw] max-md:mt-[3.077vw] max-md:p-[2.051vw]">
                     <p class="open-sans text-[0.778vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify">
-                        Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
-                        Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat. <br /><br />
-                        <strong class="font-bold block text-(--blue-color) text-[0.875vw] max-md:text-[3.846vw]">Pajak Kendaraan Bermotor</strong>
+                        Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat.<br>
+                        Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat.<br>
+                        Pajak Kendaraan Bermotor<br>
                         Adapun Pajak Kendaraan Bermotor termasuk ke dalam jenis pajak provinsi yang merupakan bagian dari Pajak Daerah. Lebih lanjut, Pajak Kendaraan Bermotor sebagaimana yang didefinisikan dalam Pasal 1 angka 28 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 adalah pajak atas kepemilikan dan/atau penguasaan kendaraan bermotor. Dalam pelaksanaan pemungutannya dilakukan di kantor bersama samsat. Kantor Bersama SAMSAT ini melibatkan tiga instansi pemerintah, yaitu: Badan Pendapatan Daerah, Kepolisian Daerah Republik Indonesia, dan PT. (Persero) Asuransi Kerugian Jasa Raharja.
                     </p>
                 </div>
 
                 <?php $bi = base_url('assets/Informasi/'); ?>
-                <div class="mt-[1.556vw] max-md:mt-[6.154vw]">
-                    <!-- Baris 1: 4 Tab -->
+                <?php
+                $publikasi_items = [
+                    [
+                        'title'   => 'Peraturan Pajak Daerah',
+                        'image'   => 'assets/ppid/pengajuan-keberatan.png',
+                    ],
+                    [
+                        'title'   => 'Publikasi',
+                        'image'   => 'assets/ppid/tugas-ppid.jpg',
+                    ],
+                    [
+                        'title'   => 'Formulir',
+                        'image'   => 'assets/ppid/tata-cara-penyelesaian.png',
+                        'pdf'   => 'assets/ppid/blanko.pdf',
+                    ],
+                ];
+                ?>
+
+                <?php
+                $publikasi_items = [
+                    [
+                        'title' => 'Peraturan Pajak Daerah',
+                        'image' => 'assets/ppid/pengajuan-keberatan.png',
+                    ],
+                    [
+                        'title' => 'Publikasi',
+                        'image' => 'assets/ppid/tugas-ppid.jpg',
+                    ],
+                    [
+                        'title' => 'Formulir',
+                        'image' => 'assets/ppid/tata-cara-penyelesaian.png',
+                        'pdf'   => 'assets/ppid/blanko.pdf',
+                    ],
+                ];
+                ?>
+
+                <div class="flex flex-col px-20 gap-[0.19vw] mt-[2.33vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
+
+                    <?php foreach ($publikasi_items as $p_item): ?>
+
+                        <div class="ppid-accordion-item">
+
+                            <!-- Header -->
+                            <button
+                                type="button"
+                                class="relative z-30 w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-[#303752] text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[4.615vw] text-left max-md:p-[2.051vw]"
+                            >
+                                <span><?= htmlspecialchars($p_item['title']) ?></span>
+
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="3"
+                                    stroke="currentColor"
+                                    class="size-[1.17vw] shrink-0 transition-transform duration-300 transform ppid-accordion-icon max-md:size-[6.154vw]"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                    />
+                                </svg>
+                            </button>
+
+
+                            <!-- Content -->
+                            <div
+                                class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content"
+                            >
+                                <?php if ($p_item['title'] === 'Formulir'): ?>
+                                    <!-- PDF Preview -->
+                                    <div class="w-full py-[1.5vw] max-md:py-[4vw]">
+                                        <div class="w-full h-[40vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
+                                            <iframe
+                                                src="<?= base_url($p_item['pdf']) ?>"
+                                                class="w-full h-full border-0"
+                                                title="Preview <?= htmlspecialchars($p_item['title']) ?>"
+                                            ></iframe>
+                                        </div>
+
+                                        <!-- Download Button -->
+                                        <div class="flex justify-center mt-[1.2vw] max-md:mt-[4vw]">
+                                            <a
+                                                href="<?= base_url($p_item['pdf']) ?>"
+                                                download="blanko.pdf"
+                                                class="inline-flex items-center justify-center gap-[0.5vw] bg-[#EAA90D] text-[#303752] jakarta-sans font-semibold text-[0.9vw] px-[1.5vw] py-[0.7vw] transition-all duration-300 hover:bg-[#303752] hover:text-white max-md:gap-[2vw] max-md:text-[3.5vw] max-md:px-[5vw] max-md:py-[2.5vw]"
+                                            >
+                                                <!-- Download Icon -->
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke-width="2"
+                                                    stroke="currentColor"
+                                                    class="size-[1.2vw] max-md:size-[5vw]"
+                                                >
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12M12 16.5V3"
+                                                    />
+                                                </svg>
+                                                Download Blanko
+                                            </a>
+                                        </div>
+                                    </div>
+                                <?php else: ?>
+                                    <!-- Image -->
+                                    <div class="flex justify-center w-full py-[1vw] max-md:py-[3vw]">
+                                        <img
+                                            src="<?= base_url($p_item['image']) ?>"
+                                            alt="<?= htmlspecialchars($p_item['title']) ?>"
+                                            class="max-w-[30vw] max-md:max-w-[90vw] h-auto object-contain"
+                                        >
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- <div class="mt-[1.556vw] max-md:mt-[6.154vw]">
                     <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw]">
-                        <!-- Tab 1: Objek Pajak (Active Default) -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="objek-pajak" style="background-image: url('<?= $bi ?>IMG-20260729-WA0012-4279738261 1.png')">
                                 <div class="absolute inset-0 bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -46,7 +166,6 @@
                             </div>
                         </div>
 
-                        <!-- Tab 2: Subjek & Wajib Pajak -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="subjek-wajib" style="background-image: url('<?= $bi ?>img20250923081406-2-68d242abed641541c5071bc2 1 (1).png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -61,7 +180,6 @@
                             </div>
                         </div>
 
-                        <!-- Tab 3: Dasar Pengenaan -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="dasar-pengenaan" style="background-image: url('<?= $bi ?>Screen Shot 2026-08-02 at 15.12.17 1 (1).png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -76,7 +194,6 @@
                             </div>
                         </div>
 
-                        <!-- Tab 4: Tarif Pajak -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="tarif" style="background-image: url('<?= $bi ?>0cf5493d8e01976457fd1b2a8035a1fe 1.png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -99,9 +216,8 @@
                         </div>
                     </div>
 
-                    <!-- Baris 2: 3 Tab -->
                     <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw] mt-[0.778vw] max-md:mt-[2.051vw]">
-                        <!-- Tab 5: Masa Pajak -->
+                        
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="masa-pajak" style="background-image: url('<?= $bi ?>img20250923081406-2-68d242abed641541c5071bc2 1 (2).png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -117,7 +233,6 @@
                             </div>
                         </div>
 
-                        <!-- Tab 6: Denda Pajak -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="denda-pajak" style="background-image: url('<?= $bi ?>Screen Shot 2026-08-02 at 15.12.17 1 (2).png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -133,7 +248,6 @@
                             </div>
                         </div>
 
-                        <!-- Tab 7: Mekanisme Pembayaran Pajak -->
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:min-h-[13.128vw] max-md:h-auto flex items-end relative cursor-pointer tab-btn px-[0.584vw] pb-[0.292vw] max-md:px-[3.077vw] max-md:py-[2.051vw]" data-tab="mekanisme" style="background-image: url('<?= $bi ?>IMG-20260729-WA0012-4279738261 1 (1).png')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
@@ -149,13 +263,12 @@
                         </div>
                     </div>
 
-                    <!-- Desktop Shared Content Box -->
                     <div class="bg-[#eaebee] w-full p-[2.724vw] text-[#303752] text-[0.778vw] jakarta-sans max-md:hidden">
                         <div class="text-justify leading-relaxed min-h-[7.3vw]" id="tab-content-text">
                             Objek pajak adalah penghasilan, kekayaan, perbuatan, atau keadaan tertentu yang digunakan sebagai dasar pengenaan pajak. Berdasarkan UU HKPD, jenis pajak kabupaten/kota meliputi: PBB-P2 (bumi dan/atau bangunan yang dimiliki, dikuasai, dan/atau dimanfaatkan), BPHTB (perolehan hak atas tanah dan bangunan baik melalui jual beli, tukar menukar, hibah, maupun pemberian hak baru), PBJT (makanan/minuman, tenaga listrik, jasa perhotelan, jasa parkir, dan jasa kesenian &amp; hiburan), Pajak Reklame (semua jenis penyelenggaraan reklame), Pajak Air Tanah (pengambilan dan/atau pemanfaatan air tanah), Pajak MBLB (kegiatan pengambilan mineral bukan logam dan batuan), serta Pajak Sarang Burung Walet.
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -482,7 +595,6 @@
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-
         <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
         </h1>
@@ -521,6 +633,81 @@
             </div>
         <?php endif; ?>
 
+        <?php
+        $galeri_path = FCPATH . 'assets/Informasi/';
+        $galeri_url  = base_url('assets/Informasi/ig-galeri.png');
+
+        $galeri_kegiatan = [];
+
+        if (is_dir($galeri_path)) {
+            $files = scandir($galeri_path);
+
+            foreach ($files as $file) {
+                $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+
+                if (in_array($extension, ['jpg', 'jpeg', 'png', 'webp', 'gif'])) {
+                    $galeri_kegiatan[] = [
+                        'thumb'    => $galeri_url . $file,
+                        'judul'    => pathinfo($file, PATHINFO_FILENAME),
+                        'video_url' => '#',
+                    ];
+                }
+            }
+        }
+
+        $is_carousel = count($galeri_kegiatan) > 4;
+        ?>
+
+        <?php if ($is_carousel): ?>
+
+        <!-- Carousel Mode -->
+        <div
+            class="owl-carousel owl-theme mt-[10.335vw] max-md:mt-[6.154vw] relative"
+            id="galeri-kegiatan-carousel"
+        >
+
+            <?php foreach ($galeri_kegiatan as $item): ?>
+
+                <div class="item">
+                    <div
+                        class="group relative block w-full overflow-hidden bg-[#303752] galeri-kegiatan-card"
+                    >
+                        <img
+                            src="<?= base_url('assets/Informasi/ig-galeri.png') ?>"
+                            alt="<?= htmlspecialchars($item['judul']) ?>"
+                            class="w-full h-auto object-cover object-center group-hover:scale-110 transition-transform duration-300"
+                        >
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+        <?php else: ?>
+
+            <!-- Grid Mode -->
+            <div
+                class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]"
+            >
+
+                <?php foreach ($galeri_kegiatan as $item): ?>
+
+                    <div
+                        class="group relative block w-full overflow-hidden galeri-kegiatan-card"
+                    >
+                        <img
+                            src="<?= base_url('assets/Informasi/ig-galeri.png') ?>"
+                            alt="<?= htmlspecialchars($item['judul']) ?>"
+                            class="w-full h-auto object-cover object-center group-hover:scale-110 transition-transform duration-300"
+                        >
+                    </div>
+
+                <?php endforeach; ?>
+
+            </div>
+
+        <?php endif; ?>
     </div>
 
     <?php
@@ -745,7 +932,7 @@
     #galeri-kegiatan-carousel .item a,
     #galeri-kegiatan-carousel .item div,
     .galeri-kegiatan-card {
-        aspect-ratio: 16 / 9 !important;
+        /* aspect-ratio: 16 / 9 !important; */
         width: 100% !important;
         overflow: hidden !important;
     }
