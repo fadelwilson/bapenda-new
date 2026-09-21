@@ -190,9 +190,111 @@
     ?>
 
     <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-        <h1 class="text-[4.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[8vw]">
-            BERITA &amp; ARTIKEL
+        <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+            Berita
         </h1>
+
+        <h3 class="text-[2.852vw] mt-[1vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
+            Kabar Purwakarta Istimewa
+        </h3>
+
+        <?php if ($is_berita_carousel): ?>
+            <!-- Carousel Mode (Jika lebih dari 3 item) -->
+            <div class="owl-carousel owl-theme mt-[2.335vw] max-md:mt-[6.154vw] relative" id="berita-carousel">
+                <?php foreach ($berita_list as $idx => $dt): ?>
+                    <?php
+                    if (!empty($dt['is_local_asset'])) {
+                        $img_src = $bi . $dt['foto_berita'];
+                    } elseif (!empty($dt['foto_berita'])) {
+                        $img_src = base_url('loginwebsite') . '/uploads/berita/' . $dt['foto_berita'];
+                    } else {
+                        $img_src = $bi . $placeholder_berita[$idx % 3]['foto_berita'];
+                    }
+
+                    $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
+                    $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                    $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+                    $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
+                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $narasi_berita = !empty($clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+                    ?>
+                    <div class="item">
+                        <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
+                            <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                                <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                            </div>
+
+                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                                <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                                    <?= $judul_berita ?>
+                                </h3>
+                            </div>
+
+                            <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
+                                <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                    <?= $narasi_berita ?>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <!-- Grid Mode (<= 3 item) -->
+            <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[2.335vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+                <?php foreach ($berita_list as $idx => $dt): ?>
+                    <?php
+                    if (!empty($dt['is_local_asset'])) {
+                        $img_src = $bi . $dt['foto_berita'];
+                    } elseif (!empty($dt['foto_berita'])) {
+                        $img_src = base_url('loginwebsite') . '/uploads/berita/' . $dt['foto_berita'];
+                    } else {
+                        $img_src = $bi . $placeholder_berita[$idx % 3]['foto_berita'];
+                    }
+
+                    $url_berita   = !empty($dt['url_berita']) ? $dt['url_berita'] : base_url('blog');
+                    $raw_judul    = !empty($dt['judul_berita']) ? $dt['judul_berita'] : 'Berita BAPENDA';
+                    $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+                    $raw_narasi   = !empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '';
+                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $narasi_berita = !empty($clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+                    ?>
+                    <a href="<?= htmlspecialchars($url_berita) ?>" target="_blank" class="group flex flex-col no-underline">
+                        <div class="relative w-full aspect-[390/280] overflow-hidden bg-[#303752]">
+                            <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                        </div>
+
+                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                            <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                                <?= $judul_berita ?>
+                            </h3>
+                        </div>
+
+                        <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
+                            <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                <?= $narasi_berita ?>
+                            </p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
+        <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+            Artikel
+        </h1>
+
+        <h3 class="text-[2.852vw] mt-[1vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
+            Bapenda Purwakarta
+        </h3>
 
         <?php if ($is_berita_carousel): ?>
             <!-- Carousel Mode (Jika lebih dari 3 item) -->
