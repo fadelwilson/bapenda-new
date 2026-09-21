@@ -660,8 +660,7 @@
 
         <?php if ($is_carousel): ?>
 
-        <!-- Carousel Mode -->
-        <div
+        <!-- <div
             class="owl-carousel owl-theme mt-[10.335vw] max-md:mt-[6.154vw] relative"
             id="galeri-kegiatan-carousel"
         >
@@ -685,8 +684,6 @@
         </div>
 
         <?php else: ?>
-
-            <!-- Grid Mode -->
             <div
                 class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]"
             >
@@ -708,7 +705,7 @@
             </div>
 
         <?php endif; ?>
-    </div>
+    </div> -->
 
     <?php
     $ppid_items = [
