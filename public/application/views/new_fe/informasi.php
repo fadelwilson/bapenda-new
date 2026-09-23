@@ -32,23 +32,6 @@
                 </div>
 
                 <?php $bi = base_url('assets/images/'); ?>
-                <?php
-                $publikasi_items = [
-                    [
-                        'title'   => 'Peraturan Pajak Daerah',
-                        'image'   => 'assets/images/pengajuan-keberatan.png',
-                    ],
-                    [
-                        'title'   => 'Publikasi',
-                        'image'   => 'assets/images/tugas-ppid.jpg',
-                    ],
-                    [
-                        'title'   => 'Formulir',
-                        'image'   => 'assets/images/tata-cara-penyelesaian.png',
-                        'pdf'     => 'assets/images/blanko.pdf',
-                    ],
-                ];
-                ?>
 
                 <?php
                 $publikasi_items = [
@@ -57,55 +40,55 @@
                         'pdfs' => [
                             [
                                 'title' => 'PERBUP No. 24 Tahun 2024 tentang BPHTB',
-                                'file'  => 'assets/ppid/PERBUP NO 24 TH 2024 TTG BPHTB.pdf',
+                                'file'  => 'assets/images/PERBUP NO 24 TH 2024 TTG BPHTB.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 25 Tahun 2024 tentang PBB-P2',
-                                'file'  => 'assets/ppid/PERBUP NO 25 TH 2024 TTG PBB-P2.pdf',
+                                'file'  => 'assets/images/PERBUP NO 25 TH 2024 TTG PBB-P2.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 27 Tahun 2024 tentang Kenaikan NJOP PBB-P2',
-                                'file'  => 'assets/ppid/PERBUP NO 27 TH 2024 TTG KENAIKAN NJOP PBB-P2.pdf',
+                                'file'  => 'assets/images/PERBUP NO 27 TH 2024 TTG KENAIKAN NJOP PBB-P2.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 28 Tahun 2024 tentang Pemberian Stimulus PBB-P2',
-                                'file'  => 'assets/ppid/PERBUP NO 28 TH 2024 TTG PEMBERIAN STIMULUS PBB-P2.pdf',
+                                'file'  => 'assets/images/PERBUP NO 28 TH 2024 TTG PEMBERIAN STIMULUS PBB-P2.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 48 Tahun 2024 tentang Tata Cara Pemungutan Pajak Air Tanah',
-                                'file'  => 'assets/ppid/PERBUP NO 48 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK AIR TANAH.pdf',
+                                'file'  => 'assets/images/PERBUP NO 48 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK AIR TANAH.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 49 Tahun 2024 tentang Tata Cara Pemungutan Pajak MBLB',
-                                'file'  => 'assets/ppid/PERBUP NO 49 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK MBLB.pdf',
+                                'file'  => 'assets/images/PERBUP NO 49 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK MBLB.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 50 Tahun 2024 tentang Tata Cara Pemungutan PBJT',
-                                'file'  => 'assets/ppid/PERBUP NO 50 TH 2024 TTG TATA CARA PEMUNGUTAN PBJT.pdf',
+                                'file'  => 'assets/images/PERBUP NO 50 TH 2024 TTG TATA CARA PEMUNGUTAN PBJT.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 51 Tahun 2024 tentang Tata Cara Pemungutan Pajak Reklame',
-                                'file'  => 'assets/ppid/PERBUP NO 51 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK REKLAME.pdf',
+                                'file'  => 'assets/images/PERBUP NO 51 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK REKLAME.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 52 Tahun 2024 tentang Tata Cara Pemungutan Pajak Sarang Burung Walet',
-                                'file'  => 'assets/ppid/PERBUP NO 52 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK SARANG BURUNG WALET.pdf',
+                                'file'  => 'assets/images/PERBUP NO 52 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK SARANG BURUNG WALET.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 53 Tahun 2024 tentang Tata Cara Penagihan Pajak Daerah',
-                                'file'  => 'assets/ppid/PERBUP NO 53 TH 2024 TTG TATA CARA PENAGIHAN PAJAK DAERAH.pdf',
+                                'file'  => 'assets/images/PERBUP NO 53 TH 2024 TTG TATA CARA PENAGIHAN PAJAK DAERAH.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 54 Tahun 2024 tentang Tata Cara Pemeriksaan Pajak Daerah',
-                                'file'  => 'assets/ppid/PERBUP NO 54 TH 2024 TTG TATA CARA PEMERIKSAAN PAJAK DAERAH.pdf',
+                                'file'  => 'assets/images/PERBUP NO 54 TH 2024 TTG TATA CARA PEMERIKSAAN PAJAK DAERAH.pdf',
                             ],
                             [
                                 'title' => 'PERBUP No. 55 Tahun 2024 tentang Sistem Monitoring Pelaporan dan Pembayaran Pajak Daerah Secara Online',
-                                'file'  => 'assets/ppid/PERBUP NO 55 TH 2024 TTG SISTEM MONITORING PELAPORAN DAN PEMBAYARAN PAJAK DAERAH SECARA ONLINE.pdf',
+                                'file'  => 'assets/images/PERBUP NO 55 TH 2024 TTG SISTEM MONITORING PELAPORAN DAN PEMBAYARAN PAJAK DAERAH SECARA ONLINE.pdf',
                             ],
                             [
                                 'title' => 'PERDA No. 15 Tahun 2023 tentang PDRD',
-                                'file'  => 'assets/ppid/PERDA NO 15 TH 2023 TENTANG PDRD.pdf',
+                                'file'  => 'assets/images/PERDA NO 15 TH 2023 TENTANG PDRD.pdf',
                             ],
                         ],
                     ],
@@ -114,27 +97,27 @@
                         'pdfs' => [
                             [
                                 'title' => 'IKU 2025-2030',
-                                'file'  => 'assets/ppid/IKU 2025-2030 n.pdf',
+                                'file'  => 'assets/images/IKU 2025-2030 n.pdf',
                             ],
                             [
                                 'title' => 'LAKIP TA 2025',
-                                'file'  => 'assets/ppid/Lakip TA 2025 fix n.pdf',
+                                'file'  => 'assets/images/Lakip TA 2025 fix n.pdf',
                             ],
                             [
                                 'title' => 'Renja Bapenda 2026',
-                                'file'  => 'assets/ppid/Renja  Bapenda 2026.pdf',
+                                'file'  => 'assets/images/Renja  Bapenda 2026.pdf',
                             ],
                             [
                                 'title' => 'RENJA 2025',
-                                'file'  => 'assets/ppid/RENJA 2025 .pdf',
+                                'file'  => 'assets/images/RENJA 2025 .pdf',
                             ],
                             [
                                 'title' => 'Renja Perubahan Bapenda 2025',
-                                'file'  => 'assets/ppid/Renja Perubahan Bapenda 2025.pdf',
+                                'file'  => 'assets/images/Renja Perubahan Bapenda 2025.pdf',
                             ],
                             [
                                 'title' => 'Renstra 2025-2029 Bapenda',
-                                'file'  => 'assets/ppid/Renstra 2025-2029 Bapenda.pdf',
+                                'file'  => 'assets/images/Renstra 2025-2029 Bapenda.pdf',
                             ],
                         ],
                     ],
@@ -143,23 +126,23 @@
                         'pdfs' => [
                             [
                                 'title' => 'Blanko',
-                                'file'  => 'assets/ppid/blanko.pdf',
+                                'file'  => 'assets/images/blanko.pdf',
                             ],
                             [
                                 'title' => 'Permohonan Mutasi',
-                                'file'  => 'assets/ppid/permohonan-mutasi.pdf',
+                                'file'  => 'assets/images/permohonan-mutasi.pdf',
                             ],
                             [
                                 'title' => 'Permohonan Pembetulan / Pembatalan',
-                                'file'  => 'assets/ppid/permohonan-pembetulan-pembatalan.pdf',
+                                'file'  => 'assets/images/permohonan-pembetulan-pembatalan.pdf',
                             ],
                             [
                                 'title' => 'Keringanan / Pengurangan PBB',
-                                'file'  => 'assets/ppid/keringanan-pengurangan-pbb.pdf',
+                                'file'  => 'assets/images/keringanan-pengurangan-pbb.pdf',
                             ],
                             [
                                 'title' => 'Permohonan Pendaftaran',
-                                'file'  => 'assets/ppid/permohonan-pendaftaran.pdf',
+                                'file'  => 'assets/images/permohonan-pendaftaran.pdf',
                             ],
                         ],
                     ],
@@ -167,7 +150,6 @@
                 ?>
 
                 <div class="flex flex-col px-20 gap-[0.19vw] mt-[2.33vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
-
                     <?php foreach ($publikasi_items as $p_item): ?>
 
                         <div class="ppid-accordion-item">
