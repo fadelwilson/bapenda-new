@@ -15,7 +15,7 @@ $navbar_text_color = $navbar_bg === 'blue'
     : 'text-[#303752] hover:text-[#EAA90D]';
 
 $menu_items = [
-    ['key' => 'beranda',   'label' => 'Beranda',       'url' => base_url()],
+    ['key' => 'beranda',   'label' => 'Beranda',        'url' => base_url()],
     ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
     ['key' => 'layanan',   'label' => 'Layanan',        'url' => base_url('layanan')],
     ['key' => 'informasi', 'label' => 'Informasi',      'url' => base_url('informasi')],

@@ -6,7 +6,7 @@
     <div class="px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/gambar/saranico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/images/saranico.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[4.669vw] text-(--text-title-sec) uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Layanan
@@ -125,8 +125,8 @@
     </div>
     
     <div class="relative overflow-hidden">
-        <img src="<?= base_url('assets/gambar/tower.png') ?>" alt="" class="absolute -left-1 bottom-0 h-[40vw] w-auto opacity-5 pointer-events-none z-0  max-md:h-[200vw] max-md:w-auto" style="filter: invert(1);">
-        <img src="<?= base_url('assets/gambar/tower.png') ?>" alt="" class="absolute -right-1 bottom-0 h-[25vw] w-auto opacity-5 pointer-events-none z-0 transform scale-x-[-1] max-md:hidden" style="filter: invert(1);">
+        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -left-1 bottom-0 h-[40vw] w-auto opacity-5 pointer-events-none z-0  max-md:h-[200vw] max-md:w-auto" style="filter: invert(1);">
+        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -right-1 bottom-0 h-[25vw] w-auto opacity-5 pointer-events-none z-0 transform scale-x-[-1] max-md:hidden" style="filter: invert(1);">
 
         <div class="mt-[15.953vw] max-md:p-[2.051vw]">
             <div class="px-[2.734vw] mt-[0.584vw] relative z-10 max-md:px-0">

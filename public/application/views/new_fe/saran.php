@@ -1,11 +1,11 @@
-﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
+<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'blue']); ?>
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/beranda/new-beranda.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/images/new-beranda.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[5.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[9vw]">
                     Kritik & Saran
@@ -119,11 +119,11 @@
 
     <div class="relative mt-auto z-0">
         <!-- Tower di kanan di atas div batik -->
-        <img src="<?= base_url('assets/gambar/towersaran.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] bottom-[0%] h-[39vw] w-auto pointer-events-none z-0 max-md:h-[140vw] max-md:bottom-[94%]">
+        <img src="<?= base_url('assets/images/towersaran.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] bottom-[0%] h-[39vw] w-auto pointer-events-none z-0 max-md:h-[140vw] max-md:bottom-[94%]">
 
         <!-- Section Info (Alamat, Jam Kerja, Telepon) -->
         <div class="relative overflow-hidden px-[7.78vw] max-md:px-[4.103vw]">
-            <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none z-0">
+            <img src="<?= base_url('assets/images/batik_sunda1.png') ?>" alt="" class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none z-0">
 
             <div
                 class="grid grid-cols-[0.7fr_1.3fr_1px_1fr_1px_1fr]
@@ -139,7 +139,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-start pr-[2vw] max-md:p-0 max-md:w-full max-md:justify-center">
                     <img
-                        src="<?= base_url('assets/gambar/bapendalogo.svg') ?>"
+                        src="<?= base_url('assets/images/bapendalogo.svg') ?>"
                         alt="Logo Bapenda"
                         class="h-[5.604vw] w-auto object-contain max-md:h-[40vw] max-md:mx-auto">
                 </div>

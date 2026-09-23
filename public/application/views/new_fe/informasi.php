@@ -6,7 +6,7 @@
     <div class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/new-info.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/images/new-info.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
 
                 <h1 class="text-[5.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Informasi
@@ -31,39 +31,21 @@
                     </p>
                 </div>
 
-                <?php $bi = base_url('assets/Informasi/'); ?>
+                <?php $bi = base_url('assets/images/'); ?>
                 <?php
                 $publikasi_items = [
                     [
                         'title'   => 'Peraturan Pajak Daerah',
-                        'image'   => 'assets/ppid/pengajuan-keberatan.png',
+                        'image'   => 'assets/images/pengajuan-keberatan.png',
                     ],
                     [
                         'title'   => 'Publikasi',
-                        'image'   => 'assets/ppid/tugas-ppid.jpg',
+                        'image'   => 'assets/images/tugas-ppid.jpg',
                     ],
                     [
                         'title'   => 'Formulir',
-                        'image'   => 'assets/ppid/tata-cara-penyelesaian.png',
-                        'pdf'   => 'assets/ppid/blanko.pdf',
-                    ],
-                ];
-                ?>
-
-                <?php
-                $publikasi_items = [
-                    [
-                        'title' => 'Peraturan Pajak Daerah',
-                        'image' => 'assets/ppid/pengajuan-keberatan.png',
-                    ],
-                    [
-                        'title' => 'Publikasi',
-                        'image' => 'assets/ppid/tugas-ppid.jpg',
-                    ],
-                    [
-                        'title' => 'Formulir',
-                        'image' => 'assets/ppid/tata-cara-penyelesaian.png',
-                        'pdf'   => 'assets/ppid/blanko.pdf',
+                        'image'   => 'assets/images/tata-cara-penyelesaian.png',
+                        'pdf'     => 'assets/images/blanko.pdf',
                     ],
                 ];
                 ?>
@@ -97,7 +79,6 @@
                                 </svg>
                             </button>
 
-
                             <!-- Content -->
                             <div
                                 class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content"
@@ -107,8 +88,11 @@
                                     <div class="w-full py-[1.5vw] max-md:py-[4vw]">
                                         <div class="w-full h-[40vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
                                             <iframe
-                                                src="<?= base_url($p_item['pdf']) ?>"
+                                                data-src="<?= base_url($p_item['pdf']) ?>"
+                                                src="about:blank"
                                                 class="w-full h-full border-0"
+                                                tabindex="-1"
+                                                loading="lazy"
                                                 title="Preview <?= htmlspecialchars($p_item['title']) ?>"
                                             ></iframe>
                                         </div>
@@ -514,25 +498,25 @@
             'judul'     => 'Kegiatan BAPENDA 1',
             'deskripsi' => '',
             'video_url' => '',
-            'thumb'     => base_url('assets/Informasi/gambar-1.png'),
+            'thumb'     => base_url('assets/images/gambar-1.png'),
         ],
         [
             'judul'     => 'Kegiatan BAPENDA 2',
             'deskripsi' => '',
             'video_url' => '',
-            'thumb'     => base_url('assets/Informasi/gambar-2.png'),
+            'thumb'     => base_url('assets/images/gambar-2.png'),
         ],
         [
             'judul'     => 'Kegiatan BAPENDA 3',
             'deskripsi' => '',
             'video_url' => '',
-            'thumb'     => base_url('assets/Informasi/gambar-3.png'),
+            'thumb'     => base_url('assets/images/gambar-3.png'),
         ],
         [
             'judul'     => 'Kegiatan BAPENDA 4',
             'deskripsi' => '',
             'video_url' => '',
-            'thumb'     => base_url('assets/Informasi/gambar-4.png'),
+            'thumb'     => base_url('assets/images/gambar-4.png'),
         ],
     ];
 
@@ -566,7 +550,7 @@
             } elseif (!empty($s['thumbnail'])) {
                 $thumb = (strpos($s['thumbnail'], 'http') === 0) ? $s['thumbnail'] : base_url('loginwebsite/uploads/seputar/' . $s['thumbnail']);
             } else {
-                $thumb = base_url('assets/Informasi/gambar-' . (($idx % 4) + 1) . '.png');
+                $thumb = base_url('assets/images/gambar-' . (($idx % 4) + 1) . '.png');
             }
 
             $judul = !empty($s['judul'])
@@ -634,8 +618,8 @@
         <?php endif; ?>
 
         <?php
-        $galeri_path = FCPATH . 'assets/Informasi/';
-        $galeri_url  = base_url('assets/Informasi/ig-galeri.png');
+        $galeri_path = FCPATH . 'assets/images/';
+        $galeri_url  = base_url('assets/images/ig-galeri.png');
 
         $galeri_kegiatan = [];
 
@@ -672,7 +656,7 @@
                         class="group relative block w-full overflow-hidden bg-[#303752] galeri-kegiatan-card"
                     >
                         <img
-                            src="<?= base_url('assets/Informasi/ig-galeri.png') ?>"
+                            src="<?= base_url('assets/images/ig-galeri.png') ?>"
                             alt="<?= htmlspecialchars($item['judul']) ?>"
                             class="w-full h-auto object-cover object-center group-hover:scale-110 transition-transform duration-300"
                         >
@@ -694,7 +678,7 @@
                         class="group relative block w-full overflow-hidden galeri-kegiatan-card"
                     >
                         <img
-                            src="<?= base_url('assets/Informasi/ig-galeri.png') ?>"
+                            src="<?= base_url('assets/images/ig-galeri.png') ?>"
                             alt="<?= htmlspecialchars($item['judul']) ?>"
                             class="w-full h-auto object-cover object-center group-hover:scale-110 transition-transform duration-300"
                         >
@@ -711,42 +695,42 @@
     $ppid_items = [
         [
             'title'   => 'Pengajuan Keberatan',
-            'image'   => 'assets/ppid/pengajuan-keberatan.png',
+            'image'   => 'assets/images/pengajuan-keberatan.png',
         ],
         [
             'title'   => 'Tugas PPID',
-            'image'   => 'assets/ppid/tugas-ppid.jpg',
+            'image'   => 'assets/images/tugas-ppid.jpg',
         ],
         [
             'title'   => 'Tata Cara Penyelesaian Sengketa Informasi',
-            'image'   => 'assets/ppid/tata-cara-penyelesaian.png',
+            'image'   => 'assets/images/tata-cara-penyelesaian.png',
         ],
         [
             'title'   => 'QR SOP Permohonan Informasi',
-            'image'   => 'assets/ppid/qrsop-permohonan.png',
+            'image'   => 'assets/images/qrsop-permohonan.png',
         ],
         [
             'title'   => 'QR SOP Uji Konsekuensi',
-            'image'   => 'assets/ppid/qrsop-uji.png',
+            'image'   => 'assets/images/qrsop-uji.png',
         ],
         [
             'title'   => 'SOP Permohonan Informasi',
-            'image'   => 'assets/ppid/sop-permohonan.png',
+            'image'   => 'assets/images/sop-permohonan.png',
         ],
         [
             'title'   => 'Struktur PPID',
-            'image'   => 'assets/ppid/struktur-ppid.png',
+            'image'   => 'assets/images/struktur-ppid.png',
         ],
         [
             'title'   => 'Visi dan Misi PPID',
-            'image'   => 'assets/ppid/visi-misi.jpg',
+            'image'   => 'assets/images/visi-misi.jpg',
         ],
     ];
     ?>
 
     <!-- PPID Section -->
     <div class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
-        <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
+        <img src="<?= base_url('assets/images/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
 
         <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
             PPID
@@ -791,10 +775,15 @@
             </div>
         </footer>
 
-        <img src="<?= base_url('assets/gambar/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] -bottom-10 h-[44vw] w-auto pointer-events-none z-10 max-md:hidden">
+        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] -bottom-10 h-[44vw] w-auto pointer-events-none z-10 max-md:hidden">
     </div>
 
     <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         document.addEventListener('DOMContentLoaded', function() {
             const tabContents = {
                 'objek-pajak': `Objek pajak adalah penghasilan, kekayaan, perbuatan, atau keadaan tertentu yang digunakan sebagai dasar pengenaan pajak. Berdasarkan UU HKPD, jenis pajak kabupaten/kota meliputi: PBB-P2 (bumi dan/atau bangunan yang dimiliki, dikuasai, dan/atau dimanfaatkan), BPHTB (perolehan hak atas tanah dan bangunan baik melalui jual beli, tukar menukar, hibah, maupun pemberian hak baru), PBJT (makanan/minuman, tenaga listrik, jasa perhotelan, jasa parkir, dan jasa kesenian &amp; hiburan), Pajak Reklame (semua jenis penyelenggaraan reklame), Pajak Air Tanah (pengambilan dan/atau pemanfaatan air tanah), Pajak MBLB (kegiatan pengambilan mineral bukan logam dan batuan), serta Pajak Sarang Burung Walet.`,
@@ -908,6 +897,12 @@
                         this.classList.add('bg-(--yellow-color)', 'text-[#303752]');
 
                         if (icon) icon.classList.add('rotate-180');
+
+                        // Lazy load iframe PDF pas accordion dibuka
+                        const iframe = content.querySelector('iframe[data-src]');
+                        if (iframe && (!iframe.getAttribute('src') || iframe.getAttribute('src') === 'about:blank')) {
+                            iframe.setAttribute('src', iframe.getAttribute('data-src'));
+                        }
 
                         content.classList.remove('max-h-0', 'opacity-0', 'py-0');
                         content.classList.add('max-h-[1000px]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');

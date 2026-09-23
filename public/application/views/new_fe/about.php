@@ -4,10 +4,10 @@ $foldermisi = 'https://www.bapenda.purwakartakab.go.id/loginwebsite/uploads/sepu
 $folderinformasi = 'https://www.bapenda.purwakartakab.go.id/loginwebsite/uploads/seputar/informasi/';
 $folderalur = 'https://www.bapenda.purwakartakab.go.id/loginwebsite/uploads/seputar/alur/';
 
-$visi_img = !empty($ShowDataVisi[0]['foto_visi']) ? $foldervisi . $ShowDataVisi[0]['foto_visi'] : base_url('assets/gambar/full-gallery-image-1.jpg');
-$misi_img = !empty($ShowDataMisi[0]['foto_misi']) ? $foldermisi . $ShowDataMisi[0]['foto_misi'] : base_url('assets/gambar/full-gallery-image-2.jpg');
-$informasi_img = !empty($ShowDataInformasi[0]['foto_seputar']) ? $folderinformasi . $ShowDataInformasi[0]['foto_seputar'] : base_url('assets/gambar/full-gallery-image-3.jpg');
-$alur_img = !empty($ShowDataAlur[0]['foto_alur']) ? $folderalur . $ShowDataAlur[0]['foto_alur'] : base_url('assets/gambar/full-gallery-image-4.jpg');
+$visi_img = !empty($ShowDataVisi[0]['foto_visi']) ? $foldervisi . $ShowDataVisi[0]['foto_visi'] : base_url('assets/images/full-gallery-image-1.jpg');
+$misi_img = !empty($ShowDataMisi[0]['foto_misi']) ? $foldermisi . $ShowDataMisi[0]['foto_misi'] : base_url('assets/images/full-gallery-image-2.jpg');
+$informasi_img = !empty($ShowDataInformasi[0]['foto_seputar']) ? $folderinformasi . $ShowDataInformasi[0]['foto_seputar'] : base_url('assets/images/full-gallery-image-3.jpg');
+$alur_img = !empty($ShowDataAlur[0]['foto_alur']) ? $folderalur . $ShowDataAlur[0]['foto_alur'] : base_url('assets/images/full-gallery-image-4.jpg');
 
 $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami']); ?>
 
@@ -17,10 +17,10 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
     <div class="flex flex-col">
         <!-- Section: Tentang Kami -->
         <div class="max-md:order-3 relative px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw] max-md:mt-[5.447vw]">
-            <div class="hidden max-md:block absolute bottom-2 left-0 w-full h-[153.846vw] bg-no-repeat bg-cover bg-center opacity-[4%] pointer-events-none z-0" style="background-image: url('<?= base_url('assets/gambar/batik_sunda1.png') ?>');"></div>
+            <div class="hidden max-md:block absolute bottom-2 left-0 w-full h-[153.846vw] bg-no-repeat bg-cover bg-center opacity-[4%] pointer-events-none z-0" style="background-image: url('<?= base_url('assets/images/batik_sunda1.png') ?>');"></div>
 
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:hidden">
+                <img src="<?= base_url('assets/images/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:hidden">
 
                 <h1 class="relative z-10 text-[4.669vw] text-(--text-title)/30 uppercase krona-one leading-none max-md:text-[9.231vw]">
                     Tentang Kami
@@ -37,19 +37,19 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                 </p>
     
                 <div class="grid grid-cols-2 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw] mt-[1.556vw] max-md:mt-0 w-[60%] max-md:w-full pt-[2.724vw] max-md:py-[8.205vw]">
-                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-start relative z-10 cursor-pointer preview-btn" data-preview="<?= $visi_img ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-start relative z-10 cursor-pointer preview-btn" data-preview="<?= $visi_img ?>" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Visi Bapenda</h3>
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-end relative z-10 cursor-pointer preview-btn" data-preview="<?= $misi_img ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-2.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-end relative z-10 cursor-pointer preview-btn" data-preview="<?= $misi_img ?>" style="background-image: url('<?= base_url('assets/images/full-gallery-image-2.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 text-right max-md:text-[8.205vw] max-md:w-full max-md:text-right">Misi Bapenda</h3>    
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-start relative z-10 cursor-pointer preview-btn" data-preview="<?= $informasi_img ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-3.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-start relative z-10 cursor-pointer preview-btn" data-preview="<?= $informasi_img ?>" style="background-image: url('<?= base_url('assets/images/full-gallery-image-3.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Informasi</h3>
                     </div>
-                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-end relative z-10 cursor-pointer preview-btn" data-preview="<?= $alur_img ?>" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-4.jpg') ?>')">
+                    <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end justify-end relative z-10 cursor-pointer preview-btn" data-preview="<?= $alur_img ?>" style="background-image: url('<?= base_url('assets/images/full-gallery-image-4.jpg') ?>')">
                         <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300"></div>
                         <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 text-right max-md:text-[8.205vw] max-md:w-full max-md:text-right">Alur Pembayaran</h3>
                     </div>
@@ -60,7 +60,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
         <!-- Section: Profil -->
         <div class="max-md:order-1 px-[1.556vw] mt-[15.953vw] max-md:mt-0 max-md:p-[2.051vw]">
             <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/Informasi/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto hidden">
+                <img src="<?= base_url('assets/images/navybapenda.svg') ?>" alt="Logo Bapenda" class="h-[6.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto hidden">
 
                 <h1 class="text-[4.669vw] text-(--text-title) uppercase krona-one leading-none max-md:text-[12.308vw]">
                     Profil
@@ -87,8 +87,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                         <?php endforeach; ?>
                     <?php endif; ?>
                     <?php if (!$has_struktur) : ?>
-                        <div class="cursor-pointer preview-btn flex justify-center w-full" data-preview="<?= base_url('assets/gambar/struktur 1.png') ?>">
-                            <img src="<?= base_url('assets/gambar/struktur 1.png') ?>" alt="Struktur Organisasi" class="!w-[65%] max-md:!w-full h-auto object-contain">
+                        <div class="cursor-pointer preview-btn flex justify-center w-full" data-preview="<?= base_url('assets/images/struktur 1.png') ?>">
+                            <img src="<?= base_url('assets/images/struktur 1.png') ?>" alt="Struktur Organisasi" class="!w-[65%] max-md:!w-full h-auto object-contain">
                         </div>
                     <?php endif; ?>
                 </div>
@@ -102,14 +102,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
             </h3>
 
             <div class="pt-[10.117vw] max-md:pt-0 mt-[2.335vw] pb-[3.113vw] relative">
-                <div class="absolute max-md:hidden inset-0 bg-repeat bg-left-top opacity-10 pointer-events-none" style="background-image: url('<?= base_url('assets/gambar/batik_sunda1.png') ?>'); z-index: 0; background-size: 1280px auto;"></div>
+                <div class="absolute max-md:hidden inset-0 bg-repeat bg-left-top opacity-10 pointer-events-none" style="background-image: url('<?= base_url('assets/images/batik_sunda1.png') ?>'); z-index: 0; background-size: 1280px auto;"></div>
                 <!-- Wayang Arjuna decoration -->
-                <img src="<?= base_url('assets/gambar/andkomin-arjuna.png') ?>" alt="" class="absolute max-md:hidden right-[1vw] top-[-5vw] h-[50vw] w-auto opacity-90 pointer-events-none z-0">
+                <img src="<?= base_url('assets/images/andkomin-arjuna.png') ?>" alt="" class="absolute max-md:hidden right-[1vw] top-[-5vw] h-[50vw] w-auto opacity-90 pointer-events-none z-0">
                 <div class="relative z-10">
                     <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw]">
                         <!-- Tab 1: Dasar Hukum -->
                         <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="hukum" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="hukum" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.jpg') ?>')">
                                 <div class="absolute inset-0 bg-white/70 transition-all duration-300 tab-overlay"></div>
                                 <h3 class="text-[1.946vw] genos text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Dasar Hukum</h3>
                             </div>
@@ -120,7 +120,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
 
                         <!-- Tab 2: Kedudukan -->
                         <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="kedudukan" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="kedudukan" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.jpg') ?>')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
                                 <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-right">Kedudukan</h3>    
                             </div>
@@ -131,7 +131,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
 
                         <!-- Tab 3: Tugas -->
                         <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="tugas" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="tugas" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.jpg') ?>')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
                                 <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Tugas</h3>
                             </div>
@@ -142,7 +142,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
 
                         <!-- Tab 4: Fungsi -->
                         <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="fungsi" style="background-image: url('<?= base_url('assets/gambar/full-gallery-image-1.jpg') ?>')">
+                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="fungsi" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.jpg') ?>')">
                                 <div class="absolute inset-0 bg-(--blue-color)/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
                                 <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-right">Fungsi</h3>
                             </div>
@@ -262,7 +262,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
     </div>
 
     <footer class="relative overflow-visible mt-[11.67vw] max-md:mt-0">
-        <img src="<?= base_url('assets/gambar/arjuna_woawan.png') ?>" alt="" class="hidden max-md:block absolute right-0 bottom-0 h-[200vw] w-auto pointer-events-none z-0">
+        <img src="<?= base_url('assets/images/arjuna_woawan.png') ?>" alt="" class="hidden max-md:block absolute right-0 bottom-0 h-[200vw] w-auto pointer-events-none z-0">
 
         <div class="relative z-10 w-full p-[1.751vw] text-(--blue-color) text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
             <div class="text-center">

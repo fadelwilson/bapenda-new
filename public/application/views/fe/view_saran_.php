@@ -140,7 +140,7 @@
                                             <article class="box-icon-megan wow fadeInUp">
                                                 <div class="box-icon-megan-header">
                                                     <div>
-                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/gambar/partner8.jpg" alt="" width="800" height="800" />
+                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/images/partner8.jpg" alt="" width="800" height="800" />
                                                     </div>
                                                 </div>
                                                 <h5 class="box-icon-megan-title"><a href="http://192.168.2.6/bhumie/index.php/user/login" target="_blank">SIP PBB</a></h5>
@@ -149,7 +149,7 @@
                                             <article class="box-icon-megan wow fadeInUp" data-wow-delay=".05s">
                                                 <div class="box-icon-megan-header">
                                                     <div>
-                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/gambar/partner9.jpg" alt="" width="800" height="800" />
+                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/images/partner9.jpg" alt="" width="800" height="800" />
                                                     </div>
                                                 </div>
                                                 <h5 class="box-icon-megan-title"><a href="http://36.67.50.122/pad/index.php/user/login" target="_blank">SIP PAD</a></h5>
@@ -158,7 +158,7 @@
                                             <article class="box-icon-megan wow fadeInUp" data-wow-delay=".1s">
                                                 <div class="box-icon-megan-header">
                                                     <div>
-                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/gambar/partner10.jpg" alt="" width="800" height="800" />
+                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/images/partner10.jpg" alt="" width="800" height="800" />
                                                     </div>
                                                 </div>
                                                 <h5 class="box-icon-megan-title"><a href="http://192.168.2.6/sistemberkas/login.php" target="_blank">Sistem Berkas</a></h5>
@@ -167,7 +167,7 @@
                                             <article class="box-icon-megan wow fadeInUp" data-wow-delay=".15s">
                                                 <div class="box-icon-megan-header">
                                                     <div>
-                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/gambar/partner11.jpg" alt="" width="800" height="800" />
+                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/images/partner11.jpg" alt="" width="800" height="800" />
                                                     </div>
                                                 </div>
                                                 <h5 class="box-icon-megan-title"><a href="http://36.67.50.122:1226/bphtb/index.php/site/login" target="_blank">BPHTB</a></h5>
@@ -176,7 +176,7 @@
                                             <article class="box-icon-megan wow fadeInUp" data-wow-delay=".15s">
                                                 <div class="box-icon-megan-header">
                                                     <div>
-                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/gambar/partner12.jpg" alt="" width="800" height="800" />
+                                                        <img src="https://www.bapenda.purwakartakab.go.id/assets/images/partner12.jpg" alt="" width="800" height="800" />
                                                     </div>
                                                 </div>
                                                 <h5 class="box-icon-megan-title"><a href="http://192.168.2.6/sip-arsip" target="_blank">SIP ARSIP</a></h5>
@@ -185,8 +185,8 @@
                                             <!--End Aplikasi Bapenda-->
 
                                             <!-- Thumbnail Creative-->
-                                            <!--article class="thumbnail thumbnail-creative"><a href="<?= base_url('assets'); ?>/gambar/full-gallery-image-2.jpg" data-lightgallery="item">
-                              <div class="thumbnail-creative-figure"><img src="<?= base_url('assets'); ?>/gambar/full-gallery-image-2.jpg" alt="" width="195" height="164"/>
+                                            <!--article class="thumbnail thumbnail-creative"><a href="<?= base_url('assets'); ?>/images/full-gallery-image-2.jpg" data-lightgallery="item">
+                              <div class="thumbnail-creative-figure"><img src="<?= base_url('assets'); ?>/images/full-gallery-image-2.jpg" alt="" width="195" height="164"/>
                               </div>
                               <div class="thumbnail-creative-caption"><span class="icon thumbnail-creative-icon linearicons-magnifier"></span></div></a></article>
                         </div>
