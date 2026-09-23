@@ -54,16 +54,114 @@
                 $publikasi_items = [
                     [
                         'title' => 'Peraturan Pajak Daerah',
-                        'image' => 'assets/ppid/pengajuan-keberatan.png',
+                        'pdfs' => [
+                            [
+                                'title' => 'PERBUP No. 24 Tahun 2024 tentang BPHTB',
+                                'file'  => 'assets/ppid/PERBUP NO 24 TH 2024 TTG BPHTB.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 25 Tahun 2024 tentang PBB-P2',
+                                'file'  => 'assets/ppid/PERBUP NO 25 TH 2024 TTG PBB-P2.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 27 Tahun 2024 tentang Kenaikan NJOP PBB-P2',
+                                'file'  => 'assets/ppid/PERBUP NO 27 TH 2024 TTG KENAIKAN NJOP PBB-P2.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 28 Tahun 2024 tentang Pemberian Stimulus PBB-P2',
+                                'file'  => 'assets/ppid/PERBUP NO 28 TH 2024 TTG PEMBERIAN STIMULUS PBB-P2.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 48 Tahun 2024 tentang Tata Cara Pemungutan Pajak Air Tanah',
+                                'file'  => 'assets/ppid/PERBUP NO 48 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK AIR TANAH.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 49 Tahun 2024 tentang Tata Cara Pemungutan Pajak MBLB',
+                                'file'  => 'assets/ppid/PERBUP NO 49 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK MBLB.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 50 Tahun 2024 tentang Tata Cara Pemungutan PBJT',
+                                'file'  => 'assets/ppid/PERBUP NO 50 TH 2024 TTG TATA CARA PEMUNGUTAN PBJT.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 51 Tahun 2024 tentang Tata Cara Pemungutan Pajak Reklame',
+                                'file'  => 'assets/ppid/PERBUP NO 51 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK REKLAME.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 52 Tahun 2024 tentang Tata Cara Pemungutan Pajak Sarang Burung Walet',
+                                'file'  => 'assets/ppid/PERBUP NO 52 TH 2024 TTG TATA CARA PEMUNGUTAN PAJAK SARANG BURUNG WALET.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 53 Tahun 2024 tentang Tata Cara Penagihan Pajak Daerah',
+                                'file'  => 'assets/ppid/PERBUP NO 53 TH 2024 TTG TATA CARA PENAGIHAN PAJAK DAERAH.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 54 Tahun 2024 tentang Tata Cara Pemeriksaan Pajak Daerah',
+                                'file'  => 'assets/ppid/PERBUP NO 54 TH 2024 TTG TATA CARA PEMERIKSAAN PAJAK DAERAH.pdf',
+                            ],
+                            [
+                                'title' => 'PERBUP No. 55 Tahun 2024 tentang Sistem Monitoring Pelaporan dan Pembayaran Pajak Daerah Secara Online',
+                                'file'  => 'assets/ppid/PERBUP NO 55 TH 2024 TTG SISTEM MONITORING PELAPORAN DAN PEMBAYARAN PAJAK DAERAH SECARA ONLINE.pdf',
+                            ],
+                            [
+                                'title' => 'PERDA No. 15 Tahun 2023 tentang PDRD',
+                                'file'  => 'assets/ppid/PERDA NO 15 TH 2023 TENTANG PDRD.pdf',
+                            ],
+                        ],
                     ],
                     [
                         'title' => 'Publikasi',
-                        'image' => 'assets/ppid/tugas-ppid.jpg',
+                        'pdfs' => [
+                            [
+                                'title' => 'IKU 2025-2030',
+                                'file'  => 'assets/ppid/IKU 2025-2030 n.pdf',
+                            ],
+                            [
+                                'title' => 'LAKIP TA 2025',
+                                'file'  => 'assets/ppid/Lakip TA 2025 fix n.pdf',
+                            ],
+                            [
+                                'title' => 'Renja Bapenda 2026',
+                                'file'  => 'assets/ppid/Renja  Bapenda 2026.pdf',
+                            ],
+                            [
+                                'title' => 'RENJA 2025',
+                                'file'  => 'assets/ppid/RENJA 2025 .pdf',
+                            ],
+                            [
+                                'title' => 'Renja Perubahan Bapenda 2025',
+                                'file'  => 'assets/ppid/Renja Perubahan Bapenda 2025.pdf',
+                            ],
+                            [
+                                'title' => 'Renstra 2025-2029 Bapenda',
+                                'file'  => 'assets/ppid/Renstra 2025-2029 Bapenda.pdf',
+                            ],
+                        ],
                     ],
                     [
                         'title' => 'Formulir',
-                        'image' => 'assets/ppid/tata-cara-penyelesaian.png',
-                        'pdf'   => 'assets/ppid/blanko.pdf',
+                        'pdfs' => [
+                            [
+                                'title' => 'Blanko',
+                                'file'  => 'assets/ppid/blanko.pdf',
+                            ],
+                            [
+                                'title' => 'Permohonan Mutasi',
+                                'file'  => 'assets/ppid/permohonan-mutasi.pdf',
+                            ],
+                            [
+                                'title' => 'Permohonan Pembetulan / Pembatalan',
+                                'file'  => 'assets/ppid/permohonan-pembetulan-pembatalan.pdf',
+                            ],
+                            [
+                                'title' => 'Keringanan / Pengurangan PBB',
+                                'file'  => 'assets/ppid/keringanan-pengurangan-pbb.pdf',
+                            ],
+                            [
+                                'title' => 'Permohonan Pendaftaran',
+                                'file'  => 'assets/ppid/permohonan-pendaftaran.pdf',
+                            ],
+                        ],
                     ],
                 ];
                 ?>
@@ -102,25 +200,103 @@
                             <div
                                 class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content"
                             >
-                                <?php if ($p_item['title'] === 'Formulir'): ?>
-                                    <!-- PDF Preview -->
+
+                                <?php if (isset($p_item['pdfs'])): ?>
+
+                                    <?php
+                                    $pdf_count = count($p_item['pdfs']);
+                                    ?>
+
                                     <div class="w-full py-[1.5vw] max-md:py-[4vw]">
-                                        <div class="w-full h-[40vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
-                                            <iframe
-                                                src="<?= base_url($p_item['pdf']) ?>"
-                                                class="w-full h-full border-0"
-                                                title="Preview <?= htmlspecialchars($p_item['title']) ?>"
-                                            ></iframe>
+
+                                        <!-- Judul PDF -->
+                                        <div class="text-center mb-[1vw] max-md:mb-[3vw]">
+                                            <h3
+                                                class="pdf-form-title jakarta-sans font-semibold text-[1.1vw] max-md:text-[4.5vw]"
+                                            >
+                                                <?= htmlspecialchars($p_item['pdfs'][0]['title']) ?>
+                                            </h3>
                                         </div>
 
-                                        <!-- Download Button -->
+                                        <!-- PDF Preview -->
+                                        <div class="w-full h-[40vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
+
+                                            <iframe
+                                                class="pdf-form-preview w-full h-full border-0"
+                                                src="<?= base_url($p_item['pdfs'][0]['file']) ?>"
+                                                title="Preview PDF"
+                                                referrerpolicy="no-referrer"
+                                            ></iframe>
+
+                                        </div>
+
+                                        <!-- Navigasi -->
+                                        <?php if ($pdf_count > 1): ?>
+
+                                            <div class="flex items-center justify-center gap-[1vw] mt-[1.2vw] max-md:gap-[3vw] max-md:mt-[4vw]">
+
+                                                <!-- Previous -->
+                                                <button
+                                                    type="button"
+                                                    class="pdf-form-prev flex items-center justify-center bg-[#303752] text-white px-[1.2vw] py-[0.6vw] jakarta-sans text-[0.85vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4vw] max-md:py-[2.5vw] max-md:text-[3.5vw]"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke-width="2"
+                                                        stroke="currentColor"
+                                                        class="size-[1vw] max-md:size-[4vw]"
+                                                    >
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            d="M15.75 19.5L8.25 12l7.5-7.5"
+                                                        />
+                                                    </svg>
+                                                </button>
+
+                                                <!-- Counter -->
+                                                <span
+                                                    class="pdf-form-counter jakarta-sans text-[0.85vw] font-semibold max-md:text-[3.5vw]"
+                                                >
+                                                    1 / <?= $pdf_count ?>
+                                                </span>
+
+                                                <!-- Next -->
+                                                <button
+                                                    type="button"
+                                                    class="pdf-form-next flex items-center justify-center bg-[#303752] text-white px-[1.2vw] py-[0.6vw] jakarta-sans text-[0.85vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4vw] max-md:py-[2.5vw] max-md:text-[3.5vw]"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke-width="2"
+                                                        stroke="currentColor"
+                                                        class="size-[1vw] max-md:size-[4vw]"
+                                                    >
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                                                        />
+                                                    </svg>
+                                                </button>
+
+                                            </div>
+
+                                        <?php endif; ?>
+
+
+                                        <!-- Download -->
                                         <div class="flex justify-center mt-[1.2vw] max-md:mt-[4vw]">
+
                                             <a
-                                                href="<?= base_url($p_item['pdf']) ?>"
-                                                download="blanko.pdf"
-                                                class="inline-flex items-center justify-center gap-[0.5vw] bg-[#EAA90D] text-[#303752] jakarta-sans font-semibold text-[0.9vw] px-[1.5vw] py-[0.7vw] transition-all duration-300 hover:bg-[#303752] hover:text-white max-md:gap-[2vw] max-md:text-[3.5vw] max-md:px-[5vw] max-md:py-[2.5vw]"
+                                                class="pdf-form-download inline-flex items-center justify-center gap-[0.5vw] bg-[#EAA90D] text-[#303752] jakarta-sans font-semibold text-[0.9vw] px-[1.5vw] py-[0.7vw] transition-all duration-300 hover:bg-[#303752] hover:text-white max-md:gap-[2vw] max-md:text-[3.5vw] max-md:px-[5vw] max-md:py-[2.5vw]"
+                                                href="<?= base_url($p_item['pdfs'][0]['file']) ?>"
+                                                download
                                             >
-                                                <!-- Download Icon -->
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     fill="none"
@@ -135,18 +311,9 @@
                                                         d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12M12 16.5V3"
                                                     />
                                                 </svg>
-                                                Download Blanko
+                                                Download
                                             </a>
                                         </div>
-                                    </div>
-                                <?php else: ?>
-                                    <!-- Image -->
-                                    <div class="flex justify-center w-full py-[1vw] max-md:py-[3vw]">
-                                        <img
-                                            src="<?= base_url($p_item['image']) ?>"
-                                            alt="<?= htmlspecialchars($p_item['title']) ?>"
-                                            class="max-w-[30vw] max-md:max-w-[90vw] h-auto object-contain"
-                                        >
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -1032,4 +1199,89 @@
                 });
             }
         });
-    </script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const publikasiData = <?= json_encode(
+                array_map(function ($item) {
+                    return [
+                        'title' => $item['title'],
+                        'pdfs'  => $item['pdfs'] ?? [],
+                    ];
+                }, $publikasi_items),
+                JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+            ) ?>;
+
+
+            document.querySelectorAll('.ppid-accordion-item').forEach(function (item) {
+
+                const header = item.querySelector('.ppid-accordion-header');
+
+                if (!header) {
+                    return;
+                }
+
+                const title = header.querySelector('span')?.textContent.trim();
+
+                const data = publikasiData.find(function (section) {
+                    return section.title === title;
+                });
+
+                if (!data || !data.pdfs || data.pdfs.length === 0) {
+                    return;
+                }
+
+                let currentPdf = 0;
+
+                const preview = item.querySelector('.pdf-form-preview');
+                const pdfTitle = item.querySelector('.pdf-form-title');
+                const counter = item.querySelector('.pdf-form-counter');
+                const download = item.querySelector('.pdf-form-download');
+
+                const prevButton = item.querySelector('.pdf-form-prev');
+                const nextButton = item.querySelector('.pdf-form-next');
+
+
+                function updatePdf() {
+                    const pdf = data.pdfs[currentPdf];
+                    const pdfUrl = "<?= base_url() ?>" + pdf.file;
+
+                    preview.src = pdfUrl;
+                    pdfTitle.textContent = pdf.title;
+                    counter.textContent =
+                        `${currentPdf + 1} / ${data.pdfs.length}`;
+
+                    download.href = pdfUrl;
+                    download.setAttribute(
+                        'download',
+                        pdf.file.split('/').pop()
+                    );
+                }
+
+                if (prevButton) {
+                    prevButton.addEventListener('click', function (event) {
+                        event.stopPropagation();
+                        currentPdf--;
+                        if (currentPdf < 0) {
+                            currentPdf = data.pdfs.length - 1;
+                        }
+                        updatePdf();
+                    });
+                }
+
+                if (nextButton) {
+                    nextButton.addEventListener('click', function (event) {
+
+                        event.stopPropagation();
+
+                        currentPdf++;
+
+                        if (currentPdf >= data.pdfs.length) {
+                            currentPdf = 0;
+                        }
+
+                        updatePdf();
+                    });
+                }
+            });
+        });
+</script>
