@@ -15,10 +15,53 @@ $navbar_text_color = $navbar_bg === 'blue'
     : 'text-[#303752] hover:text-[#EAA90D]';
 
 $menu_items = [
-    ['key' => 'beranda',   'label' => 'Beranda',        'url' => base_url()],
-    ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
+    ['key' => 'beranda',   'label' => 'Beranda',       'url' => base_url()],
+    // ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
+    [
+        'key'      => 'profil',
+        'label'    => 'Profil',
+        'url'      => base_url('tentang-kami'),
+        'dropdown' => [
+            [
+                'key'   => 'berita',
+                'label' => 'Berita',
+                'url'   => base_url('tentang-kami#pbb'),
+            ],
+            [
+                'key'   => 'galeri',
+                'label' => 'Galeri',
+                'url'   => base_url('tentang-kami#bphtb'),
+            ],
+            [
+                'key'   => 'ppid',
+                'label' => 'PPID',
+                'url'   => base_url('tentang-kami#pdl'),
+            ],
+        ],
+    ],
     ['key' => 'layanan',   'label' => 'Layanan',        'url' => base_url('layanan')],
-    ['key' => 'informasi', 'label' => 'Informasi',      'url' => base_url('informasi')],
+    [
+        'key'      => 'informasi',
+        'label'    => 'Informasi',
+        'url'      => base_url('informasi'),
+        'dropdown' => [
+            [
+                'key'   => 'berita',
+                'label' => 'Berita',
+                'url'   => base_url('informasi#berita'),
+            ],
+            [
+                'key'   => 'galeri',
+                'label' => 'Galeri',
+                'url'   => base_url('informasi#galeri'),
+            ],
+            [
+                'key'   => 'ppid',
+                'label' => 'PPID',
+                'url'   => base_url('informasi#ppid'),
+            ],
+        ],
+    ],
     ['key' => 'saran',     'label' => 'Saran & Kritik', 'url' => base_url('kritik-saran')],
 ];
 ?>
@@ -30,27 +73,58 @@ $menu_items = [
         aria-label="Menu utama"
     >
         <?php foreach ($menu_items as $item): ?>
-            <?php $is_active = ($active === $item['key']); ?>
+            <?php
+            $is_active = ($active === $item['key']);
+            $has_dropdown = isset($item['dropdown']) && !empty($item['dropdown']);
+            ?>
 
-            <a
-                href="<?= $item['url'] ?>"
-                class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
-                    <?= $is_active
-                        ? 'bg-[#EAA90D] text-[#303752]'
-                        : $navbar_text_color
-                    ?>
-                "
-                <?= $is_active ? 'aria-current="page"' : '' ?>
-            >
-                <?= htmlspecialchars($item['label']) ?>
+            <?php if ($has_dropdown): ?>
 
-                <!-- <?php if ($is_active): ?>
-                    <span
-                        class="absolute left-0 right-0 bottom-0 top-10 h-[0.18vw] bg-[#EAA90D]"
-                    ></span>
-                <?php endif; ?> -->
-            </a>
+                <!-- MENU DENGAN DROPDOWN -->
+                <div class="relative group">
 
+                    <a
+                        href="<?= $item['url'] ?>"
+                        class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                            <?= $is_active
+                                ? 'bg-[#EAA90D] text-[#303752]'
+                                : $navbar_text_color
+                            ?>"
+                        <?= $is_active ? 'aria-current="page"' : '' ?>
+                    >
+                        <?= htmlspecialchars($item['label']) ?>
+                    </a>
+
+                    <!-- DROPDOWN -->
+                    <div
+                        class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[8vw] bg-[#EAA90D] z-[99999]"
+                    >
+                        <?php foreach ($item['dropdown'] as $dropdown): ?>
+                            <a
+                                href="<?= $dropdown['url'] ?>"
+                                class="flex items-center px-[0.5vw] py-[0.25vw] geologica text-[1.167vw] text-[#303752] whitespace-nowrap hover:bg-[#d99b0b] transition-all duration-200"
+                            >
+                                <?= htmlspecialchars($dropdown['label']) ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+            <?php else: ?>
+
+                <!-- MENU BIASA -->
+                <a
+                    href="<?= $item['url'] ?>"
+                    class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                        <?= $is_active
+                            ? 'bg-[#EAA90D] text-[#303752]'
+                            : $navbar_text_color
+                        ?>"
+                    <?= $is_active ? 'aria-current="page"' : '' ?>
+                >
+                    <?= htmlspecialchars($item['label']) ?>
+                </a>
+            <?php endif; ?>
         <?php endforeach; ?>
     </nav>
     
