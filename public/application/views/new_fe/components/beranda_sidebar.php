@@ -16,7 +16,29 @@ $navbar_text_color = $navbar_bg === 'blue'
 
 $menu_items = [
     ['key' => 'beranda',   'label' => 'Beranda',       'url' => base_url()],
-    ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
+    // ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
+    [
+        'key'      => 'profil',
+        'label'    => 'Profil',
+        'url'      => base_url('tentang-kami'),
+        'dropdown' => [
+            [
+                'key'   => 'berita',
+                'label' => 'Berita',
+                'url'   => base_url('tentang-kami#pbb'),
+            ],
+            [
+                'key'   => 'galeri',
+                'label' => 'Galeri',
+                'url'   => base_url('tentang-kami#bphtb'),
+            ],
+            [
+                'key'   => 'ppid',
+                'label' => 'PPID',
+                'url'   => base_url('tentang-kami#pdl'),
+            ],
+        ],
+    ],
     ['key' => 'layanan',   'label' => 'Layanan',        'url' => base_url('layanan')],
     [
         'key'      => 'informasi',
