@@ -469,7 +469,7 @@
     $is_berita_carousel = count($berita_list) > 3;
     ?>
 
-    <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
+    <section id="berita" class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
         <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
             Berita
         </h1>
@@ -761,7 +761,7 @@
     $is_carousel = count($galeri_kegiatan) > 4;
     ?>
 
-    <div class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
+    <section id="galeri" class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
         <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
         </h1>
@@ -912,7 +912,7 @@
     ?>
 
     <!-- PPID Section -->
-    <div class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
+    <section id="ppid" class="relative px-[1.556vw] pt-[1.556vw] pb-0 mt-[5.842vw] max-md:px-[2.051vw] max-md:pt-[2.051vw] max-md:pb-0 max-md:mt-[12.308vw] overflow-hidden" id="ppid">
         <img src="<?= base_url('assets/gambar/batik_sunda1.png') ?>" alt="" class="absolute top-35 left-0 w-full h-[65%] max-md:h-[80%] object-cover object-bottom opacity-[4%] pointer-events-none -z-10">
 
         <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw] relative z-30">
