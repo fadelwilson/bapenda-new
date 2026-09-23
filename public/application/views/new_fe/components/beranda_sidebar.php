@@ -68,7 +68,7 @@ $menu_items = [
 
 <div class="absolute top-[7.5vw] right-[1.556vw] z-[9999] flex items-center max-md:fixed max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav
-        class="flex items-center gap-[0.5vw] max-md:hidden"
+        class="flex items-center gap-[0.9vw] max-md:hidden"
         id="beranda-desktop-menu"
         aria-label="Menu utama"
     >
@@ -81,11 +81,12 @@ $menu_items = [
             <?php if ($has_dropdown): ?>
 
                 <!-- MENU DENGAN DROPDOWN -->
-                <div class="relative group">
+                <div class="relative group w-fit shrink-0">
 
+                    <!-- MENU UTAMA -->
                     <a
                         href="<?= $item['url'] ?>"
-                        class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                        class="relative flex w-fit items-center px-[0.8vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
                             <?= $is_active
                                 ? 'bg-[#EAA90D] text-[#303752]'
                                 : $navbar_text_color
@@ -97,25 +98,24 @@ $menu_items = [
 
                     <!-- DROPDOWN -->
                     <div
-                        class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-[8vw] bg-[#EAA90D] z-[99999]"
+                        class="absolute left-0 top-full hidden group-hover:flex flex-col w-max min-w-[6.9vw] bg-[#EAA90D] z-[99999]"
                     >
                         <?php foreach ($item['dropdown'] as $dropdown): ?>
                             <a
                                 href="<?= $dropdown['url'] ?>"
-                                class="flex items-center px-[0.5vw] py-[0.25vw] geologica text-[1.167vw] text-[#303752] whitespace-nowrap hover:bg-[#d99b0b] transition-all duration-200"
+                                class="flex items-center w-full px-[0.5vw] py-[0.25vw] geologica text-[1.167vw] text-[#303752] whitespace-nowrap hover:bg-[#d99b0b] transition-all duration-200"
                             >
                                 <?= htmlspecialchars($dropdown['label']) ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
                 </div>
-
             <?php else: ?>
 
                 <!-- MENU BIASA -->
                 <a
                     href="<?= $item['url'] ?>"
-                    class="relative flex items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                    class="relative flex w-fit shrink-0 items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
                         <?= $is_active
                             ? 'bg-[#EAA90D] text-[#303752]'
                             : $navbar_text_color
