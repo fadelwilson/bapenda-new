@@ -55,7 +55,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                                 </li>
                                 <li>
                                     <span>Permohonan keringanan/pengurangan PBB : </span>
-                                    <a href="https://s.id/wJQHQ" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/wJQHQ</a>
+                                    <a href="https://s.id/wJQHO" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/wJQHO</a>
                                 </li>
                                 <li>
                                     <span>Permohonan Pembetulan SPPT,SKPD,STPD,SKPDLB dan Pembatalan SPPT,SKPD,STPD : </span>
@@ -193,6 +193,23 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                                 <li>Dokumen Pendukung Lain yang berkaitan langsung dengan Objek Pajak</li>
                                 <li>FC IMB (jika ada)</li>
                                 <li>Pelunasan PBB tahun-tahun sebelumnya</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                            <span>Formulir Permohonan</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                            <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
+                                <li>
+                                    <span>Formulir PBB: </span>
+                                    <a href="https://s.id/Iq6uF" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/Iq6uF</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
