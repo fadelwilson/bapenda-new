@@ -58,6 +58,7 @@ $route['loginwebsite/uploads/tentangkami/formulir/(:num)'] = 'loginwebsite/uploa
 // view
 $route['sejarah'] = 'SejarahController/index';
 $route['kritik-saran'] = 'SaranController/index';
+$route['artikel'] = 'ArtikelController/Index';
 
 // datatables (format : $route['inisial/service/modul'])
 $route['api/dtable/kritik-saran'] = 'SaranController/datatables';

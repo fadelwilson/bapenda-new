@@ -5,7 +5,7 @@
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
-                <img src="<?= base_url('assets/images/new-beranda.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
+                <img src="<?= base_url('assets/images/bapenda-white.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
 
                 <h1 class="text-[5.669vw] text-[#EA6D0D] uppercase krona-one leading-none max-md:text-[9vw]">
                     Kritik & Saran
@@ -101,6 +101,9 @@
                                 class="flex-1 inline-flex items-center justify-center gap-[0.39vw] bg-[#1C2032] hover:bg-[#1C2032]/90 text-white py-[0.58vw]  cursor-pointer transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed max-md:p-4">
                                 <span class="material-symbols-outlined animate-spin text-lg !hidden" id="loading-icon">
                                     progress_activity
+                                </span>
+                                <span class="material-symbols-outlined align-middle text-lg" id="send-icon">
+                                    send
                                 </span>
                                 <span>Kirim</span>
                             </button>
@@ -224,12 +227,12 @@
 
             const form = e.target;
             const btn = form.querySelector("button[type='submit']");
-            const loadingIco = btn.querySelector("span#loading-icon");
-            const sentIco = btn.querySelector("span#send-icon");
+            const loadingIco = btn ? btn.querySelector("#loading-icon") : null;
+            const sentIco = btn ? btn.querySelector("#send-icon") : null;
 
-            loadingIco.classList.remove("!hidden");
-            sentIco.classList.add("!hidden");
-            btn.disabled = true;
+            if (loadingIco) loadingIco.classList.remove("!hidden");
+            if (sentIco) sentIco.classList.add("!hidden");
+            if (btn) btn.disabled = true;
 
             const formData = new FormData(form);
 
@@ -251,9 +254,9 @@
                     notyf.error("Terjadi kesalahan saat mengirim kritik dan saran.");
                 })
                 .finally(() => {
-                    loadingIco.classList.add("!hidden");
-                    sentIco.classList.remove("!hidden");
-                    btn.disabled = false;
+                    if (loadingIco) loadingIco.classList.add("!hidden");
+                    if (sentIco) sentIco.classList.remove("!hidden");
+                    if (btn) btn.disabled = false;
 
                     form.querySelectorAll("input, textarea").forEach((input) => {
                         input.disabled = false;
