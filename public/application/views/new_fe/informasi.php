@@ -3,7 +3,7 @@
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi', 'navbar_bg' => 'white']); ?>
 
-    <div class="py-[1.556vw] max-md:p-[2.051vw]">
+    <section id="peraturan" class="py-[1.556vw] max-md:p-[2.051vw]">
         <div>
             <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-3">
                 <img src="<?= base_url('assets/images/new-info.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto">
@@ -18,7 +18,7 @@
                     Peraturan & Publikasi
                 </h1>
 
-                <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-[#EA6D0D] leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[12.208vw]">
+                <!-- <h3 class="text-[2.852vw] px-[1vw] mt-[1.223vw] text-[#EA6D0D] leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[12.208vw]">
                     Definisi Pajak Daerah
                 </h3>
 
@@ -29,7 +29,7 @@
                         Pajak Kendaraan Bermotor<br>
                         Adapun Pajak Kendaraan Bermotor termasuk ke dalam jenis pajak provinsi yang merupakan bagian dari Pajak Daerah. Lebih lanjut, Pajak Kendaraan Bermotor sebagaimana yang didefinisikan dalam Pasal 1 angka 28 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 adalah pajak atas kepemilikan dan/atau penguasaan kendaraan bermotor. Dalam pelaksanaan pemungutannya dilakukan di kantor bersama samsat. Kantor Bersama SAMSAT ini melibatkan tiga instansi pemerintah, yaitu: Badan Pendapatan Daerah, Kepolisian Daerah Republik Indonesia, dan PT. (Persero) Asuransi Kerugian Jasa Raharja.
                     </p>
-                </div>
+                </div> -->
 
                 <?php $bi = base_url('assets/images/'); ?>
 
@@ -743,16 +743,15 @@
     ?>
 
     <section id="galeri" class="px-[1.556vw] mt-[5.842vw] max-md:p-[2.051vw] max-md:mt-[12.308vw]">
-        <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+        <!-- <h1 class="text-[4.669vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
             GALERI
         </h1>
 
         <h3 class="text-[2.852vw] mt-[1vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5.223vw]">
             Kegiatan Bapenda Purwakarta
-        </h3>
+        </h3> -->
 
-        <?php if ($is_carousel): ?>
-            <!-- Carousel Mode (Jika lebih dari 4 item) -->
+        <!-- <?php if ($is_carousel): ?>
             <div class="owl-carousel owl-theme mt-[2.335vw] max-md:mt-[6.154vw] relative" id="galeri-kegiatan-carousel">
                 <?php foreach ($galeri_kegiatan as $item): ?>
                     <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
@@ -767,7 +766,6 @@
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <!-- Grid Mode (<= 4 item) -->
             <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
                 <?php foreach ($galeri_kegiatan as $item): ?>
                     <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
@@ -779,7 +777,7 @@
                     </<?= $has_link ? 'a' : 'div' ?>>
                 <?php endforeach; ?>
             </div>
-        <?php endif; ?>
+        <?php endif; ?> -->
 
         <?php
         $galeri_path = FCPATH . 'assets/images/';

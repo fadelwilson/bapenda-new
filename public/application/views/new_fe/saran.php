@@ -1,4 +1,4 @@
-<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
+﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'blue']); ?>
@@ -117,96 +117,216 @@
         </div>
     </div>
 
-    <div class="relative mt-auto z-0">
-        <!-- Tower di kanan di atas div batik -->
-        <img src="<?= base_url('assets/images/towersaran.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] bottom-[0%] h-[39vw] w-auto pointer-events-none z-0 max-md:h-[140vw] max-md:bottom-[94%]">
+    <div class="relative overflow-hidden px-[7.78vw] max-md:px-[4.103vw]">
+        <!-- Background Batik -->
+        <img
+            src="<?= base_url('assets/images/batik_sunda1.png') ?>"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none z-0"
+        >
+        <!-- Content -->
+        <div
+            class="
+                grid
+                grid-cols-[1.3fr_1px_1fr_1px_1fr]
+                items-stretch
+                gap-0
+                relative
+                z-10
+                pt-[1.95vw]
 
-        <!-- Section Info (Alamat, Jam Kerja, Telepon) -->
-        <div class="relative overflow-hidden px-[7.78vw] max-md:px-[4.103vw]">
-            <img src="<?= base_url('assets/images/batik_sunda1.png') ?>" alt="" class="absolute inset-0 w-full h-full object-cover opacity-5 pointer-events-none z-0">
+                max-md:flex
+                max-md:flex-col
+                max-md:gap-[2vw]
+                max-md:pt-[5.128vw]
+                max-md:text-center
+            "
+            role="contentinfo"
+        >
+            <!-- ALAMAT -->
+            <div
+                class="
+                    min-w-0
+                    pr-[2vw]
+
+                    max-md:p-0
+                    max-md:w-full
+                "
+            >
+                <h2
+                    class="
+                        geologica
+                        text-[1.56vw]
+                        text-(--yellow-color)
+                        mb-[0.5vw]
+
+                        max-md:text-[4.615vw]
+                        max-md:mb-1
+                    "
+                >
+                    Alamat Kantor
+                </h2>
+
+                <p
+                    class="
+                        open-sans
+                        text-[0.78vw]
+                        leading-relaxed
+                        text-white
+
+                        max-md:text-[3.077vw]
+                    "
+                >
+                    Jl. Surawinata No.30A, Nagri Tengah, Kec.<br>
+                    Purwakarta, Kabupaten Purwakarta, Jawa Barat 41114
+                </p>
+            </div>
+
+            <!-- SEPARATOR -->
+            <div
+                class="
+                    bg-(--blue-color)
+                    w-[1px]
+                    self-stretch
+
+                    max-md:w-full
+                    max-md:h-[1px]
+                    max-md:self-auto
+                    max-md:my-[1.5vw]
+                "
+                aria-hidden="true"
+            ></div>
+
+            <!-- JAM KERJA -->
+            <div
+                class="
+                    min-w-0
+                    px-[2vw]
+
+                    max-md:p-0
+                    max-md:w-full
+                "
+            >
+                <h2
+                    class="
+                        geologica
+                        text-[1.56vw]
+                        text-(--yellow-color)
+                        mb-[0.5vw]
+
+                        max-md:text-[4.615vw]
+                        max-md:mb-1
+                    "
+                >
+                    Jam Kerja
+                </h2>
+
+                <p
+                    class="
+                        open-sans
+                        text-[0.78vw]
+                        leading-relaxed
+                        text-white
+
+                        max-md:text-[3.077vw]
+                    "
+                >
+                    Senin - Jumat : 08:00 - 16:00 WIB<br>
+                    Sabtu : 08:00 - 22:00 WIB MPP Madukara<br>
+                    Minggu : Tutup
+                </p>
+            </div>
+
+            <!-- SEPARATOR -->
+            <div
+                class="
+                    bg-(--blue-color)
+                    w-[1px]
+                    self-stretch
+
+                    max-md:w-full
+                    max-md:h-[1px]
+                    max-md:self-auto
+                    max-md:my-[1.5vw]
+                "
+                aria-hidden="true"
+            ></div>
+
+           <!-- TELEPON -->            
+            <div
+                class="
+                    min-w-0
+                    pl-[2vw]
+
+                    max-md:p-0
+                    max-md:w-full
+                "
+            >
+                <h2
+                    class="
+                        geologica
+                        text-[1.56vw]
+                        text-(--yellow-color)
+                        mb-[0.5vw]
+
+                        max-md:text-[4.615vw]
+                        max-md:mb-1
+                    "
+                >
+                    Telepon Kami Sekarang
+                </h2>
+
+                <p
+                    class="
+                        open-sans
+                        text-[0.78vw]
+                        leading-relaxed
+                        text-white
+
+                        max-md:text-[3.077vw]
+                    "
+                >
+                    <a
+                        href="tel:+6282111336025"
+                        class="underline underline-offset-[2px]"
+                    >
+                        (+62)821-1133-6025
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT -->
+        <footer
+            class="
+                py-[1.95vw]
+                relative
+                z-10
+
+                max-md:mt-[4.103vw]
+                max-md:py-[4vw]
+            "
+        >
 
             <div
-                class="grid grid-cols-[0.7fr_1.3fr_1px_1fr_1px_1fr]
-           items-center gap-0
-           relative z-10
-           pt-[1.95vw]
-           max-md:flex max-md:flex-col
-           max-md:gap-[2vw]
-           max-md:pt-[5.128vw]
-           max-md:text-center"
-                role="contentinfo">
+                class="
+                    w-full
+                    text-white
+                    text-[0.584vw]
+                    jakarta-sans
 
-                <!-- Logo -->
-                <div class="flex items-center justify-start pr-[2vw] max-md:p-0 max-md:w-full max-md:justify-center">
-                    <img
-                        src="<?= base_url('assets/images/bapendalogo.svg') ?>"
-                        alt="Logo Bapenda"
-                        class="h-[5.604vw] w-auto object-contain max-md:h-[40vw] max-md:mx-auto">
-                </div>
+                    max-md:text-[2.564vw]
+                "
+            >
 
-                <!-- Alamat -->
-                <div class="min-w-0 pl-0 pr-[2vw] max-md:p-0 max-md:w-full">
-                    <h2 class="geologica text-[1.56vw] text-(--yellow-color) mb-[0.5vw] max-md:text-[4.615vw] max-md:mb-1">
-                        Alamat Kantor
-                    </h2>
-
-                    <p class="open-sans text-[0.78vw] leading-relaxed text-white max-md:text-[3.077vw]">
-                        Jl. Surawinata No.30A, Nagri Tengah, Kec.<br>
-                        Purwakarta, Kabupaten Purwakarta, Jawa Barat 41114
-                    </p>
-                </div>
-
-                <!-- Separator -->
-                <div
-                    class="bg-(--blue-color) h-full self-stretch
-               max-md:w-full max-md:h-[1px]
-               max-md:my-[1.5vw]"
-                    aria-hidden="true"></div>
-
-                <!-- Jam Kerja -->
-                <div class="min-w-0 px-[2vw] max-md:p-0 max-md:w-full">
-                    <h2 class="geologica text-[1.56vw] text-(--yellow-color) mb-[0.5vw] max-md:text-[4.615vw] max-md:mb-1">
-                        Jam Kerja
-                    </h2>
-
-                    <p class="open-sans text-[0.78vw] leading-relaxed text-white max-md:text-[3.077vw]">
-                        Senin - Jumat : 08:00 - 16:00 WIB<br>
-                        Sabtu - Minggu : Tutup
-                    </p>
-                </div>
-
-                <!-- Separator -->
-                <div
-                    class="bg-(--blue-color) h-full self-stretch
-               max-md:w-full max-md:h-[1px]
-               max-md:my-[1.5vw]"
-                    aria-hidden="true"></div>
-
-                <!-- Telepon -->
-                <div class="min-w-0 pl-[2vw] pr-0 max-md:p-0 max-md:w-full">
-                    <h2 class="geologica text-[1.56vw] text-(--yellow-color) mb-[0.5vw] max-md:text-[4.615vw] max-md:mb-1">
-                        Telepon Kami Sekarang
-                    </h2>
-
-                    <p class="open-sans text-[0.78vw] leading-relaxed text-white max-md:text-[3.077vw]">
-                        <a
-                            href="tel:+6282111336025"
-                            class="underline underline-offset-[2px]">
-                            (+62)821-1133-6025
-                        </a>
-                    </p>
+                <div class="text-center">
+                    Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
 
             </div>
 
-            <footer class="py-[1.95vw] relative z-10 max-md:mt-[4.103vw]">
-                <div class="w-full text-white text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
-                    <div class="text-center">
-                        Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
-                    </div>
-                </div>
-            </footer>
-        </div>
+        </footer>
+
     </div>
 
     <!-- Notyf JS & Submit Handler -->
