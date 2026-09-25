@@ -41,9 +41,10 @@ class BerandaController extends CI_Controller
 		$this->load->view('new_fe/index', $data);
 	}
 
-	public function layanan()
+	public function layanan($sub = null)
 	{
 		$data['active_menu'] = 'layanan';
+		$data['sub_menu']    = $sub ? strtolower($sub) : 'pbb';
 		$this->load->view('new_fe/service', $data);
 	}
 
@@ -93,12 +94,14 @@ class BerandaController extends CI_Controller
 	// 	$this->load->view('new_fe/Blog', $data);
 	// }
 
-	public function informasi()
+	public function informasi($sub = null)
 	{
 		$data['active_menu']     = 'informasi';
+		$data['sub_menu']        = $sub ? strtolower($sub) : 'peraturan';
 		$data['ShowData']        = $this->UploadModel->ShowData()->result_array();
 		$data['ShowDataBerita']  = $this->UploadModel->getBerita()->result_array();
 		$data['ShowDataPPID']    = $this->UploadModel->getDataPPID()->result_array();
+		$data['ShowDataArtikel'] = $this->db->order_by('id', 'desc')->get('artikel')->result_array();
 		$data['ShowDataSejarah'] = $this->db->order_by('id_sejarah', 'desc')->get('sejarah')->result_array();
 		$this->load->view('new_fe/informasi', $data);
 	}
@@ -118,6 +121,27 @@ class BerandaController extends CI_Controller
 		$data['ShowDataPPID'] = $this->UploadModel->getDataPPID()->result_array();
 
 		$this->load->view('new_fe/ppid', $data);
+	}
+
+	public function pbb()
+	{
+		$data['active_menu'] = 'layanan';
+		$data['sub_menu']    = 'pbb';
+		$this->load->view('new_fe/service', $data);
+	}
+
+	public function bphtb()
+	{
+		$data['active_menu'] = 'layanan';
+		$data['sub_menu']    = 'bphtb';
+		$this->load->view('new_fe/service', $data);
+	}
+
+	public function pdl()
+	{
+		$data['active_menu'] = 'layanan';
+		$data['sub_menu']    = 'pdl';
+		$this->load->view('new_fe/service', $data);
 	}
 
 	// public function ShowData()

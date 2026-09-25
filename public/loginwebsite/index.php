@@ -56,6 +56,11 @@
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
 /*
+ * Suppress deprecated warnings for PHP 8.2+ compatibility with CodeIgniter 3
+ */
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
+/*
  *---------------------------------------------------------------
  * ERROR REPORTING
  *---------------------------------------------------------------
@@ -66,7 +71,7 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		error_reporting(-1);
+		error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_DEPRECATED);
 		ini_set('display_errors', 1);
 	break;
 

@@ -69,6 +69,10 @@ $route['blog'] = 'BerandaController/blog';
 
 // informasi (definisi pajak + berita + ppid)
 $route['informasi'] = 'BerandaController/informasi';
+$route['informasi/(:any)'] = 'BerandaController/informasi/$1';
+$route['pbb'] = 'BerandaController/pbb';
+$route['pdl'] = 'BerandaController/pdl';
+$route['bphtb'] = 'BerandaController/bphtb';
 
 // ppid
 $route['ppid'] = 'BerandaController/ppid';

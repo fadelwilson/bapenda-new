@@ -1,14 +1,18 @@
 <?php
 /**
- * Beranda Sidebar – menu vertikal kiri sesuai desain Figma
+ * Beranda Sidebar – menu navigasi utama & logo BAPENDA
  *
  * Variabel yang diterima:
  *   $active_menu – key menu yang sedang aktif
  *                  nilai valid: beranda | profil | layanan | informasi | saran
+ *   $navbar_bg   – 'blue' | 'white' (default: 'white')
+ *   $logo_color  – 'blue' | 'white' (opsional, default menyesuaikan $navbar_bg)
  */
 
 $active = isset($active_menu) ? $active_menu : 'beranda';
 $navbar_bg = isset($navbar_bg) ? $navbar_bg : 'white';
+$logo_color = isset($logo_color) ? $logo_color : ($navbar_bg === 'blue' ? 'white' : 'blue');
+$logo_file = ($logo_color === 'white') ? 'bapenda-white.svg' : 'bapenda-blue.svg';
 
 $navbar_text_color = $navbar_bg === 'blue'
     ? 'text-white hover:text-[#EAA90D]'
@@ -16,30 +20,29 @@ $navbar_text_color = $navbar_bg === 'blue'
 
 $menu_items = [
     ['key' => 'beranda',   'label' => 'Beranda',       'url' => base_url()],
-    // ['key' => 'profil',    'label' => 'Profil',         'url' => base_url('tentang-kami')],
+    ['key' => 'profil',   'label' => 'Profil',        'url' => base_url('tentang-kami')],
     [
-        'key'      => 'profil',
-        'label'    => 'Profil',
-        'url'      => base_url('tentang-kami'),
+        'key'      => 'layanan',
+        'label'    => 'Layanan',
+        'url'      => base_url('layanan'),
         'dropdown' => [
             [
-                'key'   => 'berita',
-                'label' => 'Berita',
-                'url'   => base_url('tentang-kami#pbb'),
+                'key'   => 'pbb',
+                'label' => 'PBB',
+                'url'   => base_url('layanan#pbb'),
             ],
             [
-                'key'   => 'galeri',
-                'label' => 'Galeri',
-                'url'   => base_url('tentang-kami#bphtb'),
+                'key'   => 'bphtb',
+                'label' => 'BPHTB',
+                'url'   => base_url('layanan#bphtb'),
             ],
             [
-                'key'   => 'ppid',
-                'label' => 'PPID',
-                'url'   => base_url('tentang-kami#pdl'),
+                'key'   => 'pdl',
+                'label' => 'PDL',
+                'url'   => base_url('layanan#pdl'),
             ],
         ],
     ],
-    ['key' => 'layanan',   'label' => 'Layanan',        'url' => base_url('layanan')],
     [
         'key'      => 'informasi',
         'label'    => 'Informasi',
@@ -67,11 +70,12 @@ $menu_items = [
             ],
         ],
     ],
-    ['key' => 'saran',     'label' => 'Saran & Kritik', 'url' => base_url('kritik-saran')],
+    ['key' => 'saran',     'label' => 'Kritik & Saran', 'url' => base_url('kritik-saran')],
 ];
 ?>
 
-<div class="absolute top-[7.5vw] right-[1.556vw] z-[9999] flex items-center max-md:fixed max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+<!-- Menu Navigasi Desktop (di bawah H1) & Mobile Toggle (kanan atas) -->
+<div class="absolute top-[7.5vw] right-[1.556vw] z-[11] flex items-center max-md:fixed max-md:right-[4.049vw] max-md:top-[4.049vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav
         class="flex items-center gap-[0.9vw] max-md:hidden"
         id="beranda-desktop-menu"
@@ -91,7 +95,7 @@ $menu_items = [
                     <!-- MENU UTAMA -->
                     <a
                         href="<?= $item['url'] ?>"
-                        class="relative flex w-fit items-center px-[0.8vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                        class="relative flex w-fit items-center px-[0.9vw] py-[0.19vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
                             <?= $is_active
                                 ? 'bg-[#EAA90D] text-[#303752]'
                                 : $navbar_text_color
@@ -103,12 +107,12 @@ $menu_items = [
 
                     <!-- DROPDOWN -->
                     <div
-                        class="absolute left-0 top-full hidden group-hover:flex flex-col w-max min-w-[6.9vw] bg-[#EAA90D] z-[99999]"
+                        class="absolute left-0 top-full hidden group-hover:flex flex-col min-w-full w-max bg-[#EAA90D] z-[99999]"
                     >
                         <?php foreach ($item['dropdown'] as $dropdown): ?>
                             <a
                                 href="<?= $dropdown['url'] ?>"
-                                class="flex items-center w-full px-[0.5vw] py-[0.25vw] geologica text-[1.167vw] text-[#303752] whitespace-nowrap hover:bg-[#d99b0b] transition-all duration-200"
+                                class="flex items-center justify-center text-center w-full px-[0.5vw] py-[0.25vw] geologica text-[1.167vw] text-[#303752] whitespace-nowrap hover:bg-[#d99b0b] transition-all duration-200"
                             >
                                 <?= htmlspecialchars($dropdown['label']) ?>
                             </a>
@@ -120,7 +124,7 @@ $menu_items = [
                 <!-- MENU BIASA -->
                 <a
                     href="<?= $item['url'] ?>"
-                    class="relative flex w-fit shrink-0 items-center px-[0.5vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
+                    class="relative flex w-fit shrink-0 items-center px-[0.9vw] py-[0.19vw] geologica text-[1.167vw] whitespace-nowrap transition-all duration-200
                         <?= $is_active
                             ? 'bg-[#EAA90D] text-[#303752]'
                             : $navbar_text_color
@@ -137,12 +141,30 @@ $menu_items = [
         class="hidden max-md:flex flex-row items-start"
     >
     <nav 
-        class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:top-[14.423vw] max-md:inset-0 max-md:h-[calc(100vh-12.4vw)]" 
+        class="hidden absolute top-full right-0 flex-col bg-white shadow-xl overflow-hidden w-[12.16vw] max-md:w-full max-md:fixed max-md:inset-0 max-md:top-0 max-md:left-0 max-md:h-screen max-md:z-[99999] max-md:overflow-y-auto max-md:pb-[10vw]" 
         id="beranda-sidebar-menu" 
         aria-label="Menu utama"
     >
+        <div class="hidden max-md:flex items-center justify-between w-full px-[4.003vw] py-[3.646vw] border-b border-slate-200 mb-[2vw]">
+            <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="w-[35vw] h-auto object-contain">
+
+            <button 
+                type="button" 
+                class="size-[10.385vw] flex-shrink-0 bg-[#EAA90D] flex items-center justify-center text-[#303752] font-bold cursor-pointer hover:bg-[#d99b0b] transition-all duration-200" 
+                id="beranda-sidebar-inner-close" 
+                aria-label="Tutup menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" stroke="currentColor" class="size-[5.128vw]">
+                    <path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192.5 301.3 329.9 438.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256 375.1 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7 55.1 73.4z"/>
+                </svg>
+            </button>
+        </div>
+
         <?php foreach ($menu_items as $item): ?>
-            <?php $is_active = ($active === $item['key']); ?>
+            <?php 
+            $is_active = ($active === $item['key']); 
+            $has_dropdown = isset($item['dropdown']) && !empty($item['dropdown']);
+            ?>
             
             <?php if ($is_active): ?>
                 <a 
@@ -159,6 +181,17 @@ $menu_items = [
                 >
                     <?= htmlspecialchars($item['label']) ?>
                 </a>
+            <?php endif; ?>
+
+            <?php if ($has_dropdown): ?>
+                <?php foreach ($item['dropdown'] as $dropdown): ?>
+                    <a 
+                        href="<?= $dropdown['url'] ?>" 
+                        class="flex items-center h-[2.72vw] pl-[2.8vw] pr-[1.17vw] text-[#303752] bg-slate-50 hover:bg-slate-100 border-b border-[#303752] genos text-[1.167vw] max-md:text-[4.615vw] max-md:pl-[10.5vw] max-md:pr-[4.103vw] max-md:h-[10.385vw] transition-all duration-200 max-md:mx-[3.2vw]"
+                    >
+                        <?= htmlspecialchars($dropdown['label']) ?>
+                    </a>
+                <?php endforeach; ?>
             <?php endif; ?>
         <?php endforeach; ?>
     </nav>
@@ -188,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var wrap = document.getElementById('beranda-sidebar-wrap');
     var toggle = document.getElementById('beranda-sidebar-toggle');
     var menu = document.getElementById('beranda-sidebar-menu');
+    var innerClose = document.getElementById('beranda-sidebar-inner-close');
 
     var burger = document.getElementById('beranda-sidebar-burger');
     var closeIcon = document.getElementById('beranda-sidebar-close');
@@ -197,19 +231,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function openMenu() {
         menu.style.display = 'flex';
         toggle.setAttribute('aria-expanded', 'true');
-        // if (arrow) burger.style.transform = 'rotate(180deg)';
-
         burger.classList.add('hidden');
         closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
         menu.style.display = 'none';
         toggle.setAttribute('aria-expanded', 'false');
-        // if (arrow) burger.style.transform = 'rotate(0deg)';
-
         burger.classList.remove('hidden');
         closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
     }
 
     toggle.addEventListener('click', function () {
@@ -219,6 +251,22 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             openMenu();
         }
+    });
+
+    if (innerClose) {
+        innerClose.addEventListener('click', function (e) {
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
+
+    var menuLinks = menu.querySelectorAll('a');
+    menuLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (window.innerWidth < 768) {
+                closeMenu();
+            }
+        });
     });
 });
 </script>

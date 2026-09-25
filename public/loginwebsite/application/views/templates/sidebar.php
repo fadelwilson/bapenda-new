@@ -119,6 +119,7 @@
 				<a class="collapse-item" href="<?= site_url('GaleriController/Index') ?>">Galeri</a>
 				<a class="collapse-item" href="<?= site_url('KegiatanController/Index') ?>">Kegiatan</a>
 				<a class="collapse-item" href="<?= site_url('BeritaController/Index') ?>">Berita</a>
+				<a class="collapse-item" href="<?= site_url('ArtikelController/Index') ?>">Artikel</a>
 				<a class="collapse-item" href="<?= site_url('kritik-saran') ?>">Kritik & Saran</a>
 				<a class="collapse-item" href="<?= site_url('sejarah') ?>">Media</a>
 			</div>
