@@ -515,9 +515,12 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                     $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
                     $raw_narasi   = !empty($dt['content']) ? $dt['content'] : (!empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '');
-                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $decoded_narasi = html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    $with_newlines  = preg_replace('/<\/(p|div|h[1-6]|li)>/i', "\n\n", $decoded_narasi);
+                    $with_newlines  = preg_replace('/<br\s*\/?>/i', "\n", $with_newlines);
+                    $clean_narasi   = trim(strip_tags($with_newlines));
                     $narasi_card  = !empty($clean_narasi)
-                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr(preg_replace('/\s+/', ' ', $clean_narasi), 0, 150) . '...' : preg_replace('/\s+/', ' ', $clean_narasi))
                         : 'Badan Pendapatan Daerah Kabupaten Purwakarta berkomitmen memberikan edukasi perpajakan yang transparan dan akuntabel demi kemakmuran masyarakat.';
 
                     $url_berita   = !empty($dt['url']) ? trim($dt['url']) : (!empty($dt['url_berita']) && empty($dt['title']) ? $dt['url_berita'] : '');
@@ -567,9 +570,12 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                     $judul_berita = html_entity_decode(html_entity_decode($raw_judul, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
 
                     $raw_narasi   = !empty($dt['content']) ? $dt['content'] : (!empty($dt['narasi_berita']) ? $dt['narasi_berita'] : '');
-                    $clean_narasi = trim(strip_tags(html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+                    $decoded_narasi = html_entity_decode(html_entity_decode($raw_narasi, ENT_QUOTES | ENT_HTML5, 'UTF-8'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                    $with_newlines  = preg_replace('/<\/(p|div|h[1-6]|li)>/i', "\n\n", $decoded_narasi);
+                    $with_newlines  = preg_replace('/<br\s*\/?>/i', "\n", $with_newlines);
+                    $clean_narasi   = trim(strip_tags($with_newlines));
                     $narasi_card  = !empty($clean_narasi)
-                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr($clean_narasi, 0, 150) . '...' : $clean_narasi)
+                        ? (mb_strlen($clean_narasi) > 150 ? mb_substr(preg_replace('/\s+/', ' ', $clean_narasi), 0, 150) . '...' : preg_replace('/\s+/', ' ', $clean_narasi))
                         : 'Badan Pendapatan Daerah Kabupaten Purwakarta berkomitmen memberikan edukasi perpajakan yang transparan dan akuntabel demi kemakmuran masyarakat.';
 
                     $url_berita   = !empty($dt['url']) ? trim($dt['url']) : (!empty($dt['url_berita']) && empty($dt['title']) ? $dt['url_berita'] : '');
@@ -604,18 +610,18 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
     <!-- /content-berita -->
 
     <!-- Modal Baca Artikel (Sesuai Desain Figma / Screenshot) -->
-    <div id="modal-artikel" class="fixed inset-0 z-[999999] hidden items-center justify-center bg-[#303752]/80 p-4 md:p-10 overflow-y-auto" style="background-color: rgba(48, 55, 82, 0.8); z-index: 999999 !important;" onclick="if(event.target===this)closeArtikelModal()">
-        <!-- Tombol Close (X Lingkaran di kanan atas) -->
-        <button type="button" onclick="closeArtikelModal()" class="fixed top-4 right-4 md:top-8 md:right-10 text-white hover:text-(--yellow-color) bg-[#303752]/90 md:bg-transparent p-1.5 md:p-0 rounded-full transition-transform hover:scale-110 cursor-pointer shadow-lg md:shadow-none" style="z-index: 2147483647 !important;" aria-label="Tutup">
-            <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <div id="modal-artikel" class="fixed inset-0 z-[999999] hidden items-center justify-center bg-[#303752]/80 p-4 pt-16 md:p-10 overflow-hidden" style="background-color: rgba(48, 55, 82, 0.8); z-index: 999999 !important;" onclick="if(event.target===this)closeArtikelModal()">
+        <!-- Tombol Close (Tetap fixed di kanan atas layar, tidak ikut ter-scroll saat artikel panjang) -->
+        <button type="button" onclick="closeArtikelModal()" class="fixed top-4 right-4 md:top-8 md:right-10 text-white hover:text-(--yellow-color) bg-[#303752]/90 hover:bg-[#303752] p-1.5 md:p-2 rounded-full transition-transform hover:scale-110 cursor-pointer shadow-2xl border border-white/20" style="z-index: 2147483647 !important; position: fixed !important;" aria-label="Tutup">
+            <svg class="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="15" y1="9" x2="9" y2="15"></line>
                 <line x1="9" y1="9" x2="15" y2="15"></line>
             </svg>
         </button>
 
-        <!-- Container Konten Popup -->
-        <div class="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto my-auto p-4 md:p-8 text-white custom-scrollbar">
+        <!-- Container Konten Popup (Hanya bagian ini yang bisa di-scroll saat paragraf panjang) -->
+        <div class="relative w-full max-w-6xl max-h-[85vh] overflow-y-auto my-auto p-4 md:p-8 text-white custom-scrollbar" style="overscroll-behavior: contain; -webkit-overflow-scrolling: touch;" onclick="event.stopPropagation()">
             <!-- Row 1: 2 Kolom (Kiri Gambar, Kanan Box Judul Oranye + Lead Paragraph) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
                 <!-- Kolom Kiri: Gambar Artikel -->
@@ -1425,6 +1431,20 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
             width: 6vw !important;
         }
     }
+    #modal-artikel .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+    #modal-artikel .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 9999px;
+    }
+    #modal-artikel .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 9999px;
+    }
+    #modal-artikel .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.45);
+    }
     </style>
 
     <?php $this->load->view('new_fe/components/footer_scripts'); ?>
@@ -1676,6 +1696,10 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
                 document.body.style.overflow = 'hidden';
+                const scrollBox = modal.querySelector('.custom-scrollbar');
+                if (scrollBox) {
+                    scrollBox.scrollTop = 0;
+                }
             }
 
             const sidebarWrap = document.getElementById('beranda-sidebar-wrap');
