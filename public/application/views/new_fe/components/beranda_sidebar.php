@@ -49,8 +49,8 @@ $menu_items = [
         'url'      => base_url('informasi'),
         'dropdown' => [
             [
-                'key'   => 'peraturan & publikasi',
-                'label' => 'Peraturan & Publikasi',
+                'key'   => 'peraturan',
+                'label' => 'Peraturan',
                 'url'   => base_url('informasi#peraturan'),
             ],
             [
