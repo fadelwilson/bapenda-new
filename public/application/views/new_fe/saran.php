@@ -1,11 +1,11 @@
-<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
+﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
-<body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'blue']); ?>
+<body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white flex flex-col justify-between">
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'white']); ?>
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-white.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
 
                 <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Kritik & Saran
@@ -23,7 +23,7 @@
                     <div class="flex flex-col gap-[0.45vw]">
                         <!-- Nama Lengkap -->
                         <div>
-                            <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Nama <span class="text-red-600">*</span>
                             </label>
                             <input
@@ -38,7 +38,7 @@
 
                         <!-- No HP -->
                         <div>
-                            <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 No. Handphone
                             </label>
                             <input
@@ -53,7 +53,7 @@
                         
                         <!-- Alamat -->
                         <div>
-                            <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Alamat
                             </label>
                             <input
@@ -68,7 +68,7 @@
                     <div class="flex flex-col gap-[0.45vw]">
                         <!-- Email -->
                         <div>
-                            <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 E-mail <span class="text-red-600">*</span>
                             </label>
                             <input
@@ -83,7 +83,7 @@
                     
                         <!-- Kritik -->
                         <div>
-                            <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-white max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Kritik & Saran <span class="text-red-600">*</span>
                             </label>
                             <textarea
@@ -175,7 +175,7 @@
                         open-sans
                         text-[0.78vw]
                         leading-relaxed
-                        text-white
+                        text-(--blue-color)
 
                         max-md:text-[3.077vw]
                     "
@@ -229,7 +229,7 @@
                         open-sans
                         text-[0.78vw]
                         leading-relaxed
-                        text-white
+                        text-(--blue-color)
 
                         max-md:text-[3.077vw]
                     "
@@ -284,7 +284,7 @@
                         open-sans
                         text-[0.78vw]
                         leading-relaxed
-                        text-white
+                        text-(--blue-color)
 
                         max-md:text-[3.077vw]
                     "
@@ -301,7 +301,7 @@
 
         <!-- COPYRIGHT -->
         <footer class="relative z-10 mt-[1.95vw] max-md:mt-[4.103vw] pb-[1.556vw] max-md:pb-[4.615vw]">
-            <div class="w-full text-white text-[0.58vw] open-sans max-md:text-[2.564vw]">
+            <div class="w-full text-(--blue-color) text-[0.58vw] open-sans max-md:text-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
