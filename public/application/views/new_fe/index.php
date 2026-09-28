@@ -93,44 +93,62 @@
 
     <!-- Modal Popup / Carousel Foto & Video -->
     <?php
-    $modal_media = [
-        [
-            'type'  => 'image',
-            'src'   => base_url('assets/images/bpd-carousel1.webp'),
-            'thumb' => base_url('assets/images/bpd-carousel1.webp'),
-            'label' => 'Foto 1',
-        ],
-        [
-            'type'  => 'image',
-            'src'   => base_url('assets/images/bpd-carousel2.webp'),
-            'thumb' => base_url('assets/images/bpd-carousel2.webp'),
-            'label' => 'Foto 2',
-        ],
-        [
-            'type'  => 'image',
-            'src'   => base_url('assets/images/bpd-carousel3.webp'),
-            'thumb' => base_url('assets/images/bpd-carousel3.webp'),
-            'label' => 'Foto 3',
-        ],
-        [
-            'type'  => 'image',
-            'src'   => base_url('assets/images/bpd-carousel4.webp'),
-            'thumb' => base_url('assets/images/bpd-carousel4.webp'),
-            'label' => 'Foto 4',
-        ],
-        [
-            'type'  => 'image',
-            'src'   => base_url('assets/images/bpd-carousel5.webp'),
-            'thumb' => base_url('assets/images/bpd-carousel5.webp'),
-            'label' => 'Foto 5',
-        ],
-        [
-            'type'  => 'video',
-            'src'   => base_url('assets/images/bpd-vidcarousel.mp4'),
-            'thumb' => base_url('assets/images/bpd-vidcarousel-thumb.webp'),
-            'label' => 'Video Kegiatan Bapenda',
-        ],
-    ];
+    $modal_media = [];
+    if (!empty($ShowDataCarousel)) {
+        foreach ($ShowDataCarousel as $item) {
+            $is_video = ($item['tipe'] === 'video');
+            $file_url = base_url('loginwebsite/uploads/carousel/' . $item['file_media']);
+
+            $modal_media[] = [
+                'type'  => $item['tipe'],
+                'src'   => $file_url,
+                'thumb' => $is_video ? '' : $file_url,
+                'label' => $item['judul'],
+            ];
+        }
+    }
+
+    // Fallback ke media default jika belum ada data di database
+    if (empty($modal_media)) {
+        $modal_media = [
+            [
+                'type'  => 'image',
+                'src'   => base_url('assets/images/bpd-carousel1.webp'),
+                'thumb' => base_url('assets/images/bpd-carousel1.webp'),
+                'label' => 'Foto 1',
+            ],
+            [
+                'type'  => 'image',
+                'src'   => base_url('assets/images/bpd-carousel2.webp'),
+                'thumb' => base_url('assets/images/bpd-carousel2.webp'),
+                'label' => 'Foto 2',
+            ],
+            [
+                'type'  => 'image',
+                'src'   => base_url('assets/images/bpd-carousel3.webp'),
+                'thumb' => base_url('assets/images/bpd-carousel3.webp'),
+                'label' => 'Foto 3',
+            ],
+            [
+                'type'  => 'image',
+                'src'   => base_url('assets/images/bpd-carousel4.webp'),
+                'thumb' => base_url('assets/images/bpd-carousel4.webp'),
+                'label' => 'Foto 4',
+            ],
+            [
+                'type'  => 'image',
+                'src'   => base_url('assets/images/bpd-carousel5.webp'),
+                'thumb' => base_url('assets/images/bpd-carousel5.webp'),
+                'label' => 'Foto 5',
+            ],
+            [
+                'type'  => 'video',
+                'src'   => base_url('assets/images/bpd-vidcarousel.mp4'),
+                'thumb' => '',
+                'label' => 'Video Kegiatan Bapenda',
+            ],
+        ];
+    }
     $next_initial = $modal_media[1] ?? $modal_media[0];
     ?>
     <div
@@ -190,8 +208,7 @@
                                 controls
                                 playsinline
                                 preload="metadata"
-                                poster="<?= htmlspecialchars($m['thumb']) ?>"
-                                class="max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-lg"
+                                class="max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-lg bg-black"
                             >
                                 <source src="<?= $m['src'] ?>" type="video/mp4">
                                 Browser Anda tidak mendukung pemutar video.
@@ -231,18 +248,18 @@
                     class="flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#EA6D0D] p-1.5 pr-3 rounded-xl cursor-pointer transition-all duration-200 group shrink-0"
                     title="Klik untuk membuka slide berikutnya"
                 >
-                    <div class="relative w-12 h-8 md:w-14 md:h-9 rounded-lg overflow-hidden bg-black/50 shrink-0 border border-white/10">
+                    <div class="relative w-12 h-8 md:w-14 md:h-9 rounded-lg overflow-hidden bg-black shrink-0 border border-white/10 flex items-center justify-center">
                         <img
                             id="next-preview-thumb"
                             src="<?= htmlspecialchars($next_initial['thumb']) ?>"
                             alt="Preview Berikutnya"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 select-none"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 select-none <?= $next_initial['type'] === 'video' ? 'hidden' : '' ?>"
                         />
                         <div
                             id="next-preview-video-badge"
-                            class="absolute inset-0 bg-black/40 items-center justify-center <?= $next_initial['type'] === 'video' ? 'flex' : 'hidden' ?>"
+                            class="absolute inset-0 bg-[#0c101d] items-center justify-center <?= $next_initial['type'] === 'video' ? 'flex' : 'hidden' ?>"
                         >
-                            <svg class="size-3.5 text-white fill-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <svg class="size-3.5 md:size-4 text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                     </div>
                     <div class="flex flex-col text-left">
@@ -267,11 +284,12 @@
                             data-thumb-index="<?= $idx ?>"
                             title="<?= htmlspecialchars($m['label']) ?>"
                         >
-                            <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-10 h-7 md:w-14 md:h-9 object-cover select-none">
                             <?php if ($m['type'] === 'video'): ?>
-                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
-                                    <svg class="size-3 md:size-3.5 text-white fill-white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <div class="w-10 h-7 md:w-14 md:h-9 bg-[#0c101d] flex items-center justify-center border border-white/10">
+                                    <svg class="size-3 md:size-3.5 text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
+                            <?php else: ?>
+                                <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-10 h-7 md:w-14 md:h-9 object-cover select-none">
                             <?php endif; ?>
                         </button>
                     <?php endforeach; ?>
@@ -296,6 +314,62 @@
 
         const mediaData = <?= json_encode($modal_media) ?>;
 
+        let autoSlideTimer = null;
+        const AUTO_SLIDE_DELAY = 7000;
+
+        function isCurrentVideoPlaying() {
+            const activeSlide = slides[currentSlide];
+            if (!activeSlide) return false;
+            const vid = activeSlide.querySelector('video');
+            return vid && !vid.paused && !vid.ended;
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideTimer) {
+                clearTimeout(autoSlideTimer);
+                autoSlideTimer = null;
+            }
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            if (totalSlides <= 1) return;
+            if (!modal || modal.classList.contains('pointer-events-none')) return;
+
+            // Jika video pada slide aktif sedang di-play, jangan jalankan auto slide
+            if (isCurrentVideoPlaying()) {
+                return;
+            }
+
+            autoSlideTimer = setTimeout(function () {
+                if (!modal || modal.classList.contains('pointer-events-none')) return;
+                if (!isCurrentVideoPlaying()) {
+                    nextSlide();
+                }
+            }, AUTO_SLIDE_DELAY);
+        }
+
+        function restartAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
+
+        // Pasang event listener pada setiap video
+        slides.forEach(slide => {
+            const vid = slide.querySelector('video');
+            if (vid) {
+                vid.addEventListener('play', function () {
+                    stopAutoSlide();
+                });
+                vid.addEventListener('pause', function () {
+                    startAutoSlide();
+                });
+                vid.addEventListener('ended', function () {
+                    startAutoSlide();
+                });
+            }
+        });
+
         function pauseAllVideos() {
             slides.forEach(slide => {
                 const vid = slide.querySelector('video');
@@ -312,10 +386,12 @@
             card.classList.remove('scale-95');
             card.classList.add('scale-100');
             document.body.style.overflow = 'hidden';
+            restartAutoSlide();
         };
 
         window.closeBerandaModal = function () {
             if (!modal || !card) return;
+            stopAutoSlide();
             pauseAllVideos();
             modal.classList.add('opacity-0', 'pointer-events-none');
             modal.classList.remove('opacity-100', 'pointer-events-auto');
@@ -366,22 +442,29 @@
             const nextIdx = (currentSlide + 1) % totalSlides;
             const nextMedia = mediaData[nextIdx];
             if (nextMedia) {
-                if (nextPreviewThumb) {
-                    nextPreviewThumb.src = nextMedia.thumb;
-                }
                 if (nextPreviewTitle) {
                     nextPreviewTitle.textContent = nextMedia.label || '';
                 }
-                if (nextPreviewVideoBadge) {
-                    if (nextMedia.type === 'video') {
+                if (nextMedia.type === 'video') {
+                    if (nextPreviewThumb) nextPreviewThumb.classList.add('hidden');
+                    if (nextPreviewVideoBadge) {
                         nextPreviewVideoBadge.classList.remove('hidden');
                         nextPreviewVideoBadge.classList.add('flex');
-                    } else {
+                    }
+                } else {
+                    if (nextPreviewThumb) {
+                        nextPreviewThumb.src = nextMedia.thumb;
+                        nextPreviewThumb.classList.remove('hidden');
+                    }
+                    if (nextPreviewVideoBadge) {
                         nextPreviewVideoBadge.classList.remove('flex');
                         nextPreviewVideoBadge.classList.add('hidden');
                     }
                 }
             }
+
+            // Restart auto slide 7 detik
+            restartAutoSlide();
         };
 
         window.nextSlide = function () {

@@ -242,6 +242,19 @@ CREATE TABLE IF NOT EXISTS `sejarah` (
 INSERT INTO `sejarah` (`id_sejarah`, `judul`, `video`, `deskripsi`) VALUES
 (1, 'Video Profil BAPENDA', NULL, 'Video profil BAPENDA Purwakarta');
 
+-- ----------------------------
+-- Tabel: carousel (Popup Beranda)
+-- ----------------------------
+CREATE TABLE IF NOT EXISTS `carousel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(255) NOT NULL,
+  `tipe` enum('image','video') NOT NULL DEFAULT 'image',
+  `file_media` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- ============================================
 -- Selesai! Semua tabel berhasil dibuat.
 -- ============================================
+

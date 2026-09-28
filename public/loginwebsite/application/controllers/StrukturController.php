@@ -9,6 +9,7 @@ class StrukturController extends CI_Controller
         parent::__construct();
         is_logged_in();
         $this->load->model('StrukturModel');
+        $this->load->helper('webp');
     }
     // Controller struktur
      public function Index ()
@@ -68,7 +69,7 @@ class StrukturController extends CI_Controller
      private function UploadStruktur($data)
 	{
 		$config['upload_path']          = './uploads/tentangkami/struktur';
-		$config['allowed_types']        = 'gif|jpg|png|jpeg';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg|webp';
 		$config['max_size']             = '0';
 		$config['remove_spaces']        = TRUE;
 		$config['detect_mime']        	= TRUE;
@@ -76,11 +77,14 @@ class StrukturController extends CI_Controller
 		$config['encrypt_name']        	= TRUE;
 
 		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
 
 		if ( ! $this->upload->do_upload($data)) :
 			return FALSE;
 		else :
-			return $this->upload->data('file_name');
+			$file_name = $this->upload->data('file_name');
+			$file_name = convert_to_webp('./uploads/tentangkami/struktur/' . $file_name);
+			return $file_name;
 		endif;
 	}
 

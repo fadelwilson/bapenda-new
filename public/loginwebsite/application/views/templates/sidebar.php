@@ -116,6 +116,7 @@
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">Components:</h6>
 				<a class="collapse-item" href="<?= site_url('UploadController/Index') ?>">Header</a>
+				<a class="collapse-item" href="<?= site_url('CarouselController/Index') ?>">Popup Carousel</a>
 				<a class="collapse-item" href="<?= site_url('GaleriController/Index') ?>">Galeri</a>
 				<a class="collapse-item" href="<?= site_url('KegiatanController/Index') ?>">Kegiatan</a>
 				<a class="collapse-item" href="<?= site_url('BeritaController/Index') ?>">Berita</a>

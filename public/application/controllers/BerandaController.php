@@ -22,6 +22,7 @@ class BerandaController extends CI_Controller
 		$data['ShowDataVisi'] = $this->UploadModel->ShowDataVisi()->result_array();
 		$data['ShowDataMisi'] = $this->UploadModel->ShowDataMisi()->result_array();
 		$data['formulir'] = $this->UploadModel->getFormulir()->result_array();
+		$data['ShowDataCarousel'] = $this->UploadModel->ShowDataCarousel()->result_array();
 
 		$this->load->view('new_fe/index', $data);
 	}
@@ -37,6 +38,7 @@ class BerandaController extends CI_Controller
 		$data['hero_desc']      = 'Dinas Pendapatan Daerah Kabupaten Purwakarta hadir untuk mewujudkan '
 			. 'tata kelola pendapatan asli daerah yang akuntabel, terbuka, dan berbasis teknologi '
 			. 'demi pembangunan daerah yang berkeadilan.';
+		$data['ShowDataCarousel'] = $this->UploadModel->ShowDataCarousel()->result_array();
 
 		$this->load->view('new_fe/index', $data);
 	}

@@ -26,6 +26,26 @@ class UploadModel extends CI_Model
                 return $this->db->get();
         }
 
+        public function ShowDataCarousel()
+        {
+                $this->check_carousel_table();
+                $this->db->order_by('id', 'ASC');
+                return $this->db->get('carousel');
+        }
+
+        private function check_carousel_table()
+        {
+                $sql = "CREATE TABLE IF NOT EXISTS `carousel` (
+                        `id` int(11) NOT NULL AUTO_INCREMENT,
+                        `judul` varchar(255) NOT NULL,
+                        `tipe` enum('image','video') NOT NULL DEFAULT 'image',
+                        `file_media` varchar(255) NOT NULL,
+                        `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+                        PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+                @$this->db->query($sql);
+        }
+
         public function getBerita()
         {
                 $this->db->order_by('id', 'desc');

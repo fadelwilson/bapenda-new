@@ -10,6 +10,7 @@ class ArtikelController extends CI_Controller
         parent::__construct();
         is_logged_in();
         $this->load->model('ArtikelModel');
+        $this->load->helper('webp');
     }
 
     public function Index()
@@ -89,7 +90,9 @@ class ArtikelController extends CI_Controller
             $this->upload_error = $this->upload->display_errors('', '');
             return FALSE;
         } else {
-            return $this->upload->data('file_name');
+            $fileName = $this->upload->data('file_name');
+            $fileName = convert_to_webp('./uploads/artikel/' . $fileName);
+            return $fileName;
         }
     }
 
