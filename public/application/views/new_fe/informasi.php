@@ -1178,7 +1178,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
             </div>
         </footer>
 
-        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[0.973vw] max-md:-right-[2.051vw] opacity-[0.2] -bottom-10 h-[40.126vw] w-auto pointer-events-none -z-1 max-md:h-[118vw]">
+        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[0.973vw] max-md:-right-[2.051vw] opacity-[0.15] -bottom-10 h-[40.126vw] w-auto pointer-events-none -z-1 max-md:h-[118vw]">
     </div>
 
 
