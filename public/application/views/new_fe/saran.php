@@ -1,4 +1,4 @@
-﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
+<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'blue']); ?>
@@ -235,7 +235,7 @@
                     "
                 >
                     Senin - Jumat : 08:00 - 16:00 WIB<br>
-                    Sabtu : 08:00 - 22:00 WIB MPP Madukara<br>
+                    Sabtu : 08:00 - 22:00 WIB @MPP Madukara<br>
                     Minggu : Tutup
                 </p>
             </div>
@@ -300,34 +300,12 @@
         </div>
 
         <!-- COPYRIGHT -->
-        <footer
-            class="
-                py-[1.95vw]
-                relative
-                z-10
-
-                max-md:mt-[4.103vw]
-                max-md:py-[4vw]
-            "
-        >
-
-            <div
-                class="
-                    w-full
-                    text-white
-                    text-[0.584vw]
-                    jakarta-sans
-
-                    max-md:text-[2.564vw]
-                "
-            >
-
+        <footer class="relative z-10 mt-[1.95vw] max-md:mt-[4.103vw] pb-[1.556vw] max-md:pb-[4.615vw]">
+            <div class="w-full text-white text-[0.58vw] open-sans max-md:text-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
-
             </div>
-
         </footer>
 
     </div>

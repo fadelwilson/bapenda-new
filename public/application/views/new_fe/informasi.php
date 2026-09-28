@@ -967,7 +967,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                         <div class="p-[2px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]">
                                             <div class="p-[1.5px] bg-white rounded-full flex items-center justify-center">
                                                 <img
-                                                    src="<?= base_url('assets/images/logo-tab.jpg') ?>"
+                                                    src="<?= base_url('assets/images/logo-tab.webp') ?>"
                                                     alt="BAPENDA PURWAKARTA"
                                                     class="size-[2vw] max-md:size-[8vw] rounded-full object-cover" />
                                             </div>
@@ -1040,7 +1040,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                     <div class="p-[2px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]">
                                         <div class="p-[1.5px] bg-white rounded-full flex items-center justify-center">
                                             <img
-                                                src="<?= base_url('assets/images/logo-tab.jpg') ?>"
+                                                src="<?= base_url('assets/images/logo-tab.webp') ?>"
                                                 alt="BAPENDA PURWAKARTA"
                                                 class="size-[2vw] max-md:size-[8vw] rounded-full object-cover" />
                                         </div>
@@ -1183,8 +1183,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         </div>
         <!-- /relative z-10 -->
 
-        <footer class="mt-[4vw] max-md:mt-[12vw] relative z-30 overflow-visible">
-            <div class="relative z-10 w-full p-[1.751vw] text-[#303752] text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
+        <footer class="relative z-30 overflow-visible">
+            <div class="relative z-10 w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>

@@ -607,8 +607,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
             </div>
         </div>
 
-        <footer class="mt-[6vw] relative z-10 max-md:mt-[10vw]">
-            <div class="w-full text-white text-[0.584vw] jakarta-sans max-md:text-[2.564vw]">
+        <footer class="relative z-10">
+            <div class="w-full text-white text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
