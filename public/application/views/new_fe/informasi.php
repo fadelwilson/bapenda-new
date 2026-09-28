@@ -9,17 +9,17 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
     <div class="relative overflow-hidden min-h-screen flex flex-col justify-between px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
         <div class="relative z-10">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[2.051vw] max-md:mt-[1.538vw]">
 
-                <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
+                <h1 class="text-[4.669vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Informasi
                 </h1>
             </div>
 
-            <div class="mt-[4.5vw] max-md:mt-[8vw] relative z-10 max-md:px-0">
+            <div class="mt-[4.475vw] max-md:mt-[8.205vw] relative z-10 max-md:px-0">
                 <!-- Tab Pane 1: Peraturan & Publikasi -->
                 <div id="content-peraturan" class="informasi-pane flex flex-col">
-                    <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw]">
+                    <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-left max-md:text-[5.641vw]">
                         Peraturan & Publikasi
                     </h1>
 
@@ -141,7 +141,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 ];
                 ?>
 
-                <div class="flex flex-col px-[2.33vw] gap-[0.19vw] mt-[2.33vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
+                <div class="flex flex-col px-[2.335vw] gap-[0.195vw] mt-[2.335vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
                     <?php foreach ($publikasi_items as $p_item): ?>
 
                         <div class="ppid-accordion-item">
@@ -149,7 +149,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                             <!-- Header -->
                             <button
                                 type="button"
-                                class="relative z-30 w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-[#303752] text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]"
+                                class="relative z-30 w-full flex items-center justify-between gap-[0.973vw] max-md:gap-[2.051vw] p-[0.78vw] bg-[#303752] text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]"
                             >
                                 <span><?= htmlspecialchars($p_item['title']) ?></span>
 
@@ -171,7 +171,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
                             <!-- Content -->
                             <div
-                                class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content"
+                                class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[1.946vw] max-md:px-[3.590vw] ppid-accordion-content"
                             >
 
                                 <?php if (isset($p_item['pdfs'])): ?>
@@ -180,19 +180,19 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                     $pdf_count = count($p_item['pdfs']);
                                     ?>
 
-                                    <div class="w-full py-[1.5vw] max-md:py-[4vw]">
+                                    <div class="w-full py-[1.459vw] max-md:py-[4.103vw]">
 
                                         <!-- Judul PDF -->
-                                        <div class="text-center mb-[1vw] max-md:mb-[3vw]">
+                                        <div class="text-center mb-[0.973vw] max-md:mb-[3.077vw]">
                                             <h3
-                                                class="pdf-form-title jakarta-sans font-semibold text-[1.1vw] max-md:text-[4.5vw]"
+                                                class="pdf-form-title jakarta-sans font-semibold text-[1.070vw] max-md:text-[4.615vw]"
                                             >
                                                 <?= htmlspecialchars($p_item['pdfs'][0]['title']) ?>
                                             </h3>
                                         </div>
 
                                         <!-- PDF Preview -->
-                                        <div class="w-full h-[40vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
+                                        <div class="w-full h-[37.354vw] max-md:h-[120vw] bg-white overflow-hidden border border-[#303752]/20">
 
                                             <iframe
                                                 class="pdf-form-preview w-full h-full border-0"
@@ -206,12 +206,12 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                         <!-- Navigasi -->
                                         <?php if ($pdf_count > 1): ?>
 
-                                            <div class="flex items-center justify-center gap-[1vw] mt-[1.2vw] max-md:gap-[3vw] max-md:mt-[4vw]">
+                                            <div class="flex items-center justify-center gap-[0.973vw] mt-[1.167vw] max-md:gap-[3.077vw] max-md:mt-[4.103vw]">
 
                                                 <!-- Previous -->
                                                 <button
                                                     type="button"
-                                                    class="pdf-form-prev flex items-center justify-center bg-[#303752] text-white px-[1.2vw] py-[0.6vw] jakarta-sans text-[0.85vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4vw] max-md:py-[2.5vw] max-md:text-[3.5vw]"
+                                                    class="pdf-form-prev flex items-center justify-center bg-[#303752] text-white px-[1.167vw] py-[0.584vw] jakarta-sans text-[0.875vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4.103vw] max-md:py-[2.564vw] max-md:text-[3.590vw]"
                                                 >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +219,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                                         viewBox="0 0 24 24"
                                                         stroke-width="2"
                                                         stroke="currentColor"
-                                                        class="size-[1vw] max-md:size-[4vw]"
+                                                        class="size-[0.973vw] max-md:size-[4.103vw]"
                                                     >
                                                         <path
                                                             stroke-linecap="round"
@@ -231,7 +231,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
                                                 <!-- Counter -->
                                                 <span
-                                                    class="pdf-form-counter jakarta-sans text-[0.85vw] font-semibold max-md:text-[3.5vw]"
+                                                    class="pdf-form-counter jakarta-sans text-[0.875vw] font-semibold max-md:text-[3.590vw]"
                                                 >
                                                     1 / <?= $pdf_count ?>
                                                 </span>
@@ -239,7 +239,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                                 <!-- Next -->
                                                 <button
                                                     type="button"
-                                                    class="pdf-form-next flex items-center justify-center bg-[#303752] text-white px-[1.2vw] py-[0.6vw] jakarta-sans text-[0.85vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4vw] max-md:py-[2.5vw] max-md:text-[3.5vw]"
+                                                    class="pdf-form-next flex items-center justify-center bg-[#303752] text-white px-[1.167vw] py-[0.584vw] jakarta-sans text-[0.875vw] transition-all duration-300 hover:bg-[#EAA90D] hover:text-[#303752] max-md:px-[4.103vw] max-md:py-[2.564vw] max-md:text-[3.590vw]"
                                                 >
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +247,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                                         viewBox="0 0 24 24"
                                                         stroke-width="2"
                                                         stroke="currentColor"
-                                                        class="size-[1vw] max-md:size-[4vw]"
+                                                        class="size-[0.973vw] max-md:size-[4.103vw]"
                                                     >
                                                         <path
                                                             stroke-linecap="round"
@@ -263,10 +263,10 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
 
                                         <!-- Download -->
-                                        <div class="flex justify-center mt-[1.2vw] max-md:mt-[4vw]">
+                                        <div class="flex justify-center mt-[1.167vw] max-md:mt-[4.103vw]">
 
                                             <a
-                                                class="pdf-form-download inline-flex items-center justify-center gap-[0.5vw] bg-[#EAA90D] text-[#303752] jakarta-sans font-semibold text-[0.9vw] px-[1.5vw] py-[0.7vw] transition-all duration-300 hover:bg-[#303752] hover:text-white max-md:gap-[2vw] max-md:text-[3.5vw] max-md:px-[5vw] max-md:py-[2.5vw]"
+                                                class="pdf-form-download inline-flex items-center justify-center gap-[0.486vw] bg-[#EAA90D] text-[#303752] jakarta-sans font-semibold text-[0.875vw] px-[1.556vw] py-[0.681vw] transition-all duration-300 hover:bg-[#303752] hover:text-white max-md:gap-[2.051vw] max-md:text-[3.590vw] max-md:px-[5.128vw] max-md:py-[2.564vw]"
                                                 href="<?= base_url($p_item['pdfs'][0]['file']) ?>"
                                                 download
                                             >
@@ -276,7 +276,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                                     viewBox="0 0 24 24"
                                                     stroke-width="2"
                                                     stroke="currentColor"
-                                                    class="size-[1.2vw] max-md:size-[5vw]"
+                                                    class="size-[1.167vw] max-md:size-[5.128vw]"
                                                 >
                                                     <path
                                                         stroke-linecap="round"
@@ -377,11 +377,11 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
             <!-- Tab Pane 2: Berita & Artikel -->
             <div id="content-berita" class="informasi-pane hidden flex flex-col">
-                <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+                <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
                     Berita
                 </h1>
 
-                <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5vw]">
+                <h3 class="text-[2.821vw] px-[1.167vw] mt-[1.167vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5.128vw] max-md:mt-[5.128vw]">
                     Kabar Purwakarta Istimewa
                 </h3>
 
@@ -414,14 +414,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                 <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                             </div>
 
-                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
-                                <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.518vw] max-md:min-h-[22.051vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                                <h3 class="text-white text-[1.265vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
                                     <?= $judul_berita ?>
                                 </h3>
                             </div>
 
                             <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
-                                <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                <p class="jakarta-sans text-[0.875vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
                                     <?= $narasi_berita ?>
                                 </p>
                             </div>
@@ -457,14 +457,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                             <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                         </div>
 
-                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
-                            <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.518vw] max-md:min-h-[22.051vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                            <h3 class="text-white text-[1.265vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
                                 <?= $judul_berita ?>
                             </h3>
                         </div>
 
                         <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
-                            <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                            <p class="jakarta-sans text-[0.875vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
                                 <?= $narasi_berita ?>
                             </p>
                         </div>
@@ -474,12 +474,12 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         <?php endif; ?>
 
         <!-- Artikel Sub-Section (inside Berita Pane) -->
-        <div class="mt-[4.5vw] max-md:mt-[8vw]">
-            <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+        <div class="mt-[4.475vw] max-md:mt-[8.205vw]">
+            <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
                 Artikel
             </h1>
 
-            <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5vw]">
+            <h3 class="text-[2.821vw] px-[1.167vw] mt-[1.167vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5.128vw] max-md:mt-[5.128vw]">
                 Bapenda Purwakarta
             </h3>
 
@@ -523,14 +523,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                 <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                             </div>
 
-                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
-                                <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                            <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.518vw] max-md:min-h-[22.051vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                                <h3 class="text-white text-[1.265vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
                                     <?= $judul_berita ?>
                                 </h3>
                             </div>
 
                             <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
-                                <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                                <p class="jakarta-sans text-[0.875vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
                                     <?= $narasi_card ?>
                                 </p>
                             </div>
@@ -577,14 +577,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                             <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($judul_berita, ENT_QUOTES, 'UTF-8') ?>" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                         </div>
 
-                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.5vw] max-md:min-h-[22vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
-                            <h3 class="text-white text-[1.25vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
+                        <div class="relative z-10 -mt-[3.891vw] max-md:-mt-[9.231vw] mx-auto w-[92%] self-center bg-[#303752] min-h-[6.518vw] max-md:min-h-[22.051vw] flex items-center justify-center p-[0.973vw] max-md:p-[3.077vw] shadow-md">
+                            <h3 class="text-white text-[1.265vw] max-md:text-[4.615vw] font-bold text-center leading-snug genos line-clamp-3">
                                 <?= $judul_berita ?>
                             </h3>
                         </div>
 
                         <div class="mt-[0.973vw] max-md:mt-[3.077vw] px-[0.389vw]">
-                            <p class="jakarta-sans text-[0.85vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
+                            <p class="jakarta-sans text-[0.875vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify line-clamp-4">
                                 <?= $narasi_card ?>
                             </p>
                         </div>
@@ -888,11 +888,11 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
     <!-- Tab Pane 3: Galeri -->
     <div id="content-galeri" class="informasi-pane hidden flex flex-col">
-        <!-- <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+        <!-- <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
             GALERI
         </h1>
 
-        <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5vw]">
+        <h3 class="text-[2.821vw] px-[1.167vw] mt-[1.167vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5.128vw] max-md:mt-[5.128vw]">
             Kegiatan Bapenda Purwakarta
         </h3>
 
@@ -911,7 +911,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[1vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+            <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[0.973vw] max-md:gap-[8.205vw] mt-[2.335vw] max-md:mt-[6.154vw]">
                 <?php foreach ($galeri_kegiatan as $item): ?>
                     <?php $has_link = !empty($item['video_url']) && $item['video_url'] !== '#'; ?>
                     <<?= $has_link ? 'a href="' . htmlspecialchars($item['video_url']) . '" target="_blank"' : 'div' ?> class="group relative block w-full aspect-video overflow-hidden bg-[#303752] galeri-kegiatan-card">
@@ -925,18 +925,18 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         <?php endif; ?> -->
 
         <!-- Postingan Instagram Sub-Section (inside Galeri Pane) -->
-        <div class="mt-[4.5vw] max-md:mt-[8vw]">
+        <div class="mt-[4.475vw] max-md:mt-[8.205vw]">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+                    <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
                         Postingan Instagram
                     </h1>
-                    <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5vw]">
+                    <h3 class="text-[2.821vw] px-[1.167vw] mt-[1.167vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5.128vw] max-md:mt-[5.128vw]">
                         @bapendapwk
                     </h3>
                 </div>
-                <a href="https://www.instagram.com/bapendapwk/" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-[0.5vw] px-[1.2vw] py-[0.6vw] bg-[#303752] text-white hover:bg-[#EA6D0D] transition-colors duration-300 text-[0.85vw] font-medium jakarta-sans mr-[1.167vw] group">
-                    <svg class="size-[1.1vw] text-[#EA6D0D] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <a href="https://www.instagram.com/bapendapwk/" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-[0.486vw] px-[1.167vw] py-[0.584vw] bg-[#303752] text-white hover:bg-[#EA6D0D] transition-colors duration-300 text-[0.875vw] font-medium jakarta-sans mr-[1.167vw] group">
+                    <svg class="size-[1.070vw] text-[#EA6D0D] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     <span>Kunjungi @bapendapwk</span>
                 </a>
             </div>
@@ -945,26 +945,26 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 <!-- Carousel Mode (Jika lebih dari 3 item) -->
                 <div class="owl-carousel owl-theme mt-[2.335vw] max-md:mt-[6.154vw] relative" id="galeri-ig-carousel">
                     <?php foreach ($ig_posts as $item): ?>
-                        <div class="item p-[0.3vw] pb-[0.8vw]">
-                            <div class="bg-white rounded-[1.2vw] max-md:rounded-2xl border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:-translate-y-1">
+                        <div class="item p-[0.292vw] pb-[0.778vw]">
+                            <div class="bg-white rounded-[1.167vw] max-md:rounded-[4.103vw] border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:-translate-y-1">
                                 <!-- Header -->
-                                <div class="flex items-center justify-between px-[1vw] py-[0.8vw] max-md:px-[3.5vw] max-md:py-[3vw] bg-white">
-                                    <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-[0.6vw] max-md:gap-[2.5vw] group/user">
+                                <div class="flex items-center justify-between px-[0.973vw] py-[0.778vw] max-md:px-[3.590vw] max-md:py-[3.077vw] bg-white">
+                                    <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-[0.584vw] max-md:gap-[2.564vw] group/user">
                                         <!-- Instagram Story Gradient Ring -->
                                         <div class="p-[2px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]">
                                             <div class="p-[1.5px] bg-white rounded-full flex items-center justify-center">
                                                 <img
                                                     src="<?= base_url('assets/images/logo-tab.webp') ?>"
                                                     alt="BAPENDA PURWAKARTA"
-                                                    class="size-[2vw] max-md:size-[8vw] rounded-full object-cover" />
+                                                    class="size-[1.946vw] max-md:size-[8.205vw] rounded-full object-cover" />
                                             </div>
                                         </div>
-                                        <span class="text-[0.8vw] max-md:text-[3.2vw] font-bold text-slate-800 tracking-wide uppercase font-sans group-hover/user:text-[#EA6D0D] transition-colors">
+                                        <span class="text-[0.778vw] max-md:text-[3.077vw] font-bold text-slate-800 tracking-wide uppercase font-sans group-hover/user:text-[#EA6D0D] transition-colors">
                                             BAPENDA PURWAKARTA
                                         </span>
                                     </a>
-                                    <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-800 transition-colors p-[0.2vw]" aria-label="Menu">
-                                        <svg class="size-[1.1vw] max-md:size-[4.5vw]" fill="currentColor" viewBox="0 0 24 24">
+                                    <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-800 transition-colors p-[0.195vw]" aria-label="Menu">
+                                        <svg class="size-[1.070vw] max-md:size-[4.615vw]" fill="currentColor" viewBox="0 0 24 24">
                                             <circle cx="5" cy="12" r="1.8"/>
                                             <circle cx="12" cy="12" r="1.8"/>
                                             <circle cx="19" cy="12" r="1.8"/>
@@ -983,21 +983,21 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                 </a>
 
                                 <!-- Action Bar -->
-                                <div class="flex items-center justify-between px-[1vw] py-[0.8vw] max-md:px-[3.5vw] max-md:py-[3vw] bg-white">
+                                <div class="flex items-center justify-between px-[0.973vw] py-[0.778vw] max-md:px-[3.590vw] max-md:py-[3.077vw] bg-white">
                                     <!-- Left Actions -->
-                                    <div class="flex items-center gap-[0.9vw] max-md:gap-[3.5vw] text-slate-700">
+                                    <div class="flex items-center gap-[0.875vw] max-md:gap-[3.590vw] text-slate-700">
                                         <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors" aria-label="Suka">
-                                            <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                             </svg>
                                         </a>
                                         <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors" aria-label="Komentar">
-                                            <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                                             </svg>
                                         </a>
                                         <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors" aria-label="Bagikan">
-                                            <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                             </svg>
@@ -1006,7 +1006,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                     <!-- Right Action -->
                                     <div>
                                         <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-slate-900 transition-colors" aria-label="Simpan">
-                                            <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                             </svg>
                                         </a>
@@ -1018,26 +1018,26 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 </div>
             <?php else: ?>
                 <!-- Grid Mode (<= 3 item) -->
-                <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[1.5vw] max-md:gap-[6vw] mt-[2.335vw] max-md:mt-[6.154vw]">
+                <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[1.556vw] max-md:gap-[6.154vw] mt-[2.335vw] max-md:mt-[6.154vw]">
                     <?php foreach ($ig_posts as $item): ?>
-                        <div class="bg-white rounded-[1.2vw] max-md:rounded-2xl border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:-translate-y-1">
+                        <div class="bg-white rounded-[1.167vw] max-md:rounded-[4.103vw] border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)] hover:-translate-y-1">
                             <!-- Header -->
-                            <div class="flex items-center justify-between px-[1vw] py-[0.8vw] max-md:px-[3.5vw] max-md:py-[3vw] bg-white">
-                                <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-[0.6vw] max-md:gap-[2.5vw] group/user">
+                            <div class="flex items-center justify-between px-[0.973vw] py-[0.778vw] max-md:px-[3.590vw] max-md:py-[3.077vw] bg-white">
+                                <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="flex items-center gap-[0.584vw] max-md:gap-[2.564vw] group/user">
                                     <div class="p-[2px] rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]">
                                         <div class="p-[1.5px] bg-white rounded-full flex items-center justify-center">
                                             <img
                                                 src="<?= base_url('assets/images/logo-tab.webp') ?>"
                                                 alt="BAPENDA PURWAKARTA"
-                                                class="size-[2vw] max-md:size-[8vw] rounded-full object-cover" />
+                                                class="size-[1.946vw] max-md:size-[8.205vw] rounded-full object-cover" />
                                         </div>
                                     </div>
-                                    <span class="text-[0.8vw] max-md:text-[3.2vw] font-bold text-slate-800 tracking-wide uppercase font-sans group-hover/user:text-[#EA6D0D] transition-colors">
+                                    <span class="text-[0.778vw] max-md:text-[3.077vw] font-bold text-slate-800 tracking-wide uppercase font-sans group-hover/user:text-[#EA6D0D] transition-colors">
                                         BAPENDA PURWAKARTA
                                     </span>
                                 </a>
-                                <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-800 transition-colors p-[0.2vw]" aria-label="Menu">
-                                    <svg class="size-[1.1vw] max-md:size-[4.5vw]" fill="currentColor" viewBox="0 0 24 24">
+                                <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-800 transition-colors p-[0.195vw]" aria-label="Menu">
+                                    <svg class="size-[1.070vw] max-md:size-[4.615vw]" fill="currentColor" viewBox="0 0 24 24">
                                         <circle cx="5" cy="12" r="1.8"/>
                                         <circle cx="12" cy="12" r="1.8"/>
                                         <circle cx="19" cy="12" r="1.8"/>
@@ -1056,21 +1056,21 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                             </a>
 
                             <!-- Action Bar -->
-                            <div class="flex items-center justify-between px-[1vw] py-[0.8vw] max-md:px-[3.5vw] max-md:py-[3vw] bg-white">
+                            <div class="flex items-center justify-between px-[0.973vw] py-[0.778vw] max-md:px-[3.590vw] max-md:py-[3.077vw] bg-white">
                                 <!-- Left Actions -->
-                                <div class="flex items-center gap-[0.9vw] max-md:gap-[3.5vw] text-slate-700">
+                                <div class="flex items-center gap-[0.875vw] max-md:gap-[3.590vw] text-slate-700">
                                     <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors" aria-label="Suka">
-                                        <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                                         </svg>
                                     </a>
                                     <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors" aria-label="Komentar">
-                                        <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                                         </svg>
                                     </a>
                                     <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors" aria-label="Bagikan">
-                                        <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <line x1="22" y1="2" x2="11" y2="13"></line>
                                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                         </svg>
@@ -1079,7 +1079,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                 <!-- Right Action -->
                                 <div>
                                     <a href="<?= htmlspecialchars($item['url']) ?>" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-slate-900 transition-colors" aria-label="Simpan">
-                                        <svg class="size-[1.35vw] max-md:size-[5.5vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                        <svg class="size-[1.362vw] max-md:size-[5.385vw]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                                         </svg>
                                     </a>
@@ -1132,31 +1132,31 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
     <!-- Tab Pane 4: PPID -->
     <div id="content-ppid" class="informasi-pane hidden flex flex-col">
-        <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[10vw]">
+        <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
             PPID
         </h1>
 
-        <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5vw] max-md:mt-[5vw]">
+        <h3 class="text-[2.821vw] px-[1.167vw] mt-[1.167vw] text-[#EA6D0D] uppercase geologica leading-none max-md:text-[5.128vw] max-md:mt-[5.128vw]">
             Penjabat Pengelola Informasi &amp; Dokumentasi
         </h3>
 
         <!-- Accordion Container -->
-        <div class="flex flex-col gap-[0.19vw] mt-[2.33vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
+        <div class="flex flex-col gap-[0.195vw] mt-[2.335vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
             <?php foreach ($ppid_items as $p_item): ?>
                 <div class="ppid-accordion-item">
-                    <button type="button" class="relative z-30 w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-[#303752] text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                    <button type="button" class="relative z-30 w-full flex items-center justify-between gap-[0.973vw] max-md:gap-[2.051vw] p-[0.778vw] bg-[#303752] text-white jakarta-sans text-[0.973vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.590vw] text-left max-md:p-[2.051vw]">
                         <span><?= htmlspecialchars($p_item['title']) ?></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform ppid-accordion-icon max-md:size-[6.154vw]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.167vw] shrink-0 transition-transform duration-300 transform ppid-accordion-icon max-md:size-[6.154vw]">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
 
-                    <div class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] ppid-accordion-content">
-                        <div class="flex justify-center w-full py-[1vw] max-md:py-[3vw]">
+                    <div class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[1.946vw] max-md:px-[3.590vw] ppid-accordion-content">
+                        <div class="flex justify-center w-full py-[0.973vw] max-md:py-[3.077vw]">
                             <img
                                 src="<?= base_url($p_item['image']) ?>"
                                 alt="<?= htmlspecialchars($p_item['title']) ?>"
-                                class="max-w-[30vw] h-auto max-md:max-w-full max-md:w-full max-md:h-[120vw] object-contain"
+                                class="max-w-[28.016vw] h-auto max-md:max-w-full max-md:w-full max-md:h-[120vw] object-contain"
                             >
                         </div>
                     </div>
@@ -1170,15 +1170,15 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         </div>
         <!-- /relative z-10 -->
 
-        <footer class="relative z-30 overflow-visible mt-[4vw] max-md:mt-[6.154vw]">
-            <div class="relative z-10 w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
+        <footer class="relative z-30 overflow-visible mt-[3.891vw] max-md:mt-[6.154vw]">
+            <div class="relative z-10 w-full text-[#303752] text-[0.584vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
             </div>
         </footer>
 
-        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.35] -bottom-10 h-[43vw] w-auto pointer-events-none -z-1 max-md:h-[118vw]">
+        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[0.973vw] max-md:-right-[2.051vw] opacity-[0.2] -bottom-10 h-[40.126vw] w-auto pointer-events-none -z-1 max-md:h-[118vw]">
     </div>
 
 
@@ -1304,7 +1304,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
                         if (i) i.classList.remove('rotate-180');
 
-                        c.classList.remove('max-h-[63.23vw]', 'max-md:max-h-[180vw]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
+                        c.classList.remove('max-h-[63.23vw]', 'max-md:max-h-[180vw]', 'opacity-100', 'py-[1.459vw]', 'max-md:py-[3.590vw]');
                         c.classList.add('max-h-0', 'opacity-0', 'py-0');
                     });
 
@@ -1321,7 +1321,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                         }
 
                         content.classList.remove('max-h-0', 'opacity-0', 'py-0');
-                        content.classList.add('max-h-[63.23vw]', 'max-md:max-h-[180vw]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
+                        content.classList.add('max-h-[63.23vw]', 'max-md:max-h-[180vw]', 'opacity-100', 'py-[1.459vw]', 'max-md:py-[3.590vw]');
                     }
                 });
             });
@@ -1363,8 +1363,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         object-position: center !important;
     }
     #galeri-ig-carousel .owl-stage-outer {
-        padding: 0.5vw 0 1vw 0 !important;
-        margin: -0.5vw 0 -1vw 0 !important;
+        padding: 0.486vw 0 0.973vw 0 !important;
+        margin: -0.486vw 0 -0.973vw 0 !important;
     }
     #galeri-kegiatan-carousel .owl-dots,
     #galeri-ig-carousel .owl-dots,
@@ -1372,16 +1372,16 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
     #artikel-carousel .owl-dots {
         display: flex;
         justify-content: center;
-        gap: 0.4vw;
-        margin-top: 1.5vw;
+        gap: 0.389vw;
+        margin-top: 1.459vw;
     }
     #galeri-kegiatan-carousel .owl-dot span,
     #galeri-ig-carousel .owl-dot span,
     #berita-carousel .owl-dot span,
     #artikel-carousel .owl-dot span {
         background: #cbd5e1 !important;
-        width: 0.6vw !important;
-        height: 0.6vw !important;
+        width: 0.584vw !important;
+        height: 0.584vw !important;
         border-radius: 9999px !important;
         display: inline-block;
         transition: all 0.3s;
@@ -1391,7 +1391,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
     #berita-carousel .owl-dot.active span,
     #artikel-carousel .owl-dot.active span {
         background: #EAA90D !important;
-        width: 1.8vw !important;
+        width: 1.751vw !important;
         border-radius: 9999px !important;
     }
     @media (max-width: 768px) {
@@ -1399,21 +1399,21 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         #galeri-ig-carousel .owl-dots,
         #berita-carousel .owl-dots,
         #artikel-carousel .owl-dots {
-            gap: 1.5vw;
-            margin-top: 3vw;
+            gap: 1.538vw;
+            margin-top: 3.077vw;
         }
         #galeri-kegiatan-carousel .owl-dot span,
         #galeri-ig-carousel .owl-dot span,
         #berita-carousel .owl-dot span,
         #artikel-carousel .owl-dot span {
-            width: 2vw !important;
-            height: 2vw !important;
+            width: 2.051vw !important;
+            height: 2.051vw !important;
         }
         #galeri-kegiatan-carousel .owl-dot.active span,
         #galeri-ig-carousel .owl-dot.active span,
         #berita-carousel .owl-dot.active span,
         #artikel-carousel .owl-dot.active span {
-            width: 6vw !important;
+            width: 6.154vw !important;
         }
     }
     #modal-artikel .custom-scrollbar::-webkit-scrollbar {

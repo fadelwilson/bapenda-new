@@ -1,29 +1,29 @@
-﻿<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
+<?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Kritik & Saran']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white flex flex-col justify-between">
     <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'saran', 'navbar_bg' => 'white']); ?>
     <div class="p-[1.556vw] flex-1 flex flex-col relative z-10 max-md:p-[2.051vw]">
         <div class="flex-1 flex flex-col">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[2.051vw] max-md:mt-[1.538vw]">
 
-                <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
+                <h1 class="text-[4.669vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Kritik & Saran
                 </h1>
             </div>
-            <div class="px-[3.767vw] py-[3.767vw] my-auto max-md:my-[6.154vw]">
+            <div class="px-[3.891vw] py-[3.891vw] my-auto max-md:my-[6.154vw]">
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
-                <form id="critic" method="post" class="grid grid-cols-2 gap-[1.56vw] mt-[1.17vw] relative z-20 max-md:grid-cols-1" onsubmit="submitForm(event)">
+                <form id="critic" method="post" class="grid grid-cols-2 gap-[1.556vw] mt-[1.167vw] relative z-20 max-md:grid-cols-1" onsubmit="submitForm(event)">
                     <!-- Honeypot trap anti-bot -->
                     <div style="display:none !important;" aria-hidden="true">
                         <input type="text" name="website_url" tabindex="-1" autocomplete="off">
                     </div>
                     
-                    <div class="flex flex-col gap-[0.45vw]">
+                    <div class="flex flex-col gap-[0.389vw]">
                         <!-- Nama Lengkap -->
                         <div>
-                            <label for="nama_lengkap" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="nama_lengkap" class="block text-[1.167vw] pb-[0.389vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Nama <span class="text-red-600">*</span>
                             </label>
                             <input
@@ -33,12 +33,12 @@
                                 required
                                 autocomplete="off"
                                 placeholder="Masukkan Nama Anda"
-                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                                class="w-full py-[0.389vw] px-[0.778vw] text-[1.167vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
                         </div>
 
                         <!-- No HP -->
                         <div>
-                            <label for="no_hp" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="no_hp" class="block text-[1.167vw] pb-[0.389vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 No. Handphone
                             </label>
                             <input
@@ -47,13 +47,13 @@
                                 name="no_hp"
                                 maxlength="14"
                                 placeholder="Contoh: 081234567890"
-                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                                class="w-full py-[0.389vw] px-[0.778vw] text-[1.167vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
                         </div>
 
                         
                         <!-- Alamat -->
                         <div>
-                            <label for="alamat" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="alamat" class="block text-[1.167vw] pb-[0.389vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Alamat
                             </label>
                             <input
@@ -61,14 +61,14 @@
                                 id="alamat"
                                 name="alamat"
                                 placeholder="Masukkan Alamat Anda"
-                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                                class="w-full py-[0.389vw] px-[0.778vw] text-[1.167vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-[0.45vw]">
+                    <div class="flex flex-col gap-[0.389vw]">
                         <!-- Email -->
                         <div>
-                            <label for="email" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="email" class="block text-[1.167vw] pb-[0.389vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 E-mail <span class="text-red-600">*</span>
                             </label>
                             <input
@@ -78,12 +78,12 @@
                                 required
                                 autocomplete="off"
                                 placeholder="Masukkan Email Anda"
-                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
+                                class="w-full py-[0.389vw] px-[0.778vw] text-[1.167vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]" />
                         </div>
                     
                         <!-- Kritik -->
                         <div>
-                            <label for="kritik" class="block text-[1.17vw] pb-[0.39vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
+                            <label for="kritik" class="block text-[1.167vw] pb-[0.389vw] geologica text-(--blue-color) max-md:text-[4.615vw] max-md:pb-[2.051vw]">
                                 Kritik & Saran <span class="text-red-600">*</span>
                             </label>
                             <textarea
@@ -92,19 +92,19 @@
                                 required
                                 rows="4"
                                 placeholder="Kritik Anda Kepada BAPENDA Kab. Purwakarta"
-                                class="w-full py-[0.39vw] px-[0.78vw] text-[1.17vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]"></textarea>
+                                class="w-full py-[0.389vw] px-[0.778vw] text-[1.167vw] bg-white border border-(--blue-color) geologica focus:outline-none disabled:opacity-50 max-md:text-[3.077vw] max-md:px-[1.538vw] max-md:py-[2.564vw]"></textarea>
                         </div>
 
-                        <div class="w-full grid grid-cols-2 items-stretch gap-[3.89vw] mb-[0.29vw] text-[1.17vw] max-md:text-[4.615vw]">
+                        <div class="w-full grid grid-cols-2 items-stretch gap-[3.891vw] mb-[0.292vw] text-[1.167vw] max-md:text-[4.615vw]">
                             <button
                                 type="reset"
-                                class="w-full inline-flex items-center justify-center gap-[0.39vw] bg-(--red-color) hover:bg-(--red-color)/90 text-white py-[0.58vw] px-[1vw] cursor-pointer transition-colors duration-150 max-md:py-[3.5vw] max-md:px-[4vw]">
+                                class="w-full inline-flex items-center justify-center gap-[0.389vw] bg-(--red-color) hover:bg-(--red-color)/90 text-white py-[0.584vw] px-[0.973vw] cursor-pointer transition-colors duration-150 max-md:py-[3.590vw] max-md:px-[4.103vw]">
                                 <span class="leading-none">Batal</span>
                             </button>
 
                             <button
                                 type="submit"
-                                class="w-full inline-flex items-center justify-center gap-[0.39vw] bg-[#1C2032] hover:bg-[#1C2032]/90 text-white py-[0.58vw] px-[1vw] cursor-pointer transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed max-md:py-[3.5vw] max-md:px-[4vw]">
+                                class="w-full inline-flex items-center justify-center gap-[0.389vw] bg-[#1C2032] hover:bg-[#1C2032]/90 text-white py-[0.584vw] px-[0.973vw] cursor-pointer transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed max-md:py-[3.590vw] max-md:px-[4.103vw]">
                                 <span class="material-symbols-outlined animate-spin text-lg !hidden" id="loading-icon">
                                     progress_activity
                                 </span>
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="relative overflow-hidden px-[7.78vw] max-md:px-[4.103vw]">
+    <div class="relative overflow-hidden px-[7.782vw] max-md:px-[4.103vw]">
         <!-- Background Batik -->
         <img
             src="<?= base_url('assets/images/batik_sunda1.png') ?>"
@@ -136,11 +136,11 @@
                 gap-0
                 relative
                 z-10
-                pt-[1.95vw]
+                pt-[1.946vw]
 
                 max-md:flex
                 max-md:flex-col
-                max-md:gap-[2vw]
+                max-md:gap-[2.051vw]
                 max-md:pt-[5.128vw]
                 max-md:text-center
             "
@@ -150,7 +150,7 @@
             <div
                 class="
                     min-w-0
-                    pr-[2vw]
+                    pr-[1.946vw]
 
                     max-md:p-0
                     max-md:w-full
@@ -159,9 +159,9 @@
                 <h2
                     class="
                         geologica
-                        text-[1.56vw]
+                        text-[1.556vw]
                         text-(--yellow-color)
-                        mb-[0.5vw]
+                        mb-[0.486vw]
 
                         max-md:text-[4.615vw]
                         max-md:mb-1
@@ -173,7 +173,7 @@
                 <p
                     class="
                         open-sans
-                        text-[0.78vw]
+                        text-[0.778vw]
                         leading-relaxed
                         text-(--blue-color)
 
@@ -195,7 +195,7 @@
                     max-md:w-full
                     max-md:h-[1px]
                     max-md:self-auto
-                    max-md:my-[1.5vw]
+                    max-md:my-[1.538vw]
                 "
                 aria-hidden="true"
             ></div>
@@ -204,7 +204,7 @@
             <div
                 class="
                     min-w-0
-                    px-[2vw]
+                    px-[1.946vw]
 
                     max-md:p-0
                     max-md:w-full
@@ -213,9 +213,9 @@
                 <h2
                     class="
                         geologica
-                        text-[1.56vw]
+                        text-[1.556vw]
                         text-(--yellow-color)
-                        mb-[0.5vw]
+                        mb-[0.486vw]
 
                         max-md:text-[4.615vw]
                         max-md:mb-1
@@ -227,7 +227,7 @@
                 <p
                     class="
                         open-sans
-                        text-[0.78vw]
+                        text-[0.778vw]
                         leading-relaxed
                         text-(--blue-color)
 
@@ -250,7 +250,7 @@
                     max-md:w-full
                     max-md:h-[1px]
                     max-md:self-auto
-                    max-md:my-[1.5vw]
+                    max-md:my-[1.538vw]
                 "
                 aria-hidden="true"
             ></div>
@@ -259,7 +259,7 @@
             <div
                 class="
                     min-w-0
-                    pl-[2vw]
+                    pl-[1.946vw]
 
                     max-md:p-0
                     max-md:w-full
@@ -268,9 +268,9 @@
                 <h2
                     class="
                         geologica
-                        text-[1.56vw]
+                        text-[1.556vw]
                         text-(--yellow-color)
-                        mb-[0.5vw]
+                        mb-[0.486vw]
 
                         max-md:text-[4.615vw]
                         max-md:mb-1
@@ -282,7 +282,7 @@
                 <p
                     class="
                         open-sans
-                        text-[0.78vw]
+                        text-[0.778vw]
                         leading-relaxed
                         text-(--blue-color)
 
@@ -300,8 +300,8 @@
         </div>
 
         <!-- COPYRIGHT -->
-        <footer class="relative z-10 mt-[1.95vw] max-md:mt-[4.103vw] pb-[1.556vw] max-md:pb-[4.615vw]">
-            <div class="w-full text-(--blue-color) text-[0.58vw] open-sans max-md:text-[2.564vw]">
+        <footer class="relative z-10 mt-[1.946vw] max-md:mt-[4.103vw] pb-[1.556vw] max-md:pb-[4.615vw]">
+            <div class="w-full text-(--blue-color) text-[0.584vw] open-sans max-md:text-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>

@@ -9,33 +9,33 @@
         <div class="absolute inset-0 bg-white/60 z-0"></div>
 
         <!-- Ornamen Sigotaka di kiri dan kanan background (tema light: garis gelap elegan) -->
-        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[1vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:hidden" style="mix-blend-mode: multiply; filter: invert(1);">
-        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[1vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:h-[157.692vw] max-md:bottom-[20.103vw]" style="mix-blend-mode: multiply; filter: invert(1);">
+        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:hidden" style="mix-blend-mode: multiply; filter: invert(1);">
+        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:h-[157.692vw] max-md:bottom-[20.513vw]" style="mix-blend-mode: multiply; filter: invert(1);">
 
         <!-- Konten Header & Body -->
         <div class="relative z-10 min-h-screen flex flex-col p-[1.556vw] max-md:p-[2.051vw]">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[2.051vw] max-md:mt-[1.538vw]">
 
-                <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
+                <h1 class="text-[4.669vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Beranda
                 </h1>
             </div>
 
             <div class="flex-1 flex items-center w-full">
                 <div class="w-full px-[10.992vw] max-md:px-0">
-                    <h2 class="text-[#303752] text-[2.891vw] font-bold geologica leading-tight max-md:text-[8.205vw] max-md:leading-snug max-md:text-center">
+                    <h2 class="text-[#303752] text-[2.918vw] font-bold geologica leading-tight max-md:text-[8.205vw] max-md:leading-snug max-md:text-center">
                         Pembayaran Pajak Daerah Anda untuk Pembangunan Purwakarta Istimewa
                     </h2>
                 </div>
             </div>
 
             <!-- Scroll Indicator to Himbauan Section -->
-            <div class="w-full flex justify-center pb-[0.95vw] max-md:pb-[2.103vw]">
-                <a href="#section-himbauan" class="flex flex-col items-center gap-[0.79vw] max-md:gap-[3.238vw] group cursor-pointer" aria-label="Lihat Informasi & Himbauan Pajak">
-                    <span class="text-[0.78vw] max-md:text-[3.077vw] geologica tracking-wider font-semibold uppercase px-[0.78vw] py-[0.19vw] max-md:px-[3.077vw] max-md:py-[1.026vw] bg-white/80 backdrop-blur-xs rounded-full border border-white/80 shadow-xs text-[#303752] group-hover:text-[#EA6D0D] group-hover:bg-white transition-all">Lihat Pojok Informasi</span>
-                    <div class="size-[1.75vw] max-md:size-[7.692vw] rounded-full bg-white shadow-md border border-[#303752]/20 flex items-center justify-center group-hover:border-[#EA6D0D] group-hover:bg-[#EA6D0D] transition-all animate-bounce">
-                        <svg class="size-[0.88vw] max-md:size-[3.846vw] text-[#303752] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-full flex justify-center pb-[0.973vw] max-md:pb-[2.051vw]">
+                <a href="#section-himbauan" class="flex flex-col items-center gap-[0.778vw] max-md:gap-[3.077vw] group cursor-pointer" aria-label="Lihat Informasi & Himbauan Pajak">
+                    <span class="text-[0.778vw] max-md:text-[3.077vw] geologica tracking-wider font-semibold uppercase px-[0.778vw] py-[0.195vw] max-md:px-[3.077vw] max-md:py-[1.026vw] bg-white/80 backdrop-blur-xs rounded-full border border-white/80 shadow-xs text-[#303752] group-hover:text-[#EA6D0D] group-hover:bg-white transition-all">Lihat Pojok Informasi</span>
+                    <div class="size-[1.751vw] max-md:size-[7.692vw] rounded-full bg-white shadow-md border border-[#303752]/20 flex items-center justify-center group-hover:border-[#EA6D0D] group-hover:bg-[#EA6D0D] transition-all animate-bounce">
+                        <svg class="size-[0.875vw] max-md:size-[3.846vw] text-[#303752] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
@@ -48,15 +48,15 @@
     <section id="section-himbauan" class="relative w-full min-h-screen bg-white p-[1.556vw] max-md:p-[2.051vw] flex flex-col justify-between overflow-hidden">
         <div class="max-w-[56.03vw] max-md:max-w-full mx-auto w-full flex-1 flex flex-col justify-center">
             <!-- Section Header -->
-            <div class="text-center mb-[2.95vw] max-md:mb-[7.128vw]">
-                <span class="inline-flex items-center gap-[0.39vw] max-md:gap-[1.538vw] px-[0.68vw] max-md:px-[3.077vw] py-[0.29vw] max-md:py-[1.026vw] rounded-full bg-[#EA6D0D]/10 text-[#EA6D0D] text-[0.63vw] max-md:text-[2.821vw] font-semibold tracking-wider uppercase geologica mb-[0.39vw] max-md:mb-[2.051vw]">
-                    <span class="size-[0.39vw] max-md:size-[1.538vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
+            <div class="text-center mb-[2.918vw] max-md:mb-[7.179vw]">
+                <span class="inline-flex items-center gap-[0.389vw] max-md:gap-[1.538vw] px-[0.681vw] max-md:px-[3.077vw] py-[0.292vw] max-md:py-[1.026vw] rounded-full bg-[#EA6D0D]/10 text-[#EA6D0D] text-[0.632vw] max-md:text-[2.821vw] font-semibold tracking-wider uppercase geologica mb-[0.389vw] max-md:mb-[2.051vw]">
+                    <span class="size-[0.389vw] max-md:size-[1.538vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
                     Informasi Publik
                 </span>
-                <h2 class="text-[2.19vw] max-md:text-[6.154vw] font-bold text-[#303752] geologica leading-tight">
+                <h2 class="text-[2.189vw] max-md:text-[6.154vw] font-bold text-[#303752] geologica leading-tight">
                     Pojok Informasi Bapenda
                 </h2>
-                <div class="w-[3.11vw] max-md:w-[12.308vw] h-[0.19vw] max-md:h-[0.769vw] bg-[#EA6D0D] mx-auto mt-[0.49vw] max-md:mt-[2.051vw] rounded-full"></div>
+                <div class="w-[3.113vw] max-md:w-[12.308vw] h-[0.195vw] max-md:h-[0.769vw] bg-[#EA6D0D] mx-auto mt-[0.486vw] max-md:mt-[2.051vw] rounded-full"></div>
             </div>
 
             <!-- Carousel Card Container -->
@@ -120,23 +120,23 @@
 
             <div
                 id="beranda-carousel-card"
-                class="relative w-full bg-[#1a2035] border border-black/10 rounded-[0.78vw] max-md:rounded-[4.103vw] shadow-[0_20px_50px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col select-none"
+                class="relative w-full bg-[#1a2035] border border-black/10 rounded-[0.778vw] max-md:rounded-[4.103vw] shadow-[0_20px_50px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col select-none"
             >
                 <!-- Top Info Bar -->
-                <div class="flex items-center justify-between px-[0.68vw] max-md:px-[3.59vw] py-[0.58vw] max-md:py-[2.564vw] border-b border-white/10 bg-white/5">
-                    <div class="flex items-center gap-[0.39vw] max-md:gap-[1.538vw]">
-                        <span class="inline-block size-[0.49vw] max-md:size-[2.051vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
-                        <span id="carousel-counter-badge" class="text-white text-[0.63vw] max-md:text-[2.821vw] font-semibold tracking-wide geologica">
+                <div class="flex items-center justify-between px-[0.681vw] max-md:px-[3.590vw] py-[0.584vw] max-md:py-[2.564vw] border-b border-white/10 bg-white/5">
+                    <div class="flex items-center gap-[0.389vw] max-md:gap-[1.538vw]">
+                        <span class="inline-block size-[0.486vw] max-md:size-[2.051vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
+                        <span id="carousel-counter-badge" class="text-white text-[0.632vw] max-md:text-[2.821vw] font-semibold tracking-wide geologica">
                             1 / <?= count($carousel_media) ?>
                         </span>
-                        <span class="text-white/40 text-[0.58vw] max-md:text-[2.564vw]">|</span>
-                        <span id="carousel-label" class="text-white/90 text-[0.63vw] max-md:text-[2.821vw] open-sans font-medium truncate max-w-[20vw] max-md:max-w-[46.154vw]">
+                        <span class="text-white/40 text-[0.584vw] max-md:text-[2.564vw]">|</span>
+                        <span id="carousel-label" class="text-white/90 text-[0.632vw] max-md:text-[2.821vw] open-sans font-medium truncate max-w-[19.455vw] max-md:max-w-[46.154vw]">
                             <?= htmlspecialchars($carousel_media[0]['label']) ?>
                         </span>
                     </div>
 
-                    <div class="text-white/75 text-[0.54vw] max-md:text-[2.564vw] geologica font-medium flex items-center gap-[0.29vw] max-md:gap-[1.026vw] bg-white/5 border border-white/10 px-[0.49vw] max-md:px-[2.051vw] py-[0.19vw] max-md:py-[0.769vw] rounded-full">
-                        <svg class="size-[0.58vw] max-md:size-[2.564vw] text-[#EA6D0D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="text-white/75 text-[0.535vw] max-md:text-[2.564vw] geologica font-medium flex items-center gap-[0.292vw] max-md:gap-[1.026vw] bg-white/5 border border-white/10 px-[0.486vw] max-md:px-[2.051vw] py-[0.195vw] max-md:py-[0.769vw] rounded-full">
+                        <svg class="size-[0.584vw] max-md:size-[2.564vw] text-[#EA6D0D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <span id="carousel-countdown">7s</span>
@@ -144,10 +144,10 @@
                 </div>
 
                 <!-- Stage / Main Viewport -->
-                <div id="carousel-stage" class="relative w-full h-[28vw] max-md:h-[64.87vw] flex items-center justify-center bg-black/80 overflow-hidden">
+                <div id="carousel-stage" class="relative w-full h-[28.016vw] max-md:h-[64.872vw] flex items-center justify-center bg-black/80 overflow-hidden">
                     <?php foreach ($carousel_media as $idx => $m): ?>
                         <div
-                            class="carousel-slide absolute inset-0 flex items-center justify-center p-[0.78vw] max-md:p-[2.051vw] transition-opacity duration-300 <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
+                            class="carousel-slide absolute inset-0 flex items-center justify-center p-[0.778vw] max-md:p-[2.051vw] transition-opacity duration-300 <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
                             data-index="<?= $idx ?>"
                             data-label="<?= htmlspecialchars($m['label']) ?>"
                             data-type="<?= $m['type'] ?>"
@@ -156,7 +156,7 @@
                                 <img
                                     src="<?= $m['src'] ?>"
                                     alt="<?= htmlspecialchars($m['label']) ?>"
-                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.39vw] max-md:rounded-[1.538vw] shadow-lg select-none"
+                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.389vw] max-md:rounded-[1.538vw] shadow-lg select-none"
                                     loading="lazy"
                                 />
                             <?php else: ?>
@@ -164,7 +164,7 @@
                                     controls
                                     playsinline
                                     preload="metadata"
-                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.39vw] max-md:rounded-[1.538vw] shadow-lg bg-black"
+                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.389vw] max-md:rounded-[1.538vw] shadow-lg bg-black"
                                 >
                                     <source src="<?= $m['src'] ?>" type="video/mp4">
                                     Browser Anda tidak mendukung pemutar video.
@@ -177,10 +177,10 @@
                     <button
                         type="button"
                         onclick="prevSlide()"
-                        class="absolute left-[0.78vw] max-md:left-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.95vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
+                        class="absolute left-[0.778vw] max-md:left-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.946vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
                         aria-label="Sebelumnya"
                     >
-                        <svg class="size-[0.88vw] max-md:size-[3.59vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="size-[0.875vw] max-md:size-[3.590vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
@@ -189,37 +189,37 @@
                     <button
                         type="button"
                         onclick="nextSlide()"
-                        class="absolute right-[0.78vw] max-md:right-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.95vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
+                        class="absolute right-[0.778vw] max-md:right-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.946vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
                         aria-label="Selanjutnya"
                     >
-                        <svg class="size-[0.88vw] max-md:size-[3.59vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="size-[0.875vw] max-md:size-[3.590vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                 </div>
 
                 <!-- Bottom Control & Thumbnail Row -->
-                <div class="relative w-full px-[0.78vw] max-md:px-[2.564vw] py-[0.58vw] max-md:py-[2.051vw] bg-[#0f1424] border-t border-white/10 flex items-center justify-center overflow-hidden">
+                <div class="relative w-full px-[0.778vw] max-md:px-[2.564vw] py-[0.584vw] max-md:py-[2.051vw] bg-[#0f1424] border-t border-white/10 flex items-center justify-center overflow-hidden">
                     <!-- Thumbnails Scrollable Container -->
                     <div
                         id="carousel-thumbs-container"
-                        class="w-full overflow-x-auto scroll-smooth py-[0.19vw] max-md:py-[0.769vw] scrollbar-none flex items-center cursor-grab active:cursor-grabbing select-none"
+                        class="w-full overflow-x-auto scroll-smooth py-[0.195vw] max-md:py-[0.769vw] scrollbar-none flex items-center cursor-grab active:cursor-grabbing select-none"
                     >
-                        <div class="flex items-center gap-[0.39vw] max-md:gap-[1.538vw] m-auto shrink-0 min-w-min px-[0.39vw] max-md:px-[1.538vw]">
+                        <div class="flex items-center gap-[0.389vw] max-md:gap-[1.538vw] m-auto shrink-0 min-w-min px-[0.389vw] max-md:px-[1.538vw]">
                             <?php foreach ($carousel_media as $idx => $m): ?>
                                 <button
                                     type="button"
                                     onclick="goToSlide(<?= $idx ?>)"
-                                    class="carousel-thumb-btn relative rounded-[0.29vw] max-md:rounded-[1.538vw] overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer <?= $idx === 0 ? 'border-[#EA6D0D] ring-2 ring-[#EA6D0D]/40 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-white/30' ?>"
+                                    class="carousel-thumb-btn relative rounded-[0.292vw] max-md:rounded-[1.538vw] overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer <?= $idx === 0 ? 'border-[#EA6D0D] ring-2 ring-[#EA6D0D]/40 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-white/30' ?>"
                                     data-thumb-index="<?= $idx ?>"
                                     title="<?= htmlspecialchars($m['label']) ?>"
                                 >
                                     <?php if ($m['type'] === 'video'): ?>
-                                        <div class="w-[3.11vw] max-md:w-[12.308vw] h-[1.95vw] max-md:h-[7.692vw] bg-[#0c101d] flex items-center justify-center border border-white/10">
-                                            <svg class="size-[0.68vw] max-md:size-[3.077vw] text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <div class="w-[3.113vw] max-md:w-[12.308vw] h-[1.946vw] max-md:h-[7.692vw] bg-[#0c101d] flex items-center justify-center border border-white/10">
+                                            <svg class="size-[0.681vw] max-md:size-[3.077vw] text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                         </div>
                                     <?php else: ?>
-                                        <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-[3.11vw] max-md:w-[12.308vw] h-[1.95vw] max-md:h-[7.692vw] object-cover select-none pointer-events-none">
+                                        <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-[3.113vw] max-md:w-[12.308vw] h-[1.946vw] max-md:h-[7.692vw] object-cover select-none pointer-events-none">
                                     <?php endif; ?>
                                 </button>
                             <?php endforeach; ?>
@@ -230,8 +230,8 @@
         </div>
 
         <!-- Footer Copyright -->
-        <footer class="relative z-10 mt-[4vw] max-md:mt-[6.154vw]">
-            <div class="w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
+        <footer class="relative z-10 mt-[3.891vw] max-md:mt-[6.154vw]">
+            <div class="w-full text-[#303752] text-[0.584vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
