@@ -8,7 +8,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
     <div class="relative overflow-hidden min-h-screen flex flex-col justify-between px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
         <div class="relative z-10">
-            <div class="px-[1.556vw] max-md:px-0 flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
+            <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
                 <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
 
                 <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
@@ -22,19 +22,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                     <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-left max-md:text-[5.508vw]">
                         Peraturan & Publikasi
                     </h1>
-
-                    <!-- <h3 class="text-[2.852vw] px-[1.167vw] mt-[1.223vw] text-[#EA6D0D] leading-none uppercase geologica max-md:text-[5.231vw] max-md:text-left max-md:mt-[5vw]">
-                        Definisi Pajak Daerah
-                    </h3> -->
-
-                <!-- <div class="mt-[0.584vw] px-[1.167vw] max-md:mt-[3.077vw] max-md:p-[2.051vw]">
-                    <p class="open-sans text-[0.778vw] max-md:text-[3.59vw] text-[#303752] leading-relaxed text-justify">
-                        Jenis pajak yang diterapkan di Negara Republik Indonesia dibagi menjadi dua jenis yaitu: (i) Pajak Pusat; dan (ii) Pajak Daerah. Berdasarkan BAB I, Pasal 1 angka 21 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 Tentang Pajak Daerah dan Retribusi Daerah, definisi Pajak Daerah adalah kontribusi wajib kepada daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan daerah bagi sebesar-besarnya kemakmuran rakyat.<br>
-                        Jenis Pajak sebagaimana dimaksud dapat tidak dipungut apabila potensinya kurang memadai dan/atau disesuaikan dengan kebijakan Daerah yang ditetapkan dengan Peraturan Daerah. Pajak Daerah, yang selanjutnya disebut Pajak, adalah kontribusi wajib kepada Daerah yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan Daerah bagi sebesar-besarnya kemakmuran rakyat.<br>
-                        Pajak Kendaraan Bermotor<br>
-                        Adapun Pajak Kendaraan Bermotor termasuk ke dalam jenis pajak provinsi yang merupakan bagian dari Pajak Daerah. Lebih lanjut, Pajak Kendaraan Bermotor sebagaimana yang didefinisikan dalam Pasal 1 angka 28 UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2022 adalah pajak atas kepemilikan dan/atau penguasaan kendaraan bermotor. Dalam pelaksanaan pemungutannya dilakukan di kantor bersama samsat. Kantor Bersama SAMSAT ini melibatkan tiga instansi pemerintah, yaitu: Badan Pendapatan Daerah, Kepolisian Daerah Republik Indonesia, dan PT. (Persero) Asuransi Kerugian Jasa Raharja.
-                    </p>
-                </div> -->
 
                 <?php $bi = base_url('assets/images/'); ?>
 
@@ -1191,7 +1178,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
             </div>
         </footer>
 
-        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.03] -bottom-10 h-[44vw] w-auto pointer-events-none z-10 max-md:hidden">
+        <img src="<?= base_url('assets/images/towerakatsuki.png') ?>" alt="" class="absolute -right-[2.051vw] opacity-[0.35] -bottom-10 h-[43vw] w-auto pointer-events-none -z-1 max-md:h-[118vw]">
     </div>
 
 

@@ -1,21 +1,21 @@
 <?php $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Beranda']); ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'beranda', 'navbar_bg' => 'blue']); ?>
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'beranda', 'navbar_bg' => 'white']); ?>
 
-    <!-- Section Hero / Beranda -->
+    <!-- Section Hero / Beranda (Tema Light) -->
     <div class="relative min-h-screen w-full bg-cover bg-center overflow-hidden max-md:bg-center" style="background-image: url('<?= base_url('assets/images/new-bg.webp') ?>');">
-        <!-- Layer overlay biru -->
-        <div class="absolute inset-0 bg-(--blue-color)/75 z-0"></div>
+        <!-- Layer overlay light / gradient putih -->
+        <div class="absolute inset-0 bg-white/60 z-0"></div>
 
-        <!-- Ornamen Sigotaka di kiri dan kanan background -->
-        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[3vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-30 max-md:hidden">
-        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[3vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-30 max-md:h-[157.692vw] max-md:bottom-[94px]">
+        <!-- Ornamen Sigotaka di kiri dan kanan background (tema light: garis gelap elegan) -->
+        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[1vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:hidden" style="mix-blend-mode: multiply; filter: invert(1);">
+        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[1vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:h-[157.692vw] max-md:bottom-[20.103vw]" style="mix-blend-mode: multiply; filter: invert(1);">
 
         <!-- Konten Header & Body -->
         <div class="relative z-10 min-h-screen flex flex-col p-[1.556vw] max-md:p-[2.051vw]">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-white.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
 
                 <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Beranda
@@ -24,295 +24,247 @@
 
             <div class="flex-1 flex items-center w-full">
                 <div class="w-full px-[10.992vw] max-md:px-0">
-                    <h2 class="text-(--yellow-color) text-[2.53vw] geologica leading-none max-md:text-[8.205vw] max-md:text-center">
+                    <h2 class="text-[#303752] text-[2.891vw] font-bold geologica leading-tight max-md:text-[8.205vw] max-md:leading-snug max-md:text-center">
                         Pembayaran Pajak Daerah Anda untuk Pembangunan Purwakarta Istimewa
                     </h2>
-                    <!-- <p class="text-[0.973vw] text-white mt-[0.97vw] open-sans max-md:text-[3.59vw] max-md:mt-[4.103vw] max-md:text-center">
-                        Pengelola Pendapatan yang Transparan
-                    </p> -->
-
-                    <!-- <div class="w-fit mx-auto grid grid-cols-3 max-md:grid-cols-1 gap-[1.17vw] max-md:w-[60vw] max-md:gap-[4.103vw] mt-[2vw] max-md:mt-[8.205vw]">
-                        <div class="relative border border-white flex items-center rounded-xs justify-center bg-[#EA6D0D] p-[0.49vw] pl-[2.5vw] text-white open-sans text-[0.78vw] max-md:p-[1.538vw] max-md:pl-[9vw] max-md:text-[4.103vw]">
-                            <img src="<?= base_url('assets/images/check-list.svg') ?>" alt="" class="absolute left-0 h-full w-[1.8vw] max-md:w-[7vw] shrink-0">
-                            <span>PBB-P2</span>
-                        </div>
-
-                        <div class="relative border border-white flex items-center rounded-xs justify-center bg-[#EA6D0D] p-[0.49vw] pl-[2.5vw] text-white open-sans text-[0.78vw] max-md:p-[1.538vw] max-md:pl-[9vw] max-md:text-[4.103vw]">
-                            <img src="<?= base_url('assets/images/check-list.svg') ?>" alt="" class="absolute left-0 h-full w-[1.8vw] max-md:w-[7vw] shrink-0">
-                            <span>BPHTB</span>
-                        </div>
-
-                        <div class="relative border border-white flex items-center rounded-xs justify-center bg-[#EA6D0D] p-[0.49vw] pl-[2.5vw] text-white open-sans text-[0.78vw] max-md:p-[1.538vw] max-md:pl-[9vw] max-md:text-[4.103vw]">
-                            <img src="<?= base_url('assets/images/check-list.svg') ?>" alt="" class="absolute left-0 h-full w-[1.8vw] max-md:w-[7vw] shrink-0">
-                            <span>PAD</span>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
-            <!-- <a
-                href="http://mapagbumi.purwakartakab.go.id"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block"
+            <!-- Scroll Indicator to Himbauan Section -->
+            <div class="w-full flex justify-center pb-[0.95vw] max-md:pb-[2.103vw]">
+                <a href="#section-himbauan" class="flex flex-col items-center gap-[0.79vw] max-md:gap-[3.238vw] group cursor-pointer" aria-label="Lihat Informasi & Himbauan Pajak">
+                    <span class="text-[0.78vw] max-md:text-[3.077vw] geologica tracking-wider font-semibold uppercase px-[0.78vw] py-[0.19vw] max-md:px-[3.077vw] max-md:py-[1.026vw] bg-white/80 backdrop-blur-xs rounded-full border border-white/80 shadow-xs text-[#303752] group-hover:text-[#EA6D0D] group-hover:bg-white transition-all">Lihat Pojok Informasi</span>
+                    <div class="size-[1.75vw] max-md:size-[7.692vw] rounded-full bg-white shadow-md border border-[#303752]/20 flex items-center justify-center group-hover:border-[#EA6D0D] group-hover:bg-[#EA6D0D] transition-all animate-bounce">
+                        <svg class="size-[0.88vw] max-md:size-[3.846vw] text-[#303752] group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Himbauan & Sosialisasi Pajak Daerah (Background Putih) -->
+    <section id="section-himbauan" class="relative w-full min-h-screen bg-white p-[1.556vw] max-md:p-[2.051vw] flex flex-col justify-between overflow-hidden">
+        <div class="max-w-[56.03vw] max-md:max-w-full mx-auto w-full flex-1 flex flex-col justify-center">
+            <!-- Section Header -->
+            <div class="text-center mb-[2.95vw] max-md:mb-[7.128vw]">
+                <span class="inline-flex items-center gap-[0.39vw] max-md:gap-[1.538vw] px-[0.68vw] max-md:px-[3.077vw] py-[0.29vw] max-md:py-[1.026vw] rounded-full bg-[#EA6D0D]/10 text-[#EA6D0D] text-[0.63vw] max-md:text-[2.821vw] font-semibold tracking-wider uppercase geologica mb-[0.39vw] max-md:mb-[2.051vw]">
+                    <span class="size-[0.39vw] max-md:size-[1.538vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
+                    Informasi Publik
+                </span>
+                <h2 class="text-[2.19vw] max-md:text-[6.154vw] font-bold text-[#303752] geologica leading-tight">
+                    Pojok Informasi Bapenda
+                </h2>
+                <div class="w-[3.11vw] max-md:w-[12.308vw] h-[0.19vw] max-md:h-[0.769vw] bg-[#EA6D0D] mx-auto mt-[0.49vw] max-md:mt-[2.051vw] rounded-full"></div>
+            </div>
+
+            <!-- Carousel Card Container -->
+            <?php
+            $carousel_media = [];
+            if (!empty($ShowDataCarousel)) {
+                foreach ($ShowDataCarousel as $item) {
+                    $is_video = ($item['tipe'] === 'video');
+                    $file_url = base_url('loginwebsite/uploads/carousel/' . $item['file_media']);
+
+                    $carousel_media[] = [
+                        'type'  => $item['tipe'],
+                        'src'   => $file_url,
+                        'thumb' => $is_video ? '' : $file_url,
+                        'label' => $item['judul'],
+                    ];
+                }
+            }
+
+            if (empty($carousel_media)) {
+                $carousel_media = [
+                    [
+                        'type'  => 'image',
+                        'src'   => base_url('assets/images/bpd-carousel1.webp'),
+                        'thumb' => base_url('assets/images/bpd-carousel1.webp'),
+                        'label' => 'Ayo Bayar Pajak Tepat Waktu',
+                    ],
+                    [
+                        'type'  => 'image',
+                        'src'   => base_url('assets/images/bpd-carousel2.webp'),
+                        'thumb' => base_url('assets/images/bpd-carousel2.webp'),
+                        'label' => 'Pajak Daerah untuk Pembangunan Purwakarta',
+                    ],
+                    [
+                        'type'  => 'image',
+                        'src'   => base_url('assets/images/bpd-carousel3.webp'),
+                        'thumb' => base_url('assets/images/bpd-carousel3.webp'),
+                        'label' => 'Terima Kasih Telah Membayar Pajak',
+                    ],
+                    [
+                        'type'  => 'image',
+                        'src'   => base_url('assets/images/bpd-carousel4.webp'),
+                        'thumb' => base_url('assets/images/bpd-carousel4.webp'),
+                        'label' => 'Taat Pajak, Wujud Peduli Daerah',
+                    ],
+                    [
+                        'type'  => 'image',
+                        'src'   => base_url('assets/images/bpd-carousel5.webp'),
+                        'thumb' => base_url('assets/images/bpd-carousel5.webp'),
+                        'label' => 'Pajak Lunas, Pembangunan Lancar',
+                    ],
+                    [
+                        'type'  => 'video',
+                        'src'   => base_url('assets/images/bpd-vidcarousel.mp4'),
+                        'thumb' => '',
+                        'label' => 'Video Sosialisasi Pajak Daerah',
+                    ],
+                ];
+            }
+            ?>
+
+            <div
+                id="beranda-carousel-card"
+                class="relative w-full bg-[#1a2035] border border-black/10 rounded-[0.78vw] max-md:rounded-[4.103vw] shadow-[0_20px_50px_rgba(0,0,0,0.18)] overflow-hidden flex flex-col select-none"
             >
-                <div class="flex items-center justify-end max-md:hidden">
-                    <img
-                        src="<?= base_url('assets/images/bapendalogo.svg') ?>"
-                        alt="Logo Bapenda"
-                        class="h-[7vw] w-auto object-contain max-md:h-[40vw] max-md:mx-auto">              
-                </div>
-            </a> -->
+                <!-- Top Info Bar -->
+                <div class="flex items-center justify-between px-[0.68vw] max-md:px-[3.59vw] py-[0.58vw] max-md:py-[2.564vw] border-b border-white/10 bg-white/5">
+                    <div class="flex items-center gap-[0.39vw] max-md:gap-[1.538vw]">
+                        <span class="inline-block size-[0.49vw] max-md:size-[2.051vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
+                        <span id="carousel-counter-badge" class="text-white text-[0.63vw] max-md:text-[2.821vw] font-semibold tracking-wide geologica">
+                            1 / <?= count($carousel_media) ?>
+                        </span>
+                        <span class="text-white/40 text-[0.58vw] max-md:text-[2.564vw]">|</span>
+                        <span id="carousel-label" class="text-white/90 text-[0.63vw] max-md:text-[2.821vw] open-sans font-medium truncate max-w-[20vw] max-md:max-w-[46.154vw]">
+                            <?= htmlspecialchars($carousel_media[0]['label']) ?>
+                        </span>
+                    </div>
 
-            <footer>
-                <div class="w-full text-white text-[0.58vw] max-md:text-[2.564vw] open-sans max-md:pb-[2.564vw]">
-                    <div class="text-center">
-                        Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
+                    <div class="text-white/75 text-[0.54vw] max-md:text-[2.564vw] geologica font-medium flex items-center gap-[0.29vw] max-md:gap-[1.026vw] bg-white/5 border border-white/10 px-[0.49vw] max-md:px-[2.051vw] py-[0.19vw] max-md:py-[0.769vw] rounded-full">
+                        <svg class="size-[0.58vw] max-md:size-[2.564vw] text-[#EA6D0D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span id="carousel-countdown">7s</span>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </div>
 
-    <!-- Floating Re-open Button -->
-    <button
-        type="button"
-        id="reopen-modal-btn"
-        onclick="openBerandaModal()"
-        class="fixed bottom-6 right-6 z-40 bg-[#EA6D0D] hover:bg-[#d05c08] text-white px-3.5 py-2 md:px-4 md:py-2.5 rounded-full flex items-center gap-2 text-xs md:text-sm font-medium border border-white/30 transition-all active:scale-95 cursor-pointer backdrop-blur-sm"
-        title="Lihat Galeri & Video"
-    >
-        <svg class="size-4 md:size-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-        </svg>
-        <span class="geologica">Galeri & Video</span>
-    </button>
-
-    <!-- Modal Popup / Carousel Foto & Video -->
-    <?php
-    $modal_media = [];
-    if (!empty($ShowDataCarousel)) {
-        foreach ($ShowDataCarousel as $item) {
-            $is_video = ($item['tipe'] === 'video');
-            $file_url = base_url('loginwebsite/uploads/carousel/' . $item['file_media']);
-
-            $modal_media[] = [
-                'type'  => $item['tipe'],
-                'src'   => $file_url,
-                'thumb' => $is_video ? '' : $file_url,
-                'label' => $item['judul'],
-            ];
-        }
-    }
-
-    // Fallback ke media default jika belum ada data di database
-    if (empty($modal_media)) {
-        $modal_media = [
-            [
-                'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel1.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel1.webp'),
-                'label' => 'Foto 1',
-            ],
-            [
-                'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel2.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel2.webp'),
-                'label' => 'Foto 2',
-            ],
-            [
-                'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel3.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel3.webp'),
-                'label' => 'Foto 3',
-            ],
-            [
-                'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel4.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel4.webp'),
-                'label' => 'Foto 4',
-            ],
-            [
-                'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel5.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel5.webp'),
-                'label' => 'Foto 5',
-            ],
-            [
-                'type'  => 'video',
-                'src'   => base_url('assets/images/bpd-vidcarousel.mp4'),
-                'thumb' => '',
-                'label' => 'Video Kegiatan Bapenda',
-            ],
-        ];
-    }
-    $next_initial = $modal_media[1] ?? $modal_media[0];
-    ?>
-    <div
-        id="beranda-modal"
-        class="fixed inset-0 z-[999999] flex items-center justify-center p-2 md:p-6 bg-black/30 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300 select-none"
-        onclick="if(event.target === this) closeBerandaModal()"
-        aria-modal="true"
-        role="dialog"
-    >
-        <!-- Modal Card -->
-        <div
-            id="beranda-modal-card"
-            class="relative w-full max-w-4xl max-h-[95vh] bg-[#1a2035]/95 border border-white/20 rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col transform scale-95 transition-transform duration-300"
-            onclick="event.stopPropagation()"
-        >
-            <div class="flex items-center justify-between px-3 md:px-4 py-2.5 border-b border-white/10 bg-white/5">
-                <div class="flex items-center gap-2">
-                    <span class="inline-block size-2.5 rounded-full bg-[#EA6D0D] animate-pulse"></span>
-                    <span id="modal-counter-badge" class="text-white text-xs md:text-sm font-semibold tracking-wide geologica">
-                        1 / <?= count($modal_media) ?>
-                    </span>
-                    <span class="text-white/40 text-xs">|</span>
-                    <span id="modal-label" class="text-white/80 text-xs md:text-sm open-sans font-light truncate max-w-[180px] md:max-w-none">
-                        <?= htmlspecialchars($modal_media[0]['label']) ?>
-                    </span>
-                </div>
-
-                <button
-                    type="button"
-                    onclick="closeBerandaModal()"
-                    class="text-white/80 hover:text-white bg-white/10 hover:bg-red-600/90 size-8 md:size-9 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 cursor-pointer border border-white/15"
-                    aria-label="Tutup Modal"
-                >
-                    <svg class="size-4 md:size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div id="modal-stage" class="relative w-full h-[48vh] md:h-[62vh] flex items-center justify-center bg-black/60 overflow-hidden">
-                <?php foreach ($modal_media as $idx => $m): ?>
-                    <div
-                        class="modal-slide absolute inset-0 flex items-center justify-center p-2 md:p-4 transition-opacity duration-300 <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
-                        data-index="<?= $idx ?>"
-                        data-label="<?= htmlspecialchars($m['label']) ?>"
-                        data-type="<?= $m['type'] ?>"
-                    >
-                        <?php if ($m['type'] === 'image'): ?>
-                            <img
-                                src="<?= $m['src'] ?>"
-                                alt="<?= htmlspecialchars($m['label']) ?>"
-                                class="max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-lg select-none"
-                                loading="lazy"
-                            />
-                        <?php else: ?>
-                            <video
-                                controls
-                                playsinline
-                                preload="metadata"
-                                class="max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-lg bg-black"
-                            >
-                                <source src="<?= $m['src'] ?>" type="video/mp4">
-                                Browser Anda tidak mendukung pemutar video.
-                            </video>
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-
-                <!-- Prev Button -->
-                <button
-                    type="button"
-                    onclick="prevSlide()"
-                    class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-8 md:size-11 rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
-                    aria-label="Sebelumnya"
-                >
-                    <svg class="size-4 md:size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                </button>
-
-                <button
-                    type="button"
-                    onclick="nextSlide()"
-                    class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-8 md:size-11 rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
-                    aria-label="Selanjutnya"
-                >
-                    <svg class="size-4 md:size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="w-full px-3 md:px-4 py-2.5 bg-[#0f1424] border-t border-white/10 flex flex-wrap md:flex-nowrap items-center justify-between gap-3">
-                <div
-                    id="next-preview-card"
-                    onclick="nextSlide()"
-                    class="flex items-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#EA6D0D] p-1.5 pr-3 rounded-xl cursor-pointer transition-all duration-200 group shrink-0"
-                    title="Klik untuk membuka slide berikutnya"
-                >
-                    <div class="relative w-12 h-8 md:w-14 md:h-9 rounded-lg overflow-hidden bg-black shrink-0 border border-white/10 flex items-center justify-center">
-                        <img
-                            id="next-preview-thumb"
-                            src="<?= htmlspecialchars($next_initial['thumb']) ?>"
-                            alt="Preview Berikutnya"
-                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 select-none <?= $next_initial['type'] === 'video' ? 'hidden' : '' ?>"
-                        />
+                <!-- Stage / Main Viewport -->
+                <div id="carousel-stage" class="relative w-full h-[28vw] max-md:h-[64.87vw] flex items-center justify-center bg-black/80 overflow-hidden">
+                    <?php foreach ($carousel_media as $idx => $m): ?>
                         <div
-                            id="next-preview-video-badge"
-                            class="absolute inset-0 bg-[#0c101d] items-center justify-center <?= $next_initial['type'] === 'video' ? 'flex' : 'hidden' ?>"
+                            class="carousel-slide absolute inset-0 flex items-center justify-center p-[0.78vw] max-md:p-[2.051vw] transition-opacity duration-300 <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
+                            data-index="<?= $idx ?>"
+                            data-label="<?= htmlspecialchars($m['label']) ?>"
+                            data-type="<?= $m['type'] ?>"
                         >
-                            <svg class="size-3.5 md:size-4 text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <?php if ($m['type'] === 'image'): ?>
+                                <img
+                                    src="<?= $m['src'] ?>"
+                                    alt="<?= htmlspecialchars($m['label']) ?>"
+                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.39vw] max-md:rounded-[1.538vw] shadow-lg select-none"
+                                    loading="lazy"
+                                />
+                            <?php else: ?>
+                                <video
+                                    controls
+                                    playsinline
+                                    preload="metadata"
+                                    class="max-h-full max-w-full w-auto h-auto object-contain rounded-[0.39vw] max-md:rounded-[1.538vw] shadow-lg bg-black"
+                                >
+                                    <source src="<?= $m['src'] ?>" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
+
+                    <!-- Prev Button -->
+                    <button
+                        type="button"
+                        onclick="prevSlide()"
+                        class="absolute left-[0.78vw] max-md:left-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.95vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
+                        aria-label="Sebelumnya"
+                    >
+                        <svg class="size-[0.88vw] max-md:size-[3.59vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button
+                        type="button"
+                        onclick="nextSlide()"
+                        class="absolute right-[0.78vw] max-md:right-[2.051vw] top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#EA6D0D] text-white size-[1.95vw] max-md:size-[7.692vw] rounded-full border border-white/20 transition-all hover:scale-110 active:scale-95 shadow-xl flex items-center justify-center cursor-pointer backdrop-blur-sm"
+                        aria-label="Selanjutnya"
+                    >
+                        <svg class="size-[0.88vw] max-md:size-[3.59vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Bottom Control & Thumbnail Row -->
+                <div class="relative w-full px-[0.78vw] max-md:px-[2.564vw] py-[0.58vw] max-md:py-[2.051vw] bg-[#0f1424] border-t border-white/10 flex items-center justify-center overflow-hidden">
+                    <!-- Thumbnails Scrollable Container -->
+                    <div
+                        id="carousel-thumbs-container"
+                        class="w-full overflow-x-auto scroll-smooth py-[0.19vw] max-md:py-[0.769vw] scrollbar-none flex items-center cursor-grab active:cursor-grabbing select-none"
+                    >
+                        <div class="flex items-center gap-[0.39vw] max-md:gap-[1.538vw] m-auto shrink-0 min-w-min px-[0.39vw] max-md:px-[1.538vw]">
+                            <?php foreach ($carousel_media as $idx => $m): ?>
+                                <button
+                                    type="button"
+                                    onclick="goToSlide(<?= $idx ?>)"
+                                    class="carousel-thumb-btn relative rounded-[0.29vw] max-md:rounded-[1.538vw] overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer <?= $idx === 0 ? 'border-[#EA6D0D] ring-2 ring-[#EA6D0D]/40 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-white/30' ?>"
+                                    data-thumb-index="<?= $idx ?>"
+                                    title="<?= htmlspecialchars($m['label']) ?>"
+                                >
+                                    <?php if ($m['type'] === 'video'): ?>
+                                        <div class="w-[3.11vw] max-md:w-[12.308vw] h-[1.95vw] max-md:h-[7.692vw] bg-[#0c101d] flex items-center justify-center border border-white/10">
+                                            <svg class="size-[0.68vw] max-md:size-[3.077vw] text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </div>
+                                    <?php else: ?>
+                                        <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-[3.11vw] max-md:w-[12.308vw] h-[1.95vw] max-md:h-[7.692vw] object-cover select-none pointer-events-none">
+                                    <?php endif; ?>
+                                </button>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="flex flex-col text-left">
-                        <span class="text-[9px] md:text-[10px] text-(--yellow-color) font-bold uppercase tracking-wider geologica flex items-center gap-1">
-                            <span>Berikutnya</span>
-                            <svg class="size-2.5 text-(--yellow-color) transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </span>
-                        <span id="next-preview-title" class="text-white text-xs md:text-sm font-medium truncate max-w-[110px] md:max-w-[180px] open-sans">
-                            <?= htmlspecialchars($next_initial['label']) ?>
-                        </span>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-1.5 md:gap-2 overflow-x-auto py-1 scrollbar-none max-w-full">
-                    <?php foreach ($modal_media as $idx => $m): ?>
-                        <button
-                            type="button"
-                            onclick="goToSlide(<?= $idx ?>)"
-                            class="modal-thumb-btn relative rounded-lg overflow-hidden border-2 transition-all duration-300 shrink-0 cursor-pointer <?= $idx === 0 ? 'border-[#EA6D0D] ring-2 ring-[#EA6D0D]/40 scale-105 opacity-100' : 'border-transparent opacity-50 hover:opacity-100 hover:border-white/30' ?>"
-                            data-thumb-index="<?= $idx ?>"
-                            title="<?= htmlspecialchars($m['label']) ?>"
-                        >
-                            <?php if ($m['type'] === 'video'): ?>
-                                <div class="w-10 h-7 md:w-14 md:h-9 bg-[#0c101d] flex items-center justify-center border border-white/10">
-                                    <svg class="size-3 md:size-3.5 text-(--yellow-color) fill-(--yellow-color)" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                            <?php else: ?>
-                                <img src="<?= $m['thumb'] ?>" alt="<?= htmlspecialchars($m['label']) ?>" class="w-10 h-7 md:w-14 md:h-9 object-cover select-none">
-                            <?php endif; ?>
-                        </button>
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Footer Copyright -->
+        <footer class="relative z-10 mt-[4vw] max-md:mt-[6.154vw]">
+            <div class="w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
+                <div class="text-center">
+                    Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Carousel Script -->
     <script>
     (function () {
         let currentSlide = 0;
-        const slides = document.querySelectorAll('.modal-slide');
-        const thumbs = document.querySelectorAll('.modal-thumb-btn');
-        const modal = document.getElementById('beranda-modal');
-        const card = document.getElementById('beranda-modal-card');
-        const counterBadge = document.getElementById('modal-counter-badge');
-        const labelText = document.getElementById('modal-label');
-        const nextPreviewThumb = document.getElementById('next-preview-thumb');
-        const nextPreviewTitle = document.getElementById('next-preview-title');
-        const nextPreviewVideoBadge = document.getElementById('next-preview-video-badge');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const thumbs = document.querySelectorAll('.carousel-thumb-btn');
+        const thumbsContainer = document.getElementById('carousel-thumbs-container');
+        const counterBadge = document.getElementById('carousel-counter-badge');
+        const labelText = document.getElementById('carousel-label');
         const totalSlides = slides.length;
 
-        const mediaData = <?= json_encode($modal_media) ?>;
+        const mediaData = <?= json_encode($carousel_media) ?>;
 
-        let autoSlideTimer = null;
-        const AUTO_SLIDE_DELAY = 7000;
+        const countdownEl = document.getElementById('carousel-countdown');
+        let countdownTimer = null;
+        let remainingSeconds = 7;
+        const COUNTDOWN_TOTAL = 7;
+
+        function updateCountdownDisplay() {
+            if (!countdownEl) return;
+            if (isCurrentVideoPlaying()) {
+                countdownEl.textContent = 'Dijeda';
+            } else {
+                countdownEl.textContent = remainingSeconds + 's';
+            }
+        }
 
         function isCurrentVideoPlaying() {
             const activeSlide = slides[currentSlide];
@@ -322,36 +274,47 @@
         }
 
         function stopAutoSlide() {
-            if (autoSlideTimer) {
-                clearTimeout(autoSlideTimer);
-                autoSlideTimer = null;
+            if (countdownTimer) {
+                clearInterval(countdownTimer);
+                countdownTimer = null;
             }
+            updateCountdownDisplay();
         }
 
         function startAutoSlide() {
             stopAutoSlide();
             if (totalSlides <= 1) return;
-            if (!modal || modal.classList.contains('pointer-events-none')) return;
+
+            remainingSeconds = COUNTDOWN_TOTAL;
+            updateCountdownDisplay();
 
             // Jika video pada slide aktif sedang di-play, jangan jalankan auto slide
             if (isCurrentVideoPlaying()) {
                 return;
             }
 
-            autoSlideTimer = setTimeout(function () {
-                if (!modal || modal.classList.contains('pointer-events-none')) return;
-                if (!isCurrentVideoPlaying()) {
-                    nextSlide();
+            countdownTimer = setInterval(function () {
+                if (isCurrentVideoPlaying()) {
+                    stopAutoSlide();
+                    return;
                 }
-            }, AUTO_SLIDE_DELAY);
+
+                remainingSeconds--;
+                if (remainingSeconds <= 0) {
+                    remainingSeconds = COUNTDOWN_TOTAL;
+                    nextSlide();
+                } else {
+                    updateCountdownDisplay();
+                }
+            }, 1000);
         }
 
         function restartAutoSlide() {
-            stopAutoSlide();
+            remainingSeconds = COUNTDOWN_TOTAL;
             startAutoSlide();
         }
 
-        // Pasang event listener pada setiap video
+        // Pasang event listener pada setiap video untuk auto-slide control
         slides.forEach(slide => {
             const vid = slide.querySelector('video');
             if (vid) {
@@ -376,27 +339,6 @@
             });
         }
 
-        window.openBerandaModal = function () {
-            if (!modal || !card) return;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100', 'pointer-events-auto');
-            card.classList.remove('scale-95');
-            card.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-            restartAutoSlide();
-        };
-
-        window.closeBerandaModal = function () {
-            if (!modal || !card) return;
-            stopAutoSlide();
-            pauseAllVideos();
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modal.classList.remove('opacity-100', 'pointer-events-auto');
-            card.classList.add('scale-95');
-            card.classList.remove('scale-100');
-            document.body.style.overflow = '';
-        };
-
         window.goToSlide = function (idx) {
             if (idx < 0) idx = totalSlides - 1;
             if (idx >= totalSlides) idx = 0;
@@ -417,12 +359,24 @@
                 if (i === idx) {
                     t.classList.remove('border-transparent', 'opacity-50');
                     t.classList.add('border-[#EA6D0D]', 'ring-2', 'ring-[#EA6D0D]/40', 'scale-105', 'opacity-100');
-                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                 } else {
                     t.classList.remove('border-[#EA6D0D]', 'ring-2', 'ring-[#EA6D0D]/40', 'scale-105', 'opacity-100');
                     t.classList.add('border-transparent', 'opacity-50');
                 }
             });
+
+            // Otomatis geser thumbnail agar selalu terlihat di tengah (centered) saat pindah slide
+            if (thumbsContainer && thumbs[idx]) {
+                const activeThumb = thumbs[idx];
+                const thumbRect = activeThumb.getBoundingClientRect();
+                const containerRect = thumbsContainer.getBoundingClientRect();
+                const currentScroll = thumbsContainer.scrollLeft;
+                const targetScrollLeft = currentScroll + (thumbRect.left - containerRect.left) - (containerRect.width / 2) + (thumbRect.width / 2);
+                thumbsContainer.scrollTo({
+                    left: targetScrollLeft,
+                    behavior: 'smooth'
+                });
+            }
 
             currentSlide = idx;
 
@@ -433,31 +387,6 @@
             const activeMedia = mediaData[currentSlide];
             if (labelText && activeMedia) {
                 labelText.textContent = activeMedia.label || '';
-            }
-
-            // Update preview media berikutnya
-            const nextIdx = (currentSlide + 1) % totalSlides;
-            const nextMedia = mediaData[nextIdx];
-            if (nextMedia) {
-                if (nextPreviewTitle) {
-                    nextPreviewTitle.textContent = nextMedia.label || '';
-                }
-                if (nextMedia.type === 'video') {
-                    if (nextPreviewThumb) nextPreviewThumb.classList.add('hidden');
-                    if (nextPreviewVideoBadge) {
-                        nextPreviewVideoBadge.classList.remove('hidden');
-                        nextPreviewVideoBadge.classList.add('flex');
-                    }
-                } else {
-                    if (nextPreviewThumb) {
-                        nextPreviewThumb.src = nextMedia.thumb;
-                        nextPreviewThumb.classList.remove('hidden');
-                    }
-                    if (nextPreviewVideoBadge) {
-                        nextPreviewVideoBadge.classList.remove('flex');
-                        nextPreviewVideoBadge.classList.add('hidden');
-                    }
-                }
             }
 
             // Restart auto slide 7 detik
@@ -474,8 +403,6 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', function (e) {
-            if (!modal || modal.classList.contains('pointer-events-none')) return;
-            if (e.key === 'Escape') closeBerandaModal();
             if (e.key === 'ArrowRight') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
         });
@@ -483,7 +410,7 @@
         // Touch swipe support
         let touchStartX = 0;
         let touchEndX = 0;
-        const stage = document.getElementById('modal-stage');
+        const stage = document.getElementById('carousel-stage');
         if (stage) {
             stage.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
@@ -502,12 +429,46 @@
             }, { passive: true });
         }
 
-        // Auto open on page load
+        // Drag-to-scroll & wheel scroll pada thumbnail container (desktop)
+        if (thumbsContainer) {
+            let isDown = false;
+            let startX = 0;
+            let initialScroll = 0;
+
+            thumbsContainer.addEventListener('mousedown', function (e) {
+                isDown = true;
+                startX = e.pageX - thumbsContainer.offsetLeft;
+                initialScroll = thumbsContainer.scrollLeft;
+            });
+            thumbsContainer.addEventListener('mouseleave', function () {
+                isDown = false;
+            });
+            thumbsContainer.addEventListener('mouseup', function () {
+                isDown = false;
+            });
+            thumbsContainer.addEventListener('mousemove', function (e) {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - thumbsContainer.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                thumbsContainer.scrollLeft = initialScroll - walk;
+            });
+
+            thumbsContainer.addEventListener('wheel', function (e) {
+                if (e.deltaY !== 0 && thumbsContainer.scrollWidth > thumbsContainer.clientWidth) {
+                    e.preventDefault();
+                    thumbsContainer.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+        }
+
+        // Jalankan auto-slide saat halaman siap
         document.addEventListener('DOMContentLoaded', function () {
-            setTimeout(function () {
-                openBerandaModal();
-            }, 600);
+            startAutoSlide();
         });
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            startAutoSlide();
+        }
     })();
     </script>
 

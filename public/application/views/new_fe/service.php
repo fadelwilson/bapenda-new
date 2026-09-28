@@ -12,19 +12,19 @@ $sub_titles = [
 ];
 $init_main_title = $main_titles[$sub_menu] ?? 'PBB';
 $init_sub_title = $sub_titles[$sub_menu] ?? 'PAJAK BUMI DAN BANGUNAN';
-$this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'navbar_bg' => 'blue']);
+$this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'navbar_bg' => 'white']);
 ?>
 
-<body class="min-h-screen min-w-screen overflow-x-hidden relative bg-(--blue-color) flex flex-col justify-between">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'layanan']); ?>
+<body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white flex flex-col justify-between">
+    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'layanan', 'navbar_bg' => 'white']); ?>
 
     <div class="relative overflow-hidden min-h-screen flex flex-col justify-between px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
-        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -left-1 bottom-0 h-[50vw] w-auto opacity-5 pointer-events-none z-0 max-md:h-[205.128vw] max-md:w-auto" style="filter: invert(1);">
-        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -right-1 bottom-0 h-[30vw] w-auto opacity-5 pointer-events-none z-0 transform scale-x-[-1] max-md:hidden" style="filter: invert(1);">
+        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -left-1 bottom-0 h-[50vw] w-auto opacity-10 pointer-events-none z-0 max-md:h-[205.128vw] max-md:w-auto">
+        <img src="<?= base_url('assets/images/tower.png') ?>" alt="" class="absolute -right-1 bottom-0 h-[30vw] w-auto opacity-10 pointer-events-none z-0 transform scale-x-[-1] max-md:hidden">
 
         <div class="relative z-10">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
-                <img src="<?= base_url('assets/images/bapenda-white.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
+                <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[1.952vw] max-md:mt-[1.595vw]">
 
                 <h1 class="text-[4.67vw] max-md:text-[9.231vw] max-md:w-full text-[#EA6D0D] uppercase krona-one leading-none text-right">
                     Layanan
@@ -35,19 +35,19 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                 <h1 id="layanan-main-title" class="text-[3.89vw] text-[#EA6D0D] krona-one uppercase leading-none max-md:text-[8vw] max-md:text-center transition-all duration-300 mb-[0.6vw] max-md:mb-[2vw] max-md:hidden">
                     <?= $init_main_title ?>
                 </h1>
-                <h3 id="layanan-sub-title" class="text-[2.33vw] text-white genos mb-[1.5vw] max-md:mb-4 max-md:text-[6.154vw] max-md:text-center max-md:leading-tight uppercase transition-all duration-300">
+                <h3 id="layanan-sub-title" class="text-[2.33vw] text-(--blue-color) genos mb-[1.5vw] max-md:mb-4 max-md:text-[6.154vw] max-md:text-center max-md:leading-tight uppercase transition-all duration-300">
                     <?= $init_sub_title ?>
                 </h3>
 
                 <div id="content-pbb" class="layanan-pane flex flex-col gap-[0.19vw] max-md:gap-[1.538vw] max-md:px-[2.051vw]">
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Info Tagihan PBB</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
                                 <li>
                                     <span>Info Tagihan PBB : </span>
@@ -58,13 +58,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Pendaftaran Objek Pajak Baru</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Pendaftaran Objek Baru ditandatangani oleh Pemohon</li>
                                 <li>Surat Pemberitahuan Objek Pajak (SPOP) dan Lampiran Surat Pemberitahuan Objek Pajak (LSPOP)</li>
@@ -80,13 +80,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Permohonan Pembetulan Dan Pembatalan SPPT</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Pembetulan oleh Pemohon</li>
                                 <li>Surat Pemberitahuan Objek Pajak (SPOP) dan Lampiran Surat Pemberitahuan Objek Pajak (LSPOP)</li>
@@ -101,13 +101,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Permohonan Mutasi/Pecah/Gabung Objek Pajak</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Mutasi/Pecah/Gabung Objek Pajak oleh Pemohon</li>
                                 <li>Surat Pemberitahuan Objek Pajak (SPOP) dan Lampiran Surat Pemberitahuan Objek Pajak (LSPOP)</li>
@@ -122,13 +122,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Permohonan Penghapusan Atau Pengurangan Sanksi Administratif PBB</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Penghapusan Atau Pengurangan Sanksi Administratif PBB oleh Pemohon</li>
                                 <li>FC KTP Pemohon dan atau yang dikuasakan</li>
@@ -143,13 +143,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Permohonan Pengurangan PBB</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Pengurangan PBB oleh Pemohon</li>
                                 <li>FC KTP Pemohon dan atau yang dikuasakan</li>
@@ -163,13 +163,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Permohonan Keberatan PBB</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Surat Permohonan Keberatan PBB oleh Pemohon</li>
                                 <li>FC KTP Pemohon dan atau yang dikuasakan</li>
@@ -182,13 +182,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Formulir Permohonan</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
                                 <li>
                                     <span>Permohonan Pendaftaran Objek dan Subjek Baru PBB: </span>
@@ -213,13 +213,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
 
                 <div id="content-bphtb" class="layanan-pane hidden flex flex-col gap-[0.19vw] max-md:gap-[1.538vw] max-md:px-[2.051vw]">
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Info Tagihan BPHTB</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
                                 <li>
                                     <span>Pendaftaran BPHTB : </span>
@@ -242,13 +242,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Tarif Bea Perolehan Hak Atas Tanah dan Bangunan</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Jual Beli : Harga Transaksi (Risalah Lelang, Brosur, Nilai Wajar) – NPOPTKP (80 Juta Rupiah) X 5%</li>
                                 <li>Hibah : Total NJOP – NPOPTKP (80 Juta Rupiah) X 5%</li>
@@ -260,13 +260,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Jual Beli</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Pembeli</li>
                                 <li>KTP dan KK Penjual</li>
@@ -283,13 +283,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Jual Beli (Perumahan Subsidi)</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Pembeli</li>
                                 <li>KTP dan KK Penjual</li>
@@ -307,13 +307,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Jual Beli Perumahan Subsidi MBR/Masyarakat Berpenghasilan Rendah</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Pembeli (Jika sudah menikah wajib dilampirkan juga)</li>
                                 <li>KTP dan KK Penjual</li>
@@ -336,13 +336,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Hibah</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Penerima Hibah</li>
                                 <li>KTP dan KK Pemberi Hibah</li>
@@ -356,13 +356,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Waris</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Para Ahli Waris</li>
                                 <li>Foto Lokasi beserta Akses Jalannya</li>
@@ -376,13 +376,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Akta Pembagian Hak Bersama</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK yang menerima APHB</li>
                                 <li>KTP dan KK para ahli waris yang tidak menerima APHB</li>
@@ -396,13 +396,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi Lelang</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Pemenang Lelang</li>
                                 <li>Foto Lokasi beserta Akses Jalannya</li>
@@ -414,13 +414,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi PTSL</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP dan KK Wajib Pajak yang mengikuti program PTSL</li>
                                 <li>Foto Lokasi beserta Akses Jalannya</li>
@@ -432,13 +432,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Validasi SK BPN</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>KTP Direktur Perusahaan</li>
                                 <li>NPWP Perusahaan</li>
@@ -453,13 +453,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
 
                 <div id="content-pdl" class="layanan-pane hidden flex flex-col gap-[0.19vw] max-md:gap-[1.538vw] max-md:px-[2.051vw]">
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Cek Status Pajak Daerah Lainnya</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
                                 <li>
                                     <a href="https://sptpd.purwakartakab.go.id/site/login" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://sptpd.purwakartakab.go.id/site/login</a>
@@ -469,13 +469,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Persyaratan Pendaftaran NPWPD</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Fotokopi KTP/Paspor Pemilik</li>
                                 <li>NIB dari OSS / Izin Usaha / Surat Pernyataan Kegiatan Usaha dari Pemilik</li>
@@ -486,13 +486,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Perubahan Data WP / OP</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Wajib lapor jika ada perubahan identitas pemilik atau nama usaha.</li>
                                 <li>Syarat: Isi formulir perubahan data di kantor Bapenda.</li>
@@ -502,13 +502,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Pembetulan SPTPD / SKPD</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Wajib Pajak dapat mengajukan pembetulan jika ada salah tulis/hitung.</li>
                                 <li>Syarat: Ajukan surat permohonan bermeterai ke Kepala Bapenda.</li>
@@ -518,13 +518,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Cara Hitung & Tarif PBJT</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <div class="jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw]">
                                 <p class="font-semibold text-[#EAA90D] mb-[0.5vw] max-md:mb-[2vw]">Sistem Self Assessment. Tarif PBJT Standar = 10%</p>
                                 <ul class="list-disc list-inside space-y-[0.35vw] max-md:space-y-[1.5vw]">
@@ -551,13 +551,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Batas Waktu dan Sanksi Keterlambatan</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Penyetoran pajak: Maksimal 10 hari kerja bulan berikutnya</li>
                                 <li>Pelaporan omset (SPTPD): Maksimal 15 hari kerja bulan berikutnya</li>
@@ -567,13 +567,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Pajak Reklame & Tarif</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Pajak untuk spanduk komersial/nama pajak (NSR): 25% dari Nilai Strategis Reklame (NSR).</li>
                                 <li>NSR dihitung dari: Ukuran, Jenis media, Lokasi, & Jangka waktu tayang.</li>
@@ -583,13 +583,13 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                     </div>
 
                     <div class="accordion-item">
-                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
+                        <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-(--blue-color) text-white jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
                             <span>Pajak Air Tanah (PAT) & Tarif</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
-                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
+                        <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[2vw] max-md:px-[3.5vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.35vw] max-md:space-y-[1.5vw]">
                                 <li>Pajak untuk pemanfaatan air tanah komersil/usaha.</li>
                                 <li>Tarif: 20% dari Nilai Perolehan Air Tanah (NPAT).</li>
@@ -604,7 +604,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
         </div>
 
         <footer class="relative z-10 mt-[4vw] max-md:mt-[6.154vw]">
-            <div class="w-full text-white text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
+            <div class="w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
                 </div>
@@ -671,33 +671,33 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
             header.addEventListener('click', function () {
                 const content = this.nextElementSibling;
                 const icon = this.querySelector('.accordion-icon');
-                const isOpen = content.classList.contains('max-h-[60rem]');
+                const isOpen = content.classList.contains('opacity-100');
                 
                 const item = this.closest('.accordion-item');
                 const group = item ? item.parentElement : null;
-                const siblingHeaders = group ? group.querySelectorAll('.accordion-header') : [];
+                const siblingHeaders = group ? group.querySelectorAll('.accordion-header') : headers;
 
                 siblingHeaders.forEach(h => {
                     const c = h.nextElementSibling;
                     const i = h.querySelector('.accordion-icon');
                     
-                    h.classList.remove('bg-(--yellow-color)');
-                    h.classList.add('bg-white');
+                    h.classList.add('bg-(--blue-color)', 'text-white');
+                    h.classList.remove('bg-(--yellow-color)', 'text-[#303752]');
                     
                     if (i) i.classList.remove('rotate-180');
                     
-                    c.classList.remove('max-h-[60rem]', 'opacity-100', 'py-[1.5vw]');
+                    c.classList.remove('max-h-[60rem]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
                     c.classList.add('max-h-0', 'opacity-0', 'py-0');
                 });
 
                 if (!isOpen) {
-                    this.classList.remove('bg-white');
-                    this.classList.add('bg-(--yellow-color)');
+                    this.classList.remove('bg-(--blue-color)', 'text-white');
+                    this.classList.add('bg-(--yellow-color)', 'text-[#303752]');
                     
                     if (icon) icon.classList.add('rotate-180');
                     
                     content.classList.remove('max-h-0', 'opacity-0', 'py-0');
-                    content.classList.add('max-h-[60rem]', 'opacity-100', 'py-[1.5vw]');
+                    content.classList.add('max-h-[60rem]', 'opacity-100', 'py-[1.5vw]', 'max-md:py-[3.5vw]');
                 }
             });
         });
