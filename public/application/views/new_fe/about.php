@@ -54,16 +54,19 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                 </div>
             </div>
         </div>
-    
-        <!-- Section 2: Tentang Kami (Tabs: Tentang Kami, Visi, Misi) -->
+
+        <!-- Section 3: Profil & Visi Misi (Tabs: Tentang Kami, Visi, Misi) -->
         <div class="mt-[5.447vw] max-md:mt-0 max-md:p-[4.103vw]">
             <div class="px-[2.723vw] max-md:px-0">
                 <h1 class="text-[4.47vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[7.692vw] z-10 max-md:py-[4.103vw]">
-                    Profil & Visi Misi
+                    Seputar Bapenda Purwakarta
                 </h1>
             </div>
 
-            <div class="pt-[2.335vw] max-md:pt-[4.103vw] max-md:mt-0 mt-[1.5vw] pb-[3.113vw] relative">
+            <div class="pt-[10.117vw] max-md:pt-[4.103vw] max-md:mt-0 mt-[2.335vw] pb-[3.113vw] relative">
+                <div class="absolute max-md:hidden inset-0 bg-repeat bg-left-top opacity-3 pointer-events-none" style="background-image: url('<?= base_url('assets/images/batik_sunda1.png') ?>'); z-index: -2; background-size: 1280px auto;"></div>
+                <!-- Wayang Arjuna decoration -->
+                <img src="<?= base_url('assets/images/andkomin-arjuna.png') ?>" alt="" class="absolute max-md:hidden right-[1vw] top-[-7vw] h-[50vw] w-auto opacity-75 pointer-events-none -z-1">
                 <div class="relative z-10 max-md:px-0">
                     <div class="grid grid-cols-3 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw]">
                         <!-- Tab 1: Tentang Kami -->
@@ -83,7 +86,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                         <div>
                             <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer about-tab-btn" data-about-tab="visi" style="background-image: url('<?= base_url('assets/images/full-gallery-image-2.webp') ?>')">
                                 <div class="absolute inset-0 bg-[#EA6D0D]/65 group-hover:bg-white/70 transition-all duration-300 about-tab-overlay"></div>
-                                <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 about-tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Visi</h3>
+                                <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 about-tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-right">Visi</h3>
                             </div>
                             <div class="about-tab-accordion-content hidden md:hidden bg-(--blue-color)/60 w-full p-[4.103vw] text-white text-[0.78vw] max-md:text-[3.077vw] jakarta-sans text-justify leading-relaxed" data-about-tab-content="visi">
                                 <div class="space-y-4 text-justify leading-relaxed">
@@ -145,81 +148,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Tentang Kami'
                 </div>
             </div>
         </div>
-
-        <!-- Section: Tugas Pokok dan Fungsi -->
-        <div class="mt-[5.447vw] max-md:mt-0 max-md:p-[4.103vw]">
-            <div class="px-[2.723vw] max-md:px-0">
-                <h1 class="text-[4.47vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[7.692vw] z-10 max-md:py-[4.103vw]">
-                    Tugas Pokok dan Fungsi
-                </h1>
-            </div>
-
-            <div class="pt-[10.117vw] max-md:pt-[4.103vw] max-md:mt-0 mt-[2.335vw] pb-[3.113vw] relative">
-                <div class="absolute max-md:hidden inset-0 bg-repeat bg-left-top opacity-3 pointer-events-none" style="background-image: url('<?= base_url('assets/images/batik_sunda1.png') ?>'); z-index: -2; background-size: 1280px auto;"></div>
-                <!-- Wayang Arjuna decoration -->
-                <img src="<?= base_url('assets/images/andkomin-arjuna.png') ?>" alt="" class="absolute max-md:hidden right-[1vw] top-[-7vw] h-[50vw] w-auto opacity-75 pointer-events-none -z-1">
-                <div class="relative z-10">
-                    <div class="grid grid-cols-4 max-md:grid-cols-1 gap-[0.778vw] max-md:gap-[2.051vw]">
-                        <!-- Tab 1: Dasar Hukum -->
-                        <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="hukum" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.webp') ?>')">
-                                <div class="absolute inset-0 bg-white/70 transition-all duration-300 tab-overlay"></div>
-                                <h3 class="text-[1.946vw] genos text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Dasar Hukum</h3>
-                            </div>
-                            <div class="tab-accordion-content md:hidden bg-(--blue-color)/60 w-full p-[4.103vw] text-white text-[0.78vw] max-md:text-[3.077vw] jakarta-sans text-justify leading-relaxed" data-tab-content="hukum">
-                                Pengelolaan pendapatan daerah oleh Badan Pendapatan Daerah Kabupaten Purwakarta berlandaskan pada Peraturan Daerah Kabupaten Purwakarta Nomor 3 Tahun 2021 tentang Pajak Daerah dan Retribusi Daerah, serta Peraturan Bupati Purwakarta Nomor 87 Tahun 2022 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, serta Tata Kerja Badan Pendapatan Daerah.
-                            </div>
-                        </div>
-
-                        <!-- Tab 2: Kedudukan -->
-                        <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="kedudukan" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.webp') ?>')">
-                                <div class="absolute inset-0 bg-[#EA6D0D]/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
-                                <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-right">Kedudukan</h3>    
-                            </div>
-                            <div class="tab-accordion-content hidden md:hidden bg-(--blue-color)/60 w-full p-[4.103vw] text-white text-[0.78vw] max-md:text-[3.077vw] jakarta-sans text-justify leading-relaxed" data-tab-content="kedudukan">
-                                Badan Pendapatan Daerah merupakan unsur pelaksana fungsi penunjang urusan pemerintahan bidang keuangan sub pengelolaan pendapatan daerah. Badan Pendapatan Daerah dipimpin oleh Kepala Badan yang berkedudukan di bawah dan bertanggung jawab kepada Bupati melalui Sekretaris Daerah.
-                            </div>
-                        </div>
-
-                        <!-- Tab 3: Tugas -->
-                        <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="tugas" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.webp') ?>')">
-                                <div class="absolute inset-0 bg-[#EA6D0D]/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
-                                <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-left">Tugas</h3>
-                            </div>
-                            <div class="tab-accordion-content hidden md:hidden bg-(--blue-color)/60 w-full p-[4.103vw] text-white text-[0.78vw] max-md:text-[3.077vw] jakarta-sans text-justify leading-relaxed" data-tab-content="tugas">
-                                Badan Pendapatan Daerah mempunyai tugas membantu Bupati melaksanakan fungsi penunjang urusan pemerintahan yang menjadi kewenangan daerah bidang keuangan aspek pendapatan daerah meliputi pendaftaran, pendataan, penetapan, penagihan, keberatan, serta evaluasi dan pelaporan pendapatan daerah.
-                            </div>
-                        </div>
-
-                        <!-- Tab 4: Fungsi -->
-                        <div>
-                            <div class="group bg-cover bg-center h-[3.113vw] max-md:h-[13.128vw] flex items-end relative cursor-pointer tab-btn" data-tab="fungsi" style="background-image: url('<?= base_url('assets/images/full-gallery-image-1.webp') ?>')">
-                                <div class="absolute inset-0 bg-[#EA6D0D]/65 group-hover:bg-white/70 transition-all duration-300 tab-overlay"></div>
-                                <h3 class="text-[1.946vw] genos text-white group-hover:text-(--blue-color) leading-none relative uppercase transition-all duration-300 tab-text text-left max-md:text-[8.205vw] max-md:w-full max-md:text-right">Fungsi</h3>
-                            </div>
-                            <div class="tab-accordion-content hidden md:hidden bg-(--blue-color)/60 w-full p-[4.103vw] text-white text-[0.78vw] max-md:text-[3.077vw] jakarta-sans text-justify leading-relaxed" data-tab-content="fungsi">
-                                Dalam melaksanakan tugasnya, Badan Pendapatan Daerah menyelenggarakan fungsi:<br><br>
-                                1. Penyusunan kebijakan teknis pengelolaan pajak dan retribusi daerah.<br>
-                                2. Pelaksanaan pendaftaran dan pendataan wajib pajak/retribusi daerah.<br>
-                                3. Penetapan besaran pajak daerah.<br>
-                                4. Penagihan aktif dan penyelesaian sengketa pajak.<br>
-                                5. Pengawasan, pengendalian, dan evaluasi penerimaan daerah.<br>
-                                6. Pengelolaan administrasi umum, kepegawaian, keuangan, dan aset badan.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Desktop Shared Content Box -->
-                    <div class="bg-(--blue-color)/60 w-full px-[2.723vw] py-[2.724vw] text-white text-[0.778vw] jakarta-sans max-md:hidden">
-                        <div class="text-justify leading-relaxed min-h-[7.3vw]" id="tab-content-text">
-                            Pengelolaan pendapatan daerah oleh Badan Pendapatan Daerah Kabupaten Purwakarta berlandaskan pada Peraturan Daerah Kabupaten Purwakarta Nomor 3 Tahun 2021 tentang Pajak Daerah dan Retribusi Daerah, serta Peraturan Bupati Purwakarta Nomor 87 Tahun 2022 tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi, serta Tata Kerja Badan Pendapatan Daerah.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <script>
             document.addEventListener('DOMContentLoaded', function () {
                 // --- Tabs Section: Tentang Kami ---

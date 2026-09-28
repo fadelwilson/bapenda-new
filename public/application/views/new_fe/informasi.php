@@ -1183,7 +1183,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
         </div>
         <!-- /relative z-10 -->
 
-        <footer class="relative z-30 overflow-visible">
+        <footer class="relative z-30 overflow-visible mt-[4vw] max-md:mt-[6.154vw]">
             <div class="relative z-10 w-full text-[#303752] text-[0.58vw] open-sans max-md:text-[2.564vw] max-md:pb-[2.564vw]">
                 <div class="text-center">
                     Copyright © 2026 Badan Pendapatan Daerah Kabupaten Purwakarta.
