@@ -54,10 +54,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                                     <a href="https://mapagbumi.purwakartakab.go.id/" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://mapagbumi.purwakartakab.go.id/</a>
                                 </li>
                                 <li>
-                                    <span>Permohonan keringanan/pengurangan PBB : </span>
-                                    <a href="https://s.id/wJQHO" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/wJQHO</a>
-                                </li>
-                                <li>
                                     <span>Permohonan Pembetulan SPPT,SKPD,STPD,SKPDLB dan Pembatalan SPPT,SKPD,STPD : </span>
                                     <a href="https://s.id/xisWi" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/xisWi</a>
                                 </li>
@@ -207,8 +203,12 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                         <div class="max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-transparent text-white px-[2vw] accordion-content max-md:text-[3.077vw]">
                             <ul class="list-disc list-inside jakarta-sans text-[0.9vw] leading-relaxed max-md:text-[3.077vw] max-md:p-[2.564vw] space-y-[0.6vw] max-md:space-y-[2vw]">
                                 <li>
-                                    <span>Formulir PBB: </span>
+                                    <span>Pendaftaran PBB: </span>
                                     <a href="https://s.id/Iq6uF" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/Iq6uF</a>
+                                </li>
+                                <li>
+                                    <span>Permohonan keringanan/pengurangan PBB : </span>
+                                    <a href="https://s.id/wJQHO" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/wJQHO</a>
                                 </li>
                             </ul>
                         </div>
