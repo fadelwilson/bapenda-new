@@ -54,14 +54,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                                     <a href="https://mapagbumi.purwakartakab.go.id/" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://mapagbumi.purwakartakab.go.id/</a>
                                 </li>
                                 <li>
-                                    <span>Permohonan Pembetulan SPPT,SKPD,STPD,SKPDLB dan Pembatalan SPPT,SKPD,STPD : </span>
-                                    <a href="https://s.id/xisWi" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/xisWi</a>
-                                </li>
-                                <li>
-                                    <span>Permohonan Mutasi Pecah Penggabungan OP : </span>
-                                    <a href="https://s.id/GKxCv" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/GKxCv</a>
-                                </li>
-                                <li>
                                     <span>Permohonan Pendaftaran Objek dan Subjek Baru PBB : </span>
                                     <a href="https://s.id/lq6uF" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/lq6uF</a>
                                 </li>
@@ -195,7 +187,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
 
                     <div class="accordion-item">
                         <button class="w-full flex items-center justify-between gap-[1vw] max-md:gap-[2.051vw] p-[0.78vw] bg-white text-(--blue-color) jakarta-sans text-[0.97vw] cursor-pointer transition-all duration-300 accordion-header max-md:text-[3.59vw] text-left max-md:p-[2.051vw]">
-                            <span>Formulir Permohonan</span>
+                            <span>Permohonan Pendaftaran dan Subjek Pajak Baru</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.17vw] shrink-0 transition-transform duration-300 transform accordion-icon max-md:size-[6.154vw]">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                             </svg>
@@ -209,6 +201,14 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Layanan', 'na
                                 <li>
                                     <span>Permohonan keringanan/pengurangan PBB : </span>
                                     <a href="https://s.id/wJQHO" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/wJQHO</a>
+                                </li>
+                                <li>
+                                    <span>Permohonan Pembetulan SPPT,SKPD,STPD,SKPDLB dan Pembatalan SPPT,SKPD,STPD : </span>
+                                    <a href="https://s.id/xisWi" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/xisWi</a>
+                                </li>
+                                <li>
+                                    <span>Permohonan Mutasi Pecah Penggabungan OP : </span>
+                                    <a href="https://s.id/GKxCv" target="_blank" rel="noopener noreferrer" class="text-[#EAA90D] hover:underline underline-offset-2 break-all">https://s.id/GKxCv</a>
                                 </li>
                             </ul>
                         </div>
