@@ -89,7 +89,7 @@
         </div>
 
         <!-- Carousel: Full Kanan-Kiri & Bawah (Mengisi Sisa Layar ke Bawah) -->
-        <div id="beranda-carousel-wrap" class="relative z-10 w-full flex-1 min-h-[38.911vw] max-md:min-h-[85vw] overflow-hidden rounded-none shadow-[0_-8px_30px_rgba(0,0,0,0.12)] select-none group bg-slate-900 mt-[1.167vw] max-md:mt-[3.077vw]">
+        <div id="beranda-carousel-wrap" class="relative z-10 w-full flex-1 min-h-[33.911vw] max-md:min-h-[85vw] overflow-hidden rounded-none shadow-[0_-8px_30px_rgba(0,0,0,0.12)] select-none group bg-slate-900 mt-[1.167vw] max-md:mt-[3.077vw]">
             <!-- Stage / Main Viewport -->
             <div id="carousel-stage" class="relative w-full h-full overflow-hidden flex items-center justify-center">
                 <?php foreach ($carousel_media as $idx => $m): ?>
