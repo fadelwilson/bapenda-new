@@ -13,6 +13,7 @@ $active = isset($active_menu) ? $active_menu : 'beranda';
 $navbar_bg = isset($navbar_bg) ? $navbar_bg : 'white';
 $logo_color = isset($logo_color) ? $logo_color : ($navbar_bg === 'blue' ? 'white' : 'blue');
 $logo_file = ($logo_color === 'white') ? 'bapenda-white.svg' : 'bapenda-blue.svg';
+$is_floating = isset($is_floating) ? $is_floating : true;
 
 $navbar_text_color = $navbar_bg === 'blue'
     ? 'text-white hover:text-[#EAA90D]'
@@ -75,7 +76,7 @@ $menu_items = [
 ?>
 
 <!-- Menu Navigasi Desktop (di bawah H1) & Mobile Toggle (kanan atas) -->
-<div class="absolute top-[7.004vw] right-[1.556vw] z-[11] flex items-center max-md:fixed max-md:right-[4.103vw] max-md:top-[4.103vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+<div class="<?= $is_floating ? 'absolute top-[7.004vw] right-[1.556vw]' : 'relative' ?> z-[11] flex items-center max-md:fixed max-md:right-[4.103vw] max-md:top-[4.103vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav
         class="flex items-center gap-[0.875vw] max-md:hidden"
         id="beranda-desktop-menu"
