@@ -76,7 +76,7 @@ $menu_items = [
 ?>
 
 <!-- Menu Navigasi Desktop (di bawah H1) & Mobile Toggle (kanan atas) -->
-<div class="<?= $is_floating ? 'absolute top-[7.004vw] right-[1.556vw]' : 'relative' ?> z-[11] flex items-center max-md:fixed max-md:right-[4.103vw] max-md:top-[4.103vw] max-md:z-[9999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
+<div class="<?= $is_floating ? 'absolute top-[7.004vw] right-[1.556vw]' : 'relative' ?> z-[11] flex items-center max-md:fixed max-md:right-[4.103vw] max-md:top-[4.103vw] max-md:z-[99999] max-md:flex max-md:flex-row max-md:items-start" id="beranda-sidebar-wrap">
     <nav
         class="flex items-center gap-[0.875vw] max-md:hidden"
         id="beranda-desktop-menu"

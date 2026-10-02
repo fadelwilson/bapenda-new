@@ -71,7 +71,7 @@
         <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:h-[157.692vw] max-md:bottom-[20.513vw]" style="mix-blend-mode: multiply; filter: invert(1);">
 
         <!-- Header Top Bar (Non-Floating, Inline Document Flow) -->
-        <div class="relative z-10 pt-[1.556vw] px-[1.556vw] max-md:pt-[2.051vw] max-md:px-[2.051vw] shrink-0">
+        <div class="relative z-20 max-md:z-[99999] pt-[1.556vw] px-[1.556vw] max-md:pt-[2.051vw] max-md:px-[2.051vw] shrink-0">
             <div class="flex items-start justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
                 <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[2.051vw] max-md:mt-[1.538vw]">
 
