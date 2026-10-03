@@ -61,17 +61,14 @@
     }
     ?>
 
-    <!-- Section Hero / Beranda (Tema Light) -->
-    <div class="relative min-h-screen w-full bg-cover bg-center max-md:bg-center flex flex-col justify-between" style="background-image: url('<?= base_url('assets/images/new-bg.webp') ?>');">
-        <!-- Layer overlay light / gradient putih -->
-        <div class="absolute inset-0 bg-white/60 z-0"></div>
-
-        <!-- Ornamen Sigotaka di kiri dan kanan background (tema light: garis gelap elegan) -->
-        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:hidden" style="mix-blend-mode: multiply; filter: invert(1);">
-        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-25 max-md:h-[157.692vw] max-md:bottom-[20.513vw]" style="mix-blend-mode: multiply; filter: invert(1);">
+    <!-- Section Hero / Beranda (Tema Light Solid White) -->
+    <div class="relative min-h-[112vh] max-md:min-h-[115vh] w-full bg-white flex flex-col justify-start">
+        <!-- Ornamen Sigotaka di kiri dan kanan background (watermark halus elegan) -->
+        <img src="<?= base_url('assets/images/sigotaka_left.svg') ?>" alt="" class="absolute left-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-10 max-md:hidden" style="mix-blend-mode: multiply; filter: invert(1);">
+        <img src="<?= base_url('assets/images/sigotaka_right.svg') ?>" alt="" class="absolute right-0 bottom-[0.973vw] h-[65vh] w-auto pointer-events-none select-none z-[1] opacity-10 max-md:h-[157.692vw] max-md:bottom-[20.513vw]" style="mix-blend-mode: multiply; filter: invert(1);">
 
         <!-- Header Top Bar (Non-Floating, Inline Document Flow) -->
-        <div class="relative z-20 max-md:z-[99999] pt-[1.556vw] px-[1.556vw] max-md:pt-[2.051vw] max-md:px-[2.051vw] shrink-0">
+        <div class="relative z-20 max-md:z-[99999] pt-[1.556vw] px-[1.556vw] max-md:pt-[2.051vw] max-md:px-[2.051vw] shrink-0 bg-white">
             <div class="flex items-start justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
                 <img src="<?= base_url('assets/images/bapenda-blue.svg') ?>" alt="Logo Bapenda" class="h-[4.229vw] w-auto object-contain max-md:w-[35vw] max-md:h-auto max-md:ml-[2.051vw] max-md:mt-[1.538vw]">
 
@@ -84,19 +81,14 @@
             </div>
         </div>
 
-        <!-- Content Area: Slogan Headline & Carousel Tepat Di Bawahnya (Desktop: Menempel ke Bawah, Mobile: Center Vertikal & Horizontal) -->
-        <div class="relative z-10 w-full max-w-[63vw] max-md:max-w-full max-md:px-[3.077vw] mx-auto mt-auto max-md:my-auto flex flex-col items-center justify-center gap-[1.167vw] max-md:gap-[3.077vw] pt-[2.335vw] max-md:pt-0">
-            <!-- Slogan Headline -->
-            <h2 class="text-[#303752] text-[2.237vw] max-md:text-[5.641vw] font-bold geologica leading-tight max-md:leading-snug text-center w-full px-[0.389vw] max-md:px-0 shrink-0">
-                Pembayaran Pajak Daerah Anda untuk Pembangunan Purwakarta Istimewa
-            </h2>
-
-            <div id="beranda-carousel-wrap" class="relative w-full h-[33.560vw] max-md:h-[68.205vw] overflow-hidden rounded-t-[0.584vw] rounded-b-none max-md:rounded-[2.564vw] select-none group bg-slate-900 shadow-[0_-8px_30px_rgba(0,0,0,0.15)] max-md:shadow-[0_8px_24px_rgba(0,0,0,0.2)]">
+        <!-- Content Area: Carousel di Atas (Mentok ke Atas) & Slogan Headline di Tengah Sisa Section -->
+        <div class="relative z-10 w-full flex-1 flex flex-col items-center justify-start">
+            <div id="beranda-carousel-wrap" class="relative w-full h-[33.560vw] max-md:h-[115vw] overflow-hidden select-none group bg-white border-y-2 border-[#EAA90D] shrink-0">
                 <!-- Stage / Main Viewport -->
                 <div id="carousel-stage" class="relative w-full h-full overflow-hidden flex items-center justify-center">
                     <?php foreach ($carousel_media as $idx => $m): ?>
                         <div
-                            class="carousel-slide absolute inset-0 w-full h-full bg-black flex items-center justify-center transition-opacity duration-700 ease-in-out <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
+                            class="carousel-slide absolute inset-0 w-full h-full bg-white flex items-center justify-center transition-opacity duration-700 ease-in-out <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
                             data-index="<?= $idx ?>"
                             data-label="<?= htmlspecialchars($m['label']) ?>"
                             data-type="<?= $m['type'] ?>"
@@ -105,7 +97,7 @@
                                 <img
                                     src="<?= $m['src'] ?>"
                                     alt="<?= htmlspecialchars($m['label']) ?>"
-                                    class="w-full h-full object-contain select-none bg-black"
+                                    class="w-full h-full object-contain select-none bg-white"
                                     loading="<?= $idx === 0 ? 'eager' : 'lazy' ?>"
                                 />
                             <?php else: ?>
@@ -113,7 +105,7 @@
                                     controls
                                     playsinline
                                     preload="metadata"
-                                    class="w-full h-full object-contain bg-black"
+                                    class="w-full h-full object-contain bg-white"
                                 >
                                     <source src="<?= $m['src'] ?>" type="video/mp4">
                                     Browser Anda tidak mendukung pemutar video.
@@ -123,7 +115,7 @@
                     <?php endforeach; ?>
 
                     <!-- Bottom Gradient Overlay & Controls -->
-                    <div class="absolute inset-x-0 bottom-0 h-[8.755vw] max-md:h-[25.641vw] bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none z-20 flex items-end justify-between p-[1.556vw] max-md:p-[3.077vw]">
+                    <div class="absolute inset-x-0 bottom-0 h-[8.755vw] max-md:h-[25.641vw] bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none z-20 flex items-end justify-between p-[1.556vw] max-md:p-[3.077vw]">
                         <!-- Counter Badge (Kiri: 1 / N) -->
                         <div class="flex items-center gap-[0.389vw] max-md:gap-[1.538vw] bg-black/50 backdrop-blur-md border border-white/20 px-[0.681vw] max-md:px-[2.564vw] py-[0.292vw] max-md:py-[1.026vw] rounded-full shadow-md pointer-events-auto">
                             <span class="inline-block size-[0.389vw] max-md:size-[1.538vw] rounded-full bg-[#EA6D0D] animate-pulse"></span>
@@ -133,7 +125,7 @@
                         </div>
 
                         <!-- Dots Indicator (Kanan) -->
-                        <div class="flex items-center gap-[0.486vw] max-md:gap-[1.538vw] pointer-events-auto">
+                        <div class="flex items-center gap-[0.486vw] max-md:gap-[1.538vw] bg-black/50 backdrop-blur-md border border-white/20 px-[0.681vw] max-md:px-[2.564vw] py-[0.389vw] max-md:py-[1.282vw] rounded-full shadow-md pointer-events-auto">
                             <?php foreach ($carousel_media as $idx => $m): ?>
                                 <button
                                     type="button"
@@ -169,6 +161,23 @@
                         </svg>
                     </button>
                 </div>
+            </div>
+
+            <!-- Slogan Headline: Di Tengah Secara Vertikal & Horizontal Pada Sisa Section -->
+            <div class="w-full flex-1 flex flex-col items-center justify-center px-[3.891vw] py-[2.918vw] max-md:px-[4.103vw] max-md:py-[6.154vw]">
+                <!-- Eyebrow Tagline / Aksen Styling di Atas Slogan -->
+                <div class="flex items-center gap-[0.584vw] max-md:gap-[2.051vw] mb-[0.875vw] max-md:mb-[2.564vw]">
+                    <span class="h-[1.5px] w-[2.335vw] max-md:w-[7.692vw] bg-[#EAA90D] rounded-full"></span>
+                    <span class="text-[#EA6D0D] text-[0.875vw] max-md:text-[3.333vw] font-bold krona-one uppercase tracking-widest text-center">
+                        Pemerintah Kabupaten Purwakarta
+                    </span>
+                    <span class="h-[1.5px] w-[2.335vw] max-md:w-[7.692vw] bg-[#EAA90D] rounded-full"></span>
+                </div>
+
+                <!-- Teks Slogan Utama -->
+                <h2 class="text-[#303752] text-[2.237vw] max-md:text-[5.641vw] font-bold geologica leading-tight max-md:leading-snug text-center max-w-[63vw] max-md:max-w-full shrink-0">
+                    Pembayaran Pajak Daerah Anda untuk Pembangunan Purwakarta Istimewa
+                </h2>
             </div>
         </div>
     </div>
