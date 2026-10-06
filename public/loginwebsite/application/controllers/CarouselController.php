@@ -27,52 +27,57 @@ class CarouselController extends CI_Controller
 			$this->load->view('Carousel/CarouselView', $data);
 			$this->load->view('templates/footer');
 		} else {
-			if (empty($_FILES['file_media']['name'])) {
-				$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					Silakan pilih file foto atau video yang ingin diunggah!
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>');
-				redirect('CarouselController/Index');
-				return;
-			}
+			$tipe = $this->input->post('tipe', TRUE) ?: 'image';
 
-			// Validasi ukuran maksimal 100 MB
-			$max_bytes = 100 * 1024 * 1024;
-			if ($_FILES['file_media']['size'] > $max_bytes) {
-				$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-					Ukuran file melebihi batas maksimal 100 MB!
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>');
-				redirect('CarouselController/Index');
-				return;
-			}
+			if ($tipe === 'video') {
+				$link_youtube = trim($this->input->post('link_youtube', TRUE));
+				$yt_id = $this->CarouselModel->ExtractYoutubeId($link_youtube);
 
-			$upload_res = $this->_do_upload('file_media');
-			if (!$upload_res['status']) {
-				$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
-					$upload_res['error'] .
-					'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				</div>');
-				redirect('CarouselController/Index');
-				return;
-			}
+				if (empty($yt_id)) {
+					$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						Link video YouTube tidak valid! Pastikan Anda memasukkan URL video YouTube yang benar (contoh: https://www.youtube.com/watch?v=... atau https://youtu.be/...).
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>');
+					redirect('CarouselController/Index');
+					return;
+				}
 
-			$file_name = $upload_res['file_name'];
-			$file_ext  = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-			$video_exts = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
-			$tipe = in_array($file_ext, $video_exts) ? 'video' : 'image';
+				$insert_data = [
+					'judul'      => htmlspecialchars($this->input->post('judul', TRUE)),
+					'tipe'       => 'video',
+					'file_media' => 'https://www.youtube.com/watch?v=' . $yt_id,
+					'created_at' => date('Y-m-d H:i:s'),
+				];
+			} else {
+				if (empty($_FILES['file_media']['name'])) {
+					$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						Silakan pilih file foto / gambar yang ingin diunggah!
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>');
+					redirect('CarouselController/Index');
+					return;
+				}
 
-			// Auto converter ke WebP jika gambar
-			if ($tipe === 'image') {
+				$upload_res = $this->_do_upload('file_media');
+				if (!$upload_res['status']) {
+					$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+						$upload_res['error'] .
+						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>');
+					redirect('CarouselController/Index');
+					return;
+				}
+
+				$file_name = $upload_res['file_name'];
 				$file_name = $this->_convert_to_webp('./uploads/carousel/' . $file_name);
-			}
 
-			$insert_data = [
-				'judul'      => htmlspecialchars($this->input->post('judul', TRUE)),
-				'tipe'       => $tipe,
-				'file_media' => $file_name,
-				'created_at' => date('Y-m-d H:i:s'),
-			];
+				$insert_data = [
+					'judul'      => htmlspecialchars($this->input->post('judul', TRUE)),
+					'tipe'       => 'image',
+					'file_media' => $file_name,
+					'created_at' => date('Y-m-d H:i:s'),
+				];
+			}
 
 			$resp = $this->CarouselModel->Insert($insert_data);
 			if ($resp) {
@@ -117,48 +122,54 @@ class CarouselController extends CI_Controller
 			$this->load->view('Carousel/EditCarouselView', $data);
 			$this->load->view('templates/footer');
 		} else {
+			$tipe = $this->input->post('tipe', TRUE) ?: $data['media']['tipe'];
+
 			$update_data = [
 				'judul' => htmlspecialchars($this->input->post('judul', TRUE)),
+				'tipe'  => $tipe,
 			];
 
-			// Ganti file media baru jika ada
-			if (!empty($_FILES['file_media']['name'])) {
-				$max_bytes = 100 * 1024 * 1024;
-				if ($_FILES['file_media']['size'] > $max_bytes) {
-					$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-						Ukuran file melebihi batas maksimal 100 MB!
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>');
-					redirect('CarouselController/Edit/' . $id);
-					return;
-				}
+			if ($tipe === 'video') {
+				$link_youtube = trim($this->input->post('link_youtube', TRUE));
+				if (!empty($link_youtube)) {
+					$yt_id = $this->CarouselModel->ExtractYoutubeId($link_youtube);
+					if (empty($yt_id)) {
+						$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							Link video YouTube tidak valid!
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>');
+						redirect('CarouselController/Edit/' . $id);
+						return;
+					}
 
-				$upload_res = $this->_do_upload('file_media');
-				if ($upload_res['status']) {
+					// Hapus file lama jika sebelumnya merupakan file upload gambar
 					$old_file = './uploads/carousel/' . $data['media']['file_media'];
 					if (file_exists($old_file) && is_file($old_file)) {
 						@unlink($old_file);
 					}
 
-					$new_file_name = $upload_res['file_name'];
-					$file_ext = strtolower(pathinfo($new_file_name, PATHINFO_EXTENSION));
-					$video_exts = ['mp4', 'webm', 'mov', 'avi', 'mkv'];
-					$tipe = in_array($file_ext, $video_exts) ? 'video' : 'image';
+					$update_data['file_media'] = 'https://www.youtube.com/watch?v=' . $yt_id;
+				}
+			} else {
+				// Tipe Gambar: Ganti file jika diunggah file baru
+				if (!empty($_FILES['file_media']['name'])) {
+					$upload_res = $this->_do_upload('file_media');
+					if ($upload_res['status']) {
+						$old_file = './uploads/carousel/' . $data['media']['file_media'];
+						if (file_exists($old_file) && is_file($old_file)) {
+							@unlink($old_file);
+						}
 
-					// Auto converter ke WebP jika gambar
-					if ($tipe === 'image') {
-						$new_file_name = $this->_convert_to_webp('./uploads/carousel/' . $new_file_name);
+						$new_file_name = $this->_convert_to_webp('./uploads/carousel/' . $upload_res['file_name']);
+						$update_data['file_media'] = $new_file_name;
+					} else {
+						$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
+							$upload_res['error'] .
+							'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>');
+						redirect('CarouselController/Edit/' . $id);
+						return;
 					}
-
-					$update_data['file_media'] = $new_file_name;
-					$update_data['tipe']       = $tipe;
-				} else {
-					$this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">' .
-						$upload_res['error'] .
-						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>');
-					redirect('CarouselController/Edit/' . $id);
-					return;
 				}
 			}
 
@@ -194,8 +205,8 @@ class CarouselController extends CI_Controller
 	private function _do_upload($field_name)
 	{
 		$config['upload_path']   = './uploads/carousel/';
-		$config['allowed_types'] = 'jpg|jpeg|png|webp|gif|mp4|webm|mov|avi|mkv';
-		$config['max_size']      = '102400'; // 100 MB dalam KB
+		$config['allowed_types'] = 'jpg|jpeg|png|webp|gif';
+		$config['max_size']      = '15360'; // 15 MB dalam KB
 		$config['encrypt_name']  = TRUE;
 		$config['remove_spaces'] = TRUE;
 

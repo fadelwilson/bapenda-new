@@ -8,14 +8,32 @@
     if (!empty($ShowDataCarousel)) {
         foreach ($ShowDataCarousel as $item) {
             $is_video = ($item['tipe'] === 'video');
-            $file_url = base_url('loginwebsite/uploads/carousel/' . $item['file_media']);
+            if ($is_video) {
+                $yt_id = '';
+                $raw = trim($item['file_media']);
+                if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/|youtube\.com/shorts/)([^"&?/ ]{11})%i', $raw, $match)) {
+                    $yt_id = $match[1];
+                } elseif (preg_match('/^[a-zA-Z0-9_-]{11}$/', $raw)) {
+                    $yt_id = $raw;
+                }
 
-            $carousel_media[] = [
-                'type'  => $item['tipe'],
-                'src'   => $file_url,
-                'thumb' => $is_video ? '' : $file_url,
-                'label' => $item['judul'],
-            ];
+                $carousel_media[] = [
+                    'type'  => 'video',
+                    'yt_id' => $yt_id,
+                    'src'   => !empty($yt_id) ? "https://www.youtube-nocookie.com/embed/{$yt_id}?enablejsapi=1&rel=0&modestbranding=1" : $raw,
+                    'thumb' => !empty($yt_id) ? "https://img.youtube.com/vi/{$yt_id}/hqdefault.jpg" : '',
+                    'label' => $item['judul'],
+                ];
+            } else {
+                $file_url = base_url('loginwebsite/uploads/carousel/' . $item['file_media']);
+                $carousel_media[] = [
+                    'type'  => 'image',
+                    'yt_id' => '',
+                    'src'   => $file_url,
+                    'thumb' => $file_url,
+                    'label' => $item['judul'],
+                ];
+            }
         }
     }
 
@@ -23,36 +41,42 @@
         $carousel_media = [
             [
                 'type'  => 'image',
+                'yt_id' => '',
                 'src'   => base_url('assets/images/bpd-carousel1.webp'),
                 'thumb' => base_url('assets/images/bpd-carousel1.webp'),
                 'label' => 'Ayo Bayar Pajak Tepat Waktu',
             ],
             [
                 'type'  => 'image',
-                'src'   => base_url('assets/images/bpd-carousel2.webp'),
-                'thumb' => base_url('assets/images/bpd-carousel2.webp'),
+                'yt_id' => '',
+                'src'   => base_url('assets/images/nuhun.jpeg'),
+                'thumb' => base_url('assets/images/nuhun.jpeg'),
                 'label' => 'Pajak Daerah untuk Pembangunan Purwakarta',
             ],
             [
                 'type'  => 'image',
+                'yt_id' => '',
                 'src'   => base_url('assets/images/bpd-carousel3.webp'),
                 'thumb' => base_url('assets/images/bpd-carousel3.webp'),
                 'label' => 'Terima Kasih Telah Membayar Pajak',
             ],
             [
                 'type'  => 'image',
+                'yt_id' => '',
                 'src'   => base_url('assets/images/bpd-carousel4.webp'),
                 'thumb' => base_url('assets/images/bpd-carousel4.webp'),
                 'label' => 'Taat Pajak, Wujud Peduli Daerah',
             ],
             [
                 'type'  => 'image',
+                'yt_id' => '',
                 'src'   => base_url('assets/images/bpd-carousel5.webp'),
                 'thumb' => base_url('assets/images/bpd-carousel5.webp'),
                 'label' => 'Pajak Lunas, Pembangunan Lancar',
             ],
             [
                 'type'  => 'video',
+                'yt_id' => '',
                 'src'   => base_url('assets/images/bpd-vidcarousel.mp4'),
                 'thumb' => '',
                 'label' => 'Video Sosialisasi Pajak Daerah',
@@ -83,12 +107,12 @@
 
         <!-- Content Area: Carousel di Atas (Mentok ke Atas) & Slogan Headline di Tengah Sisa Section -->
         <div class="relative z-10 w-full flex-1 flex flex-col items-center justify-start">
-            <div id="beranda-carousel-wrap" class="relative w-full h-[33.560vw] max-md:h-[115vw] overflow-hidden select-none group bg-white border-y-2 border-[#EAA90D] shrink-0">
+            <div id="beranda-carousel-wrap" class="relative w-full h-[33.560vw] max-md:h-[115vw] overflow-hidden select-none group bg-white border-y-1 border-[#EAA90D] shrink-0">
                 <!-- Stage / Main Viewport -->
                 <div id="carousel-stage" class="relative w-full h-full overflow-hidden flex items-center justify-center">
                     <?php foreach ($carousel_media as $idx => $m): ?>
                         <div
-                            class="carousel-slide absolute inset-0 w-full h-full bg-white flex items-center justify-center transition-opacity duration-700 ease-in-out <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
+                            class="carousel-slide absolute inset-0 w-full h-full bg-white flex items-center justify-center overflow-hidden transition-opacity duration-700 ease-in-out <?= $idx === 0 ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none z-0' ?>"
                             data-index="<?= $idx ?>"
                             data-label="<?= htmlspecialchars($m['label']) ?>"
                             data-type="<?= $m['type'] ?>"
@@ -97,19 +121,29 @@
                                 <img
                                     src="<?= $m['src'] ?>"
                                     alt="<?= htmlspecialchars($m['label']) ?>"
-                                    class="w-full h-full object-contain select-none bg-white"
+                                    class="w-full h-full object-contain max-md:object-cover max-md:object-center select-none bg-white"
                                     loading="<?= $idx === 0 ? 'eager' : 'lazy' ?>"
                                 />
                             <?php else: ?>
-                                <video
-                                    controls
-                                    playsinline
-                                    preload="metadata"
-                                    class="w-full h-full object-contain bg-white"
-                                >
-                                    <source src="<?= $m['src'] ?>" type="video/mp4">
-                                    Browser Anda tidak mendukung pemutar video.
-                                </video>
+                                <?php if (!empty($m['yt_id'])): ?>
+                                    <iframe
+                                        class="carousel-yt-iframe w-full h-full max-md:w-[205vw] max-md:h-full max-md:max-w-none max-md:shrink-0 bg-black border-0"
+                                        src="<?= $m['src'] ?>"
+                                        title="<?= htmlspecialchars($m['label']) ?>"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                    ></iframe>
+                                <?php else: ?>
+                                    <video
+                                        controls
+                                        playsinline
+                                        preload="metadata"
+                                        class="w-full h-full object-contain max-md:object-cover max-md:object-center bg-white"
+                                    >
+                                        <source src="<?= $m['src'] ?>" type="video/mp4">
+                                        Browser Anda tidak mendukung pemutar video.
+                                    </video>
+                                <?php endif; ?>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
@@ -256,6 +290,13 @@
                 if (vid && !vid.paused) {
                     vid.pause();
                 }
+            });
+            document.querySelectorAll('.carousel-yt-iframe').forEach(iframe => {
+                try {
+                    if (iframe && iframe.contentWindow) {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    }
+                } catch (err) {}
             });
         }
 

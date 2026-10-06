@@ -27,6 +27,5 @@
     <link href="<?= base_url('assets'); ?>/animation/owl.carousel.min.css" rel="stylesheet" />
     <link href="<?= base_url('assets'); ?>/animation/owl.theme.default.min.css" rel="stylesheet" />
     <link href="<?= base_url('assets/vendor/viewerjs/viewer.min.css') ?>" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="<?= base_url('assets'); ?>/css/output.css" rel="stylesheet" />
+    <link href="<?= base_url('assets'); ?>/css/output.css?v=<?= file_exists(FCPATH . 'assets/css/output.css') ? filemtime(FCPATH . 'assets/css/output.css') : time(); ?>" rel="stylesheet" />
 </head>

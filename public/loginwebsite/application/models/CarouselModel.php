@@ -49,4 +49,17 @@ class CarouselModel extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->delete('carousel');
 	}
+
+	public function ExtractYoutubeId($url)
+	{
+		if (empty($url)) return '';
+		$url = trim($url);
+		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/|youtube\.com/shorts/)([^"&?/ ]{11})%i', $url, $match)) {
+			return $match[1];
+		}
+		if (preg_match('/^[a-zA-Z0-9_-]{11}$/', $url)) {
+			return $url;
+		}
+		return '';
+	}
 }
