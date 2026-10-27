@@ -26,9 +26,10 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                 <?php $bi = base_url('assets/images/'); ?>
 
                 <?php
-                $publikasi_items = [
-                    [
-                        'title' => 'Peraturan Pajak Daerah',
+                if (!isset($publikasi_items) || empty($publikasi_items)) {
+                    $publikasi_items = [
+                        [
+                            'title' => 'Peraturan Pajak Daerah',
                         'pdfs' => [
                             [
                                 'title' => 'PERBUP No. 24 Tahun 2024 tentang BPHTB',
@@ -139,7 +140,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                         ],
                     ],
                 ];
-                ?>
+            }
+            ?>
 
                 <div class="flex flex-col px-[2.335vw] gap-[0.195vw] mt-[2.335vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
                     <?php foreach ($publikasi_items as $p_item): ?>
@@ -174,7 +176,7 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                 class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[1.946vw] max-md:px-[3.590vw] ppid-accordion-content"
                             >
 
-                                <?php if (isset($p_item['pdfs'])): ?>
+                                <?php if (isset($p_item['pdfs']) && count($p_item['pdfs']) > 0): ?>
 
                                     <?php
                                     $pdf_count = count($p_item['pdfs']);
@@ -287,6 +289,10 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                                                 Download
                                             </a>
                                         </div>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="w-full py-[2.5vw] text-center text-[#303752]/70 jakarta-sans font-medium text-[0.95vw] max-md:text-[3.5vw]">
+                                        Belum ada dokumen yang diunggah untuk kategori ini.
                                     </div>
                                 <?php endif; ?>
                             </div>
@@ -1576,7 +1582,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
                 function updatePdf() {
                     const pdf = data.pdfs[currentPdf];
-                    const pdfUrl = "<?= base_url() ?>" + pdf.file;
+                    const baseUrl = "<?= rtrim(base_url(), '/') ?>/";
+                    const pdfUrl = baseUrl + (pdf.file ? pdf.file.replace(/^\/+/, '') : '');
 
                     preview.src = pdfUrl;
                     pdfTitle.textContent = pdf.title;

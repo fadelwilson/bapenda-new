@@ -105,6 +105,38 @@ class BerandaController extends CI_Controller
 		$data['ShowDataPPID']    = $this->UploadModel->getDataPPID()->result_array();
 		$data['ShowDataArtikel'] = $this->db->order_by('id', 'desc')->get('artikel')->result_array();
 		$data['ShowDataSejarah'] = $this->db->order_by('id_sejarah', 'desc')->get('sejarah')->result_array();
+
+		// Ambil data Publikasi & Peraturan dari database
+		$publikasi_items = [];
+		if ($this->db->table_exists('publikasi_kategori') && $this->db->table_exists('publikasi_item')) {
+			$kategori = $this->db->order_by('urutan', 'ASC')->order_by('id', 'ASC')->get('publikasi_kategori')->result_array();
+			$items    = $this->db->order_by('urutan', 'ASC')->order_by('id', 'ASC')->get('publikasi_item')->result_array();
+
+			foreach ($kategori as $kat) {
+				$pdfs = [];
+				foreach ($items as $item) {
+					if ($item['kategori_id'] == $kat['id']) {
+						$file_path = (strpos($item['file_pdf'], '/') !== false)
+							? $item['file_pdf']
+							: 'loginwebsite/uploads/publikasi/' . $item['file_pdf'];
+
+						$pdfs[] = [
+							'id'    => $item['id'],
+							'title' => $item['judul'],
+							'file'  => $file_path,
+						];
+					}
+				}
+
+				$publikasi_items[] = [
+					'id'    => $kat['id'],
+					'title' => $kat['nama_kategori'],
+					'pdfs'  => $pdfs,
+				];
+			}
+		}
+		$data['publikasi_items'] = $publikasi_items;
+
 		$this->load->view('new_fe/informasi', $data);
 	}
 
