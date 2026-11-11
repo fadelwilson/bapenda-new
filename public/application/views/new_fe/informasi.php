@@ -4,8 +4,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 ?>
 
 <body class="min-h-screen min-w-screen overflow-x-hidden relative bg-white flex flex-col justify-between">
-    <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi', 'navbar_bg' => 'white']); ?>
-
     <div class="relative overflow-hidden min-h-screen flex flex-col justify-between px-[1.556vw] py-[1.556vw] max-md:p-[2.051vw]">
         <div class="relative z-10">
             <div class="flex items-center justify-between max-md:flex-col max-md:items-start max-md:gap-[4.103vw]">
@@ -15,6 +13,8 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
                     Informasi
                 </h1>
             </div>
+
+            <?php $this->load->view('new_fe/components/beranda_sidebar', ['active_menu' => 'informasi', 'navbar_bg' => 'white']); ?>
 
             <div class="mt-[4.475vw] max-md:mt-[8.205vw] relative z-10 max-md:px-0">
                 <!-- Tab Pane 1: Peraturan & Publikasi -->
@@ -1099,43 +1099,6 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
     </div>
     <!-- /content-galeri -->
 
-    <?php
-    $ppid_items = [
-        [
-            'title'   => 'Pengajuan Keberatan',
-            'image'   => 'assets/images/pengajuan-keberatan.webp',
-        ],
-        [
-            'title'   => 'Tugas PPID',
-            'image'   => 'assets/images/tugas-ppid.webp',
-        ],
-        [
-            'title'   => 'Tata Cara Penyelesaian Sengketa Informasi',
-            'image'   => 'assets/images/tata-cara-penyelesaian.webp',
-        ],
-        [
-            'title'   => 'QR SOP Permohonan Informasi',
-            'image'   => 'assets/images/qrsop-permohonan.webp',
-        ],
-        [
-            'title'   => 'QR SOP Uji Konsekuensi',
-            'image'   => 'assets/images/qrsop-uji.webp',
-        ],
-        [
-            'title'   => 'SOP Permohonan Informasi',
-            'image'   => 'assets/images/sop-permohonan.webp',
-        ],
-        [
-            'title'   => 'Struktur PPID',
-            'image'   => 'assets/images/struktur-ppid.webp',
-        ],
-        [
-            'title'   => 'Visi dan Misi PPID',
-            'image'   => 'assets/images/visi-misi.webp',
-        ],
-    ];
-    ?>
-
     <!-- Tab Pane 4: PPID -->
     <div id="content-ppid" class="informasi-pane hidden flex flex-col">
         <h1 class="text-[4.669vw] px-[1.167vw] text-(--blue-color) uppercase krona-one leading-none max-md:text-[9.231vw]">
@@ -1148,26 +1111,38 @@ $this->load->view('new_fe/components/head', ['title' => 'BAPENDA - Informasi']);
 
         <!-- Accordion Container -->
         <div class="flex flex-col gap-[0.195vw] mt-[2.335vw] max-md:gap-[1.538vw] max-md:mt-[6.154vw]">
-            <?php foreach ($ppid_items as $p_item): ?>
-                <div class="ppid-accordion-item">
-                    <button type="button" class="relative z-30 w-full flex items-center justify-between gap-[0.973vw] max-md:gap-[2.051vw] p-[0.778vw] bg-[#303752] text-white jakarta-sans text-[0.973vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.590vw] text-left max-md:p-[2.051vw]">
-                        <span><?= htmlspecialchars($p_item['title']) ?></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.167vw] shrink-0 transition-transform duration-300 transform ppid-accordion-icon max-md:size-[6.154vw]">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </button>
+            <?php if (!empty($ShowDataPPID)): ?>
+                <?php foreach ($ShowDataPPID as $p_item): ?>
+                    <div class="ppid-accordion-item">
+                        <button type="button" class="relative z-30 w-full flex items-center justify-between gap-[0.973vw] max-md:gap-[2.051vw] p-[0.778vw] bg-[#303752] text-white jakarta-sans text-[0.973vw] cursor-pointer transition-all duration-300 ppid-accordion-header max-md:text-[3.590vw] text-left max-md:p-[2.051vw]">
+                            <span><?= htmlspecialchars($p_item['judul_ppid'], ENT_QUOTES, 'UTF-8') ?></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-[1.167vw] shrink-0 transition-transform duration-300 transform ppid-accordion-icon max-md:size-[6.154vw]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
 
-                    <div class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[1.946vw] max-md:px-[3.590vw] ppid-accordion-content">
-                        <div class="flex justify-center w-full py-[0.973vw] max-md:py-[3.077vw]">
-                            <img
-                                src="<?= base_url($p_item['image']) ?>"
-                                alt="<?= htmlspecialchars($p_item['title']) ?>"
-                                class="max-w-[28.016vw] h-auto max-md:max-w-full max-md:w-full max-md:h-[120vw] object-contain"
-                            >
+                        <div class="relative z-0 max-h-0 opacity-0 py-0 overflow-hidden transition-all duration-300 bg-[#eaebee] text-[#303752] px-[1.946vw] max-md:px-[3.590vw] ppid-accordion-content">
+                            <div class="flex flex-col items-center w-full py-[0.973vw] max-md:py-[3.077vw]">
+                                <?php $ppidFileUrl = base_url('loginwebsite/uploads/seputar/ppid/' . rawurlencode($p_item['foto_ppid'])); ?>
+                                <?php if (strtolower(pathinfo($p_item['foto_ppid'], PATHINFO_EXTENSION)) === 'pdf'): ?>
+                                    <a href="<?= htmlspecialchars($ppidFileUrl, ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer" class="text-blue-700 underline">Lihat dokumen PPID</a>
+                                <?php else: ?>
+                                    <img
+                                        src="<?= htmlspecialchars($ppidFileUrl, ENT_QUOTES, 'UTF-8') ?>"
+                                        alt="<?= htmlspecialchars($p_item['judul_ppid'], ENT_QUOTES, 'UTF-8') ?>"
+                                        class="max-w-[28.016vw] h-auto max-md:max-w-full max-md:w-full max-md:h-[120vw] object-contain"
+                                    >
+                                <?php endif; ?>
+                                <?php if (!empty($p_item['narasi_ppid'])): ?>
+                                    <p class="w-full mt-[0.973vw] text-left whitespace-pre-line"><?= htmlspecialchars($p_item['narasi_ppid'], ENT_QUOTES, 'UTF-8') ?></p>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="px-[1.167vw] py-[1.946vw] text-center text-[#303752]">Konten PPID belum tersedia.</p>
+            <?php endif; ?>
         </div>
     </div>
 
