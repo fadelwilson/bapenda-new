@@ -65,7 +65,7 @@ $route['tentang-kami'] = 'BerandaController/TentangKami';
 $route['layanan'] = 'BerandaController/layanan';
 
 // blog
-$route['blog'] = 'BerandaController/blog';
+// $route['blog'] = 'BerandaController/blog';
 
 // informasi (definisi pajak + berita + ppid)
 $route['informasi'] = 'BerandaController/informasi';
@@ -75,11 +75,11 @@ $route['pdl'] = 'BerandaController/pdl';
 $route['bphtb'] = 'BerandaController/bphtb';
 
 // ppid
-$route['ppid'] = 'BerandaController/ppid';
+// $route['ppid'] = 'BerandaController/ppid';
 
 // kritik&saran
 $route['kritik-saran'] = 'SaranController/index';
 $route['api/kritik-saran/store'] = 'SaranController/store';
 
 // sejarah
-$route['media'] = 'SejarahController/index';
+// $route['media'] = 'SejarahController/index';
